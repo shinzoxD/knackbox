@@ -27,12 +27,13 @@ description: Write clear, conventional git commit messages. Use whenever the
 
 ## Install a skill
 
-**Claude Code** — copy the skill folder into your skills directory:
+**Claude Code** — run the installer:
 
 ```bash
-git clone https://github.com/YOUR_ORG/knackbox
-cp -r knackbox/skills/coding/commit-messages ~/.claude/skills/
+curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/knackbox/main/install.sh | bash -s commit-messages
 ```
+
+Use `--dest DIR` to install to another Agent Skills-compatible directory, or `--force` to replace an existing copy.
 
 **Claude.ai** — open Settings → Capabilities → Skills and upload the skill folder (or paste the `SKILL.md`).
 
