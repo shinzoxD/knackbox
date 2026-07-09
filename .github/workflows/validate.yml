@@ -17,6 +17,36 @@ jobs:
       - name: Validate all skills
         run: python scripts/validate.py
 
+  site:
+    if: github.event_name == 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check whether site changed
+        id: site-changes
+        run: |
+          if git diff --name-only "origin/${{ github.base_ref }}"...HEAD | grep -q '^site/'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No site changes detected; skipping site build."
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.site-changes.outputs.changed == 'true'
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Build site
+        if: steps.site-changes.outputs.changed == 'true'
+        run: |
+          cd site
+          npm ci
+          npm run build
+
   update-catalog:
     # Regenerates catalog.json and the README table after merges to main
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

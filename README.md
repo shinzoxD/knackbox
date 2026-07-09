@@ -1,5 +1,9 @@
 # Knackbox
 
+[![Validate skills](https://github.com/YOUR_ORG/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/YOUR_ORG/knackbox/actions/workflows/validate.yml)
+![License](https://img.shields.io/badge/license-Apache--2.0-blue)
+![Skills](https://img.shields.io/badge/skills-11-green)
+
 **An open library of skills for AI agents.**
 
 Skills are small folders of instructions and resources that teach an AI model how to do a specific job well — writing commit messages, formatting meeting notes, reviewing SQL, anything. Knackbox collects high-quality, community-reviewed skills in the open [Agent Skills format](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview), so they work with Claude Code, Claude.ai, the Claude API, and any other tool that reads `SKILL.md` files.
