@@ -1,6 +1,6 @@
 # Knackbox
 
-[![Validate skills](https://github.com/YOUR_ORG/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/YOUR_ORG/knackbox/actions/workflows/validate.yml)
+[![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
 ![Skills](https://img.shields.io/badge/skills-11-green)
 
@@ -34,7 +34,7 @@ description: Write clear, conventional git commit messages. Use whenever the
 **Claude Code** — run the installer:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/knackbox/main/install.sh | bash -s commit-messages
+curl -fsSL https://raw.githubusercontent.com/shinzoxD/knackbox/main/install.sh | bash -s commit-messages
 ```
 
 Use `--dest DIR` to install to another Agent Skills-compatible directory, or `--force` to replace an existing copy.

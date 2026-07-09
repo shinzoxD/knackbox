@@ -48,7 +48,7 @@ export const allSkills = [...catalog.skills].sort((a, b) =>
 );
 export const categories = [...new Set(allSkills.map((skill) => skill.category))].sort();
 export const tiers: Tier[] = ["core", "verified", "community"];
-export const githubOrg = "YOUR_ORG";
+export const githubOrg = "shinzoxD";
 export const githubRepoUrl = `https://github.com/${githubOrg}/knackbox`;
 export const installCommand =
   `curl -fsSL https://raw.githubusercontent.com/${githubOrg}/knackbox/main/install.sh | bash -s`;

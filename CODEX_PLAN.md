@@ -37,8 +37,8 @@ knackbox/
 
 ## 3. Phase 0 — Setup (15 min)
 
-- [ ] Ask the human for the GitHub org/user slug; replace every `YOUR_ORG` placeholder in README.md and this file with it.
-- [ ] Ensure `git init` + initial commit exist; ensure `python scripts/validate.py` exits 0 before you change anything.
+- [x] GitHub org/user slug resolved to `shinzoxD`; repository URLs use that slug.
+- [x] Ensure `git init` + initial commit exist; ensure `python scripts/validate.py` exits 0 before you change anything.
 
 ## 4. Phase A — Website (`site/`) — the main deliverable
 
@@ -63,7 +63,7 @@ Static Astro site in a `site/` directory at the repo root.
    - Category filter chips (multi-select) and a tier filter; both update the table without reload.
    - A Pagefind search input above the table.
    - A one-line caption linking to `/docs/metrics` for methodology.
-3. **`/skills/[category]/[name]`** — one page per skill: tier badge, rendered SKILL.md body, a metrics sidebar (all catalog fields, nulls as "—", "benchmark suite: yes/no"), a copy-button install command (`bash <(curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/knackbox/main/install.sh) <skill-name>`), and a "View on GitHub" link to the skill folder.
+3. **`/skills/[category]/[name]`** — one page per skill: tier badge, rendered SKILL.md body, a metrics sidebar (all catalog fields, nulls as "—", "benchmark suite: yes/no"), a copy-button install command (`bash <(curl -fsSL https://raw.githubusercontent.com/shinzoxD/knackbox/main/install.sh) <skill-name>`), and a "View on GitHub" link to the skill folder.
 4. **`/docs`** — install instructions per surface (Claude Code `~/.claude/skills/`, Claude.ai upload, "any Agent Skills-compatible tool"), plus what skills are. `/docs/metrics` renders METRICS.md.
 5. **`/contribute`** — renders CONTRIBUTING.md with a hero link to the skill request issues.
 
@@ -108,7 +108,7 @@ For each entry in `tasks`: generate output A (system prompt = full SKILL.md body
 ## 6. Phase C — Distribution
 
 1. **`install.sh` at repo root** (bash + curl + tar only):
-   `curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/knackbox/main/install.sh | bash -s <skill-name> [--dest DIR]`
+   `curl -fsSL https://raw.githubusercontent.com/shinzoxD/knackbox/main/install.sh | bash -s <skill-name> [--dest DIR]`
    Downloads the repo tarball from GitHub codeload, extracts exactly `skills/*/<skill-name>` into `--dest` (default `~/.claude/skills/<skill-name>`), refuses to overwrite unless `--force`, prints what was installed and the docs URL. Unknown skill name ⇒ list available names from the tarball and exit 1. `set -euo pipefail`, no sudo, works on macOS and Linux.
 2. Update README and the site's install snippets to use it.
 3. **Stretch (only after A–C accepted):** `packages/cli` npm package exposing `npx knackbox add <skill>` — resolves the skill via raw catalog.json, then reuses the tarball extraction (shell out to system `tar`). Node stdlib only.

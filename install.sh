@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ORG="YOUR_ORG"
+ORG="shinzoxD"
 REPO="knackbox"
 BRANCH="main"
 TARBALL_URL="${KNACKBOX_TARBALL_URL:-https://codeload.github.com/${ORG}/${REPO}/tar.gz/refs/heads/${BRANCH}}"
