@@ -1,6 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ink-50: #f7f8f8;
+  --color-ink-100: #e7eaeb;
+  --color-ink-200: #cdd3d5;
+  --color-ink-300: #a8b2b6;
+  --color-ink-400: #78868c;
+  --color-ink-500: #596970;
+  --color-ink-600: #445157;
+  --color-ink-700: #333e43;
+  --color-ink-800: #232c30;
+  --color-ink-900: #151c20;
+  --color-ink-950: #0c1114;
+  --color-leaf-100: #dbece2;
+  --color-leaf-300: #92c7a7;
+  --color-leaf-700: #286345;
+  --color-leaf-900: #153825;
+  --color-brass-100: #f7e7bb;
+  --color-brass-300: #d8ae46;
+  --color-brass-700: #775415;
+  --color-brass-900: #3f2a0a;
+  --color-steel-100: #dbe5ef;
+  --color-steel-300: #91abc8;
+  --color-steel-700: #31587d;
+  --color-steel-900: #182c44;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
 
 @layer base {
   :root {

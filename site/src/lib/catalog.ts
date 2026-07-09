@@ -1,8 +1,9 @@
 import { readFileSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join } from "node:path";
 import catalogData from "../../../catalog.json";
 import { renderMarkdown, stripFrontmatter } from "./markdown";
+
+declare const __REPO_ROOT__: string;
 
 export type Tier = "core" | "verified" | "community";
 
@@ -37,8 +38,7 @@ type Catalog = {
   skills: Skill[];
 };
 
-const here = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(here, "../../..");
+const repoRoot = __REPO_ROOT__;
 
 export const catalog = catalogData as Catalog;
 export const allSkills = [...catalog.skills].sort((a, b) =>

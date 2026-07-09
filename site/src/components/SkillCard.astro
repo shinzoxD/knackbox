@@ -15,15 +15,15 @@ const { skill } = Astro.props as { skill: Skill };
   <p class="line-clamp-4 text-sm leading-6 text-ink-700 dark:text-ink-200">{skill.description}</p>
   <dl class="mt-5 grid grid-cols-3 gap-3 border-t border-ink-200 pt-4 text-xs dark:border-ink-800">
     <div>
-      <dt class="uppercase tracking-wide muted">Category</dt>
+      <dt class="uppercase muted">Category</dt>
       <dd class="mt-1 font-semibold">{skill.category}</dd>
     </div>
     <div>
-      <dt class="uppercase tracking-wide muted">Context</dt>
+      <dt class="uppercase muted">Context</dt>
       <dd class="metric mt-1">{skill.context_tokens}</dd>
     </div>
     <div>
-      <dt class="uppercase tracking-wide muted">Updated</dt>
+      <dt class="uppercase muted">Updated</dt>
       <dd class="metric mt-1">{skill.updated}</dd>
     </div>
   </dl>

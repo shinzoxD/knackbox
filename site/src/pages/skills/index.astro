@@ -27,14 +27,14 @@ import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../l
         <div id="pagefind-search" class="min-h-12"></div>
       </div>
       <div class="panel p-4">
-        <label for="skill-text-filter" class="mb-2 block text-xs font-semibold uppercase tracking-wide muted">Quick filter</label>
+        <label for="skill-text-filter" class="mb-2 block text-xs font-semibold uppercase muted">Quick filter</label>
         <input id="skill-text-filter" class="h-10 w-full border border-ink-300 bg-white px-3 text-sm text-ink-900 dark:border-ink-700 dark:bg-ink-950 dark:text-white" type="search" placeholder="Filter table" />
       </div>
     </div>
 
     <div class="mt-5 grid gap-4 lg:grid-cols-[1fr_18rem]">
       <div class="panel p-4">
-        <p class="mb-3 text-xs font-semibold uppercase tracking-wide muted">Categories</p>
+        <p class="mb-3 text-xs font-semibold uppercase muted">Categories</p>
         <div class="flex flex-wrap gap-2" data-category-filters>
           {categories.map((category) => (
             <button type="button" class="chip" data-filter-category={category} aria-pressed="false">{category}</button>
@@ -42,7 +42,7 @@ import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../l
         </div>
       </div>
       <div class="panel p-4">
-        <p class="mb-3 text-xs font-semibold uppercase tracking-wide muted">Tier</p>
+        <p class="mb-3 text-xs font-semibold uppercase muted">Tier</p>
         <div class="flex flex-wrap gap-2" data-tier-filters>
           <button type="button" class="chip is-active" data-filter-tier="all" aria-pressed="true">All</button>
           {tiers.map((tier) => (
@@ -57,7 +57,7 @@ import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../l
         <caption class="caption-bottom px-4 py-3 text-left text-xs muted">
           Null metrics render as <span class="metric">{fmt(null)}</span> and sort below measured values.
         </caption>
-        <thead class="border-b border-ink-200 bg-ink-100 text-xs uppercase tracking-wide text-ink-600 dark:border-ink-800 dark:bg-ink-800 dark:text-ink-300">
+        <thead class="border-b border-ink-200 bg-ink-100 text-xs uppercase text-ink-600 dark:border-ink-800 dark:bg-ink-800 dark:text-ink-300">
           <tr>
             <th class="w-28 px-4 py-3"><button type="button" data-sort="tier" class="font-semibold">Tier</button></th>
             <th class="w-56 px-4 py-3"><button type="button" data-sort="name" class="font-semibold">Skill</button></th>

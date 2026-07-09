@@ -1,13 +1,16 @@
 import { fileURLToPath } from "node:url";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 const repoRoot = fileURLToPath(new URL("..", import.meta.url));
 
 export default defineConfig({
   output: "static",
-  integrations: [tailwind({ applyBaseStyles: false })],
   vite: {
+    define: {
+      __REPO_ROOT__: JSON.stringify(repoRoot),
+    },
+    plugins: [tailwindcss()],
     server: {
       fs: {
         allow: [repoRoot],

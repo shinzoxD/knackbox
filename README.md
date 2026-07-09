@@ -70,6 +70,7 @@ The same data is available as machine-readable [`catalog.json`](catalog.json), w
 ## Website
 
 The static site lives in [`site/`](site/) and is built from `catalog.json` plus the raw repository markdown files.
+It requires Node.js 22.12 or newer.
 
 Local development:
 
