@@ -1,0 +1,82 @@
+---
+import CopyButton from "../components/CopyButton.astro";
+import SkillCard from "../components/SkillCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  allSkills,
+  byTier,
+  categories,
+  catalog,
+  githubRepoUrl,
+  installCommand,
+  tierCounts,
+} from "../lib/catalog";
+
+const counts = tierCounts();
+const coreSkills = byTier("core");
+const command = `${installCommand} commit-messages`;
+---
+
+<BaseLayout title="Knackbox">
+  <section class="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900" data-pagefind-body>
+    <div class="wrap grid gap-10 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-steel-700 dark:text-steel-300">Agent skill library</p>
+        <h1 class="max-w-3xl text-4xl font-semibold tracking-normal text-ink-950 dark:text-white sm:text-5xl">Knackbox</h1>
+        <p class="mt-5 max-w-2xl text-xl leading-8 muted">An open library of skills for AI agents.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn btn-primary no-underline" href="/skills/">Browse skills</a>
+          <a class="btn no-underline" href={githubRepoUrl}>GitHub</a>
+        </div>
+      </div>
+      <div class="panel p-4">
+        <div class="mb-3 flex items-center justify-between gap-3">
+          <p class="text-sm font-semibold">Install a skill</p>
+          <CopyButton value={command} />
+        </div>
+        <pre class="terminal"><code>{command}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap py-10">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div class="panel p-5">
+        <p class="text-sm muted">Skills</p>
+        <p class="metric mt-2 text-3xl font-semibold">{allSkills.length}</p>
+      </div>
+      <div class="panel p-5">
+        <p class="text-sm muted">Categories</p>
+        <p class="metric mt-2 text-3xl font-semibold">{categories.length}</p>
+      </div>
+      <div class="panel p-5">
+        <p class="text-sm muted">Core</p>
+        <p class="metric mt-2 text-3xl font-semibold">{counts.core}</p>
+      </div>
+      <div class="panel p-5">
+        <p class="text-sm muted">Verified</p>
+        <p class="metric mt-2 text-3xl font-semibold">{counts.verified}</p>
+      </div>
+      <div class="panel p-5">
+        <p class="text-sm muted">Community</p>
+        <p class="metric mt-2 text-3xl font-semibold">{counts.community}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap pb-16">
+    <div class="mb-5 flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-2xl font-semibold tracking-normal text-ink-950 dark:text-white">Core skills</h2>
+        <p class="mt-2 muted">Maintainer-curated skills surfaced first in the catalog.</p>
+      </div>
+      <a class="text-sm font-semibold" href="/docs/metrics/">Tier methodology</a>
+    </div>
+    <div class="grid gap-4 lg:grid-cols-3">
+      {coreSkills.map((skill) => <SkillCard skill={skill} />)}
+    </div>
+    <p class="mt-6 text-sm muted">
+      Catalog generated {catalog.generated}. Scores follow version {catalog.score_version}.
+    </p>
+  </section>
+</BaseLayout>

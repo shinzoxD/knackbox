@@ -1,0 +1,48 @@
+---
+import CopyButton from "../../components/CopyButton.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { installCommand } from "../../lib/catalog";
+
+const example = `${installCommand} commit-messages`;
+---
+
+<BaseLayout title="Docs | Knackbox" description="Install Knackbox skills">
+  <section class="wrap py-10" data-pagefind-body>
+    <div class="mb-8 border-b border-ink-200 pb-6 dark:border-ink-800">
+      <h1 class="text-3xl font-semibold tracking-normal text-ink-950 dark:text-white">Docs</h1>
+      <p class="mt-3 max-w-3xl muted">Skills are folders with a `SKILL.md` file and optional resources that an agent can load for a specific job.</p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-3">
+      <section class="panel p-5">
+        <h2 class="text-lg font-semibold">Claude Code</h2>
+        <p class="mt-3 text-sm leading-6 muted">Install directly into `~/.claude/skills/` with the repository installer.</p>
+        <div class="mt-5 flex items-center justify-between gap-3">
+          <p class="text-sm font-semibold">Example</p>
+          <CopyButton value={example} />
+        </div>
+        <pre class="terminal mt-3"><code>{example}</code></pre>
+      </section>
+
+      <section class="panel p-5">
+        <h2 class="text-lg font-semibold">Claude.ai</h2>
+        <p class="mt-3 text-sm leading-6 muted">Open Settings, Capabilities, Skills, then upload the skill folder or paste the `SKILL.md` content.</p>
+      </section>
+
+      <section class="panel p-5">
+        <h2 class="text-lg font-semibold">Agent Skills tools</h2>
+        <p class="mt-3 text-sm leading-6 muted">Any runtime that supports the Agent Skills folder format can load Knackbox skills as plain files.</p>
+      </section>
+    </div>
+
+    <section class="mt-10 max-w-3xl">
+      <h2 class="text-2xl font-semibold tracking-normal text-ink-950 dark:text-white">Skill format</h2>
+      <p class="mt-4 leading-7 muted">
+        Each skill has YAML frontmatter with a `name` and a trigger-oriented `description`, followed by instructions. Optional `references/`, `scripts/`, and `assets/` folders stay with the skill.
+      </p>
+      <p class="mt-4 leading-7 muted">
+        Scores, tiers, and catalog fields are generated from the repository. See <a href="/docs/metrics/">metrics</a> for the measurement model.
+      </p>
+    </section>
+  </section>
+</BaseLayout>

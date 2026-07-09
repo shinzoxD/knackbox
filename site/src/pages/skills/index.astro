@@ -1,0 +1,240 @@
+---
+import TierBadge from "../../components/TierBadge.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../lib/catalog";
+---
+
+<BaseLayout title="Skills | Knackbox" description="Knackbox skill leaderboard">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  </Fragment>
+
+  <section class="wrap py-10" data-pagefind-body>
+    <div class="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <h1 class="text-3xl font-semibold tracking-normal text-ink-950 dark:text-white">Skill leaderboard</h1>
+        <p class="mt-3 max-w-3xl muted">
+          Sort measured columns, filter by tier or category, and inspect every skill from the static catalog.
+        </p>
+      </div>
+      <p class="text-sm muted">
+        Methodology: <a href="/docs/metrics/">metrics and tiers</a>.
+      </p>
+    </div>
+
+    <div class="grid gap-5 lg:grid-cols-[1fr_18rem]">
+      <div class="panel p-4">
+        <div id="pagefind-search" class="min-h-12"></div>
+      </div>
+      <div class="panel p-4">
+        <label for="skill-text-filter" class="mb-2 block text-xs font-semibold uppercase tracking-wide muted">Quick filter</label>
+        <input id="skill-text-filter" class="h-10 w-full border border-ink-300 bg-white px-3 text-sm text-ink-900 dark:border-ink-700 dark:bg-ink-950 dark:text-white" type="search" placeholder="Filter table" />
+      </div>
+    </div>
+
+    <div class="mt-5 grid gap-4 lg:grid-cols-[1fr_18rem]">
+      <div class="panel p-4">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-wide muted">Categories</p>
+        <div class="flex flex-wrap gap-2" data-category-filters>
+          {categories.map((category) => (
+            <button type="button" class="chip" data-filter-category={category} aria-pressed="false">{category}</button>
+          ))}
+        </div>
+      </div>
+      <div class="panel p-4">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-wide muted">Tier</p>
+        <div class="flex flex-wrap gap-2" data-tier-filters>
+          <button type="button" class="chip is-active" data-filter-tier="all" aria-pressed="true">All</button>
+          {tiers.map((tier) => (
+            <button type="button" class="chip" data-filter-tier={tier} aria-pressed="false">{tier}</button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 overflow-x-auto border border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
+      <table class="min-w-[980px] w-full table-fixed text-left text-sm" data-skill-table>
+        <caption class="caption-bottom px-4 py-3 text-left text-xs muted">
+          Null metrics render as <span class="metric">{fmt(null)}</span> and sort below measured values.
+        </caption>
+        <thead class="border-b border-ink-200 bg-ink-100 text-xs uppercase tracking-wide text-ink-600 dark:border-ink-800 dark:bg-ink-800 dark:text-ink-300">
+          <tr>
+            <th class="w-28 px-4 py-3"><button type="button" data-sort="tier" class="font-semibold">Tier</button></th>
+            <th class="w-56 px-4 py-3"><button type="button" data-sort="name" class="font-semibold">Skill</button></th>
+            <th class="w-32 px-4 py-3"><button type="button" data-sort="category" class="font-semibold">Category</button></th>
+            <th class="w-32 px-4 py-3 text-right"><button type="button" data-sort="score" class="font-semibold">Skill Score</button></th>
+            <th class="w-28 px-4 py-3 text-right"><button type="button" data-sort="uplift" class="font-semibold">Uplift</button></th>
+            <th class="w-28 px-4 py-3 text-right"><button type="button" data-sort="trigger" class="font-semibold">Trigger</button></th>
+            <th class="w-32 px-4 py-3 text-right"><button type="button" data-sort="context" class="font-semibold">Context</button></th>
+            <th class="w-32 px-4 py-3"><button type="button" data-sort="updated" class="font-semibold">Updated</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          {allSkills.map((skill) => (
+            <tr
+              class="border-b border-ink-100 last:border-b-0 dark:border-ink-800"
+              data-category={skill.category}
+              data-tier={skill.tier}
+              data-name={skill.name}
+              data-description={skill.description}
+              data-sort-tier={skill.tier}
+              data-sort-name={skill.name}
+              data-sort-category={skill.category}
+              data-sort-score={skill.metrics.skill_score ?? ""}
+              data-sort-uplift={skill.metrics.quality_uplift ?? ""}
+              data-sort-trigger={skill.metrics.trigger_accuracy ?? ""}
+              data-sort-context={skill.context_tokens}
+              data-sort-updated={skill.updated}
+            >
+              <td class="px-4 py-3"><TierBadge tier={skill.tier} /></td>
+              <td class="px-4 py-3">
+                <a class="font-semibold text-ink-950 dark:text-white" href={skillUrl(skill)}>{skill.name}</a>
+              </td>
+              <td class="px-4 py-3">{skill.category}</td>
+              <td class="metric px-4 py-3 text-right">{fmt(skill.metrics.skill_score)}</td>
+              <td class="metric px-4 py-3 text-right">{fmtPercent(skill.metrics.quality_uplift)}</td>
+              <td class="metric px-4 py-3 text-right">{fmtPercent(skill.metrics.trigger_accuracy)}</td>
+              <td class="metric px-4 py-3 text-right">{skill.context_tokens}</td>
+              <td class="metric px-4 py-3">{skill.updated}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-sm muted"><span data-visible-count>{allSkills.length}</span> skills visible.</p>
+  </section>
+
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  <script is:inline>
+    (() => {
+      const tierRanks = { core: 0, verified: 1, community: 2 };
+      const table = document.querySelector("[data-skill-table]");
+      const tbody = table?.querySelector("tbody");
+      if (!table || !tbody) return;
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const state = {
+        sortKey: "tier",
+        direction: "asc",
+        categories: new Set(),
+        tier: "all",
+        query: "",
+      };
+
+      const numberKeys = new Set(["score", "uplift", "trigger", "context"]);
+
+      function valueFor(row, key) {
+        const value = row.dataset[`sort${key[0].toUpperCase()}${key.slice(1)}`] ?? "";
+        if (key === "tier") return tierRanks[value] ?? 99;
+        if (numberKeys.has(key)) return value === "" ? null : Number(value);
+        return value;
+      }
+
+      function compareRows(a, b) {
+        const av = valueFor(a, state.sortKey);
+        const bv = valueFor(b, state.sortKey);
+        const aNull = av === null || av === "";
+        const bNull = bv === null || bv === "";
+        if (aNull && !bNull) return 1;
+        if (!aNull && bNull) return -1;
+        if (aNull && bNull) return a.dataset.name.localeCompare(b.dataset.name);
+
+        let result = 0;
+        if (typeof av === "number" && typeof bv === "number") {
+          result = av - bv;
+        } else {
+          result = String(av).localeCompare(String(bv));
+        }
+        if (result === 0) {
+          result = a.dataset.name.localeCompare(b.dataset.name);
+        }
+        return state.direction === "asc" ? result : -result;
+      }
+
+      function applyState() {
+        const query = state.query.trim().toLowerCase();
+        const sorted = [...rows].sort(compareRows);
+        let visible = 0;
+        for (const row of sorted) {
+          const matchesCategory =
+            state.categories.size === 0 || state.categories.has(row.dataset.category);
+          const matchesTier = state.tier === "all" || row.dataset.tier === state.tier;
+          const haystack = `${row.dataset.name} ${row.dataset.category} ${row.dataset.description}`.toLowerCase();
+          const matchesQuery = !query || haystack.includes(query);
+          const show = matchesCategory && matchesTier && matchesQuery;
+          row.hidden = !show;
+          if (show) visible += 1;
+          tbody.appendChild(row);
+        }
+        const visibleCount = document.querySelector("[data-visible-count]");
+        if (visibleCount) visibleCount.textContent = String(visible);
+      }
+
+      document.querySelectorAll("[data-sort]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.dataset.sort;
+          if (state.sortKey === key) {
+            state.direction = state.direction === "asc" ? "desc" : "asc";
+          } else {
+            state.sortKey = key;
+            state.direction = numberKeys.has(key) ? "desc" : "asc";
+          }
+          applyState();
+        });
+      });
+
+      document.querySelectorAll("[data-filter-category]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const category = button.dataset.filterCategory;
+          if (state.categories.has(category)) {
+            state.categories.delete(category);
+            button.setAttribute("aria-pressed", "false");
+          } else {
+            state.categories.add(category);
+            button.setAttribute("aria-pressed", "true");
+          }
+          applyState();
+        });
+      });
+
+      document.querySelectorAll("[data-filter-tier]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.tier = button.dataset.filterTier;
+          document.querySelectorAll("[data-filter-tier]").forEach((tierButton) => {
+            const active = tierButton === button;
+            tierButton.classList.toggle("is-active", active);
+            tierButton.setAttribute("aria-pressed", String(active));
+          });
+          applyState();
+        });
+      });
+
+      const quickFilter = document.querySelector("#skill-text-filter");
+      quickFilter?.addEventListener("input", () => {
+        state.query = quickFilter.value;
+        applyState();
+      });
+
+      function initPagefind() {
+        if (!window.PagefindUI) return false;
+        new window.PagefindUI({
+          element: "#pagefind-search",
+          showSubResults: true,
+          resetStyles: false,
+        });
+        return true;
+      }
+
+      window.addEventListener("load", () => {
+        if (initPagefind()) return;
+        const search = document.querySelector("#pagefind-search");
+        if (search && !search.children.length) {
+          search.innerHTML =
+            '<p class="text-sm text-ink-600 dark:text-ink-300">Pagefind search is generated during production builds.</p>';
+        }
+      });
+
+      applyState();
+    })();
+  </script>
+</BaseLayout>

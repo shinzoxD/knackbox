@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Knackbox",
+  description = "An open library of skills for AI agents",
+} = Astro.props as { title?: string; description?: string };
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const dark =
+          saved === "dark" ||
+          (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", dark);
+      })();
+    </script>
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen">
+    <header class="border-b border-ink-200 bg-white/90 backdrop-blur dark:border-ink-800 dark:bg-ink-950/90">
+      <div class="wrap flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3 text-ink-950 no-underline dark:text-white">
+          <span class="flex h-8 w-8 items-center justify-center border border-ink-900 bg-ink-950 font-mono text-sm font-bold text-white dark:border-white">Kb</span>
+          <span class="font-semibold">Knackbox</span>
+        </a>
+        <nav class="flex items-center gap-1 text-sm">
+          <a class="px-2 py-2 text-ink-700 no-underline hover:text-ink-950 dark:text-ink-200 dark:hover:text-white" href="/skills/">Skills</a>
+          <a class="px-2 py-2 text-ink-700 no-underline hover:text-ink-950 dark:text-ink-200 dark:hover:text-white" href="/docs/">Docs</a>
+          <a class="px-2 py-2 text-ink-700 no-underline hover:text-ink-950 dark:text-ink-200 dark:hover:text-white" href="/contribute/">Contribute</a>
+          <button type="button" class="btn ml-2 h-8 px-2 text-xs" data-theme-toggle aria-label="Toggle theme">Theme</button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="mt-16 border-t border-ink-200 py-8 dark:border-ink-800">
+      <div class="wrap flex flex-col gap-3 text-sm muted sm:flex-row sm:items-center sm:justify-between">
+        <p>Apache-2.0. Static catalog generated from repository skills.</p>
+        <div class="flex gap-4">
+          <a href="/docs/metrics/">Metrics</a>
+          <a href="https://github.com/YOUR_ORG/knackbox">GitHub</a>
+        </div>
+      </div>
+    </footer>
+    <script is:inline>
+      document.addEventListener("click", async (event) => {
+        const copyButton = event.target.closest("[data-copy]");
+        if (copyButton) {
+          const original = copyButton.textContent;
+          await navigator.clipboard.writeText(copyButton.dataset.copy);
+          copyButton.textContent = "Copied";
+          copyButton.classList.add("copy-done");
+          window.setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove("copy-done");
+          }, 1200);
+        }
+
+        const themeButton = event.target.closest("[data-theme-toggle]");
+        if (themeButton) {
+          const nextDark = !document.documentElement.classList.contains("dark");
+          document.documentElement.classList.toggle("dark", nextDark);
+          localStorage.setItem("theme", nextDark ? "dark" : "light");
+        }
+      });
+    </script>
+  </body>
+</html>

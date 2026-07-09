@@ -62,6 +62,27 @@ The table below is regenerated automatically by CI on every merge — do not edi
 
 The same data is available as machine-readable [`catalog.json`](catalog.json), which also powers the project website.
 
+## Website
+
+The static site lives in [`site/`](site/) and is built from `catalog.json` plus the raw repository markdown files.
+
+Local development:
+
+```bash
+cd site
+npm i
+npm run dev
+```
+
+Production build:
+
+```bash
+cd site
+npm run build
+```
+
+The build emits static files to `site/dist` and runs Pagefind as a postbuild search indexer. Deploy `site/dist` to any static host; the included GitHub Actions workflow is wired for Cloudflare Pages.
+
 ## Contributing
 
 New skills are very welcome — the whole point of this repo is to grow. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the folder rules and quality bar, copy [`template/SKILL.md`](template/SKILL.md) to get started, and run the validator before opening a PR:

@@ -1,0 +1,30 @@
+---
+import TierBadge from "./TierBadge.astro";
+import { skillUrl, type Skill } from "../lib/catalog";
+
+const { skill } = Astro.props as { skill: Skill };
+---
+
+<article class="panel p-5">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <a class="text-base font-semibold text-ink-950 no-underline hover:underline dark:text-white" href={skillUrl(skill)}>
+      {skill.name}
+    </a>
+    <TierBadge tier={skill.tier} />
+  </div>
+  <p class="line-clamp-4 text-sm leading-6 text-ink-700 dark:text-ink-200">{skill.description}</p>
+  <dl class="mt-5 grid grid-cols-3 gap-3 border-t border-ink-200 pt-4 text-xs dark:border-ink-800">
+    <div>
+      <dt class="uppercase tracking-wide muted">Category</dt>
+      <dd class="mt-1 font-semibold">{skill.category}</dd>
+    </div>
+    <div>
+      <dt class="uppercase tracking-wide muted">Context</dt>
+      <dd class="metric mt-1">{skill.context_tokens}</dd>
+    </div>
+    <div>
+      <dt class="uppercase tracking-wide muted">Updated</dt>
+      <dd class="metric mt-1">{skill.updated}</dd>
+    </div>
+  </dl>
+</article>

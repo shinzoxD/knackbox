@@ -1,0 +1,19 @@
+---
+import type { Tier } from "../lib/catalog";
+
+const { tier } = Astro.props as { tier: Tier };
+const labels: Record<Tier, string> = {
+  core: "Core",
+  verified: "Verified",
+  community: "Community",
+};
+const classes: Record<Tier, string> = {
+  core: "border-brass-300 bg-brass-100 text-brass-900 dark:border-brass-300 dark:bg-brass-900 dark:text-brass-100",
+  verified: "border-leaf-300 bg-leaf-100 text-leaf-900 dark:border-leaf-300 dark:bg-leaf-900 dark:text-leaf-100",
+  community: "border-ink-300 bg-ink-100 text-ink-700 dark:border-ink-700 dark:bg-ink-800 dark:text-ink-100",
+};
+---
+
+<span class:list={["inline-flex items-center border px-2 py-1 text-xs font-semibold", classes[tier]]}>
+  {labels[tier]}
+</span>

@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getRepoMarkdownHtml } from "../../lib/catalog";
+
+const html = getRepoMarkdownHtml("METRICS.md");
+---
+
+<BaseLayout title="Metrics | Knackbox" description="Knackbox metric methodology">
+  <section class="wrap py-10">
+    <article class="prose-skill" data-pagefind-body set:html={html} />
+  </section>
+</BaseLayout>
