@@ -1,0 +1,12 @@
+# Tier assignments — MAINTAINERS ONLY. See METRICS.md for criteria.
+# Every skill not listed here is tier "community" by default.
+# A skill may appear in at most one list. Core and Verified skills
+# must ship benchmarks/prompts.json (the validator warns otherwise).
+
+core:
+  - commit-messages
+  - code-review
+  - meeting-notes
+
+verified:
+  - debugging

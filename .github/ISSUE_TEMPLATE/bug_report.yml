@@ -1,0 +1,16 @@
+name: Bug report
+description: A skill misbehaves, validation is wrong, or docs are broken
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Affected skill or file
+      placeholder: skills/coding/commit-messages
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect vs. what happened?
+    validations:
+      required: true

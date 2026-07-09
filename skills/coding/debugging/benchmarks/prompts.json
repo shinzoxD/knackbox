@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "why doesn't this work",
+    "getting TypeError: 'NoneType' object is not subscriptable, here's the trace",
+    "my test passes locally but fails in CI",
+    "this function returns the wrong value sometimes and I can't figure out why",
+    "app crashes on startup after my last change",
+    "stuck on this bug for an hour, help"
+  ],
+  "should_not_trigger": [
+    "review this code for issues",
+    "explain how Python decorators work",
+    "write a function that parses dates",
+    "make this loop faster",
+    "write a commit message for my bugfix",
+    "what's the difference between == and === in JS"
+  ],
+  "tasks": [
+    {
+      "prompt": "I get 'TypeError: cannot unpack non-iterable NoneType object' at line 3 of `a, b = find_pair(items)`. find_pair returns a tuple when it finds a match. Why does this happen intermittently?",
+      "criteria": [
+        "identifies the most likely cause: find_pair returns None on no-match",
+        "labels this as inference and gives a one-line check to confirm before fixing",
+        "fix handles the None path rather than suppressing the error",
+        "states how to verify the fix"
+      ]
+    },
+    {
+      "prompt": "My date parsing works on my machine but returns the wrong day in CI. No stack trace, values are just off by one day sometimes.",
+      "criteria": [
+        "prioritizes environment differences, especially timezone, before code changes",
+        "asks for or proposes checking TZ settings in both environments",
+        "does not propose multiple simultaneous code edits"
+      ]
+    },
+    {
+      "prompt": "Here are three errors from my log: a DB connection timeout, then a KeyError, then a 500 response. Which do I fix?",
+      "criteria": [
+        "identifies the first error in causal order (connection timeout) as the root",
+        "explains the later errors are likely downstream symptoms"
+      ]
+    }
+  ]
+}

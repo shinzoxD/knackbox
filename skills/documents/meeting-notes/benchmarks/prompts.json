@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "clean up my notes from the standup",
+    "here's the meeting transcript, what were the action items",
+    "turn this into meeting minutes",
+    "summarize this call recording transcript for the team",
+    "who agreed to do what in this meeting",
+    "make these rough notes presentable before I send them"
+  ],
+  "should_not_trigger": [
+    "schedule a meeting with the design team",
+    "write an agenda for tomorrow's planning meeting",
+    "summarize this research paper",
+    "draft an email inviting people to the retro",
+    "take notes while I dictate my essay",
+    "what's a good icebreaker for meetings"
+  ],
+  "tasks": [
+    {
+      "prompt": "Transcript excerpt: 'Priya: I think we ship Friday. Sam: only if QA signs off Thursday. Priya: fine, Thursday EOD gate. Also someone needs to update the changelog. Sam: I can. Lee: what about the pricing page? Priya: park it for next sprint.' Produce minutes.",
+      "criteria": [
+        "decision captured as an outcome: ship Friday gated on QA sign-off Thursday EOD",
+        "action item: changelog update assigned to Sam",
+        "pricing page recorded as deferred, not as a decision to change it",
+        "no invented owners or dates"
+      ]
+    },
+    {
+      "prompt": "Here are messy notes with no clear owners for two of the four tasks mentioned. Make action items.",
+      "criteria": [
+        "unowned tasks are listed with Owner: unassigned",
+        "does not guess owners",
+        "flags the missing owners under a clarification section"
+      ]
+    },
+    {
+      "prompt": "Summarize this 45-minute planning transcript for my boss who wasn't there. She just wants the essentials.",
+      "criteria": [
+        "uses a short executive-summary style rather than full minutes",
+        "leads with decisions, includes the biggest open risk",
+        "output is dramatically shorter than the transcript"
+      ]
+    }
+  ]
+}

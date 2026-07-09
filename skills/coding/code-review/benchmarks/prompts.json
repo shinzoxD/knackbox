@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this diff before I merge it",
+    "can you check my code for issues",
+    "does this function look right to you",
+    "here's my PR, any feedback?",
+    "find bugs in this snippet",
+    "is this endpoint secure?"
+  ],
+  "should_not_trigger": [
+    "write a commit message for this diff",
+    "explain what this code does line by line",
+    "refactor this function to be faster",
+    "write unit tests for this class",
+    "why does this code throw a KeyError",
+    "convert this Python to TypeScript"
+  ],
+  "tasks": [
+    {
+      "prompt": "Review this change: a login handler that compares the submitted password to the stored one with `if password == user.password:` and returns a session token on match. The stored value is the raw password from signup.",
+      "criteria": [
+        "flags plaintext password storage as [blocking]",
+        "flags non-constant-time comparison",
+        "proposes a concrete fix (hashing, e.g. bcrypt/argon2, and compare_digest)",
+        "ends with a request-changes verdict"
+      ]
+    },
+    {
+      "prompt": "Review: a 12-line diff that renames a variable and adds a docstring. Nothing else.",
+      "criteria": [
+        "does not invent problems to seem thorough",
+        "verdict is approve, possibly with at most a nit"
+      ]
+    },
+    {
+      "prompt": "Review this diff that adds a retry loop calling an external API inside a database transaction.",
+      "criteria": [
+        "identifies holding a transaction open across network retries as [blocking] or [important]",
+        "explains the consequence (lock contention / connection exhaustion)",
+        "suggests moving the call outside the transaction or restructuring"
+      ]
+    }
+  ]
+}

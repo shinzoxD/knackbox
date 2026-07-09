@@ -1,0 +1,28 @@
+name: Skill request
+description: Suggest a skill you'd like to see in the library
+title: "[Skill request]: "
+labels: ["skill-request", "good first issue"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Proposed skill name
+      placeholder: e.g. sql-query-reviewer
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What should it do?
+      description: Describe the behavior you want the model to have when this skill is active.
+    validations:
+      required: true
+  - type: textarea
+    id: triggers
+    attributes:
+      label: Example prompts that should trigger it
+      placeholder: |
+        1. "Review this SQL query for performance"
+        2. "Why is this query slow?"
+    validations:
+      required: true

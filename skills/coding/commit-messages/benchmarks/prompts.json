@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a commit message for these staged changes",
+    "here's my git diff, what should the commit say",
+    "I just fixed the login timeout bug, help me commit it",
+    "summarize this diff into a conventional commit",
+    "about to push this refactor, need a good commit msg",
+    "can you look at git status and commit this properly"
+  ],
+  "should_not_trigger": [
+    "write a PR description for this branch",
+    "explain what this diff changes to a non-technical manager",
+    "review this code change for bugs",
+    "what does git rebase do",
+    "write a changelog entry for the v2.1 release",
+    "help me undo my last commit"
+  ],
+  "tasks": [
+    {
+      "prompt": "Write a commit message for this change: in auth.py, the session token comparison was switched from == to hmac.compare_digest, and a regression test test_timing_safe_compare was added.",
+      "criteria": [
+        "type is fix (not test or chore)",
+        "summary line is imperative mood and 50 chars or fewer",
+        "body explains the security reason (timing attack), not just the mechanics",
+        "no trailing period on the summary line"
+      ]
+    },
+    {
+      "prompt": "I renamed getUserData to fetchUserProfile across 14 files and updated all call sites. Nothing else changed. Commit message?",
+      "criteria": [
+        "type is refactor",
+        "message does not invent behavior changes",
+        "body is omitted or one line, since the diff speaks for itself"
+      ]
+    },
+    {
+      "prompt": "My diff adds a new /export endpoint, fixes a typo in the README, and bumps eslint. Write the commit.",
+      "criteria": [
+        "identifies the mixed changes and recommends splitting into separate commits",
+        "provides the message for the primary change (feat: export endpoint)"
+      ]
+    }
+  ]
+}

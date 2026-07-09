@@ -1,0 +1,216 @@
+{
+  "generated": "2026-07-09",
+  "score_version": "v0",
+  "count": 11,
+  "skills": [
+    {
+      "name": "code-review",
+      "description": "Review code changes for bugs, security issues, and maintainability with severity-tagged, actionable findings. Use whenever the user shares a diff, pull request, or code snippet and asks for review, feedback, \"does this look right\", \"find issues\", or \"check my code\" — even for small snippets or partial files.",
+      "category": "coding",
+      "path": "skills/coding/code-review",
+      "tier": "core",
+      "updated": "2026-07-09",
+      "context_tokens": 572,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "commit-messages",
+      "description": "Write clear, conventional git commit messages from diffs or descriptions of changes. Use whenever the user asks for a commit message, is about to commit changes, mentions \"git commit\", shares a diff or staged changes that need summarizing, or finishes a coding task that will be committed — even if they don't ask about message formatting.",
+      "category": "coding",
+      "path": "skills/coding/commit-messages",
+      "tier": "core",
+      "updated": "2026-07-09",
+      "context_tokens": 496,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "meeting-notes",
+      "description": "Turn raw meeting transcripts, chat logs, or rough notes into clean, structured meeting notes with decisions and action items. Use whenever the user shares a transcript or messy notes, asks for meeting minutes, wants action items extracted, or says things like \"clean up my notes from the standup\" — even if they don't say the word \"minutes\".",
+      "category": "documents",
+      "path": "skills/documents/meeting-notes",
+      "tier": "core",
+      "updated": "2026-07-09",
+      "context_tokens": 536,
+      "reference_tokens": 370,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "debugging",
+      "description": "Diagnose bugs systematically instead of guessing — form hypotheses, isolate the fault, and verify the fix. Use whenever the user shares an error message, stack trace, unexpected behavior, failing test, or says things like \"why doesn't this work\", \"it crashes\", or \"I'm stuck on this bug\" — even if they only paste an error with no question.",
+      "category": "coding",
+      "path": "skills/coding/debugging",
+      "tier": "verified",
+      "updated": "2026-07-09",
+      "context_tokens": 541,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "pr-descriptions",
+      "description": "Write pull request titles and descriptions that reviewers can act on fast. Use whenever the user asks for a PR description, opens or prepares a pull/merge request, shares commits or a branch diff to summarize, or says \"write up this PR\" — even if they only paste a diff.",
+      "category": "coding",
+      "path": "skills/coding/pr-descriptions",
+      "tier": "community",
+      "updated": "2026-07-09",
+      "context_tokens": 400,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "csv-analysis",
+      "description": "Analyze CSV, TSV, and tabular data files — profile the data, answer questions with verifiable numbers, and flag quality issues. Use whenever the user uploads or pastes tabular data, asks \"what does this data show\", wants totals, trends, comparisons, or charts from a spreadsheet-like file, or asks any question that must be answered from rows and columns.",
+      "category": "data",
+      "path": "skills/data/csv-analysis",
+      "tier": "community",
+      "updated": "2026-07-09",
+      "context_tokens": 460,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "resume-builder",
+      "description": "Build or rewrite resumes and tailor them to a specific job description, with achievement-focused bullets that pass ATS screening. Use whenever the user shares a resume or CV, asks to improve or tailor one, wants bullets rewritten, or says \"help me apply for this job\" with a job posting — even if they only paste their work history as rough notes.",
+      "category": "documents",
+      "path": "skills/documents/resume-builder",
+      "tier": "community",
+      "updated": "2026-07-09",
+      "context_tokens": 526,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "email-drafts",
+      "description": "Draft and rewrite professional emails that get replies — clear ask, right tone, minimal length. Use whenever the user asks to write, reply to, improve, or \"make more professional\" any email or message, mentions following up, declining, requesting, apologizing, or cold outreach — even if they just paste an email thread with \"help me respond\".",
+      "category": "productivity",
+      "path": "skills/productivity/email-drafts",
+      "tier": "community",
+      "updated": "2026-07-09",
+      "context_tokens": 478,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "prompt-improver",
+      "description": "Rewrite and strengthen prompts for AI models — diagnose what's vague, add structure, and return a copy-paste-ready improved prompt. Use whenever the user shares a prompt to improve, asks why an AI's output was bad or inconsistent, wants a system prompt written, or says \"make this prompt better\" for any model or agent.",
+      "category": "productivity",
+      "path": "skills/productivity/prompt-improver",
+      "tier": "community",
+      "updated": "2026-07-09",
+      "context_tokens": 540,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "research-summaries",
+      "description": "Summarize papers, articles, and reports into structured research briefs that separate claims from evidence. Use whenever the user shares a paper, study, PDF, or article and asks what it says, wants key findings or limitations, asks \"is this study any good\", or needs several sources synthesized into one brief.",
+      "category": "research",
+      "path": "skills/research/research-summaries",
+      "tier": "community",
+      "updated": "2026-07-09",
+      "context_tokens": 496,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    },
+    {
+      "name": "blog-posts",
+      "description": "Write blog posts and articles with a strong hook, clear structure, and a consistent voice. Use whenever the user asks for a blog post, article, newsletter issue, or long-form web content, wants a draft \"for my blog/site\", or shares an outline or topic to turn into a post — regardless of length or how casually they ask.",
+      "category": "writing",
+      "path": "skills/writing/blog-posts",
+      "tier": "community",
+      "updated": "2026-07-09",
+      "context_tokens": 478,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null
+      }
+    }
+  ]
+}
