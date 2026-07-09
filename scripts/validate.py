@@ -30,6 +30,7 @@ except ImportError:  # pragma: no cover
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = REPO_ROOT / "skills"
 TIERS_PATH = REPO_ROOT / "tiers.yaml"
+MEASUREMENTS_DIR = REPO_ROOT / "measurements"
 MIN_TRIGGER_PROMPTS = 5
 
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -213,6 +214,26 @@ def check_tiers(known_skills: dict[str, Path]) -> None:
             seen[name] = tier
 
 
+def check_measurements(known_skills: dict[str, Path]) -> None:
+    """Measurement files are generated, but must point at real skills."""
+    if not MEASUREMENTS_DIR.is_dir():
+        return
+    for path in sorted(MEASUREMENTS_DIR.glob("*.json")):
+        if path.stem not in known_skills:
+            err(path, f"measurement references unknown skill '{path.stem}'")
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            err(path, f"invalid JSON: {exc}")
+            continue
+        if not isinstance(data, dict):
+            err(path, "measurement file must contain a JSON object")
+            continue
+        for key in ("measured_at", "model", "skill_commit", "runs", "trigger", "uplift"):
+            if key not in data:
+                err(path, f"measurement is missing required field: {key}")
+
+
 def main() -> int:
     if not SKILLS_DIR.is_dir():
         print(f"No skills/ directory found at {SKILLS_DIR}")
@@ -239,6 +260,7 @@ def main() -> int:
             err(entry, "files are not allowed directly under skills/")
 
     check_tiers(known_skills)
+    check_measurements(known_skills)
 
     for line in errors + warnings:
         print(line)

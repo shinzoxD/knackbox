@@ -23,6 +23,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from benchmark_logic import skill_score
+
 try:
     import yaml
 except ImportError:  # pragma: no cover
@@ -33,6 +35,7 @@ SKILLS_DIR = REPO_ROOT / "skills"
 TIERS_PATH = REPO_ROOT / "tiers.yaml"
 CATALOG_PATH = REPO_ROOT / "catalog.json"
 README_PATH = REPO_ROOT / "README.md"
+MEASUREMENTS_DIR = REPO_ROOT / "measurements"
 START_MARK = "<!-- CATALOG:START -->"
 END_MARK = "<!-- CATALOG:END -->"
 TABLE_DESC_LIMIT = 110
@@ -77,6 +80,39 @@ def estimate_tokens(text: str) -> int:
     return max(1, len(text) // 4)
 
 
+def load_measurements() -> dict[str, dict]:
+    """Map skill name -> generated measurement payload."""
+    if not MEASUREMENTS_DIR.is_dir():
+        return {}
+    measurements: dict[str, dict] = {}
+    for path in sorted(MEASUREMENTS_DIR.glob("*.json")):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            raise SystemExit(f"{path.relative_to(REPO_ROOT)} is invalid JSON: {exc}") from exc
+        if not isinstance(data, dict):
+            raise SystemExit(f"{path.relative_to(REPO_ROOT)} must contain a JSON object")
+        measurements[path.stem] = data
+    return measurements
+
+
+def apply_measurement(skill: dict, measurement: dict | None) -> dict:
+    """Merge a measurement payload into a catalog skill in place."""
+    if not measurement:
+        return skill
+    metrics = skill["metrics"]
+    trigger = measurement.get("trigger") or {}
+    uplift = measurement.get("uplift") or {}
+    trigger_f1 = trigger.get("f1")
+    uplift_rate = uplift.get("win_rate")
+    metrics["trigger_accuracy"] = trigger_f1
+    metrics["quality_uplift"] = uplift_rate
+    metrics["skill_score"] = skill_score(uplift_rate, trigger_f1, metrics.get("efficiency"))
+    metrics["measured_at"] = measurement.get("measured_at")
+    metrics["model"] = measurement.get("model")
+    return skill
+
+
 def last_updated(path: Path) -> str:
     try:
         out = subprocess.run(
@@ -90,8 +126,9 @@ def last_updated(path: Path) -> str:
     return dt.date.fromtimestamp(path.stat().st_mtime).isoformat()
 
 
-def collect_skills(tiers: dict[str, str]) -> list[dict]:
+def collect_skills(tiers: dict[str, str], measurements: dict[str, dict] | None = None) -> list[dict]:
     skills = []
+    measurements = measurements or {}
     if not SKILLS_DIR.is_dir():
         return skills
     for category_dir in sorted(p for p in SKILLS_DIR.iterdir() if p.is_dir()):
@@ -130,8 +167,11 @@ def collect_skills(tiers: dict[str, str]) -> list[dict]:
                     "quality_uplift": None,
                     "skill_score": None,
                     "installs_30d": None,
+                    "measured_at": None,
+                    "model": None,
                 },
             })
+            apply_measurement(skills[-1], measurements.get(name))
     skills.sort(key=lambda s: (TIER_RANK[s["tier"]], s["category"], s["name"]))
     return skills
 
@@ -190,7 +230,7 @@ def update_readme(skills: list[dict]) -> None:
 
 
 def main() -> int:
-    skills = collect_skills(load_tiers())
+    skills = collect_skills(load_tiers(), load_measurements())
     write_catalog(skills)
     update_readme(skills)
     return 0
