@@ -5,7 +5,7 @@ ORG="shinzoxD"
 REPO="knackbox"
 BRANCH="main"
 TARBALL_URL="${KNACKBOX_TARBALL_URL:-https://codeload.github.com/${ORG}/${REPO}/tar.gz/refs/heads/${BRANCH}}"
-DOCS_URL="${KNACKBOX_DOCS_URL:-https://knackbox.pages.dev/docs/}"
+DOCS_URL="${KNACKBOX_DOCS_URL:-https://github.com/${ORG}/${REPO}#install-a-skill}"
 
 usage() {
   printf 'Usage: %s <skill-name> [--dest DIR] [--force]\n' "${0##*/}" >&2
@@ -59,7 +59,15 @@ if [ -z "$dest" ]; then
   dest="${HOME}/.claude/skills/${skill}"
 fi
 
-work="${TMPDIR:-/tmp}/knackbox-install.$$"
+dest_without_slashes="${dest//\//}"
+case "$dest_without_slashes" in
+  ""|.|..)
+    printf "Refusing unsafe destination: %s\n" "$dest" >&2
+    exit 2
+    ;;
+esac
+
+work="$(mktemp -d "${TMPDIR:-/tmp}/knackbox-install.XXXXXX")"
 archive="${work}/knackbox.tar.gz"
 extract="${work}/extract"
 cleanup() {
@@ -101,13 +109,19 @@ if [ -e "$dest" ] && [ "$force" -ne 1 ]; then
   exit 1
 fi
 
+tar -xzf "$archive" -C "$extract" "$member"
+source_dir="$extract/$member"
+if [ ! -f "$source_dir/SKILL.md" ]; then
+  printf "Archive did not contain a valid %s skill folder.\n" "$skill" >&2
+  exit 1
+fi
+
 if [ -e "$dest" ]; then
   rm -rf "$dest"
 fi
 
 mkdir -p "$(dirname "$dest")"
-tar -xzf "$archive" -C "$extract" "$member"
-mv "$extract/$member" "$dest"
+mv "$source_dir" "$dest"
 
 printf "Installed %s to %s\n" "$skill" "$dest"
 printf "Docs: %s\n" "$DOCS_URL"
