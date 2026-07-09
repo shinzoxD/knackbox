@@ -184,7 +184,9 @@ def write_catalog(skills: list[dict]) -> None:
         "skills": skills,
     }
     CATALOG_PATH.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
     print(f"Wrote {CATALOG_PATH.name} with {len(skills)} skill(s)")
 
@@ -223,7 +225,7 @@ def update_readme(skills: list[dict]) -> None:
         flags=re.DOTALL,
     )
     if new_text != text:
-        README_PATH.write_text(new_text, encoding="utf-8")
+        README_PATH.write_text(new_text, encoding="utf-8", newline="\n")
         print("Updated README catalog table")
     else:
         print("README catalog table already up to date")

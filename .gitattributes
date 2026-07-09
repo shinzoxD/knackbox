@@ -1,0 +1,3 @@
+/catalog.json text eol=lf
+/README.md text eol=lf
+/measurements/*.json text eol=lf
