@@ -24,7 +24,8 @@ def trigger_metrics(positive_matches: Sequence[bool], negative_matches: Sequence
 
     precision = pct(true_positive, true_positive + false_positive)
     recall = pct(true_positive, true_positive + false_negative)
-    f1 = 0.0 if precision + recall == 0 else round(2 * precision * recall / (precision + recall), 1)
+    f1_denominator = 2 * true_positive + false_positive + false_negative
+    f1 = pct(2 * true_positive, f1_denominator)
     return {"precision": precision, "recall": recall, "f1": f1}
 
 
