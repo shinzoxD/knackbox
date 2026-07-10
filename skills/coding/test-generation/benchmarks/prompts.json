@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Add tests for this parser.",
+    "What cases should we cover for the password reset flow?",
+    "Write a regression test for this duplicate-payment bug.",
+    "Our coverage misses the retry path; create focused tests.",
+    "Generate Jest tests for this validation function."
+  ],
+  "should_not_trigger": [
+    "Find the cause of this failing test.",
+    "Review this test file for bugs.",
+    "Implement the password reset endpoint.",
+    "Design the API contract for retries.",
+    "Write a PR description for the new test suite."
+  ],
+  "tasks": [
+    {
+      "prompt": "Design tests for a function that accepts an amount from 1 to 10000 cents and rejects non-integers.",
+      "criteria": ["Covers representative, boundary, and malformed values", "Avoids redundant cases", "States observable assertions"]
+    },
+    {
+      "prompt": "Write a regression-test plan for an idempotent payment endpoint that previously charged twice after a timeout.",
+      "criteria": ["Reproduces timeout and retry behavior", "Asserts a single charge and stable response", "Includes concurrency or repeated-request risk"]
+    },
+    {
+      "prompt": "Propose deterministic tests for exponential backoff with jitter.",
+      "criteria": ["Controls time and randomness", "Tests caps and retry counts", "Avoids sleeps and flaky tolerances"]
+    }
+  ]
+}

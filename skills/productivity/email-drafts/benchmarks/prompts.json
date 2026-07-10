@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Write a polite follow-up email after no response.",
+    "Help me reply to this client complaint.",
+    "Make this email shorter and more professional.",
+    "Draft a message declining a meeting request.",
+    "I need a cold outreach email with a clear ask."
+  ],
+  "should_not_trigger": [
+    "Write a blog post announcing our product.",
+    "Create landing-page copy for this offer.",
+    "Summarize this email thread into meeting notes.",
+    "Copy edit this twenty-page report.",
+    "Draft a formal project proposal for leadership."
+  ],
+  "tasks": [
+    {
+      "prompt": "Draft a follow-up to a hiring manager seven days after an interview, warm but not pushy.",
+      "criteria": ["Uses a concise subject and context", "Makes a clear low-pressure ask", "Avoids entitlement and filler"]
+    },
+    {
+      "prompt": "Reply to a customer whose delivery is late when the new delivery date is not yet confirmed.",
+      "criteria": ["Acknowledges impact and takes ownership", "Does not invent a date", "Provides a concrete next update commitment"]
+    },
+    {
+      "prompt": "Decline a vendor demo while preserving the relationship for next quarter.",
+      "criteria": ["Declines clearly without overexplaining", "Maintains a professional tone", "Sets an honest future condition without false promises"]
+    }
+  ]
+}

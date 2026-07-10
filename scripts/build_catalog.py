@@ -17,6 +17,7 @@ harness publishes results.
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import re
 import subprocess
@@ -43,6 +44,8 @@ EFFICIENCY_BUDGET_TOKENS = 1500  # see METRICS.md
 SCORE_VERSION = "v0"
 TIER_BADGE = {"core": "⭐ core", "verified": "✅ verified", "community": "🧪 community"}
 TIER_RANK = {"core": 0, "verified": 1, "community": 2}
+SOURCE_REPO_URL = "https://github.com/shinzoxD/knackbox"
+LICENSE_ID = "Apache-2.0"
 
 
 def split_frontmatter(text: str):
@@ -78,6 +81,18 @@ def load_tiers() -> dict[str, str]:
 def estimate_tokens(text: str) -> int:
     """Rough token estimate (~4 chars per token)."""
     return max(1, len(text) // 4)
+
+
+def skill_digest(skill_dir: Path) -> str:
+    """Return a deterministic digest of every file in a skill package."""
+    digest = hashlib.sha256()
+    for path in sorted(item for item in skill_dir.rglob("*") if item.is_file()):
+        relative = path.relative_to(skill_dir).as_posix().encode("utf-8")
+        digest.update(relative)
+        digest.update(b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
+    return f"sha256:{digest.hexdigest()}"
 
 
 def load_measurements() -> dict[str, dict]:
@@ -149,6 +164,7 @@ def collect_skills(tiers: dict[str, str], measurements: dict[str, dict] | None =
             efficiency = round(
                 100 * min(1.0, EFFICIENCY_BUDGET_TOKENS / context_tokens), 1
             )
+            has_scripts = (skill_dir / "scripts").is_dir()
 
             skills.append({
                 "name": name,
@@ -159,8 +175,12 @@ def collect_skills(tiers: dict[str, str], measurements: dict[str, dict] | None =
                 "updated": last_updated(skill_dir),
                 "context_tokens": context_tokens,
                 "reference_tokens": reference_tokens,
-                "has_scripts": (skill_dir / "scripts").is_dir(),
+                "has_scripts": has_scripts,
                 "has_benchmarks": (skill_dir / "benchmarks" / "prompts.json").is_file(),
+                "source_url": f"{SOURCE_REPO_URL}/tree/main/{skill_dir.relative_to(REPO_ROOT).as_posix()}",
+                "license": LICENSE_ID,
+                "content_digest": skill_digest(skill_dir),
+                "security_profile": "includes-scripts" if has_scripts else "instructions-only",
                 "metrics": {
                     "efficiency": efficiency,
                     "trigger_accuracy": None,

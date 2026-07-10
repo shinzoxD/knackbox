@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Rewrite my resume for this product manager job.",
+    "Turn my work history into achievement-focused resume bullets.",
+    "Check whether my CV will pass ATS screening.",
+    "Tailor this resume to the attached job description.",
+    "Help me build a one-page resume from these career notes."
+  ],
+  "should_not_trigger": [
+    "Write a cover email for submitting my resume.",
+    "Draft answers for a job interview.",
+    "Fact-check the employment statistics in this article.",
+    "Copy edit this academic CV for grammar only.",
+    "Create a landing page for my freelance portfolio."
+  ],
+  "tasks": [
+    {
+      "prompt": "Rewrite this weak bullet for a backend role: Responsible for APIs and database performance.",
+      "criteria": ["Uses a strong action and specific scope", "Does not invent metrics", "Shows placeholders or asks for missing evidence"]
+    },
+    {
+      "prompt": "Plan a resume tailored to a data analyst role from experience in Excel reporting, SQL queries, stakeholder presentations, and no formal analyst title.",
+      "criteria": ["Maps transferable evidence to job needs", "Uses ATS-readable structure", "Avoids misrepresenting title or experience"]
+    },
+    {
+      "prompt": "Audit a two-page early-career resume with a summary, skills list, three projects, and unrelated part-time work.",
+      "criteria": ["Prioritizes relevant evidence", "Provides concrete structural edits", "Preserves truthful useful experience"]
+    }
+  ]
+}

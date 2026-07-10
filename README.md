@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-11-green)
+![Skills](https://img.shields.io/badge/skills-23-green)
 
 **An open library of skills for AI agents.**
 
@@ -31,13 +31,22 @@ description: Write clear, conventional git commit messages. Use whenever the
 
 ## Install a skill
 
-**Claude Code** — run the installer:
+**Open Skills CLI** — install into Claude Code, Codex, OpenCode, Cursor, or another detected agent:
+
+```bash
+npx skills add shinzoxD/knackbox --skill commit-messages
+```
+
+Add `-g` for a global install or `-a claude-code` to choose an agent explicitly. Browse the wider ecosystem at
+[skills.sh](https://skills.sh/).
+
+**Dependency-free fallback** — install directly into Claude Code with the repository script:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/shinzoxD/knackbox/main/install.sh | bash -s commit-messages
 ```
 
-Use `--dest DIR` to install to another Agent Skills-compatible directory, or `--force` to replace an existing copy.
+Use `--dest DIR` to select another Agent Skills-compatible directory, or `--force` to replace an existing copy.
 
 **Claude.ai** — open Settings → Capabilities → Skills and upload the skill folder (or paste the `SKILL.md`).
 
@@ -45,7 +54,7 @@ Use `--dest DIR` to install to another Agent Skills-compatible directory, or `--
 
 ## Browse the catalog
 
-Skills are ranked the way [Artificial Analysis](https://artificialanalysis.ai) ranks models — independent measured columns plus a composite score, with a coarse tier for quick filtering: **⭐ core** (curated + benchmarked + maintained), **✅ verified** (ships a benchmark suite that meets thresholds), **🧪 community** (passes CI validation). Full methodology, formulas, and how to get your skill Verified: [METRICS.md](METRICS.md).
+Skills are ranked the way [Artificial Analysis](https://artificialanalysis.ai) ranks models — independent measurement columns plus a composite score, with a coarse tier for quick filtering: **⭐ core** (maintainer-curated, suite-covered, and maintained), **✅ verified** (suite-covered and manually validated until measured thresholds are published), **🧪 community** (passes CI validation). Every skill ships a benchmark suite; unmeasured score fields remain visibly empty rather than being estimated. Full methodology, formulas, and how to get your skill Verified: [METRICS.md](METRICS.md).
 
 The table below is regenerated automatically by CI on every merge — do not edit it by hand.
 
@@ -77,7 +86,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [landing-page-copy](skills/writing/landing-page-copy) | writing | 503 | Write and improve landing-page copy with a clear offer, credible proof, scannable structure, and focused call… |
 <!-- CATALOG:END -->
 
-The same data is available as machine-readable [`catalog.json`](catalog.json), which also powers the project website.
+The same data is available as machine-readable [`catalog.json`](catalog.json), which also powers the project website. Each entry includes its source URL, Apache-2.0 license, executable-code profile, and a deterministic SHA-256 digest of the complete skill package.
 
 ## Website
 

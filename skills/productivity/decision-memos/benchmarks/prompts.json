@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Write a decision memo comparing Postgres and DynamoDB for this service.",
+    "Help leadership choose between these two vendors.",
+    "Document why we selected option B and the trade-offs.",
+    "Turn these pros and cons into a recommendation.",
+    "We need a one-page architecture decision with reversal triggers."
+  ],
+  "should_not_trigger": [
+    "Write a project proposal for implementing the selected option.",
+    "Break this decision into an execution plan.",
+    "Design the API for the selected database.",
+    "Summarize the meeting where the decision was made.",
+    "Fact-check the vendor's performance claims."
+  ],
+  "tasks": [
+    {
+      "prompt": "Write a decision memo choosing between buying a support platform and building a custom tool for a 20-person support team.",
+      "criteria": ["Defines constraints and common criteria", "Compares total cost, speed, flexibility, and risk fairly", "Makes a recommendation with assumptions and review triggers"]
+    },
+    {
+      "prompt": "Recommend whether to run a reversible two-week feature experiment or spend six weeks on additional research.",
+      "criteria": ["Recognizes reversibility", "Favors a bounded experiment when justified", "Defines success, owner, and review date"]
+    },
+    {
+      "prompt": "Record a decision to keep the current vendor because migration evidence is insufficient.",
+      "criteria": ["Treats status quo as an explicit option", "States uncertainty and decision rationale", "Defines evidence that would trigger reconsideration"]
+    }
+  ]
+}

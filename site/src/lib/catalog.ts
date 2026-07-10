@@ -28,6 +28,10 @@ export type Skill = {
   reference_tokens: number;
   has_scripts: boolean;
   has_benchmarks: boolean;
+  source_url: string;
+  license: string;
+  content_digest: string;
+  security_profile: "instructions-only" | "includes-scripts";
   metrics: SkillMetrics;
 };
 
@@ -50,7 +54,8 @@ export const categories = [...new Set(allSkills.map((skill) => skill.category))]
 export const tiers: Tier[] = ["core", "verified", "community"];
 export const githubOrg = "shinzoxD";
 export const githubRepoUrl = `https://github.com/${githubOrg}/knackbox`;
-export const installCommand =
+export const installCommand = `npx skills add ${githubOrg}/knackbox --skill`;
+export const legacyInstallCommand =
   `curl -fsSL https://raw.githubusercontent.com/${githubOrg}/knackbox/main/install.sh | bash -s`;
 
 export function byTier(tier: Tier): Skill[] {

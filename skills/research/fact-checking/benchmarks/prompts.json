@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Is this statistic actually true?",
+    "Verify the factual claims in this draft.",
+    "Check whether this viral post uses the study correctly.",
+    "Find authoritative evidence for or against this claim.",
+    "Fact-check this statement and give me the corrected wording."
+  ],
+  "should_not_trigger": [
+    "Summarize this research paper.",
+    "Write a literature review across these studies.",
+    "Copy edit this draft for grammar only.",
+    "Give me your opinion on whether this policy is fair.",
+    "Analyze this CSV and calculate the statistic."
+  ],
+  "tasks": [
+    {
+      "prompt": "Fact-check: Remote work always increases productivity by 20 percent.",
+      "criteria": ["Decomposes the absolute and numerical claims", "Requires current primary or strong synthesis evidence", "Uses a calibrated verdict and corrected wording"]
+    },
+    {
+      "prompt": "Audit a draft claim that a regulation took effect in 2024 and applies to every company in Europe.",
+      "criteria": ["Checks effective date, jurisdiction, scope, and exemptions", "Prioritizes official legal sources", "Avoids legal conclusions beyond evidence"]
+    },
+    {
+      "prompt": "Verify a chart caption claiming sales doubled when values moved from 101 to 109 and the y-axis begins at 100.",
+      "criteria": ["Calculates the actual change", "Identifies visual framing", "Separates the true values from the false conclusion"]
+    }
+  ]
+}

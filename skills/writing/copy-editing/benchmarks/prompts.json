@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Proofread this paragraph.",
+    "Edit this draft for clarity and concision.",
+    "Polish my writing without changing my voice.",
+    "Fix grammar and consistency in this report.",
+    "Tighten this article and flag any ambiguous claims."
+  ],
+  "should_not_trigger": [
+    "Write a new blog post from these notes.",
+    "Create landing-page copy for this product.",
+    "Fact-check every claim in this draft using external sources.",
+    "Summarize this report into meeting notes.",
+    "Rewrite my resume for a specific job."
+  ],
+  "tasks": [
+    {
+      "prompt": "Copy edit: Due to the fact that the team was in a position where they were unable to access the server, the deployment was delayed until a later time.",
+      "criteria": ["Removes redundancy and weak phrasing", "Preserves the original meaning", "Returns clean natural prose"]
+    },
+    {
+      "prompt": "Edit a paragraph that alternates between customer, user, and client for the same audience and contains an unverified 40 percent claim.",
+      "criteria": ["Normalizes terminology", "Flags rather than invents support for the claim", "Explains any substantive edit briefly"]
+    },
+    {
+      "prompt": "Line edit a personal essay excerpt with deliberate fragments and informal dialect.",
+      "criteria": ["Preserves intentional voice and fragments", "Fixes only genuine clarity or correctness issues", "Avoids making the prose corporate or generic"]
+    }
+  ]
+}

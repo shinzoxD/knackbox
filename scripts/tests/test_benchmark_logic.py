@@ -5,12 +5,13 @@ import unittest
 from contextlib import redirect_stdout
 from io import StringIO
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 SCRIPTS_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 from benchmark_logic import skill_score, trigger_metrics, win_rate
-from build_catalog import apply_measurement
+from build_catalog import apply_measurement, skill_digest
 from run_benchmarks import (
     majority_target,
     normalize_choice,
@@ -87,6 +88,18 @@ class BenchmarkLogicTests(unittest.TestCase):
         skill = {"metrics": {"efficiency": 100.0, "skill_score": None}}
         apply_measurement(skill, None)
         self.assertIsNone(skill["metrics"]["skill_score"])
+
+    def test_skill_digest_is_deterministic_and_content_addressed(self) -> None:
+        with TemporaryDirectory() as directory:
+            skill_dir = Path(directory)
+            (skill_dir / "SKILL.md").write_text("first", encoding="utf-8")
+            first = skill_digest(skill_dir)
+
+            self.assertRegex(first, r"^sha256:[0-9a-f]{64}$")
+            self.assertEqual(first, skill_digest(skill_dir))
+
+            (skill_dir / "SKILL.md").write_text("second", encoding="utf-8")
+            self.assertNotEqual(first, skill_digest(skill_dir))
 
     def test_dry_run_plan_lists_prompts_and_criteria(self) -> None:
         skill = {"name": "example", "path": "skills/test/example"}

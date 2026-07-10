@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Analyze this CSV and tell me which region grew fastest.",
+    "Profile the uploaded table and summarize important patterns.",
+    "Calculate totals and month-over-month changes from these rows.",
+    "What does this TSV show about customer churn?",
+    "Answer these questions using the spreadsheet data I pasted."
+  ],
+  "should_not_trigger": [
+    "Standardize the date formats and remove duplicates in this CSV.",
+    "Choose the best chart for these monthly totals.",
+    "Design a SQL schema for importing this table.",
+    "Write documentation for our data pipeline.",
+    "Summarize this research paper about churn."
+  ],
+  "tasks": [
+    {
+      "prompt": "Given sales rows with date, region, revenue, and refunds, explain how to identify the strongest region without confusing gross and net revenue.",
+      "criteria": ["Defines net revenue correctly", "Checks date coverage and data quality", "Uses verifiable calculations and caveats"]
+    },
+    {
+      "prompt": "Analyze a customer table containing signup date, cancellation date, and plan to compare churn by plan.",
+      "criteria": ["Defines cohort and denominator", "Handles active and censored customers", "Avoids unsupported causal claims"]
+    },
+    {
+      "prompt": "Profile a newly uploaded CSV before answering business questions.",
+      "criteria": ["Reports shape, types, nulls, ranges, and duplicates", "Flags ambiguous units or fields", "Separates data-quality issues from findings"]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Summarize this paper and tell me whether the evidence is convincing.",
+    "Turn this report into a structured research brief.",
+    "What are the key findings and limitations of this study?",
+    "Explain this article while keeping the important numbers.",
+    "Compare the claims and evidence in these two supplied papers."
+  ],
+  "should_not_trigger": [
+    "Search the whole literature and identify research gaps.",
+    "Fact-check this single statistic using external sources.",
+    "Copy edit the abstract for grammar.",
+    "Analyze the study's raw CSV data.",
+    "Write a press release about this paper."
+  ],
+  "tasks": [
+    {
+      "prompt": "Summarize an observational study of 240 employees reporting an association between meeting load and burnout, with no causal design.",
+      "criteria": ["Preserves sample and association", "Separates findings, author claims, and assessment", "Flags causal and self-report limitations"]
+    },
+    {
+      "prompt": "Create a brief from an abstract-only preprint that reports a 4 percent improvement but omits confidence intervals.",
+      "criteria": ["States abstract-only and preprint limitations", "Keeps the reported magnitude", "Does not invent methods or statistical certainty"]
+    },
+    {
+      "prompt": "Synthesize two supplied reports that disagree because they define customer retention differently.",
+      "criteria": ["Organizes around the disputed question", "Names the definition mismatch", "Explains what evidence would resolve the conflict"]
+    }
+  ]
+}

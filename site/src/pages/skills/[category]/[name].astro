@@ -7,7 +7,6 @@ import {
   fmt,
   fmtPercent,
   getSkillHtml,
-  githubRepoUrl,
   installCommand,
   type Skill,
 } from "../../../lib/catalog";
@@ -37,6 +36,8 @@ const metadataRows = [
   ["Reference tokens", String(skill.reference_tokens)],
   ["Scripts", skill.has_scripts ? "yes" : "no"],
   ["Benchmark suite", skill.has_benchmarks ? "yes" : "no"],
+  ["Security", skill.security_profile === "instructions-only" ? "instructions only" : "includes scripts"],
+  ["License", skill.license],
   ["Measured at", fmt(skill.metrics.measured_at)],
   ["Model", fmt(skill.metrics.model)],
 ];
@@ -61,7 +62,7 @@ const metadataRows = [
         <h1 class="section-title break-words">{skill.name}</h1>
         <p class="mt-3 max-w-3xl leading-7 muted">{skill.description}</p>
       </div>
-      <a class="btn shrink-0 no-underline hover:no-underline" href={`${githubRepoUrl}/tree/main/${skill.path}`}>View on GitHub</a>
+      <a class="btn shrink-0 no-underline hover:no-underline" href={skill.source_url}>View on GitHub</a>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
@@ -104,6 +105,10 @@ const metadataRows = [
             <div class="flex flex-col gap-1 py-2">
               <dt class="muted">Path</dt>
               <dd class="metric break-all text-xs">{skill.path}</dd>
+            </div>
+            <div class="flex flex-col gap-1 py-2">
+              <dt class="muted">Content digest</dt>
+              <dd class="metric break-all text-xs">{skill.content_digest}</dd>
             </div>
           </dl>
         </section>

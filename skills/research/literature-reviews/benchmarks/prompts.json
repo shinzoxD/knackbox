@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Write a literature review on retrieval-augmented generation evaluation.",
+    "Synthesize these studies by research question and identify gaps.",
+    "Build an evidence matrix for papers on employee burnout.",
+    "What is the state of the literature on this topic?",
+    "Help me define inclusion criteria and structure a review."
+  ],
+  "should_not_trigger": [
+    "Summarize this one paper.",
+    "Fact-check a statistic quoted from this article.",
+    "Analyze the raw survey CSV from our study.",
+    "Copy edit my completed literature review.",
+    "Write a blog post explaining this research to beginners."
+  ],
+  "tasks": [
+    {
+      "prompt": "Plan a focused literature review on whether code-generation assistants improve developer productivity.",
+      "criteria": ["Defines question, population, outcomes, period, and criteria", "Specifies transparent search and evidence extraction", "Anticipates incompatible productivity definitions and bias"]
+    },
+    {
+      "prompt": "Synthesize five studies where three show benefit, one shows no effect, and one uses a different population and outcome.",
+      "criteria": ["Organizes by question rather than source", "Weights design and applicability", "Explains heterogeneity instead of vote counting"]
+    },
+    {
+      "prompt": "Explain what can honestly be called a research gap when only four user-provided papers were reviewed.",
+      "criteria": ["Labels the work a focused synthesis", "Avoids claiming a systematic search", "Distinguishes observed omissions from field-wide gaps"]
+    }
+  ]
+}

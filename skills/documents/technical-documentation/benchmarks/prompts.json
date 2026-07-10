@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Write setup documentation for this repository.",
+    "Turn these incident notes into an operational runbook.",
+    "Document how clients authenticate with our API.",
+    "Improve this README so a new developer can run the project.",
+    "Create troubleshooting instructions for failed deployments."
+  ],
+  "should_not_trigger": [
+    "Write the implementation for this authentication endpoint.",
+    "Create a project proposal for improving documentation.",
+    "Summarize this technical research paper.",
+    "Copy edit this marketing article.",
+    "Generate tests for the setup script."
+  ],
+  "tasks": [
+    {
+      "prompt": "Write a structure for local setup docs covering Node 22, npm install, environment configuration, database migration, and verification.",
+      "criteria": ["Orders prerequisites before actions", "Includes exact commands and expected verification", "Treats secrets safely and includes troubleshooting"]
+    },
+    {
+      "prompt": "Create an outage runbook for elevated API 5xx errors caused by a downstream payment provider.",
+      "criteria": ["Defines trigger, impact, owner, diagnosis, mitigation, and escalation", "Includes safe verification and recovery", "Avoids unsupported vendor-specific commands"]
+    },
+    {
+      "prompt": "Improve documentation that says only: run deploy.sh and check that it worked.",
+      "criteria": ["Adds prerequisites and exact inputs", "Explains verification and rollback", "Flags destructive or unverified behavior"]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Turn these notes into a project proposal for leadership.",
+    "Write a business case for funding this migration.",
+    "Create a project charter with scope, milestones, and risks.",
+    "Help me pitch this internal automation initiative.",
+    "Draft an approval proposal for replacing our support platform."
+  ],
+  "should_not_trigger": [
+    "Break this approved project into tasks.",
+    "Write a decision memo comparing two vendors.",
+    "Summarize yesterday's project kickoff meeting.",
+    "Create a technical runbook for the migration.",
+    "Write landing-page copy for our consulting service."
+  ],
+  "tasks": [
+    {
+      "prompt": "Draft a proposal to automate invoice reconciliation for a finance team processing 8,000 invoices monthly, with a three-month pilot.",
+      "criteria": ["Leads with a concrete decision request", "Defines measurable outcomes, scope, milestones, and resources", "Labels assumptions and avoids invented ROI"]
+    },
+    {
+      "prompt": "Create a one-page concept proposal for an idea with little evidence: an internal AI search tool for support agents.",
+      "criteria": ["Keeps commitment proportionate to evidence", "Defines discovery or pilot exit criteria", "Includes alternatives, risks, and next decision"]
+    },
+    {
+      "prompt": "Write a migration proposal for replacing a legacy CRM while maintaining sales operations.",
+      "criteria": ["Covers phased scope and operational continuity", "Names dependencies and rollback risks", "Connects deliverables to business outcomes"]
+    }
+  ]
+}

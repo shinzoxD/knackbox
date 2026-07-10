@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Write the PR description for these commits.",
+    "Turn this branch diff into a reviewer-friendly pull request summary.",
+    "I am opening a merge request; explain the change and testing.",
+    "Give me a title and body for this GitHub PR.",
+    "Summarize this feature branch for reviewers."
+  ],
+  "should_not_trigger": [
+    "Write a conventional commit message for this diff.",
+    "Review this pull request and find bugs.",
+    "Generate release notes from these merged pull requests.",
+    "Explain what this function does.",
+    "Create tests for the changed validation logic."
+  ],
+  "tasks": [
+    {
+      "prompt": "Write a PR description for a change that adds idempotency keys to payment creation, stores results for 24 hours, and includes unit and integration tests.",
+      "criteria": ["Provides a clear title and concise summary", "Explains behavior and reviewer-relevant risks", "Lists verification without inventing results"]
+    },
+    {
+      "prompt": "Draft a PR for replacing offset pagination with cursors while retaining the old query parameter for one release.",
+      "criteria": ["Highlights compatibility and migration behavior", "Includes testing and rollout sections", "Calls out the temporary legacy path"]
+    },
+    {
+      "prompt": "Create a pull request write-up from: fix null crash in profile import; malformed rows now skipped and counted; added regression test.",
+      "criteria": ["States the user-visible defect and fix", "Mentions malformed-row behavior", "Keeps the description proportionate to the change"]
+    }
+  ]
+}

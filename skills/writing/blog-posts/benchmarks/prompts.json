@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Write a blog post from this outline.",
+    "Turn these notes into a long-form article for our site.",
+    "Draft a newsletter issue about this product lesson.",
+    "Create an engaging technical article for beginners.",
+    "Rewrite this blog draft with a stronger hook and structure."
+  ],
+  "should_not_trigger": [
+    "Write concise landing-page copy for this product.",
+    "Copy edit this article without restructuring it.",
+    "Draft a short email announcing the post.",
+    "Summarize this research paper into a brief.",
+    "Write technical API documentation."
+  ],
+  "tasks": [
+    {
+      "prompt": "Draft a practical blog post explaining why small teams should write decision memos, using a clear example and no invented statistics.",
+      "criteria": ["Uses a strong relevant hook and logical structure", "Provides concrete useful guidance", "Maintains a consistent non-generic voice"]
+    },
+    {
+      "prompt": "Turn an outline about debugging flaky tests into an article for intermediate developers.",
+      "criteria": ["Matches audience knowledge", "Builds a coherent narrative rather than expanding bullets mechanically", "Includes actionable examples and a focused conclusion"]
+    },
+    {
+      "prompt": "Improve a draft whose first five paragraphs repeat the same background before reaching the main lesson.",
+      "criteria": ["Moves the central value earlier", "Removes repetition", "Preserves the author's factual claims and voice"]
+    }
+  ]
+}

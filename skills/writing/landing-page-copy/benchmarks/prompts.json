@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Write homepage copy for this product.",
+    "Improve the messaging and CTA on our landing page.",
+    "Create copy for a waitlist launch page.",
+    "Turn this product brief into a conversion-focused page.",
+    "Rewrite this hero section so the offer is clear."
+  ],
+  "should_not_trigger": [
+    "Write a long-form blog post about the product.",
+    "Copy edit this existing page for grammar only.",
+    "Draft a customer follow-up email.",
+    "Design the visual layout and CSS for the page.",
+    "Write technical documentation for the product API."
+  ],
+  "tasks": [
+    {
+      "prompt": "Write landing-page copy for a tool that turns meeting transcripts into decisions and action items. No customer metrics or testimonials are available.",
+      "criteria": ["Uses a literal clear offer", "Builds hierarchy around outcomes, process, and objections", "Does not invent proof or claims"]
+    },
+    {
+      "prompt": "Rewrite a vague hero that says Transform your future with intelligent innovation for an invoice-reconciliation product.",
+      "criteria": ["Names the product category and concrete job", "Identifies audience or outcome", "Uses a specific action-oriented CTA"]
+    },
+    {
+      "prompt": "Create copy for a waitlist page for an early product with a working demo but no pricing or launch date.",
+      "criteria": ["Uses available product evidence honestly", "Sets accurate expectations after signup", "Avoids fake urgency and guarantees"]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Clean this customer CSV and standardize the columns.",
+    "Remove duplicate records without losing legitimate repeat orders.",
+    "Prepare this messy spreadsheet for analysis.",
+    "Normalize dates, booleans, and missing values in this dataset.",
+    "Merge these two exports and reconcile inconsistent IDs."
+  ],
+  "should_not_trigger": [
+    "Analyze this already-clean CSV for revenue trends.",
+    "Create a chart from these monthly totals.",
+    "Write a database query to update customer names.",
+    "Summarize the methodology section of this report.",
+    "Design an API for uploading CSV files."
+  ],
+  "tasks": [
+    {
+      "prompt": "Plan a reproducible cleanup for contacts with mixed date formats, blank emails, duplicate names, and inconsistent country codes.",
+      "criteria": ["Preserves raw data and defines a target schema", "Distinguishes safe normalization from ambiguous matching", "Includes counts and validation"]
+    },
+    {
+      "prompt": "Clean an orders file where zero, blank, NA, and unknown appear in the discount column.",
+      "criteria": ["Preserves distinct missing-value meanings", "Avoids silent imputation", "Documents transformations and unresolved cases"]
+    },
+    {
+      "prompt": "Design duplicate handling for customer records using email, phone, and fuzzy name matches.",
+      "criteria": ["Uses deterministic exact matches first", "Surfaces ambiguous fuzzy matches", "Reconciles merged and retained row counts"]
+    }
+  ]
+}

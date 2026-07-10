@@ -8,6 +8,8 @@ name: your-skill-name
 description: One sentence on what this skill does. Use whenever the user
   mentions X, asks for Y, or is doing Z — even if they don't explicitly
   ask for this skill.
+metadata:
+  internal: true
 ---
 
 # Your Skill Name

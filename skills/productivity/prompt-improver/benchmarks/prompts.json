@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Make this AI prompt more reliable.",
+    "Why does this prompt produce inconsistent output?",
+    "Rewrite my system prompt with clearer constraints.",
+    "Turn this vague request into a structured copy-paste prompt.",
+    "Improve this prompt for extracting fields from invoices."
+  ],
+  "should_not_trigger": [
+    "Answer this prompt for me instead of rewriting it.",
+    "Write API documentation for prompt storage.",
+    "Debug this Python error from the model client.",
+    "Create benchmark tasks for an agent skill.",
+    "Copy edit this article without changing its instructions."
+  ],
+  "tasks": [
+    {
+      "prompt": "Improve: Analyze this data and tell me interesting things.",
+      "criteria": ["Identifies missing input, audience, and output requirements", "Returns a usable structured prompt", "Avoids inventing a dataset or objective"]
+    },
+    {
+      "prompt": "Rewrite a prompt that extracts invoice number, date, currency, and total into strict JSON and must flag uncertainty.",
+      "criteria": ["Defines schema and valid output only", "Handles missing or ambiguous fields", "Includes constraints and a representative example"]
+    },
+    {
+      "prompt": "Diagnose a system prompt that says be concise and be exhaustive and produces inconsistent length.",
+      "criteria": ["Identifies conflicting requirements", "Introduces explicit priority and length criteria", "Returns a copy-paste-ready revision"]
+    }
+  ]
+}

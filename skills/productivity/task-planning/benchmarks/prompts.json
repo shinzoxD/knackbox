@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Break this project into an executable plan.",
+    "What should I do next to launch this feature?",
+    "Create a roadmap with dependencies and milestones.",
+    "Turn this vague goal into a checklist.",
+    "Plan the implementation sequence for this migration."
+  ],
+  "should_not_trigger": [
+    "Write a proposal to get this project approved.",
+    "Compare vendors and recommend one.",
+    "Implement the first task in this plan.",
+    "Summarize today's project meeting.",
+    "Write a PR description for the completed work."
+  ],
+  "tasks": [
+    {
+      "prompt": "Plan a migration from a shared API key to per-user OAuth without interrupting existing clients.",
+      "criteria": ["Defines outcome and compatibility constraints", "Orders discovery, implementation, rollout, and verification", "Includes owners, rollback, and completion evidence"]
+    },
+    {
+      "prompt": "Create a personal plan to publish a technical article from rough notes by Friday.",
+      "criteria": ["Uses a small proportionate action list", "Sequences drafting, review, and publication", "Ends with an immediate next action"]
+    },
+    {
+      "prompt": "Replan a delayed project where design is complete, implementation is half done, and an external security review is required before launch.",
+      "criteria": ["Preserves completed work", "Identifies the external review as a dependency", "Surfaces scope or schedule trade-offs and validation"]
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 ---
 import CopyButton from "../../components/CopyButton.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { installCommand } from "../../lib/catalog";
+import { installCommand, legacyInstallCommand } from "../../lib/catalog";
 
 const example = `${installCommand} commit-messages`;
+const legacyExample = `${legacyInstallCommand} commit-messages`;
 ---
 
 <BaseLayout title="Docs | Knackbox" description="Install Knackbox skills">
@@ -21,13 +22,14 @@ const example = `${installCommand} commit-messages`;
     <h2 class="eyebrow mb-3">Install targets</h2>
     <div class="grid gap-4 lg:grid-cols-3">
       <section class="panel p-4 sm:p-5">
-        <h3 class="text-base font-semibold text-ink-950 dark:text-white">Claude Code</h3>
+        <h3 class="text-base font-semibold text-ink-950 dark:text-white">Skills CLI</h3>
         <p class="mt-2 text-sm leading-6 muted">
-          Install directly into <code class="font-mono text-[13px]">~/.claude/skills/</code> with the repository installer.
+          Install through the open Agent Skills ecosystem. The CLI detects installed agents including Claude Code,
+          Codex, OpenCode, Cursor, and others.
         </p>
         <p class="mt-2 text-sm leading-6 muted">
-          Pass <code class="font-mono text-[13px]">--dest DIR</code> for another skills
-          directory or <code class="font-mono text-[13px]">--force</code> to replace an existing copy.
+          Add <code class="font-mono text-[13px]">-g</code> for a global install or
+          {" "}<code class="font-mono text-[13px]">-a claude-code</code> to select a target explicitly.
         </p>
         <div class="mt-4 flex items-center justify-between gap-3">
           <h4 class="text-sm font-semibold">Example</h4>
@@ -45,10 +47,15 @@ const example = `${installCommand} commit-messages`;
       </section>
 
       <section class="panel p-4 sm:p-5">
-        <h3 class="text-base font-semibold text-ink-950 dark:text-white">Agent Skills tools</h3>
+        <h3 class="text-base font-semibold text-ink-950 dark:text-white">Repository installer</h3>
         <p class="mt-2 text-sm leading-6 muted">
-          Any runtime that supports the Agent Skills folder format can load Knackbox skills as plain files.
+          The dependency-free shell installer remains available for Claude Code or a custom destination.
         </p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <h4 class="text-sm font-semibold">Fallback</h4>
+          <CopyButton value={legacyExample} />
+        </div>
+        <pre class="terminal mt-2"><code>{legacyExample}</code></pre>
       </section>
     </div>
 

@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "Design REST endpoints for a multi-tenant invoicing service.",
+    "Review this OpenAPI contract and flag breaking or inconsistent behavior.",
+    "How should pagination and filtering work for our orders endpoint?",
+    "Define the request, response, and error shapes for creating a payment.",
+    "We need an idempotent API for retrying job submissions."
+  ],
+  "should_not_trigger": [
+    "Write a TypeScript client that calls this existing API.",
+    "Why is this endpoint returning a 500 error?",
+    "Generate unit tests for this controller.",
+    "Review this pull request for security bugs.",
+    "Write database migrations for the orders table."
+  ],
+  "tasks": [
+    {
+      "prompt": "Design an HTTP API for creating, listing, cancelling, and retrying asynchronous export jobs.",
+      "criteria": ["Defines concrete operations and payload examples", "Covers job states, idempotency, pagination, authorization, and errors", "Explains compatibility and retry semantics"]
+    },
+    {
+      "prompt": "Review an API where GET /users/export starts an export and returns 200 with no operation ID.",
+      "criteria": ["Identifies unsafe GET semantics", "Proposes a concrete asynchronous contract", "Covers retries, status polling, and failure behavior"]
+    },
+    {
+      "prompt": "Propose versioning rules for a public JSON API used by mobile clients that update slowly.",
+      "criteria": ["Separates additive from breaking changes", "Addresses deprecation and observability", "Provides practical compatibility examples"]
+    }
+  ]
+}

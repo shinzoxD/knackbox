@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    "What chart should I use for this retention data?",
+    "Create a clear visualization of monthly revenue by region.",
+    "Improve this misleading dashboard graph.",
+    "Plot the distribution of response times.",
+    "Design a mobile-friendly chart comparing plan conversion rates."
+  ],
+  "should_not_trigger": [
+    "Clean the missing values in this dataset.",
+    "Calculate the monthly revenue totals from this CSV.",
+    "Write alt text for an existing product screenshot.",
+    "Build the database query that feeds this dashboard.",
+    "Write landing-page copy about our analytics feature."
+  ],
+  "tasks": [
+    {
+      "prompt": "Choose a visualization for conversion rates across six plans with very different sample sizes.",
+      "criteria": ["Chooses an appropriate comparison chart", "Includes denominators or uncertainty", "Specifies accessible labels and encoding"]
+    },
+    {
+      "prompt": "Redesign a bar chart whose y-axis starts at 97 and makes a 1% change look enormous.",
+      "criteria": ["Identifies scale distortion", "Proposes an honest alternative", "Preserves the underlying analytical question"]
+    },
+    {
+      "prompt": "Specify an operational dashboard for API latency, error rate, and request volume.",
+      "criteria": ["Uses aligned time series and clear units", "Includes thresholds and current values", "Prioritizes scanning over decorative cards"]
+    }
+  ]
+}
