@@ -1,5 +1,7 @@
 type RenderOptions = {
   linkBase?: string;
+  /** Shift headings down one level (h1 -> h2, ...) so embedding pages keep a single h1. */
+  demoteHeadings?: boolean;
 };
 
 export function stripFrontmatter(text: string): string {
@@ -156,7 +158,7 @@ export function renderMarkdown(markdown: string, options: RenderOptions = {}): s
     const heading = /^(#{1,6})\s+(.+)$/.exec(trimmed);
     if (heading) {
       flushParagraph();
-      const level = heading[1].length;
+      const level = Math.min(heading[1].length + (options.demoteHeadings ? 1 : 0), 6);
       const content = inlineMarkdown(heading[2], options);
       const id = slugify(heading[2]);
       out.push(`<h${level} id="${id}">${content}</h${level}>`);

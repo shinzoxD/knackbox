@@ -2,77 +2,107 @@
 import TierBadge from "../../components/TierBadge.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../lib/catalog";
+
+const columns = [
+  { key: "tier", label: "Tier", width: "w-28", numeric: false },
+  { key: "name", label: "Skill", width: "w-52", numeric: false },
+  { key: "category", label: "Category", width: "w-28", numeric: false },
+  { key: "score", label: "Skill score", width: "w-28", numeric: true },
+  { key: "uplift", label: "Uplift", width: "w-24", numeric: true },
+  { key: "trigger", label: "Trigger", width: "w-24", numeric: true },
+  { key: "context", label: "Context", width: "w-24", numeric: true },
+  { key: "updated", label: "Updated", width: "w-28", numeric: false },
+];
+const nullClass = "text-ink-400 dark:text-ink-500";
 ---
 
-<BaseLayout title="Skills | Knackbox" description="Knackbox skill leaderboard">
+<BaseLayout title="Skill leaderboard | Knackbox" description="Knackbox skill leaderboard">
   <Fragment slot="head">
     <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
   </Fragment>
 
-  <section class="wrap py-10" data-pagefind-body>
-    <div class="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+  <section class="rail-section" data-pagefind-body>
+    <div class="wrap py-10 sm:py-12">
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
       <div>
-        <h1 class="text-3xl font-semibold tracking-normal text-ink-950 dark:text-white">Skill leaderboard</h1>
-        <p class="mt-3 max-w-3xl muted">
-          Sort measured columns, filter by tier or category, and inspect every skill from the static catalog.
+        <p class="eyebrow mb-3">01 / Catalog</p>
+        <h1 class="section-title">Skill leaderboard</h1>
+        <p class="mt-2 max-w-3xl text-sm muted">
+          Sort measured columns, filter by tier or category, and inspect every skill in the static catalog.
         </p>
       </div>
       <p class="text-sm muted">
-        Methodology: <a href="/docs/metrics/">metrics and tiers</a>.
+        Methodology: <a href="/docs/metrics/">metrics and tiers</a>
       </p>
     </div>
 
-    <div class="grid gap-5 lg:grid-cols-[1fr_18rem]">
-      <div class="panel p-4">
-        <div id="pagefind-search" class="min-h-12"></div>
-      </div>
-      <div class="panel p-4">
-        <label for="skill-text-filter" class="mb-2 block text-xs font-semibold uppercase muted">Quick filter</label>
-        <input id="skill-text-filter" class="h-10 w-full border border-ink-300 bg-white px-3 text-sm text-ink-900 dark:border-ink-700 dark:bg-ink-950 dark:text-white" type="search" placeholder="Filter table" />
-      </div>
+    <div class="panel p-3 sm:p-4">
+      <h2 class="eyebrow mb-2">Search docs &amp; skills</h2>
+      <div id="pagefind-search" class="min-h-10"></div>
     </div>
 
-    <div class="mt-5 grid gap-4 lg:grid-cols-[1fr_18rem]">
-      <div class="panel p-4">
-        <p class="mb-3 text-xs font-semibold uppercase muted">Categories</p>
-        <div class="flex flex-wrap gap-2" data-category-filters>
+    <div class="panel mt-4 p-3 sm:p-4">
+      <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+        <div class="flex min-w-0 grow flex-col gap-3 sm:flex-row sm:items-center">
+          <label class="sr-only" for="skill-text-filter">Quick filter for the leaderboard table</label>
+          <input
+            id="skill-text-filter"
+            class="field sm:max-w-64"
+            type="search"
+            placeholder="Filter by name or description"
+            autocomplete="off"
+          />
+          <div class="seg" role="group" aria-label="Filter by tier" data-tier-filters>
+            <button type="button" data-filter-tier="all" aria-pressed="true">All</button>
+            {tiers.map((tier) => (
+              <button type="button" data-filter-tier={tier} aria-pressed="false">{tier}</button>
+            ))}
+          </div>
+        </div>
+        <p class="text-xs muted" aria-live="polite">
+          <span class="metric font-semibold" data-visible-count>{allSkills.length}</span> of <span class="metric">{allSkills.length}</span> skills shown
+        </p>
+      </div>
+      <div class="mt-3 flex flex-wrap items-center gap-1.5 border-t border-ink-200 pt-3 dark:border-ink-800">
+        <span class="eyebrow mr-1.5">Categories</span>
+        <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filter by category" data-category-filters>
           {categories.map((category) => (
             <button type="button" class="chip" data-filter-category={category} aria-pressed="false">{category}</button>
           ))}
         </div>
       </div>
-      <div class="panel p-4">
-        <p class="mb-3 text-xs font-semibold uppercase muted">Tier</p>
-        <div class="flex flex-wrap gap-2" data-tier-filters>
-          <button type="button" class="chip is-active" data-filter-tier="all" aria-pressed="true">All</button>
-          {tiers.map((tier) => (
-            <button type="button" class="chip" data-filter-tier={tier} aria-pressed="false">{tier}</button>
-          ))}
-        </div>
-      </div>
+      <noscript>
+        <p class="mt-3 border-t border-ink-200 pt-3 text-xs muted dark:border-ink-800">
+          Filtering and sorting need JavaScript. The full catalog is listed below, ordered by tier.
+        </p>
+      </noscript>
     </div>
 
-    <div class="mt-6 overflow-x-auto border border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
-      <table class="min-w-[980px] w-full table-fixed text-left text-sm" data-skill-table>
-        <caption class="caption-bottom px-4 py-3 text-left text-xs muted">
-          Null metrics render as <span class="metric">{fmt(null)}</span> and sort below measured values.
+    <div class="mt-4 overflow-x-auto border border-ink-300 bg-ink-50 dark:border-ink-700 dark:bg-ink-950">
+      <table class="w-full min-w-[960px] table-fixed text-left text-sm" data-skill-table>
+        <caption class="caption-bottom border-t border-ink-200 px-3 py-2.5 text-left text-xs muted dark:border-ink-800">
+          Unmeasured metrics render as <span class="metric">{fmt(null)}</span> and always sort below measured values.
         </caption>
-        <thead class="border-b border-ink-200 bg-ink-100 text-xs uppercase text-ink-600 dark:border-ink-800 dark:bg-ink-800 dark:text-ink-300">
+        <thead class="border-b border-ink-300 bg-ink-200 text-[11px] uppercase text-ink-600 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-300">
           <tr>
-            <th class="w-28 px-4 py-3"><button type="button" data-sort="tier" class="font-semibold">Tier</button></th>
-            <th class="w-56 px-4 py-3"><button type="button" data-sort="name" class="font-semibold">Skill</button></th>
-            <th class="w-32 px-4 py-3"><button type="button" data-sort="category" class="font-semibold">Category</button></th>
-            <th class="w-32 px-4 py-3 text-right"><button type="button" data-sort="score" class="font-semibold">Skill Score</button></th>
-            <th class="w-28 px-4 py-3 text-right"><button type="button" data-sort="uplift" class="font-semibold">Uplift</button></th>
-            <th class="w-28 px-4 py-3 text-right"><button type="button" data-sort="trigger" class="font-semibold">Trigger</button></th>
-            <th class="w-32 px-4 py-3 text-right"><button type="button" data-sort="context" class="font-semibold">Context</button></th>
-            <th class="w-32 px-4 py-3"><button type="button" data-sort="updated" class="font-semibold">Updated</button></th>
+            {columns.map((column) => (
+              <th
+                scope="col"
+                class:list={[column.width, "px-3 py-2.5"]}
+                aria-sort={column.key === "tier" ? "ascending" : undefined}
+              >
+                <button type="button" data-sort={column.key} class:list={["sort-btn", column.numeric && "justify-end"]}>
+                  <span>{column.label}</span>
+                  <span class="sort-ind" aria-hidden="true"></span>
+                </button>
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {allSkills.map((skill) => (
             <tr
-              class="border-b border-ink-100 last:border-b-0 dark:border-ink-800"
+              class="border-b border-ink-100 transition-colors last:border-b-0 hover:bg-ink-50 dark:border-ink-800 dark:hover:bg-ink-800/40"
               data-category={skill.category}
               data-tier={skill.tier}
               data-name={skill.name}
@@ -86,22 +116,22 @@ import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../l
               data-sort-context={skill.context_tokens}
               data-sort-updated={skill.updated}
             >
-              <td class="px-4 py-3"><TierBadge tier={skill.tier} /></td>
-              <td class="px-4 py-3">
-                <a class="font-semibold text-ink-950 dark:text-white" href={skillUrl(skill)}>{skill.name}</a>
+              <td class="px-3 py-2.5"><TierBadge tier={skill.tier} /></td>
+              <td class="px-3 py-2.5">
+                <a class="break-words font-medium text-ink-950 no-underline hover:underline dark:text-white" href={skillUrl(skill)}>{skill.name}</a>
               </td>
-              <td class="px-4 py-3">{skill.category}</td>
-              <td class="metric px-4 py-3 text-right">{fmt(skill.metrics.skill_score)}</td>
-              <td class="metric px-4 py-3 text-right">{fmtPercent(skill.metrics.quality_uplift)}</td>
-              <td class="metric px-4 py-3 text-right">{fmtPercent(skill.metrics.trigger_accuracy)}</td>
-              <td class="metric px-4 py-3 text-right">{skill.context_tokens}</td>
-              <td class="metric px-4 py-3">{skill.updated}</td>
+              <td class="px-3 py-2.5 muted">{skill.category}</td>
+              <td class:list={["metric px-3 py-2.5 text-right text-[13px]", skill.metrics.skill_score === null && nullClass]}>{fmt(skill.metrics.skill_score)}</td>
+              <td class:list={["metric px-3 py-2.5 text-right text-[13px]", skill.metrics.quality_uplift === null && nullClass]}>{fmtPercent(skill.metrics.quality_uplift)}</td>
+              <td class:list={["metric px-3 py-2.5 text-right text-[13px]", skill.metrics.trigger_accuracy === null && nullClass]}>{fmtPercent(skill.metrics.trigger_accuracy)}</td>
+              <td class="metric px-3 py-2.5 text-right text-[13px]">{skill.context_tokens}</td>
+              <td class="metric px-3 py-2.5 text-[13px]">{skill.updated}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-    <p class="mt-3 text-sm muted"><span data-visible-count>{allSkills.length}</span> skills visible.</p>
+    </div>
   </section>
 
   <script src="/pagefind/pagefind-ui.js" is:inline></script>
@@ -151,7 +181,20 @@ import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../l
         return state.direction === "asc" ? result : -result;
       }
 
+      function syncSortHeaders() {
+        table.querySelectorAll("thead th").forEach((th) => {
+          const button = th.querySelector("[data-sort]");
+          if (!button) return;
+          if (button.dataset.sort === state.sortKey) {
+            th.setAttribute("aria-sort", state.direction === "asc" ? "ascending" : "descending");
+          } else {
+            th.removeAttribute("aria-sort");
+          }
+        });
+      }
+
       function applyState() {
+        syncSortHeaders();
         const query = state.query.trim().toLowerCase();
         const sorted = [...rows].sort(compareRows);
         let visible = 0;
@@ -201,9 +244,7 @@ import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../l
         button.addEventListener("click", () => {
           state.tier = button.dataset.filterTier;
           document.querySelectorAll("[data-filter-tier]").forEach((tierButton) => {
-            const active = tierButton === button;
-            tierButton.classList.toggle("is-active", active);
-            tierButton.setAttribute("aria-pressed", String(active));
+            tierButton.setAttribute("aria-pressed", String(tierButton === button));
           });
           applyState();
         });
@@ -230,7 +271,7 @@ import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../l
         const search = document.querySelector("#pagefind-search");
         if (search && !search.children.length) {
           search.innerHTML =
-            '<p class="text-sm text-ink-600 dark:text-ink-300">Pagefind search is generated during production builds.</p>';
+            '<p class="text-sm muted">Pagefind search is generated during production builds.</p>';
         }
       });
 

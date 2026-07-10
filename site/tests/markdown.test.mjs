@@ -16,6 +16,11 @@ test("keeps wrapped unordered list lines in the same item", () => {
   );
 });
 
+test("demotes headings one level when demoteHeadings is set", () => {
+  const html = renderMarkdown("# Title\n\n###### Deep", { demoteHeadings: true });
+  assert.equal(html, '<h2 id="title">Title</h2>\n<h6 id="deep">Deep</h6>');
+});
+
 test("keeps wrapped ordered list lines in the same item", () => {
   const html = renderMarkdown([
     "1. Name the location and explain the",

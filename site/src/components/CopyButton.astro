@@ -2,6 +2,6 @@
 const { value, label = "Copy" } = Astro.props as { value: string; label?: string };
 ---
 
-<button type="button" class="btn h-8 px-2 text-xs" data-copy={value}>
+<button type="button" class="btn btn-xs shrink-0" data-copy={value} title="Copy to clipboard">
   {label}
 </button>

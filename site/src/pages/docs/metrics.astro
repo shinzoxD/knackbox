@@ -6,7 +6,10 @@ const html = getRepoMarkdownHtml("METRICS.md");
 ---
 
 <BaseLayout title="Metrics | Knackbox" description="Knackbox metric methodology">
-  <section class="wrap py-10">
-    <article class="prose-skill" data-pagefind-body set:html={html} />
+  <section class="rail-section">
+    <div class="wrap py-10 sm:py-12">
+      <p class="eyebrow mb-6">03 / Measurement</p>
+      <article class="prose-skill max-w-3xl" data-pagefind-body set:html={html} />
+    </div>
   </section>
 </BaseLayout>

@@ -22,61 +22,93 @@ export function getStaticPaths() {
 const { skill } = Astro.props as { skill: Skill };
 const html = getSkillHtml(skill);
 const command = `${installCommand} ${skill.name}`;
-const fields = [
-  ["Name", skill.name],
-  ["Description", skill.description],
+const metricRows = [
+  ["Skill score", fmt(skill.metrics.skill_score)],
+  ["Quality uplift", fmtPercent(skill.metrics.quality_uplift)],
+  ["Trigger accuracy", fmtPercent(skill.metrics.trigger_accuracy)],
+  ["Efficiency", fmtPercent(skill.metrics.efficiency)],
+  ["Installs (30d)", fmt(skill.metrics.installs_30d)],
+];
+const metadataRows = [
   ["Category", skill.category],
-  ["Path", skill.path],
   ["Tier", skill.tier],
   ["Updated", skill.updated],
-  ["Context tokens", skill.context_tokens],
-  ["Reference tokens", skill.reference_tokens],
-  ["Has scripts", skill.has_scripts ? "yes" : "no"],
+  ["Context tokens", String(skill.context_tokens)],
+  ["Reference tokens", String(skill.reference_tokens)],
+  ["Scripts", skill.has_scripts ? "yes" : "no"],
   ["Benchmark suite", skill.has_benchmarks ? "yes" : "no"],
-  ["Efficiency", fmtPercent(skill.metrics.efficiency)],
-  ["Trigger accuracy", fmtPercent(skill.metrics.trigger_accuracy)],
-  ["Quality uplift", fmtPercent(skill.metrics.quality_uplift)],
-  ["Skill score", fmt(skill.metrics.skill_score)],
-  ["Installs 30d", fmt(skill.metrics.installs_30d)],
   ["Measured at", fmt(skill.metrics.measured_at)],
   ["Model", fmt(skill.metrics.model)],
 ];
 ---
 
 <BaseLayout title={`${skill.name} | Knackbox`} description={skill.description}>
-  <section class="wrap py-10">
+  <section class="rail-section">
+    <div class="wrap py-10 sm:py-12">
+    <nav aria-label="Breadcrumb" class="mb-4 text-xs muted">
+      <ol class="flex flex-wrap items-center gap-1.5">
+        <li><a href="/skills/">Skills</a></li>
+        <li aria-hidden="true">/</li>
+        <li>{skill.category}</li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="font-medium text-ink-900 dark:text-ink-100">{skill.name}</li>
+      </ol>
+    </nav>
+
     <div class="mb-8 flex flex-col gap-4 border-b border-ink-200 pb-6 dark:border-ink-800 lg:flex-row lg:items-end lg:justify-between">
-      <div>
-        <div class="mb-4"><TierBadge tier={skill.tier} /></div>
-        <h1 class="text-3xl font-semibold tracking-normal text-ink-950 dark:text-white">{skill.name}</h1>
-        <p class="mt-3 max-w-4xl leading-7 muted">{skill.description}</p>
+      <div class="min-w-0">
+        <div class="mb-3"><TierBadge tier={skill.tier} /></div>
+        <h1 class="section-title break-words">{skill.name}</h1>
+        <p class="mt-3 max-w-3xl leading-7 muted">{skill.description}</p>
       </div>
-      <a class="btn no-underline" href={`${githubRepoUrl}/tree/main/${skill.path}`}>View on GitHub</a>
+      <a class="btn shrink-0 no-underline hover:no-underline" href={`${githubRepoUrl}/tree/main/${skill.path}`}>View on GitHub</a>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
-      <article class="prose-skill" data-pagefind-body set:html={html} />
-      <aside class="space-y-5">
+      <article class="prose-skill min-w-0" data-pagefind-body set:html={html} />
+      <aside class="min-w-0 space-y-4">
         <section class="panel p-4">
           <div class="mb-3 flex items-center justify-between gap-3">
-            <h2 class="text-base font-semibold">Install</h2>
+            <h2 class="text-sm font-semibold">Install</h2>
             <CopyButton value={command} />
           </div>
           <pre class="terminal"><code>{command}</code></pre>
         </section>
 
         <section class="panel p-4">
-          <h2 class="mb-4 text-base font-semibold">Catalog fields</h2>
-          <dl class="divide-y divide-ink-200 text-sm dark:divide-ink-800">
-            {fields.map(([label, value]) => (
-              <div class="grid grid-cols-[8rem_1fr] gap-3 py-2">
+          <h2 class="eyebrow mb-2">Metrics</h2>
+          <dl class="divide-y divide-ink-100 text-sm dark:divide-ink-800">
+            {metricRows.map(([label, value]) => (
+              <div class="flex items-baseline justify-between gap-3 py-2">
                 <dt class="muted">{label}</dt>
-                <dd class="break-words font-medium">{value}</dd>
+                <dd class:list={["metric text-right font-medium", value === fmt(null) && "text-ink-400 dark:text-ink-500"]}>{value}</dd>
               </div>
             ))}
           </dl>
+          <p class="mt-2 border-t border-ink-100 pt-2.5 text-xs muted dark:border-ink-800">
+            {skill.metrics.measured_at
+              ? `Measured ${skill.metrics.measured_at}${skill.metrics.model ? ` on ${skill.metrics.model}` : ""}.`
+              : "Not yet measured — the benchmark harness fills these columns."} See <a href="/docs/metrics/">methodology</a>.
+          </p>
+        </section>
+
+        <section class="panel p-4">
+          <h2 class="eyebrow mb-2">Metadata</h2>
+          <dl class="divide-y divide-ink-100 text-sm dark:divide-ink-800">
+            {metadataRows.map(([label, value]) => (
+              <div class="flex items-baseline justify-between gap-3 py-2">
+                <dt class="shrink-0 muted">{label}</dt>
+                <dd class="break-words text-right font-medium">{value}</dd>
+              </div>
+            ))}
+            <div class="flex flex-col gap-1 py-2">
+              <dt class="muted">Path</dt>
+              <dd class="metric break-all text-xs">{skill.path}</dd>
+            </div>
+          </dl>
         </section>
       </aside>
+    </div>
     </div>
   </section>
 </BaseLayout>

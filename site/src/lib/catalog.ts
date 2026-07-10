@@ -88,13 +88,18 @@ export function getSkillHtml(skill: Skill): string {
   const markdown = readFileSync(join(repoRoot, skill.path, "SKILL.md"), "utf-8");
   return renderMarkdown(stripFrontmatter(markdown), {
     linkBase: `${githubRepoUrl}/tree/main/${skill.path}`,
+    demoteHeadings: true,
   });
 }
 
-export function getRepoMarkdownHtml(fileName: string): string {
+export function getRepoMarkdownHtml(
+  fileName: string,
+  options: { demoteHeadings?: boolean } = {}
+): string {
   const markdown = readFileSync(join(repoRoot, fileName), "utf-8");
   return renderMarkdown(markdown, {
     linkBase: githubRepoUrl,
+    demoteHeadings: options.demoteHeadings,
   });
 }
 

@@ -1,10 +1,19 @@
 ---
 import "../styles/global.css";
+import { githubRepoUrl } from "../lib/catalog";
 
 const {
   title = "Knackbox",
   description = "An open library of skills for AI agents",
 } = Astro.props as { title?: string; description?: string };
+
+const path = Astro.url.pathname;
+const nav = [
+  { href: "/skills/", label: "Skills" },
+  { href: "/docs/", label: "Docs" },
+  { href: "/contribute/", label: "Contribute" },
+];
+const isActive = (href: string) => path === href || path.startsWith(href);
 ---
 
 <!doctype html>
@@ -27,30 +36,36 @@ const {
     <slot name="head" />
   </head>
   <body class="min-h-screen">
-    <header class="border-b border-ink-200 bg-white/90 backdrop-blur dark:border-ink-800 dark:bg-ink-950/90">
-      <div class="wrap flex h-16 items-center justify-between gap-4">
-        <a href="/" class="flex items-center gap-3 text-ink-950 no-underline dark:text-white">
-          <span class="flex h-8 w-8 items-center justify-center border border-ink-900 bg-ink-950 font-mono text-sm font-bold text-white dark:border-white">Kb</span>
-          <span class="hidden font-semibold sm:inline">Knackbox</span>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="rail-section bg-ink-50 dark:bg-[#080707]">
+      <div class="wrap flex h-20 items-center justify-between gap-3">
+        <a href="/" class="brand-wordmark min-w-0" aria-label="Knackbox home">
+          <span class="brand-glyph" aria-hidden="true">kb</span>
+          <span class="hidden sm:inline">knackbox</span>
         </a>
-        <nav class="flex items-center gap-1 text-sm">
-          <a class="px-2 py-2 text-ink-700 no-underline hover:text-ink-950 dark:text-ink-200 dark:hover:text-white" href="/skills/">Skills</a>
-          <a class="px-2 py-2 text-ink-700 no-underline hover:text-ink-950 dark:text-ink-200 dark:hover:text-white" href="/docs/">Docs</a>
-          <a class="px-2 py-2 text-ink-700 no-underline hover:text-ink-950 dark:text-ink-200 dark:hover:text-white" href="/contribute/">Contribute</a>
-          <button type="button" class="btn ml-2 h-8 px-2 text-xs" data-theme-toggle aria-label="Toggle theme">Theme</button>
+        <nav class="flex items-center gap-0.5 sm:gap-2" aria-label="Main">
+          {nav.map((item) => (
+            <a class="nav-link" href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+          ))}
+          <a class="nav-link hidden md:inline-flex" href={githubRepoUrl}>GitHub</a>
+          <button type="button" class="btn btn-icon ml-1 h-9 w-9" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">
+            <span aria-hidden="true">◐</span>
+          </button>
         </nav>
       </div>
     </header>
-    <main>
+    <main id="main">
       <slot />
     </main>
-    <footer class="mt-16 border-t border-ink-200 py-8 dark:border-ink-800">
-      <div class="wrap flex flex-col gap-3 text-sm muted sm:flex-row sm:items-center sm:justify-between">
-        <p>Apache-2.0. Static catalog generated from repository skills.</p>
-        <div class="flex gap-4">
+    <footer class="rail-section border-t border-ink-300 dark:border-ink-800">
+      <div class="wrap flex flex-col gap-4 py-8 text-[12px] sm:flex-row sm:items-center sm:justify-between">
+        <p class="muted">[ Apache-2.0 ] Static catalog generated from repository skills.</p>
+        <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="Footer">
+          <a href="/skills/">Leaderboard</a>
           <a href="/docs/metrics/">Metrics</a>
-          <a href="https://github.com/shinzoxD/knackbox">GitHub</a>
-        </div>
+          <a href="/contribute/">Contribute</a>
+          <a href={githubRepoUrl}>GitHub</a>
+        </nav>
       </div>
     </footer>
     <script is:inline>
@@ -58,9 +73,13 @@ const {
         const copyButton = event.target.closest("[data-copy]");
         if (copyButton) {
           const original = copyButton.textContent;
-          await navigator.clipboard.writeText(copyButton.dataset.copy);
-          copyButton.textContent = "Copied";
-          copyButton.classList.add("copy-done");
+          try {
+            await navigator.clipboard.writeText(copyButton.dataset.copy);
+            copyButton.textContent = "Copied";
+            copyButton.classList.add("copy-done");
+          } catch {
+            copyButton.textContent = "Copy failed";
+          }
           window.setTimeout(() => {
             copyButton.textContent = original;
             copyButton.classList.remove("copy-done");

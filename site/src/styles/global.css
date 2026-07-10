@@ -4,124 +4,367 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-ink-50: #f7f8f8;
-  --color-ink-100: #e7eaeb;
-  --color-ink-200: #cdd3d5;
-  --color-ink-300: #a8b2b6;
-  --color-ink-400: #78868c;
-  --color-ink-500: #596970;
-  --color-ink-600: #445157;
-  --color-ink-700: #333e43;
-  --color-ink-800: #232c30;
-  --color-ink-900: #151c20;
-  --color-ink-950: #0c1114;
-  --color-leaf-100: #dbece2;
-  --color-leaf-300: #92c7a7;
-  --color-leaf-700: #286345;
-  --color-leaf-900: #153825;
-  --color-brass-100: #f7e7bb;
-  --color-brass-300: #d8ae46;
-  --color-brass-700: #775415;
-  --color-brass-900: #3f2a0a;
-  --color-steel-100: #dbe5ef;
-  --color-steel-300: #91abc8;
-  --color-steel-700: #31587d;
-  --color-steel-900: #182c44;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --color-ink-50: #f4f1ef;
+  --color-ink-100: #e9e5e2;
+  --color-ink-200: #d7d1ce;
+  --color-ink-300: #b8b2b2;
+  --color-ink-400: #948d8b;
+  --color-ink-500: #746d6b;
+  --color-ink-600: #5a5351;
+  --color-ink-700: #3d3838;
+  --color-ink-800: #282323;
+  --color-ink-900: #191616;
+  --color-ink-950: #0f0d0d;
+  --color-accent-100: #f0ecea;
+  --color-accent-200: #e1dcda;
+  --color-accent-300: #c9c2bf;
+  --color-accent-400: #aaa19e;
+  --color-accent-500: #817875;
+  --color-accent-600: #625a57;
+  --color-accent-700: #494240;
+  --color-accent-800: #302b29;
+  --color-accent-900: #211d1c;
+  --color-signal-200: #ddff9c;
+  --color-signal-300: #c7f36b;
+  --color-signal-700: #536c20;
+  --color-signal-900: #26330d;
+  --color-gold-200: #f0d995;
+  --color-gold-300: #d9b968;
+  --color-gold-700: #6d4f18;
+  --color-gold-900: #2d210c;
+  --color-jade-200: #a8d9bd;
+  --color-jade-300: #7bb894;
+  --color-jade-700: #26543d;
+  --color-jade-900: #13291f;
+  --font-sans: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 @layer base {
   :root {
     color-scheme: light;
+    --pagefind-ui-scale: 0.82;
+    --pagefind-ui-primary: var(--color-ink-950);
+    --pagefind-ui-text: var(--color-ink-900);
+    --pagefind-ui-background: #f4f1ef;
+    --pagefind-ui-border: var(--color-ink-300);
+    --pagefind-ui-tag: var(--color-ink-100);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0;
+    --pagefind-ui-image-border-radius: 0;
+    --pagefind-ui-font: var(--font-mono);
   }
 
   :root.dark {
     color-scheme: dark;
+    --pagefind-ui-primary: var(--color-ink-50);
+    --pagefind-ui-text: var(--color-ink-100);
+    --pagefind-ui-background: var(--color-ink-950);
+    --pagefind-ui-border: var(--color-ink-700);
+    --pagefind-ui-tag: var(--color-ink-900);
   }
 
   html {
-    @apply bg-ink-50 text-ink-900 antialiased;
+    @apply bg-ink-100 text-ink-900 antialiased;
   }
 
   html.dark {
-    @apply bg-ink-950 text-ink-50;
+    @apply bg-[#080707] text-ink-100;
   }
 
   body {
-    @apply min-h-screen font-sans;
+    @apply min-h-screen font-mono text-[14px] leading-6;
   }
 
   a {
-    @apply text-steel-700 underline-offset-4 hover:underline dark:text-steel-300;
+    @apply text-inherit underline decoration-ink-400 underline-offset-4 hover:decoration-current;
+  }
+
+  ::selection {
+    @apply bg-signal-300 text-ink-950;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal-300);
+    outline-offset: 3px;
   }
 }
 
 @layer components {
   .wrap {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[68rem] border-x border-ink-300 px-5 sm:px-8 lg:px-16 dark:border-ink-800;
   }
 
   .panel {
-    @apply min-w-0 border border-ink-200 bg-white shadow-sm dark:border-ink-800 dark:bg-ink-900;
+    @apply min-w-0 border border-ink-300 bg-ink-50 dark:border-ink-700 dark:bg-ink-950;
+  }
+
+  .rail-section {
+    @apply border-b border-ink-300 dark:border-ink-800;
   }
 
   .muted {
-    @apply text-ink-600 dark:text-ink-300;
+    @apply text-ink-600 dark:text-ink-400;
   }
 
-  .terminal {
-    @apply overflow-x-auto border border-ink-800 bg-ink-950 px-4 py-3 font-mono text-sm text-ink-50 shadow-sm;
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase text-ink-500 dark:text-ink-400;
+  }
+
+  .eyebrow::before {
+    content: "[ ";
+  }
+
+  .eyebrow::after {
+    content: " ]";
   }
 
   .metric {
     @apply font-mono tabular-nums;
   }
 
+  .terminal {
+    @apply overflow-x-auto border border-ink-700 bg-ink-950 px-4 py-3 font-mono text-[13px] leading-5 text-ink-200;
+  }
+
+  .terminal::selection,
+  .terminal *::selection {
+    @apply bg-signal-300 text-ink-950;
+  }
+
   .btn {
-    @apply inline-flex h-10 items-center justify-center gap-2 border border-ink-300 bg-white px-3 text-sm font-semibold text-ink-900 shadow-sm transition hover:border-ink-500 hover:bg-ink-100 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-50 dark:hover:border-ink-500 dark:hover:bg-ink-800;
+    @apply inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap border border-ink-400 bg-transparent px-3 font-mono text-[13px] font-semibold text-ink-900 transition-colors hover:border-ink-950 hover:bg-ink-950 hover:text-ink-50 dark:border-ink-700 dark:text-ink-100 dark:hover:border-ink-100 dark:hover:bg-ink-50 dark:hover:text-ink-950;
   }
 
   .btn-primary {
-    @apply border-steel-700 bg-steel-700 text-white hover:border-steel-900 hover:bg-steel-900 dark:border-steel-300 dark:bg-steel-300 dark:text-ink-950 dark:hover:border-white dark:hover:bg-white;
+    @apply border-ink-950 bg-ink-950 text-ink-50 hover:bg-transparent hover:text-ink-950 dark:border-ink-50 dark:bg-ink-50 dark:text-ink-950 dark:hover:bg-transparent dark:hover:text-ink-50;
+  }
+
+  .btn-xs {
+    @apply h-8 px-2 text-[12px];
+  }
+
+  .btn-icon {
+    @apply w-10 px-0;
+  }
+
+  .field {
+    @apply h-10 w-full min-w-0 border border-ink-400 bg-transparent px-3 font-mono text-[13px] text-ink-900 placeholder:text-ink-500 dark:border-ink-700 dark:text-ink-50 dark:placeholder:text-ink-500;
   }
 
   .chip {
-    @apply inline-flex h-8 items-center border border-ink-300 bg-white px-3 text-xs font-semibold text-ink-700 transition hover:border-ink-500 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-200;
+    @apply inline-flex h-8 items-center border border-ink-400 bg-transparent px-2.5 font-mono text-[12px] text-ink-600 transition-colors hover:border-ink-950 hover:text-ink-950 dark:border-ink-700 dark:text-ink-400 dark:hover:border-ink-200 dark:hover:text-ink-100;
   }
 
-  .chip[aria-pressed="true"],
-  .chip.is-active {
-    @apply border-steel-700 bg-steel-100 text-steel-900 dark:border-steel-300 dark:bg-steel-900 dark:text-steel-100;
+  .chip[aria-pressed="true"] {
+    @apply border-signal-700 bg-signal-200 text-ink-950 dark:border-signal-300 dark:bg-signal-300;
+  }
+
+  .seg {
+    @apply inline-flex items-stretch overflow-hidden border border-ink-400 bg-transparent dark:border-ink-700;
+  }
+
+  .seg > button {
+    @apply flex h-9 items-center border-r border-ink-400 px-2.5 font-mono text-[12px] capitalize text-ink-600 transition-colors last:border-r-0 hover:bg-ink-200 hover:text-ink-950 dark:border-ink-700 dark:text-ink-400 dark:hover:bg-ink-900 dark:hover:text-ink-100;
+  }
+
+  .seg > button[aria-pressed="true"] {
+    @apply bg-ink-950 text-ink-50 hover:bg-ink-950 hover:text-ink-50 dark:bg-ink-50 dark:text-ink-950 dark:hover:bg-ink-50 dark:hover:text-ink-950;
+  }
+
+  .seg > button:focus-visible {
+    outline-offset: -3px;
   }
 
   .copy-done {
-    @apply border-leaf-700 bg-leaf-100 text-leaf-900 dark:border-leaf-300 dark:bg-leaf-900 dark:text-leaf-100;
+    @apply border-signal-700 bg-signal-200 text-ink-950 dark:border-signal-300 dark:bg-signal-300;
+  }
+
+  .nav-link {
+    @apply border-b border-transparent px-2 py-1.5 font-mono text-[13px] text-ink-600 no-underline transition-colors hover:border-current hover:text-ink-950 hover:no-underline dark:text-ink-400 dark:hover:text-ink-50;
+  }
+
+  .nav-link[aria-current="page"] {
+    @apply border-current font-semibold text-ink-950 dark:text-ink-50;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:border focus:border-ink-950 focus:bg-ink-50 focus:px-3 focus:py-2 focus:font-semibold focus:text-ink-950 dark:focus:border-ink-50 dark:focus:bg-ink-950 dark:focus:text-ink-50;
+  }
+
+  .brand-wordmark {
+    @apply flex items-center gap-2 font-mono text-[17px] font-bold text-ink-950 no-underline hover:no-underline dark:text-ink-50;
+  }
+
+  .brand-glyph {
+    @apply inline-flex h-7 min-w-7 items-center justify-center bg-ink-950 px-1.5 text-[12px] text-ink-50 dark:bg-ink-50 dark:text-ink-950;
+  }
+
+  .hero-title {
+    @apply max-w-3xl text-[38px] font-bold leading-[1.35] text-ink-950 dark:text-ink-50;
+  }
+
+  .hero-command {
+    @apply mt-8 max-w-4xl border border-ink-300 dark:border-ink-700;
+  }
+
+  .hero-command-head {
+    @apply flex min-h-11 items-center justify-between border-b border-ink-300 px-4 dark:border-ink-700;
+  }
+
+  .figure-grid {
+    @apply grid grid-cols-2 divide-x divide-y divide-ink-300 sm:grid-cols-5 sm:divide-y-0 dark:divide-ink-800;
+  }
+
+  .figure {
+    @apply min-h-28 bg-ink-50 p-4 dark:bg-[#080707];
+  }
+
+  .section-title {
+    @apply text-[22px] font-bold leading-8 text-ink-950 dark:text-ink-50;
+  }
+
+  .tier-badge {
+    @apply inline-flex items-center whitespace-nowrap font-mono text-[11px] font-semibold leading-4;
+  }
+
+  .tier-badge::before {
+    content: "[";
+    @apply mr-0.5;
+  }
+
+  .tier-badge::after {
+    content: "]";
+    @apply ml-0.5;
+  }
+
+  .tier-core {
+    @apply text-gold-700 dark:text-gold-300;
+  }
+
+  .tier-verified {
+    @apply text-jade-700 dark:text-jade-300;
+  }
+
+  .tier-community {
+    @apply text-ink-600 dark:text-ink-400;
+  }
+
+  .sort-btn {
+    @apply flex w-full items-center gap-1 text-left font-semibold;
+  }
+
+  .sort-btn:focus-visible {
+    outline-offset: 1px;
+  }
+
+  .sort-ind {
+    @apply inline-block w-3 shrink-0 text-center text-[10px] leading-none;
+  }
+
+  .sort-ind::after {
+    content: "↕";
+    @apply opacity-40;
+  }
+
+  #pagefind-search {
+    --pagefind-ui-scale: 0.82 !important;
+    --pagefind-ui-primary: var(--color-ink-950) !important;
+    --pagefind-ui-text: var(--color-ink-900) !important;
+    --pagefind-ui-background: transparent !important;
+    --pagefind-ui-border: var(--color-ink-400) !important;
+    --pagefind-ui-tag: var(--color-ink-200) !important;
+    --pagefind-ui-border-width: 1px !important;
+    --pagefind-ui-border-radius: 0 !important;
+    --pagefind-ui-image-border-radius: 0 !important;
+    --pagefind-ui-font: var(--font-mono) !important;
+  }
+
+  .dark #pagefind-search {
+    --pagefind-ui-primary: var(--color-ink-50) !important;
+    --pagefind-ui-text: var(--color-ink-100) !important;
+    --pagefind-ui-border: var(--color-ink-700) !important;
+    --pagefind-ui-tag: var(--color-ink-900) !important;
+  }
+
+  #pagefind-search .pagefind-ui__form::before {
+    left: 12px !important;
+    top: 13px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  #pagefind-search .pagefind-ui__search-input {
+    height: 40px !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding: 0 54px 0 38px !important;
+    font-family: var(--font-mono) !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+  }
+
+  #pagefind-search .pagefind-ui__search-clear {
+    top: 1px !important;
+    right: 1px !important;
+    height: 38px !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    font-family: var(--font-mono) !important;
+    font-size: 12px !important;
+  }
+
+  th[aria-sort="ascending"] .sort-ind::after {
+    content: "↑";
+    @apply opacity-100;
+  }
+
+  th[aria-sort="descending"] .sort-ind::after {
+    content: "↓";
+    @apply opacity-100;
+  }
+
+  th[aria-sort] .sort-btn {
+    @apply text-ink-950 dark:text-signal-300;
   }
 
   .prose-skill {
-    @apply max-w-none text-ink-800 dark:text-ink-100;
+    @apply max-w-none text-[14px] leading-7 text-ink-800 dark:text-ink-300;
+  }
+
+  .prose-skill > :first-child {
+    @apply mt-0;
   }
 
   .prose-skill h1 {
-    @apply mb-5 text-3xl font-semibold tracking-normal text-ink-950 dark:text-white;
+    @apply mb-5 text-[30px] font-bold leading-10 text-ink-950 dark:text-ink-50;
   }
 
   .prose-skill h2 {
-    @apply mb-3 mt-9 border-b border-ink-200 pb-2 text-xl font-semibold text-ink-950 dark:border-ink-800 dark:text-white;
+    @apply mb-3 mt-10 border-b border-ink-300 pb-2 text-[20px] font-bold text-ink-950 dark:border-ink-800 dark:text-ink-50;
   }
 
   .prose-skill h3 {
-    @apply mb-2 mt-6 text-lg font-semibold text-ink-950 dark:text-white;
+    @apply mb-2 mt-7 text-[16px] font-bold text-ink-950 dark:text-ink-50;
+  }
+
+  .prose-skill h4,
+  .prose-skill h5,
+  .prose-skill h6 {
+    @apply mb-2 mt-6 text-[14px] font-bold text-ink-950 dark:text-ink-50;
   }
 
   .prose-skill p {
-    @apply my-4 leading-7;
+    @apply my-4;
+  }
+
+  .prose-skill a {
+    @apply underline decoration-ink-400;
   }
 
   .prose-skill ul,
   .prose-skill ol {
-    @apply my-4 space-y-2 pl-6 leading-7;
+    @apply my-4 space-y-1.5 pl-6;
   }
 
   .prose-skill ul {
@@ -132,12 +375,20 @@
     @apply list-decimal;
   }
 
+  .prose-skill li::marker {
+    @apply text-ink-500;
+  }
+
+  .prose-skill blockquote {
+    @apply my-5 border-l border-signal-700 pl-4 text-ink-600 dark:border-signal-300 dark:text-ink-400;
+  }
+
   .prose-skill code {
-    @apply bg-ink-100 px-1 py-0.5 font-mono text-sm text-ink-950 dark:bg-ink-800 dark:text-white;
+    @apply bg-ink-200 px-1 py-0.5 font-mono text-[13px] text-ink-950 dark:bg-ink-900 dark:text-ink-100;
   }
 
   .prose-skill pre {
-    @apply my-5 overflow-x-auto border border-ink-800 bg-ink-950 p-4 text-sm text-ink-50;
+    @apply my-5 overflow-x-auto border border-ink-700 bg-ink-950 p-4 text-[13px] leading-5 text-ink-200;
   }
 
   .prose-skill pre code {
@@ -145,15 +396,15 @@
   }
 
   .prose-skill table {
-    @apply my-5 w-full border-collapse text-sm;
+    @apply my-5 w-full border-collapse text-[13px] leading-6;
   }
 
   .prose-skill th,
   .prose-skill td {
-    @apply border border-ink-200 px-3 py-2 align-top dark:border-ink-800;
+    @apply border border-ink-300 px-3 py-2 text-left align-top dark:border-ink-800;
   }
 
   .prose-skill th {
-    @apply bg-ink-100 text-left font-semibold dark:bg-ink-800;
+    @apply bg-ink-200 font-bold text-ink-950 dark:bg-ink-900 dark:text-ink-50;
   }
 }
