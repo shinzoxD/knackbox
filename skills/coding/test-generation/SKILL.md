@@ -5,6 +5,12 @@ description: >-
   behavior. Use whenever the user asks for tests, shares untested code, fixes a
   defect that needs regression coverage, mentions coverage gaps, or wants help
   deciding what to test, even if they do not name a testing framework.
+license: Apache-2.0
+compatibility: Portable instructions; may use the project's existing test runner.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read-write"
+  knackbox.execution: "optional"
 ---
 
 # Test Generation

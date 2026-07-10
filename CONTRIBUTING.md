@@ -5,7 +5,12 @@ Thanks for helping grow the library! This guide covers everything you need to su
 ## Add a skill in five steps
 
 1. **Fork** this repo and create a branch.
-2. **Copy the template**: `cp -r template skills/<category>/<your-skill-name>` and edit `SKILL.md`.
+2. **Scaffold the skill** with the command below, then replace every `TODO`:
+
+   ```bash
+   python scripts/new_skill.py <category> <your-skill-name> \
+     --description "What it does and when the agent should use it"
+   ```
 3. **Test it**: run your skill against at least 2–3 real prompts in Claude Code or Claude.ai and make sure the output is what you intended.
 4. **Validate**: `python scripts/validate.py` must pass (CI runs the same script).
 5. **Open a PR** using the template, including the prompts you tested with.
@@ -18,6 +23,7 @@ We aim to review PRs within 48 hours.
 - Skill names are lowercase-with-hyphens, at most 64 characters, and **must match the folder name** exactly.
 - Current categories: `coding`, `writing`, `documents`, `data`, `research`, `productivity`. Want a new category? Open an issue first.
 - Optional subfolders: `scripts/` (executable helpers), `references/` (docs loaded on demand), `assets/` (templates, fonts, images).
+- Every skill declares `license`, `compatibility`, and `metadata` permission fields for network, filesystem, and command execution.
 
 ## The quality bar
 
@@ -32,6 +38,8 @@ Beyond the description:
 - Write instructions for the *model*, not marketing copy for humans. Be concrete: formats, rules, good/bad examples, edge cases.
 - Include no secrets, credentials, or personal data anywhere in the skill.
 - If your skill ships `scripts/`, keep them short, plainly written, and free of undisclosed network calls — see [SECURITY.md](SECURITY.md).
+- Replace the benchmark scaffold with at least five realistic trigger prompts, five nearby non-trigger prompts, and three substantive tasks with observable criteria.
+- Ground the instructions in real expertise: tested workflows, failure cases, runbooks, schemas, or repeated corrections. Generic advice the base model already follows is not enough.
 
 ## Improving existing skills
 
@@ -39,7 +47,7 @@ Fixes and improvements to existing skills are just as valuable as new ones. Keep
 
 ## Tiers and benchmarks
 
-Every merged skill starts at **🧪 community** tier. To move up to **✅ verified**, add a `benchmarks/prompts.json` to your skill (schema and thresholds in [METRICS.md](METRICS.md)) — the example prompts from your PR are the natural seed for it. **⭐ core** is maintainer-curated on top of verified. Tier assignments live in `tiers.yaml`, which only maintainers edit.
+Every merged skill starts at **🧪 community** tier. All skills must include `benchmarks/prompts.json`; suite coverage alone does not confer Verified status. To move up to **✅ verified**, publish measurements that meet the thresholds in [METRICS.md](METRICS.md) and pass human review under [EVALUATION.md](EVALUATION.md). **⭐ core** is maintainer-curated on top of verified. Tier assignments live in `tiers.yaml`, which only maintainers edit.
 
 ## Sign your work
 

@@ -5,6 +5,12 @@ description: Write blog posts and articles with a strong hook, clear
   post, article, newsletter issue, or long-form web content, wants a draft
   "for my blog/site", or shares an outline or topic to turn into a post —
   regardless of length or how casually they ask.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Blog Posts

@@ -5,6 +5,12 @@ description: >-
   calibrated verdicts with citations. Use whenever the user asks whether a claim
   is true, wants information verified, shares a statistic or viral assertion,
   needs sources checked, or asks to audit factual accuracy in a draft.
+license: Apache-2.0
+compatibility: Requires access to current authoritative sources for external verification.
+metadata:
+  knackbox.network: "required"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Fact Checking

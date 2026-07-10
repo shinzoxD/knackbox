@@ -5,6 +5,12 @@ description: >-
   scope, plan, costs, risks, and a clear approval request. Use whenever the user
   needs a business case, internal proposal, project charter, funding request, or
   stakeholder pitch, even if they only provide scattered notes or an idea.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Project Proposals

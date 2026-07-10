@@ -5,6 +5,12 @@ description: Summarize papers, articles, and reports into structured
   user shares a paper, study, PDF, or article and asks what it says,
   wants key findings or limitations, asks "is this study any good", or
   needs several sources synthesized into one brief.
+license: Apache-2.0
+compatibility: Network access is optional when the user supplies all source material.
+metadata:
+  knackbox.network: "optional"
+  knackbox.filesystem: "read"
+  knackbox.execution: "none"
 ---
 
 # Research Summaries

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 import unittest
 from contextlib import redirect_stdout
@@ -18,6 +19,7 @@ from run_benchmarks import (
     normalize_judgment,
     print_plan,
 )
+from new_skill import scaffold
 
 
 class BenchmarkLogicTests(unittest.TestCase):
@@ -59,6 +61,7 @@ class BenchmarkLogicTests(unittest.TestCase):
 
     def test_apply_measurement_merges_catalog_metrics(self) -> None:
         skill = {
+            "content_digest": "sha256:current",
             "metrics": {
                 "efficiency": 90.0,
                 "trigger_accuracy": None,
@@ -70,6 +73,7 @@ class BenchmarkLogicTests(unittest.TestCase):
             }
         }
         measurement = {
+            "content_digest": "sha256:current",
             "measured_at": "2026-07-09T00:00:00Z",
             "model": "claude-sonnet-4-6",
             "trigger": {"precision": 75.0, "recall": 88.9, "f1": 81.4},
@@ -83,6 +87,21 @@ class BenchmarkLogicTests(unittest.TestCase):
         self.assertEqual(skill["metrics"]["skill_score"], 75.8)
         self.assertEqual(skill["metrics"]["measured_at"], "2026-07-09T00:00:00Z")
         self.assertEqual(skill["metrics"]["model"], "claude-sonnet-4-6")
+
+    def test_apply_measurement_ignores_stale_content_digest(self) -> None:
+        skill = {
+            "content_digest": "sha256:current",
+            "metrics": {"efficiency": 100.0, "skill_score": None},
+        }
+        measurement = {
+            "content_digest": "sha256:old",
+            "trigger": {"f1": 100.0},
+            "uplift": {"win_rate": 100.0},
+        }
+
+        apply_measurement(skill, measurement)
+
+        self.assertIsNone(skill["metrics"]["skill_score"])
 
     def test_apply_measurement_leaves_missing_measurements_null(self) -> None:
         skill = {"metrics": {"efficiency": 100.0, "skill_score": None}}
@@ -118,6 +137,28 @@ class BenchmarkLogicTests(unittest.TestCase):
         self.assertIn("near miss", output.getvalue())
         self.assertIn("task prompt", output.getvalue())
         self.assertIn("criterion", output.getvalue())
+
+    def test_new_skill_scaffolds_permissions_and_benchmarks(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "skills" / "coding").mkdir(parents=True)
+            path = scaffold(
+                root,
+                "coding",
+                "example-skill",
+                "Create a useful example. Use whenever a user asks for the example workflow.",
+                network="optional",
+                filesystem="read",
+                execution="none",
+            )
+
+            skill_text = (path / "SKILL.md").read_text(encoding="utf-8")
+            suite = json.loads((path / "benchmarks" / "prompts.json").read_text(encoding="utf-8"))
+            self.assertIn('knackbox.network: "optional"', skill_text)
+            self.assertIn('knackbox.filesystem: "read"', skill_text)
+            self.assertEqual(len(suite["should_trigger"]), 5)
+            self.assertEqual(len(suite["should_not_trigger"]), 5)
+            self.assertEqual(len(suite["tasks"]), 3)
 
 
 if __name__ == "__main__":

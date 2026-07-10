@@ -5,6 +5,12 @@ description: Review code changes for bugs, security issues, and maintainability
   diff, pull request, or code snippet and asks for review, feedback, "does
   this look right", "find issues", or "check my code" — even for small
   snippets or partial files.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read"
+  knackbox.execution: "none"
 ---
 
 # Code Review

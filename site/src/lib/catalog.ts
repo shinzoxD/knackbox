@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import catalogData from "../../../catalog.json";
+import packsData from "../../../packs.json";
 import { renderMarkdown, stripFrontmatter } from "./markdown";
 
 declare const __REPO_ROOT__: string;
@@ -30,8 +31,14 @@ export type Skill = {
   has_benchmarks: boolean;
   source_url: string;
   license: string;
+  compatibility: string;
   content_digest: string;
   security_profile: "instructions-only" | "includes-scripts";
+  permissions: {
+    network: "none" | "optional" | "required";
+    filesystem: "none" | "read" | "read-write";
+    execution: "none" | "optional" | "required";
+  };
   metrics: SkillMetrics;
 };
 
@@ -42,9 +49,17 @@ type Catalog = {
   skills: Skill[];
 };
 
+export type SkillPack = {
+  slug: string;
+  name: string;
+  description: string;
+  skills: string[];
+};
+
 const repoRoot = __REPO_ROOT__;
 
 export const catalog = catalogData as Catalog;
+export const packs = packsData.packs as SkillPack[];
 export const allSkills = [...catalog.skills].sort((a, b) =>
   a.tier === b.tier
     ? a.name.localeCompare(b.name)

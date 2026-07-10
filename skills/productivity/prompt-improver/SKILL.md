@@ -5,6 +5,12 @@ description: Rewrite and strengthen prompts for AI models — diagnose
   prompt. Use whenever the user shares a prompt to improve, asks why an
   AI's output was bad or inconsistent, wants a system prompt written, or
   says "make this prompt better" for any model or agent.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Prompt Improver

@@ -5,6 +5,12 @@ description: >-
   scannable structure, and focused calls to action. Use whenever the user needs
   homepage, product, service, waitlist, launch, or campaign copy, asks to improve
   website messaging or conversion, or shares a page brief that needs words.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Landing Page Copy

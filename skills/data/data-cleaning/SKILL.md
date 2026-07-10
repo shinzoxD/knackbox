@@ -6,6 +6,12 @@ description: >-
   whenever the user has inconsistent CSV or spreadsheet data, asks to prepare
   data for analysis, merge records, standardize columns, remove duplicates, or
   fix data-quality problems.
+license: Apache-2.0
+compatibility: Portable instructions; may use local tabular-data processing tools.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read-write"
+  knackbox.execution: "optional"
 ---
 
 # Data Cleaning

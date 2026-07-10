@@ -52,6 +52,20 @@ Use `--dest DIR` to select another Agent Skills-compatible directory, or `--forc
 
 **Anything else** — any agent runtime that supports the Agent Skills format can load these folders as-is.
 
+## Starter packs
+
+Curated packs provide explicit multi-skill installation commands for common workflows:
+
+| Pack | Skills |
+|---|---|
+| Developer Essentials | API design, debugging, tests, review, commits, and PR descriptions |
+| Data Workbench | Data cleaning, CSV analysis, and visualization |
+| Research Rigor | Fact checking, source summaries, and literature reviews |
+| Clear Writing | Email, articles, copy editing, and landing pages |
+| Project Leadership | Decisions, proposals, planning, and meeting notes |
+
+Browse commands at [knackbox.pages.dev/packs](https://knackbox.pages.dev/packs/) or consume [`packs.json`](packs.json) directly.
+
 ## Browse the catalog
 
 Skills are ranked the way [Artificial Analysis](https://artificialanalysis.ai) ranks models — independent measurement columns plus a composite score, with a coarse tier for quick filtering: **⭐ core** (maintainer-curated, suite-covered, and maintained), **✅ verified** (suite-covered and manually validated until measured thresholds are published), **🧪 community** (passes CI validation). Every skill ships a benchmark suite; unmeasured score fields remain visibly empty rather than being estimated. Full methodology, formulas, and how to get your skill Verified: [METRICS.md](METRICS.md).
@@ -86,7 +100,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [landing-page-copy](skills/writing/landing-page-copy) | writing | 503 | Write and improve landing-page copy with a clear offer, credible proof, scannable structure, and focused call… |
 <!-- CATALOG:END -->
 
-The same data is available as machine-readable [`catalog.json`](catalog.json), which also powers the project website. Each entry includes its source URL, Apache-2.0 license, executable-code profile, and a deterministic SHA-256 digest of the complete skill package.
+The same data is available as machine-readable [`catalog.json`](catalog.json), which also powers the project website. Each entry includes its source URL, Apache-2.0 license, compatibility notes, declared network/filesystem/execution permissions, executable-code profile, and a deterministic SHA-256 digest of the complete skill package.
 
 ## Website
 
@@ -119,6 +133,10 @@ python scripts/validate.py
 ```
 
 Looking for ideas? Check the [skill request issues](../../issues?q=is%3Aissue+is%3Aopen+label%3Askill-request).
+
+Questions and early proposals belong in [GitHub Discussions](../../discussions). See
+[SUPPORT.md](SUPPORT.md) for where to ask for help, [GOVERNANCE.md](GOVERNANCE.md) for how decisions and tiers are managed,
+and [EVALUATION.md](EVALUATION.md) for the reproducible benchmark protocol.
 
 ## Security
 

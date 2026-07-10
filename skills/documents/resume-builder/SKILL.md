@@ -5,6 +5,12 @@ description: Build or rewrite resumes and tailor them to a specific job
   Use whenever the user shares a resume or CV, asks to improve or tailor
   one, wants bullets rewritten, or says "help me apply for this job" with
   a job posting — even if they only paste their work history as rough notes.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read"
+  knackbox.execution: "none"
 ---
 
 # Resume Builder

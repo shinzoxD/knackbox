@@ -6,6 +6,12 @@ description: Draft and rewrite professional emails that get replies —
   message, mentions following up, declining, requesting, apologizing, or
   cold outreach — even if they just paste an email thread with "help me
   respond".
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Email Drafts

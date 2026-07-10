@@ -17,6 +17,7 @@ Exits 1 if any errors were found. Warnings never fail the build.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -31,13 +32,21 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = REPO_ROOT / "skills"
 TIERS_PATH = REPO_ROOT / "tiers.yaml"
 MEASUREMENTS_DIR = REPO_ROOT / "measurements"
+PACKS_PATH = REPO_ROOT / "packs.json"
 MIN_TRIGGER_PROMPTS = 5
+EVALUATION_PROTOCOL = "knackbox-eval-v1"
 
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 MAX_NAME_LEN = 64
 MAX_DESC_LEN = 1024
 MIN_DESC_WARN = 50
 MAX_BODY_LINES = 500
+REQUIRED_LICENSE = "Apache-2.0"
+PERMISSION_FIELDS = {
+    "knackbox.network": {"none", "optional", "required"},
+    "knackbox.filesystem": {"none", "read", "read-write"},
+    "knackbox.execution": {"none", "optional", "required"},
+}
 
 LINK_RE = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 SKIP_LINK_PREFIXES = ("http://", "https://", "mailto:", "#", "data:")
@@ -63,6 +72,18 @@ def err(path: Path, msg: str) -> None:
 
 def warn(path: Path, msg: str) -> None:
     warnings.append(f"WARNING {path.relative_to(REPO_ROOT)}: {msg}")
+
+
+def skill_digest(skill_dir: Path) -> str:
+    """Return the package digest used by catalog and measurement files."""
+    digest = hashlib.sha256()
+    for path in sorted(item for item in skill_dir.rglob("*") if item.is_file()):
+        relative = path.relative_to(skill_dir).as_posix().encode("utf-8")
+        digest.update(relative)
+        digest.update(b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
+    return f"sha256:{digest.hexdigest()}"
 
 
 def split_frontmatter(text: str) -> tuple[str | None, str]:
@@ -143,6 +164,31 @@ def validate_skill(skill_dir: Path, category: str) -> None:
             warn(skill_md, "description is very short — say when to trigger, "
                            "not just what the skill does")
 
+    license_name = fm.get("license")
+    if license_name != REQUIRED_LICENSE:
+        err(skill_md, f"license must be '{REQUIRED_LICENSE}'")
+
+    compatibility = fm.get("compatibility")
+    if compatibility is not None:
+        if not isinstance(compatibility, str) or not compatibility.strip():
+            err(skill_md, "compatibility must be a non-empty string when provided")
+        elif len(compatibility) > 500:
+            err(skill_md, "compatibility exceeds 500 characters")
+
+    metadata = fm.get("metadata")
+    if not isinstance(metadata, dict):
+        err(skill_md, "metadata must declare Knackbox permission fields")
+        metadata = {}
+    for field, allowed in PERMISSION_FIELDS.items():
+        value = metadata.get(field)
+        if value not in allowed:
+            choices = ", ".join(sorted(allowed))
+            err(skill_md, f"metadata.{field} must be one of: {choices}")
+
+    has_scripts = (skill_dir / "scripts").is_dir()
+    if has_scripts and metadata.get("knackbox.execution") == "none":
+        err(skill_md, "skills with scripts cannot declare knackbox.execution: none")
+
     body_lines = body.strip().count("\n") + 1
     if body_lines > MAX_BODY_LINES:
         err(skill_md, f"body is {body_lines} lines (max {MAX_BODY_LINES}); "
@@ -174,6 +220,8 @@ def check_benchmarks(skill_dir: Path) -> None:
         elif len(prompts) < MIN_TRIGGER_PROMPTS:
             warn(bench, f"'{key}' has {len(prompts)} prompt(s); "
                         f"{MIN_TRIGGER_PROMPTS}+ needed for a meaningful measurement")
+        elif any("TODO" in prompt.upper() for prompt in prompts):
+            err(bench, f"'{key}' still contains TODO placeholder prompts")
     tasks = data.get("tasks", [])
     if not isinstance(tasks, list):
         err(bench, "'tasks' must be a list")
@@ -183,6 +231,10 @@ def check_benchmarks(skill_dir: Path) -> None:
                 err(bench, f"tasks[{i}] must be an object with a 'prompt'")
             elif not task.get("criteria"):
                 warn(bench, f"tasks[{i}] has no 'criteria' — graders need them")
+            elif "TODO" in str(task.get("prompt", "")).upper() or any(
+                "TODO" in str(criterion).upper() for criterion in task.get("criteria") or []
+            ):
+                err(bench, f"tasks[{i}] still contains TODO placeholders")
 
 
 def check_tiers(known_skills: dict[str, Path]) -> None:
@@ -229,9 +281,58 @@ def check_measurements(known_skills: dict[str, Path]) -> None:
         if not isinstance(data, dict):
             err(path, "measurement file must contain a JSON object")
             continue
-        for key in ("measured_at", "model", "skill_commit", "runs", "trigger", "uplift"):
+        for key in (
+            "protocol_version", "measured_at", "model", "skill_commit",
+            "content_digest", "runs", "trigger", "uplift"
+        ):
             if key not in data:
                 err(path, f"measurement is missing required field: {key}")
+        if data.get("protocol_version") != EVALUATION_PROTOCOL:
+            err(path, f"protocol_version must be '{EVALUATION_PROTOCOL}'")
+        if not isinstance(data.get("runs"), int) or data.get("runs", 0) < 3:
+            err(path, "published measurements require at least 3 runs")
+        skill_dir = known_skills.get(path.stem)
+        if skill_dir and data.get("content_digest") != skill_digest(skill_dir):
+            err(path, "content_digest is stale; rerun the benchmark for the current skill package")
+
+
+def check_packs(known_skills: dict[str, Path]) -> None:
+    """Validate curated pack names and references."""
+    if not PACKS_PATH.is_file():
+        err(PACKS_PATH, "missing starter-pack catalog")
+        return
+    try:
+        data = json.loads(PACKS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        err(PACKS_PATH, f"invalid JSON: {exc}")
+        return
+    packs = data.get("packs") if isinstance(data, dict) else None
+    if data.get("version") != 1 or not isinstance(packs, list):
+        err(PACKS_PATH, "must contain version 1 and a packs list")
+        return
+    seen: set[str] = set()
+    for index, pack in enumerate(packs):
+        if not isinstance(pack, dict):
+            err(PACKS_PATH, f"packs[{index}] must be an object")
+            continue
+        slug = pack.get("slug")
+        if not isinstance(slug, str) or not NAME_RE.fullmatch(slug):
+            err(PACKS_PATH, f"packs[{index}].slug must be lowercase-with-hyphens")
+        elif slug in seen:
+            err(PACKS_PATH, f"duplicate pack slug: {slug}")
+        else:
+            seen.add(slug)
+        if not pack.get("name") or not pack.get("description"):
+            err(PACKS_PATH, f"packs[{index}] requires name and description")
+        skill_names = pack.get("skills")
+        if not isinstance(skill_names, list) or len(skill_names) < 2:
+            err(PACKS_PATH, f"packs[{index}].skills must list at least two skills")
+            continue
+        if len(skill_names) != len(set(skill_names)):
+            err(PACKS_PATH, f"packs[{index}] contains duplicate skills")
+        for name in skill_names:
+            if name not in known_skills:
+                err(PACKS_PATH, f"pack '{slug}' references unknown skill '{name}'")
 
 
 def main() -> int:
@@ -261,6 +362,7 @@ def main() -> int:
 
     check_tiers(known_skills)
     check_measurements(known_skills)
+    check_packs(known_skills)
 
     for line in errors + warnings:
         print(line)

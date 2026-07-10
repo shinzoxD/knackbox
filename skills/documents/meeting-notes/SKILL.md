@@ -5,6 +5,12 @@ description: Turn raw meeting transcripts, chat logs, or rough notes into
   whenever the user shares a transcript or messy notes, asks for meeting
   minutes, wants action items extracted, or says things like "clean up my
   notes from the standup" — even if they don't say the word "minutes".
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Meeting Notes

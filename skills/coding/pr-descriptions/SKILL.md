@@ -4,6 +4,12 @@ description: Write pull request titles and descriptions that reviewers can
   act on fast. Use whenever the user asks for a PR description, opens or
   prepares a pull/merge request, shares commits or a branch diff to
   summarize, or says "write up this PR" — even if they only paste a diff.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read"
+  knackbox.execution: "optional"
 ---
 
 # PR Descriptions

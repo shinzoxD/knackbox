@@ -41,6 +41,11 @@ const metadataRows = [
   ["Measured at", fmt(skill.metrics.measured_at)],
   ["Model", fmt(skill.metrics.model)],
 ];
+const permissionRows = [
+  ["Network", skill.permissions.network],
+  ["Filesystem", skill.permissions.filesystem],
+  ["Execution", skill.permissions.execution],
+];
 ---
 
 <BaseLayout title={`${skill.name} | Knackbox`} description={skill.description}>
@@ -77,6 +82,21 @@ const metadataRows = [
         </section>
 
         <section class="panel p-4">
+          <h2 class="eyebrow mb-2">Permissions</h2>
+          <dl class="divide-y divide-ink-100 text-sm dark:divide-ink-800">
+            {permissionRows.map(([label, value]) => (
+              <div class="flex items-baseline justify-between gap-3 py-2">
+                <dt class="muted">{label}</dt>
+                <dd class="metric text-right font-medium">{value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="mt-2 border-t border-ink-100 pt-2.5 text-xs muted dark:border-ink-800">
+            Declared capability expectations. Your agent still controls actual tool approval.
+          </p>
+        </section>
+
+        <section class="panel p-4">
           <h2 class="eyebrow mb-2">Metrics</h2>
           <dl class="divide-y divide-ink-100 text-sm dark:divide-ink-800">
             {metricRows.map(([label, value]) => (
@@ -105,6 +125,10 @@ const metadataRows = [
             <div class="flex flex-col gap-1 py-2">
               <dt class="muted">Path</dt>
               <dd class="metric break-all text-xs">{skill.path}</dd>
+            </div>
+            <div class="flex flex-col gap-1 py-2">
+              <dt class="muted">Compatibility</dt>
+              <dd class="text-xs leading-5">{skill.compatibility}</dd>
             </div>
             <div class="flex flex-col gap-1 py-2">
               <dt class="muted">Content digest</dt>

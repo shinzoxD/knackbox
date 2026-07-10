@@ -5,6 +5,12 @@ description: >-
   a clear evidence-based recommendation. Use whenever the user must choose
   between tools, vendors, architectures, priorities, or policies, asks for pros
   and cons, or needs a decision recorded for stakeholders.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Decision Memos

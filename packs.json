@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "slug": "developer-essentials",
+      "name": "Developer Essentials",
+      "description": "Plan, implement, test, review, and document software changes with a consistent engineering workflow.",
+      "skills": ["api-design", "debugging", "test-generation", "code-review", "commit-messages", "pr-descriptions"]
+    },
+    {
+      "slug": "data-workbench",
+      "name": "Data Workbench",
+      "description": "Clean tabular inputs, compute defensible findings, and communicate them with honest visualizations.",
+      "skills": ["data-cleaning", "csv-analysis", "data-visualization"]
+    },
+    {
+      "slug": "research-rigor",
+      "name": "Research Rigor",
+      "description": "Verify claims, summarize individual sources, and synthesize a wider body of evidence without overstating certainty.",
+      "skills": ["fact-checking", "research-summaries", "literature-reviews"]
+    },
+    {
+      "slug": "clear-writing",
+      "name": "Clear Writing",
+      "description": "Draft, edit, and adapt professional writing across email, articles, and product pages.",
+      "skills": ["email-drafts", "blog-posts", "copy-editing", "landing-page-copy"]
+    },
+    {
+      "slug": "project-leadership",
+      "name": "Project Leadership",
+      "description": "Turn uncertain initiatives into decisions, proposals, execution plans, and durable meeting records.",
+      "skills": ["decision-memos", "project-proposals", "task-planning", "meeting-notes"]
+    }
+  ]
+}

@@ -6,6 +6,12 @@ description: >-
   the user is planning endpoints, reviewing an API specification, naming
   resources, defining request or response shapes, or asking how services
   should communicate, even if they only share a rough route list.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # API Design

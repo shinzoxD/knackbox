@@ -26,3 +26,20 @@ body:
         2. "Why is this query slow?"
     validations:
       required: true
+  - type: textarea
+    id: near_misses
+    attributes:
+      label: Nearby prompts that should not trigger it
+      description: List adjacent requests that belong to another skill or normal agent behavior.
+      placeholder: |
+        1. "Write a SQL migration"
+        2. "Explain what this query returns"
+    validations:
+      required: true
+  - type: textarea
+    id: expertise
+    attributes:
+      label: Evidence or domain expertise
+      description: What real workflow, failure case, runbook, schema, or repeated correction should this skill encode?
+    validations:
+      required: true

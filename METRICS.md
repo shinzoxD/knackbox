@@ -4,6 +4,8 @@ This library ranks skills the way [Artificial Analysis](https://artificialanalys
 
 Everything measurable today is computed automatically by `scripts/build_catalog.py` and published in `catalog.json`, which the website reads. Fields that need the benchmark harness are `null` until measured; the leaderboard shows them as "—" and never fakes a number.
 
+The complete execution protocol, evidence format, review requirements, and promotion rules are documented in [EVALUATION.md](EVALUATION.md). Published results must include raw model outputs and the skill content digest so a score can be audited and reproduced.
+
 ## The leaderboard columns
 
 | Column | What it measures | How | Status |

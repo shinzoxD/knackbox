@@ -5,6 +5,12 @@ description: >-
   preserving the author's meaning and voice. Use whenever the user asks to edit,
   proofread, polish, tighten, simplify, or improve writing, shares a draft with
   minimal instructions, or wants grammar and style issues fixed.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read"
+  knackbox.execution: "none"
 ---
 
 # Copy Editing

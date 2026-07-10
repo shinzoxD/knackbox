@@ -5,6 +5,12 @@ description: >-
   pages that users can follow successfully. Use whenever the user asks for docs,
   a README, setup instructions, an operational runbook, API usage guidance, or
   an explanation of how a system works, including requests to document code.
+license: Apache-2.0
+compatibility: Portable instructions; may inspect a workspace and run existing verification commands.
+metadata:
+  knackbox.network: "optional"
+  knackbox.filesystem: "read-write"
+  knackbox.execution: "optional"
 ---
 
 # Technical Documentation

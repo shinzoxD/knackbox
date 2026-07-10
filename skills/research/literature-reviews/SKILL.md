@@ -6,6 +6,12 @@ description: >-
   asks for a literature review, state-of-the-art overview, evidence map,
   comparison of studies, research gap analysis, or help structuring sources for
   an academic or technical review.
+license: Apache-2.0
+compatibility: Network access is optional when the user supplies all source material.
+metadata:
+  knackbox.network: "optional"
+  knackbox.filesystem: "read"
+  knackbox.execution: "none"
 ---
 
 # Literature Reviews

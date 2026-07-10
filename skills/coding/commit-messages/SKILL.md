@@ -5,6 +5,12 @@ description: Write clear, conventional git commit messages from diffs or
   is about to commit changes, mentions "git commit", shares a diff or staged
   changes that need summarizing, or finishes a coding task that will be
   committed — even if they don't ask about message formatting.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read"
+  knackbox.execution: "optional"
 ---
 
 # Commit Messages

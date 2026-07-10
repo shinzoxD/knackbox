@@ -5,6 +5,12 @@ description: Diagnose bugs systematically instead of guessing — form
   shares an error message, stack trace, unexpected behavior, failing test,
   or says things like "why doesn't this work", "it crashes", or "I'm stuck
   on this bug" — even if they only paste an error with no question.
+license: Apache-2.0
+compatibility: Portable instructions; may use the project's existing test and diagnostic tools.
+metadata:
+  knackbox.network: "optional"
+  knackbox.filesystem: "read-write"
+  knackbox.execution: "optional"
 ---
 
 # Debugging

@@ -113,7 +113,7 @@ def load_measurements() -> dict[str, dict]:
 
 def apply_measurement(skill: dict, measurement: dict | None) -> dict:
     """Merge a measurement payload into a catalog skill in place."""
-    if not measurement:
+    if not measurement or measurement.get("content_digest") != skill.get("content_digest"):
         return skill
     metrics = skill["metrics"]
     trigger = measurement.get("trigger") or {}
@@ -154,6 +154,7 @@ def collect_skills(tiers: dict[str, str], measurements: dict[str, dict] | None =
             fm, body = frontmatter(skill_md)
             name = str(fm.get("name", skill_dir.name))
             description = " ".join(str(fm.get("description", "")).split())
+            metadata = fm.get("metadata") if isinstance(fm.get("metadata"), dict) else {}
 
             context_tokens = estimate_tokens(body)
             reference_tokens = sum(
@@ -178,9 +179,15 @@ def collect_skills(tiers: dict[str, str], measurements: dict[str, dict] | None =
                 "has_scripts": has_scripts,
                 "has_benchmarks": (skill_dir / "benchmarks" / "prompts.json").is_file(),
                 "source_url": f"{SOURCE_REPO_URL}/tree/main/{skill_dir.relative_to(REPO_ROOT).as_posix()}",
-                "license": LICENSE_ID,
+                "license": str(fm.get("license") or LICENSE_ID),
+                "compatibility": str(fm.get("compatibility") or ""),
                 "content_digest": skill_digest(skill_dir),
                 "security_profile": "includes-scripts" if has_scripts else "instructions-only",
+                "permissions": {
+                    "network": str(metadata.get("knackbox.network") or "none"),
+                    "filesystem": str(metadata.get("knackbox.filesystem") or "none"),
+                    "execution": str(metadata.get("knackbox.execution") or "none"),
+                },
                 "metrics": {
                     "efficiency": efficiency,
                     "trigger_accuracy": None,

@@ -14,7 +14,9 @@ import os
 import random
 import subprocess
 import sys
+import time
 from collections import Counter
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from benchmark_logic import trigger_metrics, win_rate
@@ -24,6 +26,15 @@ CATALOG_PATH = REPO_ROOT / "catalog.json"
 SKILLS_DIR = REPO_ROOT / "skills"
 MEASUREMENTS_DIR = REPO_ROOT / "measurements"
 DEFAULT_MODEL = "claude-sonnet-4-6"
+PROTOCOL_VERSION = "knackbox-eval-v1"
+
+
+@dataclass(frozen=True)
+class ModelResult:
+    text: str
+    input_tokens: int | None
+    output_tokens: int | None
+    duration_ms: int
 
 
 def load_json(path: Path) -> dict:
@@ -116,7 +127,8 @@ def messages_client(model: str):
     return Anthropic(), model
 
 
-def call_model(client, model: str, system: str, prompt: str, max_tokens: int = 800) -> str:
+def call_model(client, model: str, system: str, prompt: str, max_tokens: int = 800) -> ModelResult:
+    started = time.perf_counter()
     response = client.messages.create(
         model=model,
         max_tokens=max_tokens,
@@ -129,7 +141,13 @@ def call_model(client, model: str, system: str, prompt: str, max_tokens: int = 8
         text = getattr(block, "text", None)
         if text:
             parts.append(text)
-    return "\n".join(parts).strip()
+    usage = getattr(response, "usage", None)
+    return ModelResult(
+        text="\n".join(parts).strip(),
+        input_tokens=getattr(usage, "input_tokens", None),
+        output_tokens=getattr(usage, "output_tokens", None),
+        duration_ms=round((time.perf_counter() - started) * 1000),
+    )
 
 
 def normalize_choice(value: str, known_names: set[str]) -> str:
@@ -162,22 +180,43 @@ def evaluate_trigger(client, model: str, catalog: list[dict], skill: dict, suite
     system = trigger_system_prompt(catalog)
     positives: list[bool] = []
     negatives: list[bool] = []
+    positive_cases: list[dict] = []
+    negative_cases: list[dict] = []
 
     for prompt in suite.get("should_trigger") or []:
+        responses = [call_model(client, model, system, prompt, max_tokens=32) for _ in range(runs)]
         choices = [
-            normalize_choice(call_model(client, model, system, prompt, max_tokens=32), known_names)
-            for _ in range(runs)
+            normalize_choice(response.text, known_names)
+            for response in responses
         ]
-        positives.append(majority_target(choices, skill["name"]))
+        matched = majority_target(choices, skill["name"])
+        positives.append(matched)
+        positive_cases.append({
+            "prompt": prompt,
+            "matched": matched,
+            "responses": [asdict(response) | {"choice": choice} for response, choice in zip(responses, choices)],
+        })
 
     for prompt in suite.get("should_not_trigger") or []:
+        responses = [call_model(client, model, system, prompt, max_tokens=32) for _ in range(runs)]
         choices = [
-            normalize_choice(call_model(client, model, system, prompt, max_tokens=32), known_names)
-            for _ in range(runs)
+            normalize_choice(response.text, known_names)
+            for response in responses
         ]
-        negatives.append(majority_target(choices, skill["name"]))
+        matched = majority_target(choices, skill["name"])
+        negatives.append(matched)
+        negative_cases.append({
+            "prompt": prompt,
+            "incorrectly_matched": matched,
+            "responses": [asdict(response) | {"choice": choice} for response, choice in zip(responses, choices)],
+        })
 
-    return trigger_metrics(positives, negatives)
+    metrics = trigger_metrics(positives, negatives)
+    metrics["cases"] = {
+        "should_trigger": positive_cases,
+        "should_not_trigger": negative_cases,
+    }
+    return metrics
 
 
 def skill_body(skill: dict) -> str:
@@ -226,14 +265,14 @@ def evaluate_uplift(client, model: str, skill: dict, suite: dict, runs: int) -> 
 
     for index, task in enumerate(suite.get("tasks") or []):
         task_results: list[str] = []
-        for _ in range(runs):
+        samples: list[dict] = []
+        for run_index in range(runs):
             with_skill = call_model(client, model, system_with_skill, task["prompt"], max_tokens=1200)
             baseline = call_model(client, model, baseline_system, task["prompt"], max_tokens=1200)
             first_is_skill = rng.choice([True, False])
-            first, second = (with_skill, baseline) if first_is_skill else (baseline, with_skill)
-            judgment = normalize_judgment(
-                call_model(client, model, judge_system_prompt(), judge_prompt(task, first, second), max_tokens=16)
-            )
+            first, second = (with_skill.text, baseline.text) if first_is_skill else (baseline.text, with_skill.text)
+            judge = call_model(client, model, judge_system_prompt(), judge_prompt(task, first, second), max_tokens=16)
+            judgment = normalize_judgment(judge.text)
             if judgment == "tie":
                 result = "tie"
             elif (judgment == "first" and first_is_skill) or (judgment == "second" and not first_is_skill):
@@ -242,12 +281,22 @@ def evaluate_uplift(client, model: str, skill: dict, suite: dict, runs: int) -> 
                 result = "baseline"
             task_results.append(result)
             all_results.append(result)
+            samples.append({
+                "run": run_index + 1,
+                "first_presented": "skill" if first_is_skill else "baseline",
+                "judgment": judgment,
+                "result": result,
+                "with_skill": asdict(with_skill),
+                "baseline": asdict(baseline),
+                "judge": asdict(judge),
+            })
         task_summaries.append({
             "index": index,
             "prompt": task["prompt"],
             "criteria": task.get("criteria") or [],
             "win_rate": win_rate(task_results),
             "results": task_results,
+            "samples": samples,
         })
 
     return {"win_rate": win_rate(all_results), "tasks": task_summaries}
@@ -281,9 +330,11 @@ def write_measurement(skill: dict, model: str, runs: int, trigger: dict, uplift:
             newline="\n",
         )
     payload = {
+        "protocol_version": PROTOCOL_VERSION,
         "measured_at": dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "model": model,
         "skill_commit": skill_commit(skill),
+        "content_digest": skill.get("content_digest"),
         "runs": runs,
         "trigger": trigger,
         "uplift": uplift,

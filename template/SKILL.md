@@ -8,8 +8,13 @@ name: your-skill-name
 description: One sentence on what this skill does. Use whenever the user
   mentions X, asks for Y, or is doing Z — even if they don't explicitly
   ask for this skill.
+license: Apache-2.0
+compatibility: Describe required products, binaries, or network access; remove if none.
 metadata:
   internal: true
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Your Skill Name

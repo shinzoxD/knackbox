@@ -6,6 +6,12 @@ description: Analyze CSV, TSV, and tabular data files — profile the data,
   data show", wants totals, trends, comparisons, or charts from a
   spreadsheet-like file, or asks any question that must be answered from
   rows and columns.
+license: Apache-2.0
+compatibility: Portable instructions; may use local tabular-data analysis tools.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read-write"
+  knackbox.execution: "optional"
 ---
 
 # CSV Analysis

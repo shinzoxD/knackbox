@@ -5,6 +5,12 @@ description: >-
   whenever the user asks for a chart, dashboard, plot, visual comparison, trend
   view, or advice on how to visualize data, including requests to improve an
   existing graph or select the right chart type.
+license: Apache-2.0
+compatibility: Portable instructions; may use local charting tools and write output files.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "read-write"
+  knackbox.execution: "optional"
 ---
 
 # Data Visualization

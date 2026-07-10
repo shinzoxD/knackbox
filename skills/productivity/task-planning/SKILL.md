@@ -5,6 +5,12 @@ description: >-
   milestones, owners, and verification steps. Use whenever the user asks for a
   plan, roadmap, implementation sequence, checklist, breakdown of a large task,
   or help deciding what to do next, even if the request is only a rough goal.
+license: Apache-2.0
+compatibility: Portable instructions; no bundled scripts or required external binaries.
+metadata:
+  knackbox.network: "none"
+  knackbox.filesystem: "none"
+  knackbox.execution: "none"
 ---
 
 # Task Planning

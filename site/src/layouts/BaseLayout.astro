@@ -10,8 +10,9 @@ const {
 const path = Astro.url.pathname;
 const nav = [
   { href: "/skills/", label: "Skills" },
+  { href: "/packs/", label: "Packs" },
   { href: "/docs/", label: "Docs" },
-  { href: "/contribute/", label: "Contribute" },
+  { href: "/contribute/", label: "Contribute", mobileHidden: true },
 ];
 const isActive = (href: string) => path === href || path.startsWith(href);
 ---
@@ -45,7 +46,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
         </a>
         <nav class="flex items-center gap-0.5 sm:gap-2" aria-label="Main">
           {nav.map((item) => (
-            <a class="nav-link" href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+            <a class:list={["nav-link", item.mobileHidden && "hidden sm:inline-flex"]} href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
           ))}
           <a class="nav-link hidden md:inline-flex" href={githubRepoUrl}>GitHub</a>
           <button type="button" class="btn btn-icon ml-1 h-9 w-9" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">
@@ -62,6 +63,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
         <p class="muted">[ Apache-2.0 ] Static catalog generated from repository skills.</p>
         <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="Footer">
           <a href="/skills/">Leaderboard</a>
+          <a href="/packs/">Starter packs</a>
           <a href="/docs/metrics/">Metrics</a>
           <a href="/contribute/">Contribute</a>
           <a href={githubRepoUrl}>GitHub</a>
