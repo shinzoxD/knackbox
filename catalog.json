@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-10",
   "score_version": "v0",
-  "count": 11,
+  "count": 23,
   "skills": [
     {
       "name": "code-review",
@@ -88,6 +88,27 @@
       }
     },
     {
+      "name": "api-design",
+      "description": "Design and review HTTP, REST, GraphQL, and internal service APIs with clear contracts, errors, pagination, security, and evolution rules. Use whenever the user is planning endpoints, reviewing an API specification, naming resources, defining request or response shapes, or asking how services should communicate, even if they only share a rough route list.",
+      "category": "coding",
+      "path": "skills/coding/api-design",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 674,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "pr-descriptions",
       "description": "Write pull request titles and descriptions that reviewers can act on fast. Use whenever the user asks for a PR description, opens or prepares a pull/merge request, shares commits or a branch diff to summarize, or says \"write up this PR\" — even if they only paste a diff.",
       "category": "coding",
@@ -95,6 +116,27 @@
       "tier": "community",
       "updated": "2026-07-09",
       "context_tokens": 400,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "test-generation",
+      "description": "Design and write focused automated tests for new code, bug fixes, and risky behavior. Use whenever the user asks for tests, shares untested code, fixes a defect that needs regression coverage, mentions coverage gaps, or wants help deciding what to test, even if they do not name a testing framework.",
+      "category": "coding",
+      "path": "skills/coding/test-generation",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 616,
       "reference_tokens": 0,
       "has_scripts": false,
       "has_benchmarks": false,
@@ -130,6 +172,69 @@
       }
     },
     {
+      "name": "data-cleaning",
+      "description": "Profile and clean messy tabular datasets with reproducible transformations and explicit handling of types, missing values, duplicates, and outliers. Use whenever the user has inconsistent CSV or spreadsheet data, asks to prepare data for analysis, merge records, standardize columns, remove duplicates, or fix data-quality problems.",
+      "category": "data",
+      "path": "skills/data/data-cleaning",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 540,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "data-visualization",
+      "description": "Choose and produce clear, honest charts from tabular or summarized data. Use whenever the user asks for a chart, dashboard, plot, visual comparison, trend view, or advice on how to visualize data, including requests to improve an existing graph or select the right chart type.",
+      "category": "data",
+      "path": "skills/data/data-visualization",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 579,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "project-proposals",
+      "description": "Turn a rough initiative into a decision-ready project proposal with outcomes, scope, plan, costs, risks, and a clear approval request. Use whenever the user needs a business case, internal proposal, project charter, funding request, or stakeholder pitch, even if they only provide scattered notes or an idea.",
+      "category": "documents",
+      "path": "skills/documents/project-proposals",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 477,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "resume-builder",
       "description": "Build or rewrite resumes and tailor them to a specific job description, with achievement-focused bullets that pass ATS screening. Use whenever the user shares a resume or CV, asks to improve or tailor one, wants bullets rewritten, or says \"help me apply for this job\" with a job posting — even if they only paste their work history as rough notes.",
       "category": "documents",
@@ -137,6 +242,48 @@
       "tier": "community",
       "updated": "2026-07-09",
       "context_tokens": 526,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "technical-documentation",
+      "description": "Write and improve technical documentation, tutorials, runbooks, and reference pages that users can follow successfully. Use whenever the user asks for docs, a README, setup instructions, an operational runbook, API usage guidance, or an explanation of how a system works, including requests to document code.",
+      "category": "documents",
+      "path": "skills/documents/technical-documentation",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 504,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "decision-memos",
+      "description": "Write concise decision memos that compare options, expose trade-offs, and make a clear evidence-based recommendation. Use whenever the user must choose between tools, vendors, architectures, priorities, or policies, asks for pros and cons, or needs a decision recorded for stakeholders.",
+      "category": "productivity",
+      "path": "skills/productivity/decision-memos",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 460,
       "reference_tokens": 0,
       "has_scripts": false,
       "has_benchmarks": false,
@@ -193,6 +340,69 @@
       }
     },
     {
+      "name": "task-planning",
+      "description": "Convert ambiguous work into an executable plan with outcomes, dependencies, milestones, owners, and verification steps. Use whenever the user asks for a plan, roadmap, implementation sequence, checklist, breakdown of a large task, or help deciding what to do next, even if the request is only a rough goal.",
+      "category": "productivity",
+      "path": "skills/productivity/task-planning",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 498,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "fact-checking",
+      "description": "Verify factual claims against current, authoritative evidence and return calibrated verdicts with citations. Use whenever the user asks whether a claim is true, wants information verified, shares a statistic or viral assertion, needs sources checked, or asks to audit factual accuracy in a draft.",
+      "category": "research",
+      "path": "skills/research/fact-checking",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 549,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "literature-reviews",
+      "description": "Plan and synthesize a literature review across papers and reports, organizing evidence by research question rather than by source. Use whenever the user asks for a literature review, state-of-the-art overview, evidence map, comparison of studies, research gap analysis, or help structuring sources for an academic or technical review.",
+      "category": "research",
+      "path": "skills/research/literature-reviews",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 548,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "research-summaries",
       "description": "Summarize papers, articles, and reports into structured research briefs that separate claims from evidence. Use whenever the user shares a paper, study, PDF, or article and asks what it says, wants key findings or limitations, asks \"is this study any good\", or needs several sources synthesized into one brief.",
       "category": "research",
@@ -221,6 +431,48 @@
       "tier": "community",
       "updated": "2026-07-09",
       "context_tokens": 478,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "copy-editing",
+      "description": "Edit prose for clarity, correctness, flow, consistency, and concision while preserving the author's meaning and voice. Use whenever the user asks to edit, proofread, polish, tighten, simplify, or improve writing, shares a draft with minimal instructions, or wants grammar and style issues fixed.",
+      "category": "writing",
+      "path": "skills/writing/copy-editing",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 522,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": false,
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "landing-page-copy",
+      "description": "Write and improve landing-page copy with a clear offer, credible proof, scannable structure, and focused calls to action. Use whenever the user needs homepage, product, service, waitlist, launch, or campaign copy, asks to improve website messaging or conversion, or shares a page brief that needs words.",
+      "category": "writing",
+      "path": "skills/writing/landing-page-copy",
+      "tier": "community",
+      "updated": "2026-07-10",
+      "context_tokens": 503,
       "reference_tokens": 0,
       "has_scripts": false,
       "has_benchmarks": false,
