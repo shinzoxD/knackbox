@@ -30,7 +30,7 @@ jobs:
           expected="$(find skills -mindepth 3 -maxdepth 3 -name SKILL.md | wc -l | tr -d ' ')"
           output="$(NO_COLOR=1 npx --yes skills@1.5.16 add . --list)"
           printf '%s\n' "$output"
-          printf '%s\n' "$output" | grep -Eq "Found .*[^0-9]${expected}[^0-9].* skills"
+          printf '%s\n' "$output" | grep -Eq "Found[[:space:]]+${expected}[[:space:]]+skills"
 
   site:
     if: github.event_name == 'pull_request'
