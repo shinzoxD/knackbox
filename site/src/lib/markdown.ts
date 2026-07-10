@@ -81,6 +81,42 @@ function isTableSeparator(line: string): boolean {
   return /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(line);
 }
 
+function listToHtml(
+  lines: string[],
+  startIndex: number,
+  marker: RegExp,
+  tag: "ul" | "ol",
+  options: RenderOptions
+): { html: string; endIndex: number } {
+  const items: string[] = [];
+  let index = startIndex;
+
+  while (index < lines.length) {
+    const match = marker.exec(lines[index].trim());
+    if (!match) {
+      break;
+    }
+
+    const parts = [match[1]];
+    index += 1;
+    while (index < lines.length) {
+      const continuation = lines[index];
+      const trimmed = continuation.trim();
+      if (!trimmed || marker.test(trimmed) || !/^\s{2,}\S/.test(continuation)) {
+        break;
+      }
+      parts.push(trimmed);
+      index += 1;
+    }
+    items.push(`<li>${inlineMarkdown(parts.join(" "), options)}</li>`);
+  }
+
+  return {
+    html: `<${tag}>${items.join("")}</${tag}>`,
+    endIndex: index - 1,
+  };
+}
+
 export function renderMarkdown(markdown: string, options: RenderOptions = {}): string {
   const lines = markdown.replace(/\r\n?/g, "\n").split("\n");
   const out: string[] = [];
@@ -147,34 +183,18 @@ export function renderMarkdown(markdown: string, options: RenderOptions = {}): s
     const unordered = /^[-*]\s+(.+)$/.exec(trimmed);
     if (unordered) {
       flushParagraph();
-      const items: string[] = [];
-      while (index < lines.length) {
-        const match = /^[-*]\s+(.+)$/.exec(lines[index].trim());
-        if (!match) {
-          break;
-        }
-        items.push(`<li>${inlineMarkdown(match[1], options)}</li>`);
-        index += 1;
-      }
-      index -= 1;
-      out.push(`<ul>${items.join("")}</ul>`);
+      const list = listToHtml(lines, index, /^[-*]\s+(.+)$/, "ul", options);
+      index = list.endIndex;
+      out.push(list.html);
       continue;
     }
 
     const ordered = /^\d+\.\s+(.+)$/.exec(trimmed);
     if (ordered) {
       flushParagraph();
-      const items: string[] = [];
-      while (index < lines.length) {
-        const match = /^\d+\.\s+(.+)$/.exec(lines[index].trim());
-        if (!match) {
-          break;
-        }
-        items.push(`<li>${inlineMarkdown(match[1], options)}</li>`);
-        index += 1;
-      }
-      index -= 1;
-      out.push(`<ol>${items.join("")}</ol>`);
+      const list = listToHtml(lines, index, /^\d+\.\s+(.+)$/, "ol", options);
+      index = list.endIndex;
+      out.push(list.html);
       continue;
     }
 

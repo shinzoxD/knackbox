@@ -63,7 +63,7 @@
   }
 
   .panel {
-    @apply border border-ink-200 bg-white shadow-sm dark:border-ink-800 dark:bg-ink-900;
+    @apply min-w-0 border border-ink-200 bg-white shadow-sm dark:border-ink-800 dark:bg-ink-900;
   }
 
   .muted {
