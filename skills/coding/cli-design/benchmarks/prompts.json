@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design a CLI for our deploy tool",
+    "flags vs subcommands for this developer tool",
+    "exit codes and JSON output for scripting",
+    "improve UX of this command line interface",
+    "CLI help text and examples structure",
+    "make this CLI CI-friendly"
+  ],
+  "should_not_trigger": [
+    "REST API design only",
+    "web UI design system",
+    "terraform module",
+    "press release",
+    "hiring scorecards",
+    "websocket protocol"
+  ],
+  "tasks": [
+    {
+      "prompt": "Tool: deploy, rollback, status. Sketch CLI.",
+      "criteria": [
+        "subcommands",
+        "flags",
+        "examples"
+      ]
+    },
+    {
+      "prompt": "CLI prints emoji and progress on stdout breaking jq. Fix.",
+      "criteria": [
+        "stdout/stderr split",
+        "machine mode",
+        "practical fix"
+      ]
+    },
+    {
+      "prompt": "Destructive delete command. UX for safety.",
+      "criteria": [
+        "confirm/force",
+        "clear messaging",
+        "exit codes"
+      ]
+    }
+  ]
+}

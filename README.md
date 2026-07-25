@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-83-green)
+![Skills](https://img.shields.io/badge/skills-99-green)
 
 **An open library of skills for AI agents — ranked by quality, not installs.**
 
@@ -121,7 +121,10 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [accessibility-review](skills/coding/accessibility-review) | coding | 441 | Review UI and content for accessibility issues against WCAG-minded practices. Use whenever the user asks for… |
 | 🧪 community | [api-changelog](skills/coding/api-changelog) | coding | 254 | Write consumer-facing API changelogs and migration notes for breaking and additive changes. Use whenever the… |
 | 🧪 community | [api-design](skills/coding/api-design) | coding | 674 | Design and review HTTP, REST, GraphQL, and internal service APIs with clear contracts, errors, pagination, se… |
+| 🧪 community | [caching-strategies](skills/coding/caching-strategies) | coding | 286 | Design caching layers with correctness, TTLs, invalidation, and stampede control. Use whenever the user asks… |
+| 🧪 community | [chaos-experiment-design](skills/coding/chaos-experiment-design) | coding | 302 | Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use wh… |
 | 🧪 community | [ci-cd-pipelines](skills/coding/ci-cd-pipelines) | coding | 340 | Design and review CI/CD pipelines for speed, safety, and clear failure signals. Use whenever the user edits G… |
+| 🧪 community | [cli-design](skills/coding/cli-design) | coding | 244 | Design developer CLIs with clear UX, exit codes, flags, and help text. Use whenever the user builds a command… |
 | 🧪 community | [code-comments](skills/coding/code-comments) | coding | 317 | Write and improve code comments and docstrings that explain why, not noise. Use whenever the user asks for be… |
 | 🧪 community | [container-review](skills/coding/container-review) | coding | 320 | Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a… |
 | 🧪 community | [database-migrations](skills/coding/database-migrations) | coding | 377 | Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations,… |
@@ -136,19 +139,25 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [kubernetes-review](skills/coding/kubernetes-review) | coding | 380 | Review Kubernetes manifests and Helm values for security, reliability, and operability. Use whenever the user… |
 | 🧪 community | [load-test-planning](skills/coding/load-test-planning) | coding | 355 | Plan and interpret load tests with clear goals, scenarios, and pass/fail criteria. Use whenever the user asks… |
 | 🧪 community | [logging-observability](skills/coding/logging-observability) | coding | 382 | Design logging, metrics, and tracing that operators can use under pressure. Use whenever the user asks about… |
+| 🧪 community | [migration-playbooks](skills/coding/migration-playbooks) | coding | 258 | Plan large technical migrations with strangler patterns, dual-run, and rollback. Use whenever the user migrat… |
+| 🧪 community | [observability-alerts](skills/coding/observability-alerts) | coding | 259 | Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes… |
 | 🧪 community | [openapi-spec-design](skills/coding/openapi-spec-design) | coding | 275 | Design and review OpenAPI specifications for clarity, consistency, and evolution. Use whenever the user write… |
 | 🧪 community | [performance-review](skills/coding/performance-review) | coding | 641 | Diagnose application performance bottlenecks and propose measured fixes. Use whenever the user mentions slow… |
 | 🧪 community | [pr-descriptions](skills/coding/pr-descriptions) | coding | 914 | Write pull request titles and descriptions that reviewers can act on fast. Use whenever the user asks for a P… |
 | 🧪 community | [prompt-injection-hardening](skills/coding/prompt-injection-hardening) | coding | 559 | Threat-model AI features against prompt injection, tool abuse, and data exfiltration, then propose mitigation… |
+| 🧪 community | [rate-limiting](skills/coding/rate-limiting) | coding | 277 | Design rate limiting and throttling for APIs and gateways with fair use and abuse resistance. Use whenever th… |
 | 🧪 community | [refactor-planning](skills/coding/refactor-planning) | coding | 630 | Plan safe refactors that preserve behavior — seams, steps, tests, and rollback. Use whenever the user asks ho… |
 | 🧪 community | [secrets-management](skills/coding/secrets-management) | coding | 347 | Handle secrets safely in apps and infrastructure without committing credentials. Use whenever the user asks a… |
 | 🧪 community | [security-review](skills/coding/security-review) | coding | 1095 | Review code and designs for security vulnerabilities — injection, authn/authz, secrets, crypto, SSRF, and dat… |
 | 🧪 community | [sql-query-review](skills/coding/sql-query-review) | coding | 948 | Review and improve SQL queries for correctness, performance, safety, and maintainability. Use whenever the us… |
 | 🧪 community | [terraform-review](skills/coding/terraform-review) | coding | 440 | Review Terraform and OpenTofu configuration and plans for blast radius, state risk, IAM overreach, and safer… |
 | 🧪 community | [test-generation](skills/coding/test-generation) | coding | 616 | Design and write focused automated tests for new code, bug fixes, and risky behavior. Use whenever the user a… |
+| 🧪 community | [websocket-design](skills/coding/websocket-design) | coding | 286 | Design WebSocket and realtime channels with auth, backpressure, and reconnect semantics. Use whenever the use… |
 | 🧪 community | [ab-test-analysis](skills/data/ab-test-analysis) | data | 377 | Analyze A/B and experiment results with correct metrics, uncertainty, and caveats. Use whenever the user shar… |
+| 🧪 community | [anomaly-detection](skills/data/anomaly-detection) | data | 257 | Investigate metric and log anomalies with structured hypotheses and next checks. Use whenever the user sees a… |
 | 🧪 community | [csv-analysis](skills/data/csv-analysis) | data | 961 | Analyze CSV, TSV, and tabular data files — profile the data, answer questions with verifiable numbers, and fl… |
 | 🧪 community | [data-cleaning](skills/data/data-cleaning) | data | 540 | Profile and clean messy tabular datasets with reproducible transformations and explicit handling of types, mi… |
+| 🧪 community | [data-contract-design](skills/data/data-contract-design) | data | 308 | Define producer-consumer data contracts with schema evolution, compatibility, and SLAs. Use whenever the user… |
 | 🧪 community | [data-visualization](skills/data/data-visualization) | data | 579 | Choose and produce clear, honest charts from tabular or summarized data. Use whenever the user asks for a cha… |
 | 🧪 community | [etl-pipeline-design](skills/data/etl-pipeline-design) | data | 300 | Design ETL and ELT pipelines with clear contracts, quality checks, and failure modes. Use whenever the user p… |
 | 🧪 community | [metrics-definitions](skills/data/metrics-definitions) | data | 378 | Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the u… |
@@ -163,12 +172,15 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [rfc-design-docs](skills/documents/rfc-design-docs) | documents | 588 | Write RFCs and technical design docs that force clear decisions. Use whenever the user asks for an RFC, desig… |
 | 🧪 community | [rfp-response](skills/documents/rfp-response) | documents | 279 | Structure RFP and RFI responses that map requirements to evidence. Use whenever the user answers a vendor que… |
 | 🧪 community | [runbook-writing](skills/documents/runbook-writing) | documents | 356 | Write operational runbooks that on-call engineers can follow under stress. Use whenever the user asks for a r… |
+| 🧪 community | [sla-slo-writing](skills/documents/sla-slo-writing) | documents | 255 | Write SLAs and SLOs that operations can measure and support can explain. Use whenever the user drafts service… |
 | 🧪 community | [status-reports](skills/documents/status-reports) | documents | 245 | Write clear project and program status reports for stakeholders. Use whenever the user asks for a weekly stat… |
 | 🧪 community | [technical-documentation](skills/documents/technical-documentation) | documents | 504 | Write and improve technical documentation, tutorials, runbooks, and reference pages that users can follow suc… |
+| 🧪 community | [vendor-evaluation](skills/documents/vendor-evaluation) | documents | 252 | Run structured vendor evaluations and scorecards for build-vs-buy decisions. Use whenever the user compares v… |
 | 🧪 community | [1-1-agendas](skills/productivity/1-1-agendas) | productivity | 224 | Prepare effective manager and IC 1:1 agendas and notes. Use whenever the user asks for a one-on-one agenda, 1… |
 | 🧪 community | [decision-memos](skills/productivity/decision-memos) | productivity | 460 | Write concise decision memos that compare options, expose trade-offs, and make a clear evidence-based recomme… |
 | 🧪 community | [delegation-briefs](skills/productivity/delegation-briefs) | productivity | 248 | Write tight delegation briefs so others can execute without thrash. Use whenever the user wants to hand off w… |
 | 🧪 community | [email-drafts](skills/productivity/email-drafts) | productivity | 478 | Draft and rewrite professional emails that get replies — clear ask, right tone, minimal length. Use whenever… |
+| 🧪 community | [hiring-scorecards](skills/productivity/hiring-scorecards) | productivity | 277 | Build interview scorecards and debrief structures that reduce bias and noise. Use whenever the user designs h… |
 | 🧪 community | [interview-prep](skills/productivity/interview-prep) | productivity | 354 | Prepare for technical and behavioral interviews with structured practice. Use whenever the user asks for inte… |
 | 🧪 community | [issue-triage](skills/productivity/issue-triage) | productivity | 405 | Triage bugs and tickets with severity, repro steps, and next actions. Use whenever the user asks to triage is… |
 | 🧪 community | [meeting-agendas](skills/productivity/meeting-agendas) | productivity | 320 | Build focused meeting agendas with outcomes, timeboxes, and prep. Use whenever the user asks for a meeting ag… |
@@ -181,7 +193,9 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [standup-updates](skills/productivity/standup-updates) | productivity | 367 | Turn raw work notes into crisp standup or status updates. Use whenever the user asks for a standup, daily sta… |
 | 🧪 community | [support-macros](skills/productivity/support-macros) | productivity | 381 | Draft customer support replies and macros with correct tone, escalation judgment, and no over-promising. Use… |
 | 🧪 community | [task-planning](skills/productivity/task-planning) | productivity | 498 | Convert ambiguous work into an executable plan with outcomes, dependencies, milestones, owners, and verificat… |
+| 🧪 community | [timebox-planning](skills/productivity/timebox-planning) | productivity | 253 | Plan deep work and timeboxes when everything feels urgent. Use whenever the user asks how to schedule focus t… |
 | 🧪 community | [competitor-briefs](skills/research/competitor-briefs) | research | 532 | Research competitors into structured comparison briefs with evidence and gaps. Use whenever the user asks for… |
+| 🧪 community | [customer-discovery](skills/research/customer-discovery) | research | 260 | Plan and run customer discovery interviews that test assumptions. Use whenever the user is validating a start… |
 | 🧪 community | [fact-checking](skills/research/fact-checking) | research | 549 | Verify factual claims against current, authoritative evidence and return calibrated verdicts with citations.… |
 | 🧪 community | [literature-reviews](skills/research/literature-reviews) | research | 548 | Plan and synthesize a literature review across papers and reports, organizing evidence by research question r… |
 | 🧪 community | [market-sizing](skills/research/market-sizing) | research | 249 | Build transparent TAM SAM SOM style market sizing with explicit assumptions. Use whenever the user asks for m… |
@@ -195,6 +209,8 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [incident-comms](skills/writing/incident-comms) | writing | 377 | Write customer and stakeholder communications during incidents. Use whenever the user needs a status page upd… |
 | 🧪 community | [internal-comms](skills/writing/internal-comms) | writing | 207 | Write clear internal company communications — all-hands notes, policy updates, and reorg announcements. Use w… |
 | 🧪 community | [landing-page-copy](skills/writing/landing-page-copy) | writing | 503 | Write and improve landing-page copy with a clear offer, credible proof, scannable structure, and focused call… |
+| 🧪 community | [newsletter-writing](skills/writing/newsletter-writing) | writing | 161 | Write email newsletters with a clear point, scannable structure, and one CTA. Use whenever the user asks for… |
+| 🧪 community | [press-release](skills/writing/press-release) | writing | 171 | Write press-style announcements with a lead, facts, and quotes without hype fluff. Use whenever the user need… |
 | 🧪 community | [product-announcements](skills/writing/product-announcements) | writing | 327 | Write product launch and feature announcements for users and stakeholders. Use whenever the user asks for a l… |
 | 🧪 community | [social-posts](skills/writing/social-posts) | writing | 291 | Write clear social posts and short threads for LinkedIn, X, and similar channels. Use whenever the user asks… |
 <!-- CATALOG:END -->

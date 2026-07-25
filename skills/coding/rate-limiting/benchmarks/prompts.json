@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design rate limits for our public API",
+    "429 and Retry-After behavior for mobile clients",
+    "token bucket vs fixed window for multi-tenant SaaS",
+    "protect login from credential stuffing",
+    "per-tenant quotas on the export endpoint",
+    "gateway rate limiting plan"
+  ],
+  "should_not_trigger": [
+    "caching strategy only",
+    "chaos experiment",
+    "write OpenAPI without limits",
+    "SQL optimization",
+    "newsletter draft",
+    "hiring scorecard"
+  ],
+  "tasks": [
+    {
+      "prompt": "Public free tier API: 100 req/min/key, bursts ok. Design.",
+      "criteria": [
+        "keying",
+        "algorithm choice",
+        "client-visible behavior"
+      ]
+    },
+    {
+      "prompt": "Limiter Redis down \u2014 fail open or closed for payments API?",
+      "criteria": [
+        "trade-offs",
+        "recommendation by risk",
+        "observability"
+      ]
+    },
+    {
+      "prompt": "Shared corporate NAT makes IP limits unfair. Alternative?",
+      "criteria": [
+        "identity-based keys",
+        "practical approach",
+        "edge cases"
+      ]
+    }
+  ]
+}

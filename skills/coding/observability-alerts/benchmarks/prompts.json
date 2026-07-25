@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design paging alerts for checkout",
+    "fix alert fatigue on our on-call",
+    "SLO burn rate alert design",
+    "what should page vs slack for the API",
+    "runbook-linked alert rules list",
+    "reduce noisy CPU alerts"
+  ],
+  "should_not_trigger": [
+    "dashboard layout only",
+    "log field design only",
+    "anomaly one-off investigation",
+    "chaos experiment",
+    "SLA contract wording only",
+    "write unit tests"
+  ],
+  "tasks": [
+    {
+      "prompt": "Checkout error rate pages 20 times/night. Redesign.",
+      "criteria": [
+        "symptom focus",
+        "threshold/window",
+        "runbook/severity"
+      ]
+    },
+    {
+      "prompt": "Team pages on CPU >70%. Critique.",
+      "criteria": [
+        "symptom vs cause",
+        "better signals",
+        "noise"
+      ]
+    },
+    {
+      "prompt": "SLO 99.9%; want burn alerts. Sketch.",
+      "criteria": [
+        "multi-window idea",
+        "route",
+        "ownership"
+      ]
+    }
+  ]
+}

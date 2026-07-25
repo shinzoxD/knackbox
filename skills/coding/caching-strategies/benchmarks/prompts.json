@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "Redis caching design for product pages",
+    "HTTP cache headers for a public API",
+    "how to avoid cache stampede on cold start",
+    "invalidate cache when user updates profile",
+    "CDN caching strategy for marketing site",
+    "why am I seeing stale data after write"
+  ],
+  "should_not_trigger": [
+    "rate limiting only",
+    "SQL index review only",
+    "chaos game day",
+    "press release",
+    "sprint planning",
+    "data contract schema"
+  ],
+  "tasks": [
+    {
+      "prompt": "Profile read 10k QPS; updates rare. Cache plan.",
+      "criteria": [
+        "keys/TTL",
+        "invalidation on update",
+        "stampede note"
+      ]
+    },
+    {
+      "prompt": "Cache key is just userId for billing plan; admin endpoint shares it. Risk?",
+      "criteria": [
+        "authz/cache keying risk",
+        "fix",
+        "correctness"
+      ]
+    },
+    {
+      "prompt": "TTL-only cache causes 5 min wrong price after update. Options.",
+      "criteria": [
+        "invalidation strategies",
+        "trade-offs",
+        "recommendation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "vendor scorecard for error monitoring tools",
+    "compare these three vendors fairly",
+    "build vs buy evaluation for feature flags",
+    "bake-off plan for two databases",
+    "shortlist and disqualify SaaS options",
+    "weighted criteria for security tooling purchase"
+  ],
+  "should_not_trigger": [
+    "RFP customer response matrix",
+    "competitor marketing brief only",
+    "SLA writing only",
+    "implement integration code",
+    "press release",
+    "sprint planning"
+  ],
+  "tasks": [
+    {
+      "prompt": "Choose between Datadog-like A vs cheaper B for logs. Criteria sketch.",
+      "criteria": [
+        "weighted criteria",
+        "risks",
+        "evidence needed"
+      ]
+    },
+    {
+      "prompt": "Vendor claims SOC2; we have not verified. How to score.",
+      "criteria": [
+        "unknown handling",
+        "verification step",
+        "honest scoring"
+      ]
+    },
+    {
+      "prompt": "Build vs buy feature flags for mid-size team. Structure decision.",
+      "criteria": [
+        "build option",
+        "scorecard shape",
+        "recommendation path"
+      ]
+    }
+  ]
+}

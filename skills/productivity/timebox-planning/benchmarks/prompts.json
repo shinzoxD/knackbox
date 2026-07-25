@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "plan my week I am overloaded",
+    "protect deep work time on my calendar",
+    "daily timebox plan for too many tasks",
+    "how to cut thrash and focus",
+    "maker schedule with too many meetings",
+    "prioritize under everything is urgent"
+  ],
+  "should_not_trigger": [
+    "sprint planning for a whole team",
+    "OKR quarterly goals",
+    "hiring scorecard",
+    "project multi-month plan",
+    "meeting agenda only",
+    "task breakdown RFC style"
+  ],
+  "tasks": [
+    {
+      "prompt": "IC eng: 6 meetings, 12 tickets, deploy Friday. Day plan.",
+      "criteria": [
+        "outcomes",
+        "deep work blocks",
+        "not doing"
+      ]
+    },
+    {
+      "prompt": "Everything marked urgent by stakeholders. Approach.",
+      "criteria": [
+        "explicit prioritization",
+        "renegotiate",
+        "timeboxes"
+      ]
+    },
+    {
+      "prompt": "On-call primary this week. Planning advice.",
+      "criteria": [
+        "buffer",
+        "thinner commit",
+        "practical schedule shape"
+      ]
+    }
+  ]
+}

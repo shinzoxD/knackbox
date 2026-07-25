@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design WebSocket protocol for live notifications",
+    "realtime presence system design",
+    "reconnect and resume for mobile sockets",
+    "auth for private websocket rooms",
+    "backpressure when clients are slow",
+    "scale websockets across multiple nodes"
+  ],
+  "should_not_trigger": [
+    "REST rate limiting only",
+    "GraphQL schema without realtime",
+    "caching headers",
+    "newsletter writing",
+    "vendor evaluation",
+    "unit tests for pure functions"
+  ],
+  "tasks": [
+    {
+      "prompt": "Chat rooms with private DMs over websocket. Auth and routing sketch.",
+      "criteria": [
+        "auth on connect",
+        "room model",
+        "security notes"
+      ]
+    },
+    {
+      "prompt": "Clients miss messages on reconnect. Fix design.",
+      "criteria": [
+        "resume/offset or replay",
+        "idempotent events",
+        "practical approach"
+      ]
+    },
+    {
+      "prompt": "One node holds all sockets; traffic growing. Scale options.",
+      "criteria": [
+        "pub/sub or sticky",
+        "trade-offs",
+        "observability"
+      ]
+    }
+  ]
+}

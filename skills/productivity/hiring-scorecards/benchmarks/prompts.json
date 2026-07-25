@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "interview scorecard for senior backend engineer",
+    "hiring rubric and debrief structure",
+    "leveling scorecard for mid frontend",
+    "reduce bias in our interview loop",
+    "structured debrief agenda for panel",
+    "competency anchors for system design interview"
+  ],
+  "should_not_trigger": [
+    "interview prep for a candidate only",
+    "resume rewrite only",
+    "sprint planning",
+    "1:1 agenda manager-report",
+    "OKR drafting",
+    "vendor evaluation"
+  ],
+  "tasks": [
+    {
+      "prompt": "Senior backend: coding, system design, collaboration. Draft scorecard anchors.",
+      "criteria": [
+        "dimensions",
+        "anchors",
+        "loop coverage note"
+      ]
+    },
+    {
+      "prompt": "Panel debrief starts with loudest voice. Fix process.",
+      "criteria": [
+        "independent scores first",
+        "structure",
+        "decision rule"
+      ]
+    },
+    {
+      "prompt": "Culture fit used to reject unlike personalities. Reframe.",
+      "criteria": [
+        "behavior-specific criteria",
+        "bias note",
+        "better dimension"
+      ]
+    }
+  ]
+}

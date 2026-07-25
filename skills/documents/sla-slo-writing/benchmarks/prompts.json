@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "draft SLOs for our API",
+    "error budget policy for on-call",
+    "customer-facing SLA language for availability",
+    "SLI definitions for checkout success",
+    "uptime commitment we can actually measure",
+    "internal reliability targets for the team"
+  ],
+  "should_not_trigger": [
+    "alert rule syntax only",
+    "chaos experiment",
+    "rate limiting design",
+    "press release",
+    "vendor evaluation scorecard without SLOs",
+    "anomaly investigation of one spike"
+  ],
+  "tasks": [
+    {
+      "prompt": "API wants 99.9% monthly availability SLO. Define SLI and measurement.",
+      "criteria": [
+        "clear SLI",
+        "window/target",
+        "exclusions ideas"
+      ]
+    },
+    {
+      "prompt": "Sales wants five nines in the contract; eng measures 99.5%. Advise.",
+      "criteria": [
+        "honest gap",
+        "options",
+        "no fake commitment"
+      ]
+    },
+    {
+      "prompt": "Data pipeline freshness SLO vs uptime. How to write.",
+      "criteria": [
+        "freshness SLI",
+        "practical target shape",
+        "ownership"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "why did error rate spike at 14:00",
+    "investigate this latency anomaly chart",
+    "is this traffic drop real or a tracking bug",
+    "metrics look weird after deploy \u2014 how to investigate",
+    "log volume anomaly investigation",
+    "p99 jumped \u2014 structured hypothesis list"
+  ],
+  "should_not_trigger": [
+    "design SLO from scratch without anomaly",
+    "write alert rules only",
+    "A/B experiment analysis",
+    "ETL pipeline design only",
+    "chaos experiment design",
+    "blog post about ML anomaly detection"
+  ],
+  "tasks": [
+    {
+      "prompt": "Error rate 0.1%\u21923% after deploy. Investigation plan.",
+      "criteria": [
+        "deploy correlation",
+        "segment next checks",
+        "hypotheses"
+      ]
+    },
+    {
+      "prompt": "Traffic -40% on marketing site Monday. Could be real or tracker.",
+      "criteria": [
+        "artifact vs real",
+        "checks",
+        "no fake root cause"
+      ]
+    },
+    {
+      "prompt": "Single metric spike, no user reports. Triage.",
+      "criteria": [
+        "impact assessment",
+        "instrumentation check",
+        "next steps"
+      ]
+    }
+  ]
+}

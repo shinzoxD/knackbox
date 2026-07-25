@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "data contract between payments and warehouse",
+    "schema evolution rules for event streams",
+    "breaking change policy for analytics events",
+    "define Avro/JSON schema contract for orders",
+    "producer consumer SLA for clickstream",
+    "schema registry compatibility mode choice"
+  ],
+  "should_not_trigger": [
+    "one-off SQL analytics query only",
+    "OpenAPI REST design without data platform",
+    "market sizing",
+    "A/B test analysis only",
+    "terraform review",
+    "press release"
+  ],
+  "tasks": [
+    {
+      "prompt": "Orders event: order_id, amount, currency, created_at. Warehouse + fraud consumers. Draft contract.",
+      "criteria": [
+        "grain/keys",
+        "schema+semantics",
+        "compatibility notes"
+      ]
+    },
+    {
+      "prompt": "Producer wants to rename userId to user_id without version. Advise.",
+      "criteria": [
+        "treats as breaking risk",
+        "migration path",
+        "compat guidance"
+      ]
+    },
+    {
+      "prompt": "No registry; JSON blobs today. Minimal contract envelope?",
+      "criteria": [
+        "envelope fields",
+        "validation idea",
+        "evolution path"
+      ]
+    }
+  ]
+}

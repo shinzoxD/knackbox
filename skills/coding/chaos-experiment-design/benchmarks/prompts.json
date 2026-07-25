@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design a chaos experiment for checkout",
+    "game day plan for regional failover",
+    "safe fault injection for the payments service",
+    "chaos engineering hypothesis for redis down",
+    "resilience experiment for pod kill storm",
+    "abort criteria for a production chaos test"
+  ],
+  "should_not_trigger": [
+    "unannounced 50k RPS load test only",
+    "unit test generation only",
+    "kubernetes YAML style nits only",
+    "write a blog post about chaos",
+    "support macro",
+    "OKR drafting"
+  ],
+  "tasks": [
+    {
+      "prompt": "Hypothesis: if payment API pods die, checkout retries succeed within SLO. Plan experiment.",
+      "criteria": [
+        "states hypothesis and steady state",
+        "blast radius and abort",
+        "env/approval notes"
+      ]
+    },
+    {
+      "prompt": "Engineer wants random kill -9 in prod for fun. Respond.",
+      "criteria": [
+        "rejects unscoped prod chaos",
+        "safer alternative",
+        "learning-focused framing"
+      ]
+    },
+    {
+      "prompt": "Game day: lose one AZ of cache. Outline agenda.",
+      "criteria": [
+        "roles/scenario",
+        "metrics to watch",
+        "debrief structure"
+      ]
+    }
+  ]
+}

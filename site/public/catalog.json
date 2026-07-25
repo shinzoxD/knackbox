@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-26",
   "score_version": "v0",
-  "count": 83,
+  "count": 99,
   "skills": [
     {
       "name": "code-review",
@@ -221,6 +221,68 @@
       }
     },
     {
+      "name": "caching-strategies",
+      "description": "Design caching layers with correctness, TTLs, invalidation, and stampede control. Use whenever the user asks about Redis cache, CDN caching, HTTP cache headers, cache invalidation, thundering herd, or stale reads.",
+      "category": "coding",
+      "path": "skills/coding/caching-strategies",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 286,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/caching-strategies",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:28b429acad38d8feec4e96896b079697b64c2a764d999bdee410dc68f22d016a",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "chaos-experiment-design",
+      "description": "Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use whenever the user asks for chaos engineering, game days, fault injection, resilience experiments, or how to safely break things in staging or production.",
+      "category": "coding",
+      "path": "skills/coding/chaos-experiment-design",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 302,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/chaos-experiment-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:b6865a247948768ecf9792ca799c624ad7201c8290d3e3db831af4d7430cdf5c",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "ci-cd-pipelines",
       "description": "Design and review CI/CD pipelines for speed, safety, and clear failure signals. Use whenever the user edits GitHub Actions, GitLab CI, Jenkinsfiles, or asks how to structure tests, builds, caches, deploy gates, and rollbacks in continuous integration.",
       "category": "coding",
@@ -235,6 +297,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:068f23869cae45e905488468543e1c57ff8d74bf04c5e59d99044995fd47b992",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "cli-design",
+      "description": "Design developer CLIs with clear UX, exit codes, flags, and help text. Use whenever the user builds a command-line tool, debates flags vs subcommands, stdout vs stderr, or asks how to structure a CLI for engineers.",
+      "category": "coding",
+      "path": "skills/coding/cli-design",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 244,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/cli-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:2c977da67f51cb0e4aa090f04b36d202e372453aa91f108cd74d663c95ed5598",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -686,6 +779,68 @@
       }
     },
     {
+      "name": "migration-playbooks",
+      "description": "Plan large technical migrations with strangler patterns, dual-run, and rollback. Use whenever the user migrates frameworks, databases, clouds, monorepo boundaries, or large platform changes at scale.",
+      "category": "coding",
+      "path": "skills/coding/migration-playbooks",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 258,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/migration-playbooks",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:dd0a487b200c79249cc8d1fffef7de6a567294e53947c74e5b2894d11dc43c4c",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "observability-alerts",
+      "description": "Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes alert fatigue, designs on-call notifications, escalations, or SLO burn alerts.",
+      "category": "coding",
+      "path": "skills/coding/observability-alerts",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 259,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/observability-alerts",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:9270ba1f260338fa8da2bbc6e0598ef627429c31d4bbfd6bb35dca66919ecf97",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "openapi-spec-design",
       "description": "Design and review OpenAPI specifications for clarity, consistency, and evolution. Use whenever the user writes OpenAPI or Swagger YAML/JSON, reviews API specs, or asks how to document REST endpoints for code generation and client SDKs.",
       "category": "coding",
@@ -793,6 +948,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:c403f76ccc7f5d31903e67ddbdde9b72151149f847bdf3e6d42414b5b2fefb36",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "rate-limiting",
+      "description": "Design rate limiting and throttling for APIs and gateways with fair use and abuse resistance. Use whenever the user asks about rate limits, quotas, 429 responses, token buckets, leaky buckets, or protecting endpoints from overload and abuse.",
+      "category": "coding",
+      "path": "skills/coding/rate-limiting",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 277,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/rate-limiting",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:dd0a62c24f656fcd4a2a859b323e96a15bd35869059f247d6c7fcb752b3a7321",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -996,6 +1182,37 @@
       }
     },
     {
+      "name": "websocket-design",
+      "description": "Design WebSocket and realtime channels with auth, backpressure, and reconnect semantics. Use whenever the user builds realtime features, sockets, presence, live updates, or streaming over persistent connections.",
+      "category": "coding",
+      "path": "skills/coding/websocket-design",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 286,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/websocket-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:84a35a6d43d51d5d4141b8259a22cfbe601f18e574e05623a65b38b6d4a279ca",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "ab-test-analysis",
       "description": "Analyze A/B and experiment results with correct metrics, uncertainty, and caveats. Use whenever the user shares experiment data, asks if a variant won, or needs help interpreting lift, p-values, confidence intervals, CUPED, or sample ratio mismatch.",
       "category": "data",
@@ -1010,6 +1227,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may use local analysis tools when available.",
       "content_digest": "sha256:4b6712bd8640b3d45ec0d85208432fd505df43ffbefb34cf8ec2aebeceeb2ffb",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "anomaly-detection",
+      "description": "Investigate metric and log anomalies with structured hypotheses and next checks. Use whenever the user sees a spike, drop, or weird pattern in metrics or logs and asks what is going on, whether it is real, or how to investigate.",
+      "category": "data",
+      "path": "skills/data/anomaly-detection",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 257,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/anomaly-detection",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may interpret charts/series when provided.",
+      "content_digest": "sha256:2a50a35585d7d74aa5b297f1f643fa3ccf7641db92b327b40a6aba0902ec0693",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1077,6 +1325,37 @@
         "network": "none",
         "filesystem": "read-write",
         "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "data-contract-design",
+      "description": "Define producer-consumer data contracts with schema evolution, compatibility, and SLAs. Use whenever the user designs event schemas, warehouse contracts, schema registry rules, or breaking-change policy between data producers and consumers.",
+      "category": "data",
+      "path": "skills/data/data-contract-design",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 308,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/data-contract-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:48beefbec97cb1c520bee678fb8dc727ca145a3c151ca125fc14061787031046",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -1523,6 +1802,37 @@
       }
     },
     {
+      "name": "sla-slo-writing",
+      "description": "Write SLAs and SLOs that operations can measure and support can explain. Use whenever the user drafts service levels, uptime commitments, error budgets, customer-facing availability language, or internal reliability targets.",
+      "category": "documents",
+      "path": "skills/documents/sla-slo-writing",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 255,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/sla-slo-writing",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; not legal advice.",
+      "content_digest": "sha256:5ee1a026a2ca8340f08a4d6e7da43cc54d4f584e5327eb53367a09d62b939345",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "status-reports",
       "description": "Write clear project and program status reports for stakeholders. Use whenever the user asks for a weekly status, program update, executive status, RAG status, or progress report on a project or initiative.",
       "category": "documents",
@@ -1573,6 +1883,37 @@
         "network": "optional",
         "filesystem": "read-write",
         "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "vendor-evaluation",
+      "description": "Run structured vendor evaluations and scorecards for build-vs-buy decisions. Use whenever the user compares vendors, shortlists tools, runs a bake-off, or needs a fair scorecard across products for a purchase decision.",
+      "category": "documents",
+      "path": "skills/documents/vendor-evaluation",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 252,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/vendor-evaluation",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; do not invent pricing or certifications.",
+      "content_digest": "sha256:2004ff233edb50a47ece4406da48a4c02f005d2f6c9fe9d68e1d71978bf163bb",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -1692,6 +2033,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:6007787574f354a6622263bffc400231360e373d9ca71fe1fbee17ffbeee041b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "hiring-scorecards",
+      "description": "Build interview scorecards and debrief structures that reduce bias and noise. Use whenever the user designs hiring loops, interview rubrics, scorecards, structured debriefs, or leveling guides for candidates.",
+      "category": "productivity",
+      "path": "skills/productivity/hiring-scorecards",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 277,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/hiring-scorecards",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; follow company legal/HR policy.",
+      "content_digest": "sha256:e4341de44d088454619445fb28df411a234d966404e78a54fc2263c0c56ff4d5",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -2081,6 +2453,37 @@
       }
     },
     {
+      "name": "timebox-planning",
+      "description": "Plan deep work and timeboxes when everything feels urgent. Use whenever the user asks how to schedule focus time, cut thrash, plan a day or week under overload, protect maker time, or prioritize under too many tasks.",
+      "category": "productivity",
+      "path": "skills/productivity/timebox-planning",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 253,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/timebox-planning",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:8e99ffbe7319b99253cd4d6bbdac9db721fb8f713fc6ac0ab29c5b0d274b433e",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "competitor-briefs",
       "description": "Research competitors into structured comparison briefs with evidence and gaps. Use whenever the user asks for competitive analysis, competitor research, market landscape, battlecards, or how we compare to another product — even if they only name one rival.",
       "category": "research",
@@ -2098,6 +2501,37 @@
       "security_profile": "instructions-only",
       "permissions": {
         "network": "optional",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "customer-discovery",
+      "description": "Plan and run customer discovery interviews that test assumptions. Use whenever the user is validating a startup idea, talking to customers for problem discovery, needs an interview guide, or wants to test riskiest product assumptions.",
+      "category": "research",
+      "path": "skills/research/customer-discovery",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 260,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/research/customer-discovery",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:3a12a11347a7fb83675dd6eba539093e2780400e09fd9664d35648bf03cec0e1",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
         "filesystem": "none",
         "execution": "none"
       },
@@ -2498,6 +2932,68 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:c706856c7faa36ce04759a09b1909490f6a875f43ed0c3735b7fc631766bced0",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "newsletter-writing",
+      "description": "Write email newsletters with a clear point, scannable structure, and one CTA. Use whenever the user asks for a newsletter draft, weekly digest email, subscriber update, or email issue for an audience list.",
+      "category": "writing",
+      "path": "skills/writing/newsletter-writing",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 161,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/newsletter-writing",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:7ea751629a2c12c0e3d3b1872d8d6cf0e040ff67ad40327639309f8089bbfb82",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "press-release",
+      "description": "Write press-style announcements with a lead, facts, and quotes without hype fluff. Use whenever the user needs a press release, media announcement, wire-style launch note, or journalist-facing company news.",
+      "category": "writing",
+      "path": "skills/writing/press-release",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 171,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/press-release",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; never invent quotes, customers, or financials.",
+      "content_digest": "sha256:a524c7c2a6b9504e099161cbd44c8d16f5890fb858cfc5abc6e3f39c6c213d32",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

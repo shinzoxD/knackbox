@@ -28,7 +28,12 @@
         "openapi-spec-design",
         "feature-flags",
         "secrets-management",
-        "code-comments"
+        "code-comments",
+        "rate-limiting",
+        "caching-strategies",
+        "cli-design",
+        "websocket-design",
+        "migration-playbooks"
       ]
     },
     {
@@ -62,7 +67,12 @@
         "load-test-planning",
         "helm-chart-scaffolding",
         "secrets-management",
-        "feature-flags"
+        "feature-flags",
+        "chaos-experiment-design",
+        "rate-limiting",
+        "caching-strategies",
+        "migration-playbooks",
+        "observability-alerts"
       ]
     },
     {
@@ -76,7 +86,9 @@
         "metrics-definitions",
         "ab-test-analysis",
         "sql-analytics",
-        "etl-pipeline-design"
+        "etl-pipeline-design",
+        "data-contract-design",
+        "anomaly-detection"
       ]
     },
     {
@@ -90,7 +102,8 @@
         "competitor-briefs",
         "user-interview-synthesis",
         "survey-analysis",
-        "market-sizing"
+        "market-sizing",
+        "customer-discovery"
       ]
     },
     {
@@ -108,7 +121,9 @@
         "internal-comms",
         "api-changelog",
         "case-studies",
-        "documentation-migration"
+        "documentation-migration",
+        "newsletter-writing",
+        "press-release"
       ]
     },
     {
@@ -134,7 +149,10 @@
         "onboarding-guides",
         "sprint-planning",
         "1-1-agendas",
-        "policy-writing"
+        "policy-writing",
+        "vendor-evaluation",
+        "timebox-planning",
+        "hiring-scorecards"
       ]
     },
     {
@@ -151,7 +169,11 @@
         "dependency-upgrades",
         "logging-observability",
         "load-test-planning",
-        "kubernetes-review"
+        "kubernetes-review",
+        "chaos-experiment-design",
+        "observability-alerts",
+        "sla-slo-writing",
+        "anomaly-detection"
       ]
     },
     {
@@ -162,7 +184,9 @@
         "interview-prep",
         "resume-builder",
         "decision-memos",
-        "email-drafts"
+        "email-drafts",
+        "hiring-scorecards",
+        "timebox-planning"
       ]
     },
     {
@@ -178,7 +202,9 @@
         "privacy-request-playbook",
         "internal-comms",
         "case-studies",
-        "rfp-response"
+        "rfp-response",
+        "press-release",
+        "newsletter-writing"
       ]
     },
     {
@@ -236,6 +262,18 @@
         "rfp-response",
         "competitor-briefs",
         "user-interview-synthesis"
+      ]
+    },
+    {
+      "slug": "realtime-and-edge",
+      "name": "Realtime & Edge",
+      "description": "Design sockets, caching, rate limits, and resilient edge behavior.",
+      "skills": [
+        "websocket-design",
+        "caching-strategies",
+        "rate-limiting",
+        "error-handling",
+        "observability-alerts"
       ]
     }
   ]

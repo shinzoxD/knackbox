@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "customer discovery interview guide for our idea",
+    "validate startup assumptions with interviews",
+    "problem interview script for B2B buyers",
+    "how to test if anyone cares about this pain",
+    "synthesize five discovery calls",
+    "recruit screener for target users"
+  ],
+  "should_not_trigger": [
+    "user interview synthesis only with no plan",
+    "survey analysis quant",
+    "market sizing TAM only",
+    "case study marketing",
+    "competitor brief",
+    "press release"
+  ],
+  "tasks": [
+    {
+      "prompt": "Idea: AI meeting notes for lawyers. Riskiest assumptions + 8 questions.",
+      "criteria": [
+        "assumptions",
+        "past-behavior questions",
+        "not pitchy"
+      ]
+    },
+    {
+      "prompt": "Interviewees all friends who say they love it. Bias handling.",
+      "criteria": [
+        "bias callout",
+        "better recruit",
+        "decision rule"
+      ]
+    },
+    {
+      "prompt": "After 6 calls, mixed pain signals. Next step.",
+      "criteria": [
+        "synthesis shape",
+        "experiment",
+        "persevere/pivot framing"
+      ]
+    }
+  ]
+}

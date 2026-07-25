@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a press release for our launch",
+    "media announcement for Series B",
+    "journalist-facing product news draft",
+    "FOR IMMEDIATE RELEASE draft from these facts",
+    "press release with CEO quote placeholder",
+    "wire-style announcement for partnership"
+  ],
+  "should_not_trigger": [
+    "customer case study narrative",
+    "newsletter to subscribers",
+    "social media posts",
+    "internal reorg memo",
+    "landing page marketing",
+    "blog thought leadership"
+  ],
+  "tasks": [
+    {
+      "prompt": "Facts: launched EU region hosting today; no quotes yet. Draft PR.",
+      "criteria": [
+        "lead",
+        "placeholders for quotes",
+        "no invented claims"
+      ]
+    },
+    {
+      "prompt": "Wants 'world's best AI' in headline. Fix.",
+      "criteria": [
+        "removes hype",
+        "news-worthy framing",
+        "factual tone"
+      ]
+    },
+    {
+      "prompt": "Partnership PR; partner name TBD. Structure.",
+      "criteria": [
+        "structure",
+        "clear placeholders for missing facts",
+        "no fake partner"
+      ]
+    }
+  ]
+}

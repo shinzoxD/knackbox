@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write this week's product newsletter",
+    "subscriber email digest draft",
+    "newsletter issue from these three links",
+    "weekly update email for our audience",
+    "subject lines for a launch newsletter",
+    "re-engagement newsletter draft"
+  ],
+  "should_not_trigger": [
+    "cold outbound sales sequence",
+    "press release formal",
+    "long blog post only",
+    "social posts only",
+    "internal all-hands memo",
+    "landing page copy full page"
+  ],
+  "tasks": [
+    {
+      "prompt": "Product shipped dark mode; link blog. Newsletter 250 words.",
+      "criteria": [
+        "subject",
+        "hook",
+        "one CTA"
+      ]
+    },
+    {
+      "prompt": "Three unrelated updates. Structure digest.",
+      "criteria": [
+        "scannable sections",
+        "primary CTA choice",
+        "tight writing"
+      ]
+    },
+    {
+      "prompt": "Wants 'guaranteed 10x open rate' subject tricks. Respond.",
+      "criteria": [
+        "honest subjects",
+        "better alternatives",
+        "no false claims"
+      ]
+    }
+  ]
+}

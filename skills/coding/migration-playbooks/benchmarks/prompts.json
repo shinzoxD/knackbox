@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "plan migration from monolith to services",
+    "database migration playbook zero downtime",
+    "strangler pattern plan for legacy module",
+    "cloud migration dual-run strategy",
+    "framework upgrade migration across 20 services",
+    "rollback plan for platform migration"
+  ],
+  "should_not_trigger": [
+    "single PR refactor plan small file",
+    "feature flag for one button only",
+    "sprint planning",
+    "chaos experiment single fault",
+    "helm chart for one service",
+    "write press release"
+  ],
+  "tasks": [
+    {
+      "prompt": "Move auth from monolith to service. Phased plan.",
+      "criteria": [
+        "strangler/dual-run",
+        "validation",
+        "rollback"
+      ]
+    },
+    {
+      "prompt": "Big-bang cutover this weekend for payments DB. Critique.",
+      "criteria": [
+        "risk callout",
+        "safer alternative",
+        "checks"
+      ]
+    },
+    {
+      "prompt": "After migration, old system still gets writes. Cleanup.",
+      "criteria": [
+        "decommission steps",
+        "traffic proof",
+        "ownership"
+      ]
+    }
+  ]
+}
