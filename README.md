@@ -51,14 +51,15 @@ node packages/cli/bin/knackbox.js add commit-messages
 # or: npm run knackbox -- add commit-messages
 ```
 
-**Open Skills CLI** — install into Claude Code, Codex, OpenCode, Cursor, or another detected agent:
+**Open Skills CLI ([skills.sh](https://www.skills.sh/))** — install into Claude Code, Codex, OpenCode, Cursor, or another detected agent:
 
 ```bash
-npx skills add shinzoxD/knackbox --skill commit-messages
+npx skills add shinzoxD/knackbox --list
+npx skills add shinzoxD/knackbox --skill commit-messages -y
+npx skills add shinzoxD/knackbox --skill '*' -y
 ```
 
-Add `-g` for a global install or `-a claude-code` to choose an agent explicitly. Browse the wider ecosystem at
-[skills.sh](https://skills.sh/).
+Add `-g` for a global install or `-a claude-code` (or `-a '*'` for all agents). Knackbox is fully compatible with the open Agent Skills ecosystem; see [ECOSYSTEM.md](ECOSYSTEM.md) for how skills.sh works and how to combine third-party skills with this library.
 
 **Dependency-free fallback** — install directly into Claude Code with the repository script:
 

@@ -6,3 +6,8 @@ dist/
 .astro/
 .codex/
 .venv/
+# Local Agent Skills installs (skills CLI / agent runtimes). Source of truth is skills/.
+.agents/
+.claude/skills/
+.cursor/skills/
+skills-lock.json
