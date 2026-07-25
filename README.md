@@ -4,9 +4,11 @@
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
 ![Skills](https://img.shields.io/badge/skills-83-green)
 
-**An open library of skills for AI agents.**
+**An open library of skills for AI agents — ranked by quality, not installs.**
 
-Skills are small folders of instructions and resources that teach an AI model how to do a specific job well — writing commit messages, formatting meeting notes, reviewing SQL, anything. Knackbox collects high-quality, community-reviewed skills in the open [Agent Skills format](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview), so they work with Claude Code, Claude.ai, the Claude API, and any other tool that reads `SKILL.md` files.
+[skills.sh](https://www.skills.sh/) is great at discovery and popularity. Knackbox is the **quality layer** on the same open [Agent Skills format](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview): mandatory benchmarks, trust digests, honest metrics (no faked scores), and curated packs. See **[WHY.md](WHY.md)** · **[STANDARD.md](STANDARD.md)** · [why page](https://knackbox.pages.dev/why/).
+
+Skills are small folders of instructions that teach a model a job well — commits, reviews, SQL, incidents, writing — for Claude Code, Codex, Cursor, OpenCode, and any runtime that reads `SKILL.md`.
 
 ## What a skill looks like
 
@@ -38,8 +40,11 @@ npx knackbox add commit-messages
 npx knackbox add code-review security-review --agent cursor
 npx knackbox pack developer-essentials
 npx knackbox search security
-npx knackbox list --category coding
+npx knackbox list --sort tier
+npx knackbox compare code-review security-review
+npx knackbox add commit-messages --agent codex,cursor
 npx knackbox doctor
+npx knackbox why
 ```
 
 Default destination is `~/.claude/skills/<name>`. Use `--agent codex|cursor|opencode`, `--dest DIR`, or `--force` as needed. Package source: [`packages/cli`](packages/cli). Job-based install recipes: [`RECIPES.md`](RECIPES.md).

@@ -1,8 +1,8 @@
 {
   "name": "knackbox",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
-  "description": "Open Agent Skills library — install with the knackbox CLI",
+  "description": "Quality-first open Agent Skills library — benchmarks, digests, packs (not a popularity board)",
   "type": "module",
   "bin": {
     "knackbox": "./packages/cli/bin/knackbox.js"

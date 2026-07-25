@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { allSkills, githubRepoUrl, knackboxCliCommand, tierCounts } from "../lib/catalog";
+import { websiteJsonLd } from "../lib/seo";
+
+const counts = tierCounts();
+const withBenchmarks = allSkills.filter((s) => s.has_benchmarks).length;
+const withDigest = allSkills.filter((s) => Boolean(s.content_digest)).length;
+const instructionsOnly = allSkills.filter((s) => s.security_profile === "instructions-only").length;
+const measured = allSkills.filter((s) => s.metrics?.skill_score != null).length;
+
+const rows = [
+  {
+    dim: "Primary ranking signal",
+    skillsSh: "Install counts & trending",
+    knackbox: "Tier + benchmarks + measured scores",
+  },
+  {
+    dim: "Quality gate",
+    skillsSh: "Whatever each repo ships",
+    knackbox: "CI validation + review standard",
+  },
+  {
+    dim: "Benchmark suites",
+    skillsSh: "Optional / uncommon",
+    knackbox: "Required for every skill",
+  },
+  {
+    dim: "Metric honesty",
+    skillsSh: "Popularity is the metric",
+    knackbox: "Null scores show as — until measured",
+  },
+  {
+    dim: "Trust metadata",
+    skillsSh: "Varies by package",
+    knackbox: "Digest, permissions, security profile",
+  },
+  {
+    dim: "Job-based install",
+    skillsSh: "Per skill or whole repo",
+    knackbox: "Curated starter packs + recipes",
+  },
+  {
+    dim: "Scope",
+    skillsSh: "Entire GitHub skill ecosystem",
+    knackbox: "Opinionated, high-bar library",
+  },
+];
+
+const command = `${knackboxCliCommand} commit-messages`;
+const jsonLd = websiteJsonLd();
+---
+
+<BaseLayout
+  title="Why Knackbox beats a popularity board"
+  description="skills.sh ranks skills by installs. Knackbox ranks by quality: mandatory benchmarks, honest metrics, trust digests, and curated packs. Compatible with the open Skills CLI."
+  canonicalPath="/why/"
+  keywords="knackbox vs skills.sh, agent skills quality, skill benchmarks, trust digests, curated agent skills"
+  jsonLd={jsonLd}
+>
+  <section class="rail-section" data-pagefind-body>
+    <div class="wrap py-12 sm:py-16">
+      <p class="eyebrow mb-3">Quality over virality</p>
+      <h1 class="hero-title">skills.sh finds skills. Knackbox proves them.</h1>
+      <p class="mt-5 max-w-2xl text-[16px] leading-7 muted">
+        The open ecosystem CLI and directory are great at discovery. Install counts are not a substitute for
+        trigger accuracy, output uplift, security review, or an honest scoreboard. Knackbox is the quality layer
+        on the same open <code class="font-mono text-[13px]">SKILL.md</code> standard.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-2.5">
+        <a class="btn btn-primary no-underline hover:no-underline" href="/skills/">Open quality leaderboard</a>
+        <a class="btn no-underline hover:no-underline" href="/docs/metrics/">Metrics methodology</a>
+        <a class="btn no-underline hover:no-underline" href={githubRepoUrl + "/blob/main/STANDARD.md"}>Read the standard</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rail-section" aria-label="Quality coverage">
+    <div class="wrap px-0">
+      <dl class="figure-grid">
+        <div class="figure">
+          <dt class="eyebrow">Skills</dt>
+          <dd class="metric mt-4 text-[30px] font-bold leading-none text-ink-950 dark:text-ink-50">{allSkills.length}</dd>
+        </div>
+        <div class="figure">
+          <dt class="eyebrow">With suites</dt>
+          <dd class="metric mt-4 text-[30px] font-bold leading-none text-ink-950 dark:text-ink-50">{withBenchmarks}</dd>
+        </div>
+        <div class="figure">
+          <dt class="eyebrow">Digests</dt>
+          <dd class="metric mt-4 text-[30px] font-bold leading-none text-ink-950 dark:text-ink-50">{withDigest}</dd>
+        </div>
+        <div class="figure">
+          <dt class="eyebrow">Instructions-only</dt>
+          <dd class="metric mt-4 text-[30px] font-bold leading-none text-ink-950 dark:text-ink-50">{instructionsOnly}</dd>
+        </div>
+        <div class="figure">
+          <dt class="eyebrow">Core</dt>
+          <dd class="metric mt-4 text-[30px] font-bold leading-none text-ink-950 dark:text-ink-50">{counts.core}</dd>
+        </div>
+        <div class="figure">
+          <dt class="eyebrow">Measured scores</dt>
+          <dd class="metric mt-4 text-[30px] font-bold leading-none text-ink-950 dark:text-ink-50">{measured}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="rail-section">
+    <div class="wrap py-12">
+      <p class="eyebrow mb-3">Head to head</p>
+      <h2 class="section-title">Not the same product</h2>
+      <p class="mt-3 max-w-3xl text-sm muted">
+        Use skills.sh to explore the whole ecosystem. Use Knackbox when you want a reviewed default toolkit with
+        evidence, not vibes.
+      </p>
+      <div class="panel mt-8 overflow-x-auto">
+        <table class="w-full min-w-[40rem] text-left text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-xs uppercase tracking-wide muted dark:border-ink-800">
+              <th class="px-4 py-3 font-semibold">Dimension</th>
+              <th class="px-4 py-3 font-semibold">skills.sh</th>
+              <th class="px-4 py-3 font-semibold">Knackbox</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr class="border-b border-ink-100 dark:border-ink-900">
+                <td class="px-4 py-3 font-medium text-ink-950 dark:text-ink-50">{row.dim}</td>
+                <td class="px-4 py-3 muted">{row.skillsSh}</td>
+                <td class="px-4 py-3 text-ink-900 dark:text-ink-100">{row.knackbox}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="rail-section">
+    <div class="wrap py-12">
+      <p class="eyebrow mb-3">Compatible by design</p>
+      <h2 class="section-title">Same format. Higher bar.</h2>
+      <div class="mt-6 grid gap-4 lg:grid-cols-3">
+        <div class="panel p-5">
+          <h3 class="font-semibold text-ink-950 dark:text-white">Open Skills CLI</h3>
+          <p class="mt-2 text-sm leading-6 muted">
+            <code class="font-mono text-[13px]">npx skills add shinzoxD/knackbox</code> already discovers every
+            Knackbox skill. We do not fork the standard — we raise the quality bar on top of it.
+          </p>
+        </div>
+        <div class="panel p-5">
+          <h3 class="font-semibold text-ink-950 dark:text-white">Honest scores</h3>
+          <p class="mt-2 text-sm leading-6 muted">
+            Unmeasured metrics stay empty. When measurements land, they include digests and review protocol so
+            scores are auditable — not leaderboard theater.
+          </p>
+        </div>
+        <div class="panel p-5">
+          <h3 class="font-semibold text-ink-950 dark:text-white">Packs for real jobs</h3>
+          <p class="mt-2 text-sm leading-6 muted">
+            Engineering, ops, research, GTM, privacy, OSS maintainers — install a coherent set instead of one viral
+            one-liner.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-command mt-10">
+        <div class="hero-command-head">
+          <h2 class="eyebrow">Start with quality</h2>
+          <button type="button" class="btn btn-icon" data-copy={command} aria-label="Copy install command">Copy</button>
+        </div>
+        <pre class="terminal border-0"><code>{command}</code></pre>
+        <p class="border-t border-ink-300 px-4 py-3 text-xs muted dark:border-ink-700">
+          Or install a pack: <code class="font-mono">npx knackbox pack developer-essentials</code>
+          · Full argument: <a href={githubRepoUrl + "/blob/main/WHY.md"}>WHY.md</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

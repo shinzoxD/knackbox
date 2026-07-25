@@ -44,6 +44,7 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const nav = [
   { href: "/skills/", label: "Skills" },
   { href: "/packs/", label: "Packs" },
+  { href: "/why/", label: "Why" },
   { href: "/docs/", label: "Docs" },
   { href: "/contribute/", label: "Contribute", mobileHidden: true },
 ];
@@ -142,6 +143,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
         <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="Footer">
           <a href="/skills/">Leaderboard</a>
           <a href="/packs/">Starter packs</a>
+          <a href="/why/">Why Knackbox</a>
           <a href="/docs/">Install docs</a>
           <a href="/docs/metrics/">Metrics</a>
           <a href="/contribute/">Contribute</a>

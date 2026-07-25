@@ -1,7 +1,7 @@
 {
   "name": "knackbox",
-  "version": "0.2.0",
-  "description": "Install Knackbox Agent Skills into Claude Code, Codex, Cursor, and custom destinations",
+  "version": "0.3.0",
+  "description": "Quality-first Agent Skills installer — packs, search, multi-agent, trust digests (better than popularity boards)",
   "type": "module",
   "bin": {
     "knackbox": "./bin/knackbox.js"

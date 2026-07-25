@@ -50,16 +50,17 @@ const jsonLd = [
   <section class="rail-section" data-pagefind-body>
     <div class="wrap py-14 sm:py-16 lg:py-20">
       <a class="eyebrow inline-flex no-underline hover:no-underline" href="/skills/">
-        catalog v0 / {catalogStatsLine()}
+        catalog v0 / {catalogStatsLine()} / quality-first
       </a>
-      <h1 class="hero-title mt-8">The open skill library for AI agents.</h1>
+      <h1 class="hero-title mt-8">Agent skills ranked by evidence, not installs.</h1>
       <p class="mt-5 max-w-2xl text-[16px] leading-7 muted">
-        Plain-file <strong class="font-semibold text-ink-900 dark:text-ink-100">Agent Skills</strong> that
-        Claude Code, Codex, Cursor, and OpenCode load when a task matches. Browse the open catalog,
-        inspect every <code class="font-mono text-[13px]">SKILL.md</code>, and install only what you need.
+        Popularity boards answer what people downloaded. Knackbox answers what is
+        <strong class="font-semibold text-ink-900 dark:text-ink-100"> reviewed, suite-covered, and measurable</strong>
+        — plain-file Agent Skills for Claude Code, Codex, Cursor, and OpenCode, with digests and honest scores.
       </p>
       <div class="mt-7 flex flex-wrap gap-2.5">
-        <a class="btn btn-primary no-underline hover:no-underline" href="/skills/">Browse catalog</a>
+        <a class="btn btn-primary no-underline hover:no-underline" href="/skills/">Quality leaderboard</a>
+        <a class="btn no-underline hover:no-underline" href="/why/">Why not skills.sh</a>
         <a class="btn no-underline hover:no-underline" href="/packs/">Starter packs</a>
         <a class="btn no-underline hover:no-underline" href={githubRepoUrl}>View source</a>
       </div>

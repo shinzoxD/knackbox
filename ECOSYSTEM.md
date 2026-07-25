@@ -1,14 +1,17 @@
 # skills.sh & the Agent Skills ecosystem
 
-[skills.sh](https://www.skills.sh/) is the open **Agent Skills directory and leaderboard**.
+[skills.sh](https://www.skills.sh/) is the open **Agent Skills directory and popularity leaderboard**.
 The CLI is:
 
 ```bash
 npx skills add <owner/repo>
 ```
 
-Knackbox is a normal skills package in that ecosystem. Same `SKILL.md` format,
-same install path model — not a competing standard.
+Knackbox is a normal skills package in that ecosystem (same `SKILL.md` format)
+**and** a higher bar: the [Knackbox Standard](STANDARD.md). We are compatible
+with skills.sh installs and compete on **quality and trust**, not install volume.
+
+Read [WHY.md](WHY.md) or [knackbox.pages.dev/why/](https://knackbox.pages.dev/why/).
 
 ## Can you use Knackbox skills via skills.sh?
 

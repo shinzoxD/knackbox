@@ -3,9 +3,10 @@ import { allSkills, categories, githubRepoUrl, type Skill } from "./catalog";
 /** Canonical production origin for the static catalog site. */
 export const siteUrl = "https://knackbox.pages.dev";
 
-export const defaultTitle = "Knackbox — Open Agent Skills Library for Claude, Codex & Cursor";
+export const defaultTitle =
+  "Knackbox — Agent Skills Ranked by Quality, Not Installs";
 export const defaultDescription =
-  "Open Agent Skills library for Claude Code, Codex, Cursor, and OpenCode. Browse benchmark-ready SKILL.md packages for coding, writing, research, and more.";
+  "Quality-first Agent Skills for Claude Code, Codex, Cursor, and OpenCode. Mandatory benchmarks, trust digests, honest metrics — better defaults than a popularity board.";
 
 export const defaultKeywords = [
   "agent skills",

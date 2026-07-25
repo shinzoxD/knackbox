@@ -164,3 +164,19 @@ test("cli doctor runs without throwing", async () => {
   const code = await main(["doctor", "--catalog", catalogPath]);
   assert.equal(code, 0);
 });
+
+test("cli why exits 0", async () => {
+  assert.equal(await main(["why"]), 0);
+});
+
+test("cli compare two skills", async () => {
+  const catalogPath = path.join(repoRoot, "catalog.json");
+  const code = await main([
+    "compare",
+    "commit-messages",
+    "code-review",
+    "--catalog",
+    catalogPath,
+  ]);
+  assert.equal(code, 0);
+});
