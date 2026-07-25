@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-26",
   "score_version": "v0",
-  "count": 47,
+  "count": 60,
   "skills": [
     {
       "name": "code-review",
@@ -190,6 +190,68 @@
       }
     },
     {
+      "name": "ci-cd-pipelines",
+      "description": "Design and review CI/CD pipelines for speed, safety, and clear failure signals. Use whenever the user edits GitHub Actions, GitLab CI, Jenkinsfiles, or asks how to structure tests, builds, caches, deploy gates, and rollbacks in continuous integration.",
+      "category": "coding",
+      "path": "skills/coding/ci-cd-pipelines",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 340,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/ci-cd-pipelines",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:068f23869cae45e905488468543e1c57ff8d74bf04c5e59d99044995fd47b992",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "container-review",
+      "description": "Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a Dockerfile, compose file, Kubernetes image config, or asks how to harden, slim, or debug a container build.",
+      "category": "coding",
+      "path": "skills/coding/container-review",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 320,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/container-review",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may reason about local docker commands when available.",
+      "content_digest": "sha256:a1ab111371383643f0fe53c33ccaf1173c39ee8287a419b515d7e89f647e5f55",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "database-migrations",
       "description": "Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations, alters tables, backfills data, adds indexes, or asks how to deploy schema changes without downtime or lock pain.",
       "category": "coding",
@@ -314,6 +376,99 @@
       }
     },
     {
+      "name": "graphql-schema-design",
+      "description": "Design and review GraphQL schemas for authz, pagination, N+1 risk, nullability, and evolution. Use whenever the user works on GraphQL types, resolvers, connections, deprecations, query cost, or schema reviews — even when they only paste an SDL snippet.",
+      "category": "coding",
+      "path": "skills/coding/graphql-schema-design",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 354,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/graphql-schema-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:c835555922d1b38ce83ef8b2ded9f510b6d2322452587fb0e27a4fe1ad13e365",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "i18n-review",
+      "description": "Review product UI and copy for internationalization readiness — concatenation, pluralization, locale formats, RTL, and string extraction. Use whenever the user asks about i18n, l10n, localization readiness, translation safety, or whether strings are ready for other locales.",
+      "category": "coding",
+      "path": "skills/coding/i18n-review",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 434,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/i18n-review",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:049c9379d12c0c2eb7aa461ecf52f1cc67004dbba7a94c1dd56c356bca2e005e",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "logging-observability",
+      "description": "Design logging, metrics, and tracing that operators can use under pressure. Use whenever the user asks about structured logs, metrics, OpenTelemetry, dashboards, SLIs/SLOs, alerting, or how to instrument a service for production debugging.",
+      "category": "coding",
+      "path": "skills/coding/logging-observability",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 382,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/logging-observability",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:19601461a1ab3eb01bfb5c075b23b804e9c8d1897960a5dbaf2a001a3085a33a",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "performance-review",
       "description": "Diagnose application performance bottlenecks and propose measured fixes. Use whenever the user mentions slow endpoints, high latency, CPU or memory spikes, N+1 queries, profiling results, p95/p99, or asks how to make code or systems faster — even without formal profiler output.",
       "category": "coding",
@@ -364,6 +519,37 @@
         "network": "none",
         "filesystem": "read",
         "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "prompt-injection-hardening",
+      "description": "Threat-model AI features against prompt injection, tool abuse, and data exfiltration, then propose mitigations and eval cases. Use whenever the user builds agents, RAG chatbots, tool-calling systems, or asks about prompt injection, jailbreaks, indirect injection, or agent security.",
+      "category": "coding",
+      "path": "skills/coding/prompt-injection-hardening",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 559,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/prompt-injection-hardening",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:c403f76ccc7f5d31903e67ddbdde9b72151149f847bdf3e6d42414b5b2fefb36",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -452,6 +638,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may reason about EXPLAIN output when provided.",
       "content_digest": "sha256:0bba61bad0854d7c1bc48d74de9aa1f5a353623ae547ad7ef7ff76123b9fd6fa",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "terraform-review",
+      "description": "Review Terraform and OpenTofu configuration and plans for blast radius, state risk, IAM overreach, and safer apply order. Use whenever the user shares .tf files, a terraform plan, asks if apply is safe, or reviews infrastructure-as-code modules and state backends.",
+      "category": "coding",
+      "path": "skills/coding/terraform-review",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 440,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/terraform-review",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may interpret terraform plan output when provided.",
+      "content_digest": "sha256:67a8fd02450793d5f5280312116bf526f60d774b8ce161b5010edc9f9f132b42",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -643,6 +860,37 @@
         "network": "none",
         "filesystem": "none",
         "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "sql-analytics",
+      "description": "Write analytical SQL for warehouses and BI questions with correct grain and caveats. Use whenever the user asks for warehouse SQL, BigQuery, Snowflake, Redshift, DuckDB analytics, funnel metrics in SQL, or reporting joins — as opposed to OLTP query performance tuning alone.",
+      "category": "data",
+      "path": "skills/data/sql-analytics",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 294,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/sql-analytics",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; dialect-aware when specified.",
+      "content_digest": "sha256:c1368a2ac6d054c312bd25e1d3aeaca482859cbc91ea0cb34a4ff4dba8dbf8e7",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -872,6 +1120,37 @@
       }
     },
     {
+      "name": "status-reports",
+      "description": "Write clear project and program status reports for stakeholders. Use whenever the user asks for a weekly status, program update, executive status, RAG status, or progress report on a project or initiative.",
+      "category": "documents",
+      "path": "skills/documents/status-reports",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 245,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/status-reports",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:f2a16887c18ab5f028463ac399dd78e0db069cb65a64e797ecbf1d0cf2c0c8da",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "technical-documentation",
       "description": "Write and improve technical documentation, tutorials, runbooks, and reference pages that users can follow successfully. Use whenever the user asks for docs, a README, setup instructions, an operational runbook, API usage guidance, or an explanation of how a system works, including requests to document code.",
       "category": "documents",
@@ -917,6 +1196,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:4b2c79576eb70e4562641c620d7b25acdd97db9e899e24573ee5537d3d5e6ca5",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "delegation-briefs",
+      "description": "Write tight delegation briefs so others can execute without thrash. Use whenever the user wants to hand off work, brief a teammate, scope work for an intern or contractor, or turn a vague idea into an executable assignment.",
+      "category": "productivity",
+      "path": "skills/productivity/delegation-briefs",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 248,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/delegation-briefs",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:e65261277e64c60049faf1b41da5cb2ce8d865585b3bb645aae51e9f1873190e",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1027,6 +1337,37 @@
       }
     },
     {
+      "name": "meeting-agendas",
+      "description": "Build focused meeting agendas with outcomes, timeboxes, and prep. Use whenever the user asks for a meeting agenda, sync agenda, design review agenda, kickoff agenda, or how to structure a meeting that needs a decision.",
+      "category": "productivity",
+      "path": "skills/productivity/meeting-agendas",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 320,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/meeting-agendas",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:49bef46e74033dcf7f6936da2f6b59776222c0aeb3a8bc0f1e541632f8e264a5",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "prompt-improver",
       "description": "Rewrite and strengthen prompts for AI models — diagnose what's vague, add structure, and return a copy-paste-ready improved prompt. Use whenever the user shares a prompt to improve, asks why an AI's output was bad or inconsistent, wants a system prompt written, or says \"make this prompt better\" for any model or agent.",
       "category": "productivity",
@@ -1107,6 +1448,37 @@
       "permissions": {
         "network": "none",
         "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "support-macros",
+      "description": "Draft customer support replies and macros with correct tone, escalation judgment, and no over-promising. Use whenever the user pastes a support ticket, asks for a help-desk reply, canned macro, refund wording, or whether to escalate a customer issue.",
+      "category": "productivity",
+      "path": "skills/productivity/support-macros",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 381,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/support-macros",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:3338cb46ecd8fee4bb0d82d4463cb43da2576312810ae1ba653f456f4ea9da65",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
         "execution": "none"
       },
       "metrics": {
@@ -1355,6 +1727,37 @@
       "permissions": {
         "network": "none",
         "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "incident-comms",
+      "description": "Write customer and stakeholder communications during incidents. Use whenever the user needs a status page update, outage notice, customer incident email, or internal incident broadcast — separate from the engineering postmortem write-up.",
+      "category": "writing",
+      "path": "skills/writing/incident-comms",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 377,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/incident-comms",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:8440dcf000177b9aef2c0869348c7d72fae22fdfd4c80aa943ece6e5e2416776",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
         "execution": "none"
       },
       "metrics": {

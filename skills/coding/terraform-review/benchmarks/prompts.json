@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this terraform plan before I apply",
+    "is this IAM policy in my .tf too broad",
+    "terraform destroy of the database \u2014 how bad is it",
+    "review these modules for multi-env safety",
+    "OpenTofu plan shows 12 replacements \u2014 help",
+    "check our state backend and locking setup"
+  ],
+  "should_not_trigger": [
+    "write a Dockerfile for the API",
+    "security review this Express handler only",
+    "design a REST API for orders",
+    "GitHub Actions CI for unit tests only with no infra",
+    "standup update",
+    "customer support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "Plan shows: aws_db_instance.main must be replaced due to engine version. Prod. Review.",
+      "criteria": [
+        "treats DB replace as high/blocking risk",
+        "discusses backup/snapshot or blue-green alternatives",
+        "does not invent plan lines not given"
+      ]
+    },
+    {
+      "prompt": "Security group allows 0.0.0.0/0 on port 22 to bastion. Terraform snippet provided.",
+      "criteria": [
+        "flags open SSH as serious/blocking",
+        "proposes tighter CIDR or SSM alternative",
+        "severity-tagged finding"
+      ]
+    },
+    {
+      "prompt": "Team uses local terraform.tfstate on a laptop for shared staging.",
+      "criteria": [
+        "flags missing remote state/locking",
+        "recommends remote backend pattern",
+        "explains corruption/collision risk"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "reply to this angry churn risk ticket",
+    "macro for password reset when SSO is enabled",
+    "should I escalate this ticket or resolve",
+    "draft a help desk response for billing confusion",
+    "canned reply for delayed shipment",
+    "customer thinks data was deleted \u2014 what do I say"
+  ],
+  "should_not_trigger": [
+    "cold outbound sales email to a prospect",
+    "engineering incident postmortem",
+    "blog post about support culture",
+    "PR description for a bugfix",
+    "threat model the AI support bot",
+    "weekly status report for executives"
+  ],
+  "tasks": [
+    {
+      "prompt": "Customer: charged twice, angry. Policy: refund duplicate charges within 48h after verification. Draft reply.",
+      "criteria": [
+        "empathetic but accurate",
+        "follows given refund policy",
+        "states verification/next step"
+      ]
+    },
+    {
+      "prompt": "User wants refund outside policy. Policy forbids except manager approval.",
+      "criteria": [
+        "does not invent exception",
+        "offers escalate or clear denial path per policy",
+        "keeps respectful tone"
+      ]
+    },
+    {
+      "prompt": "Possible account takeover report. Draft support handling.",
+      "criteria": [
+        "avoids asking for password in clear text email",
+        "escalation/security-minded steps",
+        "calm clear customer guidance"
+      ]
+    }
+  ]
+}

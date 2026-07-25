@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "threat model our RAG chatbot for prompt injection",
+    "can a user make the agent email secrets via tools",
+    "hardening checklist for an agent with browse and code exec",
+    "indirect prompt injection in retrieved docs",
+    "secure tool calling design for our support bot",
+    "jailbreak and injection risks for this MCP server setup"
+  ],
+  "should_not_trigger": [
+    "improve this marketing prompt for Midjourney style images",
+    "OWASP review of a classic login form with no AI",
+    "write unit tests for string parsing",
+    "general code review for performance",
+    "draft a blog post about AI ethics",
+    "SQL injection in a raw query string"
+  ],
+  "tasks": [
+    {
+      "prompt": "Support agent can call send_email(to, body) and search_docs(q). Users paste tickets. Threat model.",
+      "criteria": [
+        "identifies tool abuse / exfiltration path",
+        "proposes confirmation or allowlist controls",
+        "includes at least one red-team eval case"
+      ]
+    },
+    {
+      "prompt": "RAG over customer PDFs, no tools, multi-tenant. Risks?",
+      "criteria": [
+        "covers cross-tenant retrieval isolation",
+        "covers indirect injection in documents",
+        "does not invent tools that do not exist"
+      ]
+    },
+    {
+      "prompt": "Team relies only on a stronger system prompt for a coding agent with shell. Critique.",
+      "criteria": [
+        "states prompt-only is insufficient",
+        "proposes sandbox/least privilege",
+        "mentions irreversible action gates"
+      ]
+    }
+  ]
+}

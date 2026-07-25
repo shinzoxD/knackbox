@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a delegation brief for this feature",
+    "hand off this bugfix to a teammate",
+    "scope an intern project for the summer",
+    "brief a contractor on the docs migration",
+    "turn this idea into an assignment with DoD",
+    "task brief for on-call follow-up work"
+  ],
+  "should_not_trigger": [
+    "meeting agenda for decision",
+    "full RFC design",
+    "standup status",
+    "sprint retro",
+    "customer support reply",
+    "resume bullet rewrite only"
+  ],
+  "tasks": [
+    {
+      "prompt": "Delegate: add CSV export to reports. Due in 1 week. Mid-level eng. Auth must match existing reports.",
+      "criteria": [
+        "includes definition of done",
+        "scope and constraints",
+        "checkpoints or first steps"
+      ]
+    },
+    {
+      "prompt": "Vague idea: make onboarding better. Create a brief that forces clarity.",
+      "criteria": [
+        "narrows or lists clarifying questions",
+        "does not pretend fake requirements are known",
+        "still usable structure"
+      ]
+    },
+    {
+      "prompt": "Intern brief for improving test reliability. Keep safe scope.",
+      "criteria": [
+        "scopes appropriately for intern",
+        "clear done criteria",
+        "escalation/checkpoints"
+      ]
+    }
+  ]
+}

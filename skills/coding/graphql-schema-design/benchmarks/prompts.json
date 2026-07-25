@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this GraphQL schema for breaking changes",
+    "how should we paginate nested connections",
+    "field-level authz on this GraphQL API",
+    "design GraphQL types for orders and line items",
+    "N+1 risk in these resolvers",
+    "deprecate a GraphQL field safely"
+  ],
+  "should_not_trigger": [
+    "design REST resources for orders only",
+    "optimize a raw SQL query with no GraphQL",
+    "write React Apollo boilerplate without schema design",
+    "terraform review",
+    "blog post about GraphQL history",
+    "customer support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "SDL has `users: [User!]!` returning all users, no pagination, auth is global login only. Review.",
+      "criteria": [
+        "flags unbounded list / pagination need",
+        "flags authorization/overfetch risk",
+        "proposes safer shape"
+      ]
+    },
+    {
+      "prompt": "Want to rename field `email` to `primaryEmail` on User in a public API.",
+      "criteria": [
+        "uses deprecation/additive strategy",
+        "calls out breaking risk of hard rename",
+        "migration guidance for clients"
+      ]
+    },
+    {
+      "prompt": "Nested `author { posts { comments } }` on a feed. Performance notes.",
+      "criteria": [
+        "identifies N+1 or cost risk",
+        "mentions dataloader or query limits",
+        "practical mitigation"
+      ]
+    }
+  ]
+}

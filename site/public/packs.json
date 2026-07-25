@@ -4,7 +4,7 @@
     {
       "slug": "developer-essentials",
       "name": "Developer Essentials",
-      "description": "Plan, implement, test, review, and ship software changes with a consistent engineering workflow.",
+      "description": "Plan, implement, test, review, secure, and ship software with a consistent engineering workflow.",
       "skills": [
         "api-design",
         "debugging",
@@ -19,32 +19,51 @@
         "performance-review",
         "error-handling",
         "git-conflict-resolution",
-        "database-migrations"
+        "database-migrations",
+        "ci-cd-pipelines",
+        "logging-observability",
+        "container-review"
       ]
     },
     {
       "slug": "quality-and-a11y",
       "name": "Quality & Accessibility",
-      "description": "Review product quality from security, accessibility, performance, and defect triage angles.",
+      "description": "Review product quality from security, accessibility, performance, i18n, and defect triage angles.",
       "skills": [
         "code-review",
         "security-review",
         "accessibility-review",
+        "i18n-review",
         "performance-review",
         "issue-triage",
         "test-generation"
       ]
     },
     {
+      "slug": "platform-and-infra",
+      "name": "Platform & Infra",
+      "description": "Review infrastructure-as-code, containers, CI/CD, GraphQL platforms, and AI agent hardening.",
+      "skills": [
+        "terraform-review",
+        "container-review",
+        "ci-cd-pipelines",
+        "logging-observability",
+        "graphql-schema-design",
+        "prompt-injection-hardening",
+        "database-migrations"
+      ]
+    },
+    {
       "slug": "data-workbench",
       "name": "Data Workbench",
-      "description": "Clean tabular inputs, define metrics, analyze experiments, and communicate findings honestly.",
+      "description": "Clean inputs, define metrics, analyze experiments, write warehouse SQL, and communicate findings.",
       "skills": [
         "data-cleaning",
         "csv-analysis",
         "data-visualization",
         "metrics-definitions",
-        "ab-test-analysis"
+        "ab-test-analysis",
+        "sql-analytics"
       ]
     },
     {
@@ -62,25 +81,29 @@
     {
       "slug": "clear-writing",
       "name": "Clear Writing",
-      "description": "Draft, edit, and adapt writing across email, articles, launches, social, and product pages.",
+      "description": "Draft and edit writing across email, articles, launches, social, and incident communications.",
       "skills": [
         "email-drafts",
         "blog-posts",
         "copy-editing",
         "landing-page-copy",
         "product-announcements",
-        "social-posts"
+        "social-posts",
+        "incident-comms"
       ]
     },
     {
       "slug": "project-leadership",
       "name": "Project Leadership",
-      "description": "Turn uncertain work into decisions, designs, plans, status, retros, and durable records.",
+      "description": "Turn uncertain work into decisions, designs, plans, status, agendas, and durable records.",
       "skills": [
         "decision-memos",
         "project-proposals",
         "task-planning",
         "meeting-notes",
+        "meeting-agendas",
+        "delegation-briefs",
+        "status-reports",
         "release-notes",
         "incident-postmortems",
         "rfc-design-docs",
@@ -93,25 +116,39 @@
     {
       "slug": "ops-reliability",
       "name": "Ops & Reliability",
-      "description": "Operate systems under stress: runbooks, incidents, migrations, errors, and performance.",
+      "description": "Operate systems under stress: runbooks, incidents, migrations, errors, performance, and comms.",
       "skills": [
         "runbook-writing",
         "incident-postmortems",
+        "incident-comms",
         "database-migrations",
         "error-handling",
         "performance-review",
-        "dependency-upgrades"
+        "dependency-upgrades",
+        "logging-observability"
       ]
     },
     {
       "slug": "career-and-hiring",
       "name": "Career & Hiring",
-      "description": "Prepare candidates and interviewers with structured practice and clear story telling.",
+      "description": "Prepare candidates and interviewers with structured practice and clear storytelling.",
       "skills": [
         "interview-prep",
         "resume-builder",
         "decision-memos",
         "email-drafts"
+      ]
+    },
+    {
+      "slug": "customer-facing",
+      "name": "Customer Facing",
+      "description": "Support macros, incident customer updates, announcements, and clear external writing.",
+      "skills": [
+        "support-macros",
+        "incident-comms",
+        "product-announcements",
+        "email-drafts",
+        "copy-editing"
       ]
     }
   ]

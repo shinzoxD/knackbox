@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "agenda for a 45 minute design review",
+    "kickoff meeting agenda for the migration",
+    "weekly product eng sync agenda",
+    "decision meeting agenda for pricing change",
+    "how to structure a meeting to choose a vendor",
+    "agenda with prep for architecture review"
+  ],
+  "should_not_trigger": [
+    "meeting notes from a transcript",
+    "retro facilitation stickies",
+    "status report for executives",
+    "delegation brief for a task",
+    "support macro",
+    "RFC full design doc"
+  ],
+  "tasks": [
+    {
+      "prompt": "Need a decision: Redis vs Memcached for session cache. 30 minutes, 4 eng + 1 staff lead.",
+      "criteria": [
+        "states outcome as decision",
+        "timeboxes topics",
+        "includes prep and decision owner"
+      ]
+    },
+    {
+      "prompt": "Manager wants a 90 minute meeting with 12 FYI topics. Advise and agenda.",
+      "criteria": [
+        "pushes back or moves FYI to pre-read",
+        "focuses agenda",
+        "practical structure"
+      ]
+    },
+    {
+      "prompt": "Recurring 15-min standup-style sync for 8 people feels useless. Propose agenda or async.",
+      "criteria": [
+        "may recommend async or restructure",
+        "clear purpose if meeting kept",
+        "actionable format"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "BigQuery SQL for weekly active users",
+    "Snowflake funnel query from events table",
+    "write analytical SQL for revenue by plan",
+    "Redshift query for retention cohorts",
+    "DuckDB SQL to join orders and accounts for BI",
+    "warehouse SQL for activation rate by week"
+  ],
+  "should_not_trigger": [
+    "optimize this OLTP SELECT with FOR UPDATE",
+    "review terraform",
+    "A/B test statistics without SQL",
+    "define north star metric text only",
+    "container Dockerfile review",
+    "support macro draft"
+  ],
+  "tasks": [
+    {
+      "prompt": "Events table: user_id, event_name, ts. Define WAU as users with any event in ISO week. BigQuery SQL.",
+      "criteria": [
+        "states grain",
+        "provides SQL with week bucketing",
+        "notes timezone or assumes clearly"
+      ]
+    },
+    {
+      "prompt": "Join orders (many per user) to users for count of users with revenue>0; warn about fan-out.",
+      "criteria": [
+        "avoids double-counting users",
+        "clear SQL approach",
+        "mentions grain"
+      ]
+    },
+    {
+      "prompt": "Funnel signup\u2192activate\u2192pay in SQL. User events may repeat.",
+      "criteria": [
+        "handles first-time events or distinct steps",
+        "stable step definitions",
+        "caveats listed"
+      ]
+    }
+  ]
+}

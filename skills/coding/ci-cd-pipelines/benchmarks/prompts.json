@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this GitHub Actions workflow",
+    "design CI for a Node monorepo",
+    "how should we gate production deploys",
+    "speed up our pipeline with better caching",
+    "GitLab CI stages for test and deploy",
+    "OIDC to cloud from GitHub Actions"
+  ],
+  "should_not_trigger": [
+    "terraform module structure without CI",
+    "unit test ideas for a pure function only",
+    "write a Dockerfile only",
+    "support ticket reply",
+    "blog announcement",
+    "interview prep STAR story"
+  ],
+  "tasks": [
+    {
+      "prompt": "PR workflow runs npm test but deploy workflow can be triggered by workflow_dispatch from anyone with write. Review.",
+      "criteria": [
+        "flags unsafe deploy trigger/permissions concern",
+        "proposes safer gating",
+        "mentions environment protection or similar"
+      ]
+    },
+    {
+      "prompt": "Pipeline rebuilds Docker image separately for staging and prod with different Dockerfiles. Advise.",
+      "criteria": [
+        "prefers promote artifact pattern",
+        "explains drift risk",
+        "practical stage design"
+      ]
+    },
+    {
+      "prompt": "Tests are flaky; CI retries 5 times and is often green. Critique.",
+      "criteria": [
+        "rejects infinite/heavy retry as sole strategy",
+        "proposes quarantine/ownership",
+        "notes signal quality"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "status page update for elevated API errors",
+    "customer email about the outage",
+    "internal incident broadcast for all hands channel",
+    "write an investigating update without root cause",
+    "resolved message after checkout recovery",
+    "outage notice with workaround for read-only mode"
+  ],
+  "should_not_trigger": [
+    "full blameless engineering postmortem with timeline",
+    "weekly project status green/yellow",
+    "support macro for billing",
+    "release notes for a feature launch",
+    "security code review",
+    "meeting agenda"
+  ],
+  "tasks": [
+    {
+      "prompt": "Since 14:10 UTC 5xx on checkout for ~20% of users. Cause unknown. Draft status page investigating update.",
+      "criteria": [
+        "states impact and uncertainty honestly",
+        "includes next update time",
+        "does not invent root cause"
+      ]
+    },
+    {
+      "prompt": "Issue mitigated at 15:02; root cause still unknown. Customer email.",
+      "criteria": [
+        "resolved/mitigated language careful",
+        "no fake RCA",
+        "mentions follow-up if appropriate"
+      ]
+    },
+    {
+      "prompt": "Security incident possible; legal says minimize detail. Public note.",
+      "criteria": [
+        "minimal detail",
+        "customer-safe wording",
+        "no exploit steps"
+      ]
+    }
+  ]
+}

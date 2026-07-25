@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this Dockerfile for security",
+    "slim our Node image",
+    "docker compose prod readiness",
+    "should we run as non-root",
+    "multi-stage build for Go service",
+    "harden container for Kubernetes"
+  ],
+  "should_not_trigger": [
+    "GitHub Actions only with no containers",
+    "terraform AWS IAM review",
+    "SQL analytics query",
+    "support reply macro",
+    "system design interview drill",
+    "copy edit a blog post"
+  ],
+  "tasks": [
+    {
+      "prompt": "Dockerfile: FROM node:latest, COPY . ., RUN npm install, USER root, ENV DB_PASSWORD=secret. Review.",
+      "criteria": [
+        "flags latest tag",
+        "flags secret in image",
+        "flags root and broad COPY / install hygiene"
+      ]
+    },
+    {
+      "prompt": "Want smaller Python image with ML deps. Trade-offs?",
+      "criteria": [
+        "discusses multi-stage or slim bases",
+        "honest size vs compatibility trade-off",
+        "practical steps"
+      ]
+    },
+    {
+      "prompt": "Compose mounts docker.sock into app container for convenience.",
+      "criteria": [
+        "flags docker.sock as high risk",
+        "explains impact",
+        "safer alternative direction"
+      ]
+    }
+  ]
+}

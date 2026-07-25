@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "is this UI ready for localization",
+    "review these React strings for i18n issues",
+    "pluralization problems in our notification copy",
+    "i18n review before we hire translators",
+    "RTL readiness for our settings page",
+    "are these date formats locale-safe"
+  ],
+  "should_not_trigger": [
+    "translate this paragraph into Spanish only",
+    "accessibility keyboard review without i18n",
+    "write landing page marketing copy",
+    "performance review of the bundle",
+    "security review of auth",
+    "SQL analytics for signups"
+  ],
+  "tasks": [
+    {
+      "prompt": "Code: `label = 'Hi ' + user.name + ', you have ' + count + ' items'`. Review for i18n.",
+      "criteria": [
+        "flags concatenation",
+        "proposes single message with placeholders/plurals",
+        "severity appropriate"
+      ]
+    },
+    {
+      "prompt": "UI uses `toLocaleDateString` nowhere; all dates formatted as MM/DD/YYYY strings.",
+      "criteria": [
+        "flags hardcoded US date format",
+        "recommends locale-aware formatting",
+        "notes user/locale source"
+      ]
+    },
+    {
+      "prompt": "Button width fixed 80px with English 'Submit'. Planning German.",
+      "criteria": [
+        "flags fixed width / layout risk",
+        "suggests flexible layout",
+        "practical fix"
+      ]
+    }
+  ]
+}

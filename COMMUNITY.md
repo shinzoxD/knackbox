@@ -29,18 +29,21 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Infrastructure-as-code review (Terraform/Pulumi)
+- Pulumi / CloudFormation review (Terraform skill already ships)
 - Prompt evaluation / offline eval harness notes
-- Mobile release checklist
-- Threat model for AI features (prompt injection, data exfil)
-- Localization / i18n review
-- GraphQL schema design (deeper than general API design)
+- Mobile release checklist (iOS/Android)
 - Data contract / schema registry workflows
-- Customer support macros with escalation judgment
 - Hiring scorecards (beyond interview prep)
 - Open-source maintainer triage (issues + PRs)
+- Kubernetes manifest review
+- Privacy / GDPR request handling playbooks
+- Load-test planning and interpretation
+- Design-system contribution checklist
 
-If you build one of these, link the issue in your PR.
+Shipped from earlier requests: `terraform-review`, `prompt-injection-hardening`,
+`i18n-review`, `graphql-schema-design`, `support-macros`.
+
+If you build a new skill, link any related issue in your PR.
 
 ## Using Knackbox in public content
 

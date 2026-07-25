@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write the weekly project status",
+    "executive status update for the migration program",
+    "RAG status report for leadership",
+    "program update across three workstreams",
+    "progress report for the board deck appendix",
+    "yellow status narrative with risks"
+  ],
+  "should_not_trigger": [
+    "daily standup bullets only",
+    "incident customer status page copy",
+    "sprint retro notes",
+    "RFC design for a feature",
+    "support ticket reply",
+    "release notes for engineers"
+  ],
+  "tasks": [
+    {
+      "prompt": "Project: search rewrite. Shipped indexing; ranking delayed; blocked on ML headcount. Status yellow. Write weekly.",
+      "criteria": [
+        "overall yellow with reason",
+        "highlights and risks/asks",
+        "does not invent metrics"
+      ]
+    },
+    {
+      "prompt": "No progress this week due to incident freeze. Status?",
+      "criteria": [
+        "honest about lack of progress",
+        "still provides risks/next",
+        "appropriate color"
+      ]
+    },
+    {
+      "prompt": "Exec wants 8 bullet status with a decision ask on budget.",
+      "criteria": [
+        "concise exec-friendly structure",
+        "explicit decision ask",
+        "clear overall health"
+      ]
+    }
+  ]
+}

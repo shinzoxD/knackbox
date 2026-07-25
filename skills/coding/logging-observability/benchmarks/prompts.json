@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design metrics and logs for our checkout service",
+    "OpenTelemetry instrumentation plan",
+    "what should we alert on for the API",
+    "structured logging fields for multi-tenant SaaS",
+    "SLO dashboard sketch for latency",
+    "why is our tracing useless across services"
+  ],
+  "should_not_trigger": [
+    "terraform apply review",
+    "write unit tests for parser",
+    "customer support macro",
+    "refactor planning only",
+    "landing page copy",
+    "A/B test interpretation"
+  ],
+  "tasks": [
+    {
+      "prompt": "Payments API: need observability before GA. Outline SLIs, logs, traces.",
+      "criteria": [
+        "defines SLIs relevant to payments",
+        "structured log field guidance without secrets",
+        "includes alerts or dashboard ideas"
+      ]
+    },
+    {
+      "prompt": "Engineer wants metric label user_id on every request counter.",
+      "criteria": [
+        "flags cardinality risk",
+        "proposes alternative",
+        "still allows debugging via logs/traces"
+      ]
+    },
+    {
+      "prompt": "Logs currently print Authorization headers for debug. Fix guidance.",
+      "criteria": [
+        "treats as critical secret leakage",
+        "redaction guidance",
+        "prevention practice"
+      ]
+    }
+  ]
+}
