@@ -1,17 +1,23 @@
 ---
 import CopyButton from "../../components/CopyButton.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { installCommand, legacyInstallCommand } from "../../lib/catalog";
+import {
+  installCommand,
+  knackboxCliCommand,
+  legacyInstallCommand,
+} from "../../lib/catalog";
 
-const example = `${installCommand} commit-messages`;
+const knackboxExample = `${knackboxCliCommand} commit-messages`;
+const knackboxPackExample = "npx knackbox pack developer-essentials";
+const skillsExample = `${installCommand} commit-messages`;
 const legacyExample = `${legacyInstallCommand} commit-messages`;
 ---
 
 <BaseLayout
   title="Install Agent Skills — Docs"
-  description="How to install Knackbox Agent Skills into Claude Code, Codex, Cursor, OpenCode, Claude.ai, and any SKILL.md-compatible runtime. CLI and curl installers included."
+  description="How to install Knackbox Agent Skills with the knackbox CLI, Skills CLI, curl installer, Claude.ai, and any SKILL.md-compatible runtime."
   canonicalPath="/docs/"
-  keywords="install agent skills, Claude Code skills install, npx skills add, SKILL.md install, knackbox install"
+  keywords="install agent skills, npx knackbox add, Claude Code skills install, npx skills add, SKILL.md install"
 >
   <section class="rail-section" data-pagefind-body>
     <div class="wrap py-10 sm:py-12">
@@ -25,7 +31,31 @@ const legacyExample = `${legacyInstallCommand} commit-messages`;
     </div>
 
     <h2 class="eyebrow mb-3">Install targets</h2>
-    <div class="grid gap-4 lg:grid-cols-3">
+    <div class="grid gap-4 lg:grid-cols-2">
+      <section class="panel p-4 sm:p-5">
+        <h3 class="text-base font-semibold text-ink-950 dark:text-white">Knackbox CLI</h3>
+        <p class="mt-2 text-sm leading-6 muted">
+          Zero-dependency Node CLI. Resolves the live catalog, downloads the repo tarball, and extracts only the
+          skill folder. Defaults to <code class="font-mono text-[13px]">~/.claude/skills</code>.
+        </p>
+        <p class="mt-2 text-sm leading-6 muted">
+          Use <code class="font-mono text-[13px]">--agent cursor|codex|opencode</code>,
+          {" "}<code class="font-mono text-[13px]">--dest DIR</code>, or
+          {" "}<code class="font-mono text-[13px]">--force</code>. Install a starter pack with
+          {" "}<code class="font-mono text-[13px]">npx knackbox pack &lt;slug&gt;</code>.
+        </p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <h4 class="text-sm font-semibold">Add a skill</h4>
+          <CopyButton value={knackboxExample} />
+        </div>
+        <pre class="terminal mt-2"><code>{knackboxExample}</code></pre>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <h4 class="text-sm font-semibold">Install a pack</h4>
+          <CopyButton value={knackboxPackExample} />
+        </div>
+        <pre class="terminal mt-2"><code>{knackboxPackExample}</code></pre>
+      </section>
+
       <section class="panel p-4 sm:p-5">
         <h3 class="text-base font-semibold text-ink-950 dark:text-white">Skills CLI</h3>
         <p class="mt-2 text-sm leading-6 muted">
@@ -38,9 +68,9 @@ const legacyExample = `${legacyInstallCommand} commit-messages`;
         </p>
         <div class="mt-4 flex items-center justify-between gap-3">
           <h4 class="text-sm font-semibold">Example</h4>
-          <CopyButton value={example} />
+          <CopyButton value={skillsExample} />
         </div>
-        <pre class="terminal mt-2"><code>{example}</code></pre>
+        <pre class="terminal mt-2"><code>{skillsExample}</code></pre>
       </section>
 
       <section class="panel p-4 sm:p-5">

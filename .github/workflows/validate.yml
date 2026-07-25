@@ -32,6 +32,21 @@ jobs:
           printf '%s\n' "$output"
           printf '%s\n' "$output" | grep -Eq "Found[[:space:]]+${expected}[[:space:]]+skills"
 
+  cli:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - name: Test knackbox CLI
+        run: |
+          cd packages/cli
+          node bin/knackbox.js help
+          node bin/knackbox.js list --catalog ../../catalog.json --category coding >/dev/null
+          npm test
+
   site:
     if: github.event_name == 'pull_request'
     needs: validate

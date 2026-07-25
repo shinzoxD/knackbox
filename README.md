@@ -31,6 +31,23 @@ description: Write clear, conventional git commit messages. Use whenever the
 
 ## Install a skill
 
+**Knackbox CLI** — zero-dependency Node installer (resolves the live catalog, extracts from the repo tarball):
+
+```bash
+npx knackbox add commit-messages
+npx knackbox add code-review security-review --agent cursor
+npx knackbox pack developer-essentials
+npx knackbox list --category coding
+```
+
+Default destination is `~/.claude/skills/<name>`. Use `--agent codex|cursor|opencode`, `--dest DIR`, or `--force` as needed. Package source: [`packages/cli`](packages/cli).
+
+Until the package is on the public npm registry, run from a clone:
+
+```bash
+node packages/cli/bin/knackbox.js add commit-messages
+```
+
 **Open Skills CLI** — install into Claude Code, Codex, OpenCode, Cursor, or another detected agent:
 
 ```bash

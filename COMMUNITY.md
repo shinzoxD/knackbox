@@ -48,7 +48,8 @@ If you build a new skill, link any related issue in your PR.
 ## Using Knackbox in public content
 
 - Site: [knackbox.pages.dev](https://knackbox.pages.dev)
-- Install example: `npx skills add shinzoxD/knackbox --skill commit-messages`
+- Install: `npx knackbox add commit-messages` (see [`packages/cli`](packages/cli))
+- Ecosystem CLI: `npx skills add shinzoxD/knackbox --skill commit-messages`
 - Machine catalog: [catalog.json](https://knackbox.pages.dev/catalog.json)
 - AI crawlers: [llms.txt](https://knackbox.pages.dev/llms.txt)
 

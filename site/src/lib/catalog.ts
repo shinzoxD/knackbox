@@ -69,6 +69,9 @@ export const categories = [...new Set(allSkills.map((skill) => skill.category))]
 export const tiers: Tier[] = ["core", "verified", "community"];
 export const githubOrg = "shinzoxD";
 export const githubRepoUrl = `https://github.com/${githubOrg}/knackbox`;
+/** Primary Knackbox npm CLI (packages/cli). */
+export const knackboxCliCommand = "npx knackbox add";
+/** Ecosystem Skills CLI. */
 export const installCommand = `npx skills add ${githubOrg}/knackbox --skill`;
 export const legacyInstallCommand =
   `curl -fsSL https://raw.githubusercontent.com/${githubOrg}/knackbox/main/install.sh | bash -s`;

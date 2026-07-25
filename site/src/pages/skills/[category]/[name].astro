@@ -7,7 +7,7 @@ import {
   fmt,
   fmtPercent,
   getSkillHtml,
-  installCommand,
+  knackboxCliCommand,
   skillUrl,
   type Skill,
 } from "../../../lib/catalog";
@@ -22,7 +22,7 @@ export function getStaticPaths() {
 
 const { skill } = Astro.props as { skill: Skill };
 const html = getSkillHtml(skill);
-const command = `${installCommand} ${skill.name}`;
+const command = `${knackboxCliCommand} ${skill.name}`;
 const pagePath = skillUrl(skill);
 const pageDescription = skillMetaDescription(skill);
 const jsonLd = [

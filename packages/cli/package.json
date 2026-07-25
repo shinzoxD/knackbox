@@ -1,0 +1,43 @@
+{
+  "name": "knackbox",
+  "version": "0.1.0",
+  "description": "Install Knackbox Agent Skills into Claude Code, Codex, Cursor, and custom destinations",
+  "type": "module",
+  "bin": {
+    "knackbox": "./bin/knackbox.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start": "node ./bin/knackbox.js"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "cursor",
+    "skills",
+    "knackbox",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinzoxD/knackbox.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://knackbox.pages.dev",
+  "bugs": {
+    "url": "https://github.com/shinzoxD/knackbox/issues"
+  },
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}

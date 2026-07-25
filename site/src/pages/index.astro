@@ -8,7 +8,7 @@ import {
   categories,
   catalog,
   githubRepoUrl,
-  installCommand,
+  knackboxCliCommand,
   skillUrl,
   tierCounts,
 } from "../lib/catalog";
@@ -23,7 +23,7 @@ import {
 
 const counts = tierCounts();
 const coreSkills = byTier("core");
-const command = `${installCommand} commit-messages`;
+const command = `${knackboxCliCommand} commit-messages`;
 const stats = [
   { label: "Skills", value: allSkills.length, wide: true },
   { label: "Categories", value: categories.length },
@@ -71,8 +71,9 @@ const jsonLd = [
         </div>
         <pre class="terminal border-0"><code>{command}</code></pre>
         <p class="border-t border-ink-300 px-4 py-3 text-xs muted dark:border-ink-700">
-          Uses the open Skills CLI to detect supported agents. Add <code class="font-mono">-g</code> for a global install.
-          See <a href="/docs/">installation docs</a> for explicit agent targets and the repository installer.
+          Knackbox CLI installs into <code class="font-mono">~/.claude/skills</code> by default.
+          Pass <code class="font-mono">--agent cursor</code> (or codex / opencode) for other roots.
+          See <a href="/docs/">installation docs</a> for the ecosystem Skills CLI and curl fallback.
         </p>
       </div>
     </div>
