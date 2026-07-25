@@ -1,0 +1,47 @@
+{
+  "should_trigger": [
+    "security review this auth endpoint before we ship",
+    "is this login code safe? any vulns?",
+    "threat model the file upload feature",
+    "OWASP check on this payment webhook handler",
+    "we hardcode an API key here — is that a problem and how do we fix it",
+    "can an attacker exploit this SSRF-looking fetch?"
+  ],
+  "should_not_trigger": [
+    "write unit tests for the login handler",
+    "review this PR for maintainability and naming",
+    "write a commit message for the auth fix",
+    "debug why login returns 500 on missing user",
+    "design the REST API for sessions and tokens",
+    "generate a PR description for the security patch"
+  ],
+  "tasks": [
+    {
+      "prompt": "Security-review this endpoint: GET /users/{id}/profile returns full user rows including password_hash and email. Any authenticated user can pass any id. Framework is Express + Postgres.",
+      "criteria": [
+        "flags missing object-level authorization (IDOR) as high or critical",
+        "flags password_hash (and preferably email) exposure in the response",
+        "proposes concrete fixes (authz check to self/admin, field allowlist)",
+        "includes a ship verdict"
+      ]
+    },
+    {
+      "prompt": "Review: a Node handler builds SQL with `query('SELECT * FROM orders WHERE user_id = ' + req.query.userId)` and returns rows.",
+      "criteria": [
+        "flags SQL injection as critical or high",
+        "gives an abuse path with example input",
+        "recommends parameterized queries with a concrete example",
+        "mentions that userId must still be authorized to the caller"
+      ]
+    },
+    {
+      "prompt": "Design-only: we will let users paste a URL and our worker will fetch it to generate a link preview. No code yet. What should we worry about?",
+      "criteria": [
+        "identifies SSRF as a primary risk",
+        "covers allowlists/block private IP ranges/metadata endpoints",
+        "mentions timeouts, size limits, and content-type handling",
+        "outputs a threat-model style summary rather than inventing code bugs"
+      ]
+    }
+  ]
+}

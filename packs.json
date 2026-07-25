@@ -5,7 +5,7 @@
       "slug": "developer-essentials",
       "name": "Developer Essentials",
       "description": "Plan, implement, test, review, and document software changes with a consistent engineering workflow.",
-      "skills": ["api-design", "debugging", "test-generation", "code-review", "commit-messages", "pr-descriptions"]
+      "skills": ["api-design", "debugging", "test-generation", "code-review", "commit-messages", "pr-descriptions", "security-review", "sql-query-review"]
     },
     {
       "slug": "data-workbench",
@@ -29,7 +29,7 @@
       "slug": "project-leadership",
       "name": "Project Leadership",
       "description": "Turn uncertain initiatives into decisions, proposals, execution plans, and durable meeting records.",
-      "skills": ["decision-memos", "project-proposals", "task-planning", "meeting-notes"]
+      "skills": ["decision-memos", "project-proposals", "task-planning", "meeting-notes", "release-notes"]
     }
   ]
 }

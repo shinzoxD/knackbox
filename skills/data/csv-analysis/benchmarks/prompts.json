@@ -4,14 +4,16 @@
     "Profile the uploaded table and summarize important patterns.",
     "Calculate totals and month-over-month changes from these rows.",
     "What does this TSV show about customer churn?",
-    "Answer these questions using the spreadsheet data I pasted."
+    "Answer these questions using the spreadsheet data I pasted.",
+    "From this table, what's our conversion funnel drop-off by step?"
   ],
   "should_not_trigger": [
     "Standardize the date formats and remove duplicates in this CSV.",
     "Choose the best chart for these monthly totals.",
     "Design a SQL schema for importing this table.",
     "Write documentation for our data pipeline.",
-    "Summarize this research paper about churn."
+    "Summarize this research paper about churn.",
+    "Review this SQL aggregation for correctness."
   ],
   "tasks": [
     {

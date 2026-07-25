@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "write release notes for v2.4 from these commits",
+    "draft a changelog entry for this release",
+    "what's new summary for customers from these merged PRs",
+    "turn this commit list into Keep a Changelog format",
+    "ship notes for engineers for the 1.12.0 tag",
+    "customer-facing release notes from the diff between v1 and v2"
+  ],
+  "should_not_trigger": [
+    "write a PR description for this single branch",
+    "write a conventional commit message for my staged changes",
+    "review this code for security issues",
+    "summarize this research paper",
+    "draft a project proposal for the mobile rewrite",
+    "meeting notes from today's planning call"
+  ],
+  "tasks": [
+    {
+      "prompt": "Write Keep a Changelog notes for version 2.1.0 dated 2026-07-01 from: feat: CSV export on reports page; fix: crash when invoice tax is null; feat!: rename env var DB_URL to DATABASE_URL; chore: bump eslint; merge main.",
+      "criteria": [
+        "uses Added/Fixed/Breaking (or equivalent) sections appropriately",
+        "omits pure chore/merge noise or folds it out of user-facing lists",
+        "breaking change includes migration guidance for DATABASE_URL",
+        "does not invent features not in the list"
+      ]
+    },
+    {
+      "prompt": "Customer what's-new blurb from: fixed login timeout on slow networks; added dark mode toggle in settings; refactored auth middleware; upgraded internal metrics library.",
+      "criteria": [
+        "highlights dark mode and login fix in plain language",
+        "excludes or de-emphasizes internal refactor and metrics library",
+        "benefit-led bullets, not file-level jargon"
+      ]
+    },
+    {
+      "prompt": "Security patch 1.0.1 notes from: fix: prevent IDOR on /invoices/:id so users only see own invoices. Audience: operators.",
+      "criteria": [
+        "Security section or clear security labeling",
+        "describes impact class without a step-by-step exploit",
+        "urges upgrade; keeps notes short for a patch"
+      ]
+    }
+  ]
+}

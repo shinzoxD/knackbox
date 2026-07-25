@@ -4,14 +4,16 @@
     "Turn this branch diff into a reviewer-friendly pull request summary.",
     "I am opening a merge request; explain the change and testing.",
     "Give me a title and body for this GitHub PR.",
-    "Summarize this feature branch for reviewers."
+    "Summarize this feature branch for reviewers.",
+    "Draft description for this draft PR — I need feedback on the API shape."
   ],
   "should_not_trigger": [
     "Write a conventional commit message for this diff.",
     "Review this pull request and find bugs.",
     "Generate release notes from these merged pull requests.",
     "Explain what this function does.",
-    "Create tests for the changed validation logic."
+    "Create tests for the changed validation logic.",
+    "Security review the auth changes in this branch."
   ],
   "tasks": [
     {

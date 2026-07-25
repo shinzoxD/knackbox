@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "review this SQL query for bugs and performance",
+    "why is this join so slow and how do I fix it",
+    "optimize this SELECT with three LEFT JOINs",
+    "is this query safe from SQL injection",
+    "rewrite my ORM query so it doesn't N+1",
+    "check this UPDATE statement before I run it in prod"
+  ],
+  "should_not_trigger": [
+    "design a REST API for orders and customers",
+    "write unit tests for the repository layer",
+    "analyze this CSV of query latencies for trends",
+    "draft a PR description for the index migration",
+    "threat model the database network boundary",
+    "write release notes for the reporting feature"
+  ],
+  "tasks": [
+    {
+      "prompt": "Review this application SQL built by string concatenation: SELECT * FROM orders o JOIN order_items i ON o.id = i.order_id WHERE YEAR(o.created_at) = 2024 AND o.customer_id = ' + userInput + ' (quotes glued around userInput). PostgreSQL; indexes exist on orders(created_at) and orders(customer_id). Goal: list line items for one customer in 2024.",
+      "criteria": [
+        "flags string concatenation / SQL injection risk",
+        "flags non-sargable YEAR(created_at) (or equivalent) vs range filter",
+        "flags SELECT * or join grain issues for the stated goal",
+        "provides a parameterized rewritten query using a date range"
+      ]
+    },
+    {
+      "prompt": "This query returns inflated revenue: SELECT c.name, SUM(o.amount) FROM customers c JOIN orders o ON c.id = o.customer_id JOIN order_tags t ON o.id = t.order_id WHERE t.tag = 'vip' GROUP BY c.name. Some orders have multiple vip-related tags.",
+      "criteria": [
+        "identifies join fan-out multiplying SUM",
+        "proposes a correct rewrite (e.g. pre-aggregate, EXISTS, or DISTINCT order ids)",
+        "states the intended grain clearly"
+      ]
+    },
+    {
+      "prompt": "Review before prod: DELETE FROM sessions WHERE user_id IN (SELECT user_id FROM users WHERE last_login < '2020-01-01'. MySQL. Typo: missing closing parenthesis may or may not be present — focus on safety of the delete.",
+      "criteria": [
+        "treats unconstrained or broad DELETE risk seriously",
+        "recommends transaction, SELECT preview, or LIMIT/batching strategy",
+        "mentions verifying the subquery predicate before delete"
+      ]
+    }
+  ]
+}

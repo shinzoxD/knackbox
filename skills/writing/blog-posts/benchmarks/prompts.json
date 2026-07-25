@@ -4,14 +4,16 @@
     "Turn these notes into a long-form article for our site.",
     "Draft a newsletter issue about this product lesson.",
     "Create an engaging technical article for beginners.",
-    "Rewrite this blog draft with a stronger hook and structure."
+    "Rewrite this blog draft with a stronger hook and structure.",
+    "Ghostwrite a post in my voice about shipping weekly."
   ],
   "should_not_trigger": [
     "Write concise landing-page copy for this product.",
     "Copy edit this article without restructuring it.",
     "Draft a short email announcing the post.",
     "Summarize this research paper into a brief.",
-    "Write technical API documentation."
+    "Write technical API documentation.",
+    "Write customer release notes for v3."
   ],
   "tasks": [
     {
