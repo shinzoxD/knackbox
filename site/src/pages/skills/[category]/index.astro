@@ -1,0 +1,80 @@
+---
+import SkillRow from "../../../components/SkillRow.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { allSkills, byCategory, categories, skillUrl } from "../../../lib/catalog";
+import {
+  breadcrumbJsonLd,
+  categoryMetaDescription,
+  itemListJsonLd,
+} from "../../../lib/seo";
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props as { category: string };
+const skills = byCategory(category);
+const description = categoryMetaDescription(category, skills.length);
+const path = `/skills/${category}/`;
+const jsonLd = [
+  itemListJsonLd(
+    `${category} Agent Skills`,
+    description,
+    skills.map((skill) => ({
+      name: skill.name,
+      path: skillUrl(skill),
+      description: skill.description,
+    }))
+  ),
+  breadcrumbJsonLd([
+    { name: "Skills", path: "/skills/" },
+    { name: category, path },
+  ]),
+];
+const related = categories.filter((entry) => entry !== category);
+---
+
+<BaseLayout
+  title={`${category} Agent Skills`}
+  description={description}
+  canonicalPath={path}
+  keywords={`${category} agent skills, ${category} Claude Code skills, ${category} SKILL.md, knackbox ${category}`}
+  jsonLd={jsonLd}
+>
+  <section class="rail-section" data-pagefind-body>
+    <div class="wrap py-10 sm:py-12">
+      <nav aria-label="Breadcrumb" class="mb-4 text-xs muted">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/skills/">Skills</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="font-medium text-ink-900 dark:text-ink-100">{category}</li>
+        </ol>
+      </nav>
+
+      <p class="eyebrow mb-3">Category</p>
+      <h1 class="section-title capitalize">{category} Agent Skills</h1>
+      <p class="mt-3 max-w-3xl text-sm leading-6 muted">
+        {skills.length} open {category} skills for AI agents. Each package is a portable
+        <code class="font-mono text-[13px]">SKILL.md</code> folder with trigger guidance, instructions,
+        and a benchmark suite — installable into Claude Code, Codex, Cursor, and OpenCode.
+      </p>
+
+      <ul class="panel mt-8 list-none divide-y divide-ink-300 dark:divide-ink-800">
+        {skills.map((skill) => <SkillRow skill={skill} />)}
+      </ul>
+
+      <div class="mt-8">
+        <h2 class="eyebrow mb-3">Other categories</h2>
+        <div class="flex flex-wrap gap-2">
+          {related.map((entry) => (
+            <a class="chip no-underline hover:no-underline" href={`/skills/${entry}/`}>{entry}</a>
+          ))}
+          <a class="chip no-underline hover:no-underline" href="/skills/">Full leaderboard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

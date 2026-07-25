@@ -2,6 +2,20 @@
 import TierBadge from "../../components/TierBadge.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { allSkills, categories, fmt, fmtPercent, skillUrl, tiers } from "../../lib/catalog";
+import { itemListJsonLd, truncateMeta } from "../../lib/seo";
+
+const skillsDescription = truncateMeta(
+  `Browse and sort ${allSkills.length} open Agent Skills for Claude Code, Codex, Cursor, and OpenCode. Filter by tier and category, compare context cost, and install any skill with one command.`
+);
+const jsonLd = itemListJsonLd(
+  "Knackbox Agent Skills leaderboard",
+  skillsDescription,
+  allSkills.map((skill) => ({
+    name: skill.name,
+    path: skillUrl(skill),
+    description: skill.description,
+  }))
+);
 
 const columns = [
   { key: "tier", label: "Tier", width: "w-28", numeric: false },
@@ -16,7 +30,13 @@ const columns = [
 const nullClass = "text-ink-400 dark:text-ink-500";
 ---
 
-<BaseLayout title="Skill leaderboard | Knackbox" description="Knackbox skill leaderboard">
+<BaseLayout
+  title="Agent Skills Leaderboard"
+  description={skillsDescription}
+  canonicalPath="/skills/"
+  keywords="agent skills leaderboard, Claude Code skills, Codex skills, Cursor skills, SKILL.md catalog, AI agent skills"
+  jsonLd={jsonLd}
+>
   <Fragment slot="head">
     <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
   </Fragment>
@@ -26,9 +46,9 @@ const nullClass = "text-ink-400 dark:text-ink-500";
     <div class="mb-6 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
       <div>
         <p class="eyebrow mb-3">01 / Catalog</p>
-        <h1 class="section-title">Skill leaderboard</h1>
+        <h1 class="section-title">Agent Skills leaderboard</h1>
         <p class="mt-2 max-w-3xl text-sm muted">
-          Sort measured columns, filter by tier or category, and inspect every skill in the static catalog.
+          Sort measured columns, filter by tier or category, and inspect every open Agent Skill in the static catalog for Claude Code, Codex, Cursor, and compatible runtimes.
         </p>
       </div>
       <p class="text-sm muted">

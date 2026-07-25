@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "write a blameless postmortem from these pager notes",
+    "RCA for last night's outage",
+    "incident write-up for the database failover",
+    "lessons learned doc after the payment outage",
+    "draft postmortem timeline from this Slack export",
+    "production failure report for leadership"
+  ],
+  "should_not_trigger": [
+    "meeting notes from the standup",
+    "project proposal for multi-region",
+    "security review of the auth service",
+    "release notes for the hotfix",
+    "debug why the service OOM'd right now",
+    "write an RFC for retry policies"
+  ],
+  "tasks": [
+    {
+      "prompt": "Draft a postmortem: 14:02 deploy of payments-api; 14:10 error rate spike; 14:18 rollback; 14:25 recovered. Cause: missing null check on new tax field. 12% of checkouts failed for 15 minutes. No customer data loss.",
+      "criteria": [
+        "includes summary, impact, timeline, root cause, action items",
+        "uses blameless language",
+        "action items are concrete (tests, alerts, review), not 'be careful'",
+        "does not invent unstated financial losses"
+      ]
+    },
+    {
+      "prompt": "We only know the site was down 'for a while' Tuesday morning and someone restarted a pod. Make a postmortem scaffold.",
+      "criteria": [
+        "marks unknowns explicitly",
+        "lists open questions for timeline and impact",
+        "does not fabricate a detailed false timeline"
+      ]
+    },
+    {
+      "prompt": "Near miss: bad migration caught in staging by a canary check. Write a short postmortem-style note.",
+      "criteria": [
+        "treats near miss as valuable",
+        "focuses on detection and prevention actions",
+        "keeps severity/impact honest (no production customer harm)"
+      ]
+    }
+  ]
+}

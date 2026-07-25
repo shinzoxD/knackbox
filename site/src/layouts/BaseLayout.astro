@@ -1,13 +1,46 @@
 ---
 import "../styles/global.css";
 import { githubRepoUrl } from "../lib/catalog";
+import {
+  absoluteUrl,
+  defaultDescription,
+  defaultKeywords,
+  defaultTitle,
+  siteUrl,
+  truncateMeta,
+  withSiteTitle,
+} from "../lib/seo";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogType?: "website" | "article";
+  noindex?: boolean;
+  keywords?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  updated?: string;
+};
 
 const {
-  title = "Knackbox",
-  description = "An open library of skills for AI agents",
-} = Astro.props as { title?: string; description?: string };
+  title = defaultTitle,
+  description = defaultDescription,
+  canonicalPath,
+  ogType = "website",
+  noindex = false,
+  keywords = defaultKeywords,
+  jsonLd,
+  updated,
+} = Astro.props as Props;
 
+const pageTitle = withSiteTitle(title);
+const metaDescription = truncateMeta(description);
 const path = Astro.url.pathname;
+const canonical = absoluteUrl(canonicalPath ?? path);
+const ogImage = absoluteUrl("/og.svg");
+const robots = noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large";
+const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
 const nav = [
   { href: "/skills/", label: "Skills" },
   { href: "/packs/", label: "Packs" },
@@ -22,9 +55,48 @@ const isActive = (href: string) => path === href || path.startsWith(href);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.svg" />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Knackbox" />
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={robots} />
+    <meta name="theme-color" content="#0c0b0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/json" title="Knackbox skills catalog" href={absoluteUrl("/catalog.json")} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://github.com" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Knackbox" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:alt" content="Knackbox — open library of skills for AI agents" />
+    {updated && <meta property="article:modified_time" content={updated} />}
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Knackbox — open library of skills for AI agents" />
+
+    <meta name="application-name" content="Knackbox" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="me" href={githubRepoUrl} />
+
+    {jsonLdBlocks.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+
     <script is:inline>
       (() => {
         const saved = localStorage.getItem("theme");
@@ -60,12 +132,20 @@ const isActive = (href: string) => path === href || path.startsWith(href);
     </main>
     <footer class="rail-section border-t border-ink-300 dark:border-ink-800">
       <div class="wrap flex flex-col gap-4 py-8 text-[12px] sm:flex-row sm:items-center sm:justify-between">
-        <p class="muted">[ Apache-2.0 ] Static catalog generated from repository skills.</p>
+        <div class="space-y-1">
+          <p class="muted">[ Apache-2.0 ] Static catalog generated from repository skills.</p>
+          <p class="muted">
+            Open Agent Skills for Claude Code, Codex, Cursor, and compatible tools ·{" "}
+            <a href={siteUrl}>{siteUrl.replace(/^https:\/\//, "")}</a>
+          </p>
+        </div>
         <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="Footer">
           <a href="/skills/">Leaderboard</a>
           <a href="/packs/">Starter packs</a>
+          <a href="/docs/">Install docs</a>
           <a href="/docs/metrics/">Metrics</a>
           <a href="/contribute/">Contribute</a>
+          <a href="/llms.txt">llms.txt</a>
           <a href={githubRepoUrl}>GitHub</a>
         </nav>
       </div>

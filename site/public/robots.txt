@@ -1,0 +1,31 @@
+# Knackbox — https://knackbox.pages.dev
+User-agent: *
+Allow: /
+
+# AI / research crawlers — public catalog is intentionally open
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://knackbox.pages.dev/sitemap-index.xml
+Host: knackbox.pages.dev

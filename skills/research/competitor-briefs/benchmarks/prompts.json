@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "competitive analysis of Notion vs Coda for our team",
+    "competitor brief on the top three CI tools",
+    "how do we compare to Linear for issue tracking",
+    "market landscape for AI coding assistants",
+    "sales battlecard against Competitor X",
+    "research rivals for our new analytics product"
+  ],
+  "should_not_trigger": [
+    "fact-check this claim about market size",
+    "literature review of academic papers on competition",
+    "summarize this single PDF whitepaper",
+    "write a project proposal for entering the market",
+    "draft a blog post about competitors",
+    "design our pricing page copy"
+  ],
+  "tasks": [
+    {
+      "prompt": "Create a competitor brief template filled for a fictional project-management tool 'Shiply' vs Asana and Trello. Mark anything you cannot verify as unverified. Decision: whether to add timeline views.",
+      "criteria": [
+        "uses structured brief with comparison dimensions",
+        "labels unverified or assumed claims",
+        "ties implications to the timeline-view decision",
+        "does not present invented pricing as hard fact without labels"
+      ]
+    },
+    {
+      "prompt": "No network access. User wants competitors for an on-prem secrets manager. What do you deliver?",
+      "criteria": [
+        "provides a research plan and source list",
+        "asks clarifying ICP/decision questions",
+        "does not fabricate a full fake landscape as verified fact"
+      ]
+    },
+    {
+      "prompt": "Sales asks for a battlecard: we are cheaper but missing SSO. Competitor has SSO and is twice the price. Outline the card.",
+      "criteria": [
+        "honest win/loss themes",
+        "includes discovery questions or talk tracks",
+        "does not deny the SSO gap"
+      ]
+    }
+  ]
+}

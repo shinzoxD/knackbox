@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "facilitate our sprint retrospective",
+    "write retro notes from these stickies",
+    "agenda for a 45 minute team retro",
+    "what went well / improve template for last sprint",
+    "help me run a blameless retro after a rough release",
+    "turn these retro board columns into action items"
+  ],
+  "should_not_trigger": [
+    "daily standup update",
+    "incident postmortem for the outage",
+    "project proposal for team offsite",
+    "meeting notes for a product review",
+    "task plan for the next epic",
+    "performance review of an employee"
+  ],
+  "tasks": [
+    {
+      "prompt": "Stickies: deploys were smooth; on-call quiet; flaky CI wasted hours; unclear product priority; pair programming helped. Create retro notes with max 3 actions.",
+      "criteria": [
+        "groups themes into went well / needs improvement",
+        "limits actions and makes them concrete with owners placeholders",
+        "does not invent stickies not provided"
+      ]
+    },
+    {
+      "prompt": "Give a 50-minute remote retro agenda for a 6-person eng team.",
+      "criteria": [
+        "timeboxes stages",
+        "includes review of previous actions",
+        "ends with owned actions"
+      ]
+    },
+    {
+      "prompt": "Retro is turning into blame about who broke prod. How should the facilitator redirect?",
+      "criteria": [
+        "emphasizes blameless / systems framing",
+        "offers concrete facilitation moves",
+        "still aims at useful actions"
+      ]
+    }
+  ]
+}

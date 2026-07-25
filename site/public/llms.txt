@@ -1,0 +1,43 @@
+# Knackbox
+
+> Open, auditable library of Agent Skills (SKILL.md) for Claude Code, Codex, Cursor, OpenCode, and any runtime that loads the Agent Skills format.
+
+Knackbox ranks skills with independent measurement columns (trigger accuracy, quality uplift, context cost) and ships every skill with a benchmark suite. Source of truth is the GitHub repository; this site is a static catalog.
+
+## Site
+
+- Home: https://knackbox.pages.dev/
+- Skill leaderboard: https://knackbox.pages.dev/skills/
+- Starter packs: https://knackbox.pages.dev/packs/
+- Install docs: https://knackbox.pages.dev/docs/
+- Metrics methodology: https://knackbox.pages.dev/docs/metrics/
+- Contribute: https://knackbox.pages.dev/contribute/
+- Machine-readable catalog: https://knackbox.pages.dev/catalog.json
+- Starter packs JSON: https://knackbox.pages.dev/packs.json
+
+## Repository
+
+- GitHub: https://github.com/shinzoxD/knackbox
+- License: Apache-2.0
+- Skills tree: https://github.com/shinzoxD/knackbox/tree/main/skills
+
+## Install
+
+```bash
+npx skills add shinzoxD/knackbox --skill commit-messages
+```
+
+Dependency-free:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/shinzoxD/knackbox/main/install.sh | bash -s commit-messages
+```
+
+## Categories
+
+coding, data, documents, productivity, research, writing
+
+## Optional
+
+- Sitemap: https://knackbox.pages.dev/sitemap-index.xml
+- Full skill pages follow `/skills/{category}/{name}/`

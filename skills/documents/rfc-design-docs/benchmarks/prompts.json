@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "write an RFC for multi-tenant rate limiting",
+    "draft a technical design doc for the new billing service",
+    "architecture proposal for moving search to OpenSearch",
+    "tech design: how should we build notifications",
+    "RFC comparing monolith extract vs modular monorepo",
+    "design doc for feature flags platform"
+  ],
+  "should_not_trigger": [
+    "write the API endpoint list only as OpenAPI without design tradeoffs",
+    "meeting notes from design review",
+    "postmortem for yesterday's outage",
+    "project proposal for non-technical leadership funding",
+    "implement the rate limiter in Go",
+    "security review of the existing gateway"
+  ],
+  "tasks": [
+    {
+      "prompt": "RFC: add asynchronous email sending so signup HTTP returns in under 200ms. Today emails send inline. Options include queue+worker vs third-party ESP async API.",
+      "criteria": [
+        "includes goals, non-goals, at least two options, recommendation",
+        "covers failure modes (queue down, retries, duplicates)",
+        "includes rollout/observability considerations",
+        "does not invent fake traffic numbers as hard facts"
+      ]
+    },
+    {
+      "prompt": "Short design for storing user preferences. Very early, little data.",
+      "criteria": [
+        "uses a lean RFC-lite structure",
+        "lists open questions",
+        "still states a provisional recommendation"
+      ]
+    },
+    {
+      "prompt": "Design doc for a breaking API change on public /v1/orders. Need dual-running.",
+      "criteria": [
+        "addresses migration and compatibility",
+        "discusses rollback",
+        "makes the breaking nature explicit"
+      ]
+    }
+  ]
+}

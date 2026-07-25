@@ -3,21 +3,41 @@ import CopyButton from "../components/CopyButton.astro";
 import TierBadge from "../components/TierBadge.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { allSkills, installCommand, packs, skillUrl } from "../lib/catalog";
+import { itemListJsonLd, truncateMeta } from "../lib/seo";
 
 const entries = packs.map((pack) => ({
   ...pack,
   command: pack.skills.map((name, index) => `${index === 0 ? installCommand : "--skill"} ${name}`).join(" "),
   skillEntries: pack.skills.map((name) => allSkills.find((skill) => skill.name === name)).filter(Boolean),
 }));
+const packsDescription = truncateMeta(
+  "Install curated Agent Skills starter packs for developers, data work, research, writing, and project leadership. One command installs a coherent multi-skill workflow for Claude Code, Codex, and Cursor."
+);
+const jsonLd = itemListJsonLd(
+  "Knackbox starter packs",
+  packsDescription,
+  entries.map((pack) => ({
+    name: pack.name,
+    path: `/packs/#${pack.slug}`,
+    description: pack.description,
+  }))
+);
 ---
 
-<BaseLayout title="Starter packs | Knackbox" description="Curated Agent Skills starter packs">
+<BaseLayout
+  title="Agent Skills Starter Packs"
+  description={packsDescription}
+  canonicalPath="/packs/"
+  keywords="agent skills packs, Claude Code skill packs, developer essentials skills, AI agent workflow packs"
+  jsonLd={jsonLd}
+>
   <section class="rail-section" data-pagefind-body>
     <div class="wrap py-10 sm:py-12">
       <p class="eyebrow mb-3">02 / Starter packs</p>
-      <h1 class="section-title">Install a coherent workflow</h1>
+      <h1 class="section-title">Install a coherent Agent Skills workflow</h1>
       <p class="mt-3 max-w-3xl leading-7 muted">
-        Packs group complementary skills for a job. Each command remains explicit, so you can remove any skill before installing.
+        Packs group complementary open skills for a job — coding, data, research, writing, and leadership.
+        Each command remains explicit, so you can remove any skill before installing into Claude Code, Codex, Cursor, or OpenCode.
       </p>
     </div>
   </section>

@@ -5,12 +5,17 @@ import { getRepoMarkdownHtml, githubRepoUrl } from "../lib/catalog";
 const html = getRepoMarkdownHtml("CONTRIBUTING.md", { demoteHeadings: true });
 ---
 
-<BaseLayout title="Contribute | Knackbox" description="Contribute skills to Knackbox">
+<BaseLayout
+  title="Contribute Agent Skills"
+  description="Contribute open Agent Skills to Knackbox: scaffold a SKILL.md, add benchmarks, pass validation, and open a PR. Help grow the library for Claude Code, Codex, and Cursor."
+  canonicalPath="/contribute/"
+  keywords="contribute agent skills, submit SKILL.md, knackbox contributing, open source AI skills"
+>
   <section class="rail-section">
     <div class="wrap py-10 sm:py-12">
       <p class="eyebrow mb-3">04 / Contribute</p>
-      <h1 class="section-title">Contribute</h1>
-      <p class="mt-2 max-w-3xl text-sm leading-6 muted">Add a skill, improve benchmarks, or request a missing workflow.</p>
+      <h1 class="section-title">Contribute open Agent Skills</h1>
+      <p class="mt-2 max-w-3xl text-sm leading-6 muted">Add a skill, improve benchmarks, or request a missing workflow for the Knackbox catalog.</p>
       <div class="mt-5 flex flex-wrap gap-2.5">
         <a class="btn btn-primary no-underline hover:no-underline" href={`${githubRepoUrl}/issues?q=is%3Aissue+is%3Aopen+label%3Askill-request`}>Skill requests</a>
         <a class="btn no-underline hover:no-underline" href={`${githubRepoUrl}/discussions`}>Discussions</a>

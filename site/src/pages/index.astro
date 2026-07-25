@@ -9,8 +9,17 @@ import {
   catalog,
   githubRepoUrl,
   installCommand,
+  skillUrl,
   tierCounts,
 } from "../lib/catalog";
+import {
+  catalogStatsLine,
+  defaultDescription,
+  defaultTitle,
+  itemListJsonLd,
+  softwareSourceJsonLd,
+  websiteJsonLd,
+} from "../lib/seo";
 
 const counts = tierCounts();
 const coreSkills = byTier("core");
@@ -22,18 +31,32 @@ const stats = [
   { label: "Verified", value: counts.verified },
   { label: "Community", value: counts.community },
 ];
+const jsonLd = [
+  websiteJsonLd(),
+  softwareSourceJsonLd(),
+  itemListJsonLd(
+    "Knackbox core Agent Skills",
+    "Maintainer-curated core skills in the Knackbox catalog.",
+    coreSkills.map((skill) => ({
+      name: skill.name,
+      path: skillUrl(skill),
+      description: skill.description,
+    }))
+  ),
+];
 ---
 
-<BaseLayout title="Knackbox | Open skills for AI agents">
+<BaseLayout title={defaultTitle} description={defaultDescription} canonicalPath="/" jsonLd={jsonLd}>
   <section class="rail-section" data-pagefind-body>
     <div class="wrap py-14 sm:py-16 lg:py-20">
       <a class="eyebrow inline-flex no-underline hover:no-underline" href="/skills/">
-        catalog v0 / {allSkills.length} skills / {categories.length} categories
+        catalog v0 / {catalogStatsLine()}
       </a>
       <h1 class="hero-title mt-8">The open skill library for AI agents.</h1>
       <p class="mt-5 max-w-2xl text-[16px] leading-7 muted">
-        Plain-file instructions that agents load when a task matches. Browse the catalog,
-        inspect every source file, and install only what you need.
+        Plain-file <strong class="font-semibold text-ink-900 dark:text-ink-100">Agent Skills</strong> that
+        Claude Code, Codex, Cursor, and OpenCode load when a task matches. Browse the open catalog,
+        inspect every <code class="font-mono text-[13px]">SKILL.md</code>, and install only what you need.
       </p>
       <div class="mt-7 flex flex-wrap gap-2.5">
         <a class="btn btn-primary no-underline hover:no-underline" href="/skills/">Browse catalog</a>
@@ -85,6 +108,30 @@ const stats = [
         Catalog generated <span class="metric">{catalog.generated}</span>. Scores follow version <span class="metric">{catalog.score_version}</span>.
         Unmeasured metrics stay <span class="metric">—</span> until the benchmark harness runs.
       </p>
+    </div>
+  </section>
+
+  <section class="rail-section" aria-label="Skill categories">
+    <div class="wrap py-12 sm:py-14">
+      <p class="eyebrow mb-3">Browse by category</p>
+      <h2 class="section-title">Agent skill categories</h2>
+      <p class="mt-2 max-w-2xl text-sm muted">
+        Coding, data, documents, productivity, research, and writing — each skill is a portable folder with
+        triggers, instructions, and a benchmark suite.
+      </p>
+      <ul class="mt-6 grid list-none gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {categories.map((category) => {
+          const count = allSkills.filter((skill) => skill.category === category).length;
+          return (
+            <li>
+              <a class="panel block p-4 no-underline hover:no-underline" href={`/skills/${category}/`}>
+                <span class="text-base font-semibold text-ink-950 dark:text-ink-50">{category}</span>
+                <span class="mt-1 block text-sm muted">{count} skills</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "help me plan a refactor of this 800-line service class",
+    "how should I extract this module without breaking callers",
+    "I want to restructure the auth package safely",
+    "untangle this god object — give me steps",
+    "plan a behavior-preserving cleanup of the payment flow",
+    "reduce coupling between orders and inventory modules"
+  ],
+  "should_not_trigger": [
+    "review this diff for bugs",
+    "write unit tests for the cart calculator",
+    "debug why checkout returns 500",
+    "write a PR description for my branch",
+    "security review the session cookies",
+    "optimize this SQL join"
+  ],
+  "tasks": [
+    {
+      "prompt": "Plan a refactor for a UserManager class that handles signup, login, password reset, profile updates, and email sending in one 900-line file. Tests cover login and signup only. Language: TypeScript.",
+      "criteria": [
+        "proposes characterization or additional tests before large moves",
+        "sequences small steps rather than a single rewrite",
+        "keeps product behavior changes out of the refactor steps",
+        "includes verification and rollback"
+      ]
+    },
+    {
+      "prompt": "We want to split a monolith folder lib/ into domain packages. No public API change for external clients. Give a strangler-style plan.",
+      "criteria": [
+        "uses incremental/strangler approach",
+        "defines seams and intermediate green states",
+        "states non-goals around external API stability"
+      ]
+    },
+    {
+      "prompt": "Engineer wants to rewrite the entire billing module in a weekend because it's messy. Advise and plan.",
+      "criteria": [
+        "pushes back on big-bang rewrite or scopes it tightly",
+        "offers a safer incremental path",
+        "names risks of weekend rewrite"
+      ]
+    }
+  ]
+}

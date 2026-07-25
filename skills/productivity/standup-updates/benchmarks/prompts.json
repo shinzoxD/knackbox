@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "write my standup from these notes",
+    "daily status update for scrum",
+    "turn this git log into yesterday/today/blockers",
+    "Slack check-in for the eng channel",
+    "what I did yesterday update for the team",
+    "async standup bullets please"
+  ],
+  "should_not_trigger": [
+    "meeting minutes from the planning call",
+    "sprint retrospective notes",
+    "project proposal for Q3",
+    "task plan for the migration epic",
+    "release notes for the sprint",
+    "email to a customer about delay"
+  ],
+  "tasks": [
+    {
+      "prompt": "Notes: finished PR for tax null fix (merged); started investigating flaky test in CI; waiting on API keys from infra; maybe look at dashboard polish. Write standup.",
+      "criteria": [
+        "uses Yesterday/Today/Blockers structure",
+        "puts merge under yesterday as an outcome",
+        "blocker names infra/API keys",
+        "does not invent extra completed work"
+      ]
+    },
+    {
+      "prompt": "Git log only: fix: null tax crash; wip: dashboard; merge main; chore: prettier. Standup for today.",
+      "criteria": [
+        "translates meaningful commits to outcomes",
+        "ignores or de-emphasizes merge/prettier noise",
+        "keeps claims grounded in the log"
+      ]
+    },
+    {
+      "prompt": "I was out sick yesterday. Today back on invoice export. No blockers.",
+      "criteria": [
+        "honest short yesterday line",
+        "clear today focus",
+        "blockers none"
+      ]
+    }
+  ]
+}

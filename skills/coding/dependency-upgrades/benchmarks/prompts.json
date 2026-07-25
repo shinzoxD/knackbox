@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "plan upgrading react from 17 to 18 in this app",
+    "we need to bump lodash for a CVE — how do we do it safely",
+    "resolve this npm peer dependency conflict",
+    "upgrade Django major version with a checklist",
+    "our lockfile has 40 outdated packages; prioritize them",
+    "how do I upgrade @types/node without breaking the build"
+  ],
+  "should_not_trigger": [
+    "write a commit message for the package bump",
+    "review this PR for security vulns in our code",
+    "design the REST API for package search",
+    "debug a null pointer in checkout",
+    "write release notes for v2",
+    "plan a refactor of the auth module"
+  ],
+  "tasks": [
+    {
+      "prompt": "Plan upgrading express from 4.17 to 5.x in a medium Node API. Tests exist for routes. Motivated by maintenance, not a specific CVE.",
+      "criteria": [
+        "assigns a risk level with rationale",
+        "calls for reading breaking changes / migration notes",
+        "includes verification steps and rollback",
+        "does not invent specific CVE numbers"
+      ]
+    },
+    {
+      "prompt": "npm audit reports a high severity in a transitive dependency of webpack-dev-server. Production app does not ship that path. What should we do?",
+      "criteria": [
+        "distinguishes dev vs production exposure",
+        "suggests upgrading parent or override with caveats",
+        "avoids panic-only advice without context"
+      ]
+    },
+    {
+      "prompt": "Python service wants to jump pydantic v1 to v2. Give a stepwise plan.",
+      "criteria": [
+        "treats major migration as multi-step",
+        "mentions API/validation changes or migration tooling at a high level",
+        "includes test verification"
+      ]
+    }
+  ]
+}

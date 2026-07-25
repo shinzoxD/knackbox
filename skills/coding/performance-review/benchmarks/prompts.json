@@ -1,0 +1,45 @@
+{
+  "should_trigger": [
+    "this API is slow — help me find the bottleneck",
+    "review performance of this endpoint that does many DB calls",
+    "our p95 latency doubled after deploy",
+    "profile shows CPU in JSON serialization — what next",
+    "why is this loop using so much memory",
+    "make this batch job finish faster"
+  ],
+  "should_not_trigger": [
+    "security review this auth code",
+    "write unit tests for the sorter",
+    "plan a pure readability refactor",
+    "draft release notes for the speed work",
+    "write a commit message",
+    "design the REST resource model"
+  ],
+  "tasks": [
+    {
+      "prompt": "GET /orders loads a user, then for each of up to 200 orders loads line items and product rows in separate queries. p95 is 2.1s. Postgres. Propose a performance plan.",
+      "criteria": [
+        "identifies N+1 or chattiness as primary issue",
+        "proposes concrete query/join/batch fix",
+        "includes a verification/measurement approach",
+        "does not invent fake speedup percentages as facts"
+      ]
+    },
+    {
+      "prompt": "No profiles available. Users say the dashboard is slow. What should we measure first?",
+      "criteria": [
+        "prescribes measurement before large rewrites",
+        "names useful signals (RUM, server timing, DB, waterfalls)",
+        "avoids a pure guess-and-rewrite plan"
+      ]
+    },
+    {
+      "prompt": "A pure function computing a report is O(n^2) over 50k rows and dominates CPU. Outline fixes.",
+      "criteria": [
+        "addresses algorithmic complexity",
+        "mentions correctness of the faster approach",
+        "includes how to verify"
+      ]
+    }
+  ]
+}
