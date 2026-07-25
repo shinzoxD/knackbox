@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "how should we store API keys for the backend",
+    "secrets management for GitHub Actions deploys",
+    "rotate database passwords safely",
+    ".env best practices for local and prod",
+    "should this signing key live in the repo",
+    "OIDC instead of static cloud keys"
+  ],
+  "should_not_trigger": [
+    "feature flag rollout without secrets",
+    "SQL analytics query",
+    "write a case study",
+    "helm chart values structure only",
+    "market sizing",
+    "1:1 agenda"
+  ],
+  "tasks": [
+    {
+      "prompt": "Team commits .env with Stripe secret to git history. Response plan.",
+      "criteria": [
+        "rotate/revoke immediately",
+        "remove from history guidance high level",
+        "prevention practices"
+      ]
+    },
+    {
+      "prompt": "GitHub Action needs AWS access. Static key vs OIDC?",
+      "criteria": [
+        "prefers short-lived/OIDC when possible",
+        "least privilege",
+        "practical setup notes"
+      ]
+    },
+    {
+      "prompt": "Frontend needs 'API key' for maps. How to handle?",
+      "criteria": [
+        "distinguishes restricted public keys vs private secrets",
+        "domain restrictions guidance",
+        "does not put private server secrets in frontend"
+      ]
+    }
+  ]
+}

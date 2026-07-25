@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "improve comments in this function",
+    "write docstrings for this module",
+    "add JSDoc to these exported functions",
+    "why-comment this tricky concurrency code",
+    "clean up noisy comments in this file",
+    "module header comment for this package"
+  ],
+  "should_not_trigger": [
+    "full technical documentation website",
+    "code review for bugs primarily",
+    "refactor planning large redesign",
+    "commit message only",
+    "openapi design",
+    "case study writing"
+  ],
+  "tasks": [
+    {
+      "prompt": "Function uses bit tricks for performance; reader confused. Comment strategy.",
+      "criteria": [
+        "explains why not what line-by-line",
+        "suggests precise comment placement",
+        "may suggest rename if helpful"
+      ]
+    },
+    {
+      "prompt": "Comments say returns null; code throws. Fix approach.",
+      "criteria": [
+        "treats as bug/stale comment",
+        "align comment with behavior or fix code",
+        "emphasizes updating together"
+      ]
+    },
+    {
+      "prompt": "Public API function with no docstring; TypeScript. Write docstring.",
+      "criteria": [
+        "documents params/returns/errors meaningfully",
+        "does not invent behavior",
+        "concise"
+      ]
+    }
+  ]
+}

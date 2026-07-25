@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "migrate Confluence docs to a docs site",
+    "restructure our documentation information architecture",
+    "plan docs migration waves and redirects",
+    "consolidate scattered markdown into one library",
+    "move wiki to Docusaurus-style site",
+    "documentation migration checklist"
+  ],
+  "should_not_trigger": [
+    "write a single new tutorial from scratch only",
+    "case study for marketing",
+    "openapi design",
+    "sprint planning",
+    "code comments only",
+    "policy writing"
+  ],
+  "tasks": [
+    {
+      "prompt": "200 Confluence pages, 40% stale, moving to static docs. Plan waves.",
+      "criteria": [
+        "inventory keep/rewrite/archive",
+        "phased waves",
+        "redirect/sunset thoughts"
+      ]
+    },
+    {
+      "prompt": "External links to old URLs matter for SEO. Migration constraint?",
+      "criteria": [
+        "emphasizes redirects/permalinks",
+        "practical approach",
+        "success checks"
+      ]
+    },
+    {
+      "prompt": "Engineers still edit random Google Docs after migration. Governance?",
+      "criteria": [
+        "ownership and canonical home",
+        "process to prevent drift",
+        "communication"
+      ]
+    }
+  ]
+}

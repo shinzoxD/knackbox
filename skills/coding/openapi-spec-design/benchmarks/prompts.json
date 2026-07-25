@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this OpenAPI YAML for consistency",
+    "write OpenAPI for these REST endpoints",
+    "Swagger spec for codegen readiness",
+    "fix nullable and required fields in the schema",
+    "document error responses in OpenAPI components",
+    "operationId and tags structure for our API"
+  ],
+  "should_not_trigger": [
+    "GraphQL schema design only",
+    "API changelog prose without OpenAPI",
+    "terraform review",
+    "helm chart scaffold",
+    "case study writing",
+    "sprint planning"
+  ],
+  "tasks": [
+    {
+      "prompt": "Path POST /orders has no request schema and only 200 response documented. Review.",
+      "criteria": [
+        "flags missing requestBody/schema",
+        "flags missing error responses",
+        "concrete remediation"
+      ]
+    },
+    {
+      "prompt": "Two operations share operationId createUser. Problem?",
+      "criteria": [
+        "flags non-unique operationId",
+        "explains codegen impact",
+        "rename guidance"
+      ]
+    },
+    {
+      "prompt": "Adding required field to existing User schema in v1. Advise.",
+      "criteria": [
+        "treats as breaking for clients",
+        "versioning or optional+migration path",
+        "clear recommendation"
+      ]
+    }
+  ]
+}

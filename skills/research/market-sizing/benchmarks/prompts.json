@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "TAM SAM SOM for our B2B SaaS",
+    "bottom-up market sizing for this product",
+    "investor market size slide assumptions",
+    "addressable market for AI coding tools wedge",
+    "top-down sizing with clear filters",
+    "market estimate with sensitivity analysis"
+  ],
+  "should_not_trigger": [
+    "competitor feature matrix only",
+    "user interview synthesis",
+    "survey analysis of NPS",
+    "case study writing",
+    "OKR drafting",
+    "SQL analytics"
+  ],
+  "tasks": [
+    {
+      "prompt": "B2B tool $100/mo; 2M companies in US; we can reach 50k SMBs year 1. Bottom-up SOM sketch.",
+      "criteria": [
+        "shows explicit math",
+        "labels assumptions",
+        "SOM vs TAM distinction"
+      ]
+    },
+    {
+      "prompt": "No research access; need market sizing for pitch. What to deliver?",
+      "criteria": [
+        "framework with inputs to gather",
+        "does not invent citeable analyst numbers",
+        "confidence caveats"
+      ]
+    },
+    {
+      "prompt": "Top-down says $40B; bottom-up says $200M. Reconcile.",
+      "criteria": [
+        "explains common gap causes",
+        "tightens definitions",
+        "practical next steps"
+      ]
+    }
+  ]
+}

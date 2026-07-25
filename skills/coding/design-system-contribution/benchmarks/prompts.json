@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "add a Button variant to our design system",
+    "how should we version design tokens",
+    "checklist for a new DS component PR",
+    "Storybook docs for this Modal primitive",
+    "design system contribution for a Select component",
+    "should this one-off card become a DS component"
+  ],
+  "should_not_trigger": [
+    "landing page marketing copy only",
+    "one-off CSS fix with no system intent",
+    "accessibility review of a random form outside DS",
+    "helm chart scaffold",
+    "sprint planning",
+    "case study writing"
+  ],
+  "tasks": [
+    {
+      "prompt": "Propose API for Button: primary/secondary/danger, sizes sm/md, loading state, icon support.",
+      "criteria": [
+        "defines clear props/variants",
+        "covers a11y for icon-only/loading",
+        "docs/stories mention"
+      ]
+    },
+    {
+      "prompt": "Team wants to change default button radius globally in a minor release.",
+      "criteria": [
+        "flags potential breaking visual change",
+        "versioning/migration advice",
+        "safer alternative if any"
+      ]
+    },
+    {
+      "prompt": "One product built a special PricingCard. Promote to DS?",
+      "criteria": [
+        "decision criteria for promotion vs keep local",
+        "if promote, outlines contribution steps",
+        "avoids automatic yes without reuse signal"
+      ]
+    }
+  ]
+}

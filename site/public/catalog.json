@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-26",
   "score_version": "v0",
-  "count": 68,
+  "count": 83,
   "skills": [
     {
       "name": "code-review",
@@ -252,6 +252,37 @@
       }
     },
     {
+      "name": "code-comments",
+      "description": "Write and improve code comments and docstrings that explain why, not noise. Use whenever the user asks for better comments, docstrings, module headers, JSDoc/TSDoc, or documentation comments in source code.",
+      "category": "coding",
+      "path": "skills/coding/code-comments",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 317,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/code-comments",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:9123aac7254ca4be424bc19416c92c39a5bb20c815d91864ddd187a9d0bf3d41",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "container-review",
       "description": "Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a Dockerfile, compose file, Kubernetes image config, or asks how to harden, slim, or debug a container build.",
       "category": "coding",
@@ -345,6 +376,37 @@
       }
     },
     {
+      "name": "design-system-contribution",
+      "description": "Guide contributions to a design system — component API, accessibility, tokens, and docs. Use whenever the user adds a design-system component, variants, design tokens, Storybook docs, or asks how to version UI primitives safely.",
+      "category": "coding",
+      "path": "skills/coding/design-system-contribution",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 328,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/design-system-contribution",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:bcac85cf78a8d0e788a1b9ecea62e544cd615b315bb38fdf179093a2c6950f80",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "error-handling",
       "description": "Design robust error handling, retries, and failure modes for application code. Use whenever the user asks about exceptions, error types, retry policies, circuit breakers, timeouts, or how to handle failures in APIs, jobs, and distributed calls.",
       "category": "coding",
@@ -359,6 +421,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:af1bccbda2f1e64ff997f3b8f6674e93e2e30bbc3ca5b3cea8f1b51a75005b6b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "feature-flags",
+      "description": "Design feature flag rollout plans with targeting, kill switches, and cleanup. Use whenever the user asks about feature flags, gradual rollout, percentage deploys, experiments in production, flag lifecycle, or technical debt from stale flags.",
+      "category": "coding",
+      "path": "skills/coding/feature-flags",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 321,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/feature-flags",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:d462c15d9e886cdcbd17d349f1fd6a4372bc448de61059e4292858973615cd5f",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -426,6 +519,37 @@
         "network": "none",
         "filesystem": "read",
         "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "helm-chart-scaffolding",
+      "description": "Scaffold and review Helm charts with safe defaults for values, templates, and hooks. Use whenever the user asks for a Helm chart, Chart.yaml, values.yaml production review, Helm upgrade hooks, or packaging a service for Helm install/upgrade.",
+      "category": "coding",
+      "path": "skills/coding/helm-chart-scaffolding",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 332,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/helm-chart-scaffolding",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may sketch helm CLI commands when helpful.",
+      "content_digest": "sha256:bd39da1fec85c9cd7ca6039a8de1f7c3f38d1a97b6e2da15a9273c903ecc6070",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -562,6 +686,37 @@
       }
     },
     {
+      "name": "openapi-spec-design",
+      "description": "Design and review OpenAPI specifications for clarity, consistency, and evolution. Use whenever the user writes OpenAPI or Swagger YAML/JSON, reviews API specs, or asks how to document REST endpoints for code generation and client SDKs.",
+      "category": "coding",
+      "path": "skills/coding/openapi-spec-design",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 275,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/openapi-spec-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:c6d01070c5e7a77b44668acf88f31fc998194e4eca01ae40e5dda91fd3945903",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "performance-review",
       "description": "Diagnose application performance bottlenecks and propose measured fixes. Use whenever the user mentions slow endpoints, high latency, CPU or memory spikes, N+1 queries, profiling results, p95/p99, or asks how to make code or systems faster — even without formal profiler output.",
       "category": "coding",
@@ -669,6 +824,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:3bf6f1bb8ed6ab60db4d503923694fec2442c181de62a4d821e924e8e9569dc2",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "secrets-management",
+      "description": "Handle secrets safely in apps and infrastructure without committing credentials. Use whenever the user asks about API keys, secret managers, .env handling, rotation, CI secrets, or how to inject credentials at runtime.",
+      "category": "coding",
+      "path": "skills/coding/secrets-management",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 347,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/secrets-management",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:c31e0898646db520c8fb1c53dea2645c8608840a32fc62af02c8e9b0f7df25a8",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -934,6 +1120,37 @@
       }
     },
     {
+      "name": "etl-pipeline-design",
+      "description": "Design ETL and ELT pipelines with clear contracts, quality checks, and failure modes. Use whenever the user plans data ingestion, transformations, warehouse loads, dbt-style models, batch/stream pipelines, or data pipeline architecture.",
+      "category": "data",
+      "path": "skills/data/etl-pipeline-design",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 300,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/etl-pipeline-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:563e430119f474619e5affeacbe434b544471db9f4d6cb6a5d619edcf359954a",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "metrics-definitions",
       "description": "Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the user asks what to measure, how to define a KPI, North Star, activation, retention, churn, or event taxonomy for analytics — even for a rough product idea.",
       "category": "data",
@@ -1089,6 +1306,37 @@
       }
     },
     {
+      "name": "policy-writing",
+      "description": "Write clear internal policies people can follow under time pressure. Use whenever the user asks for a company policy, acceptable use policy, security policy draft, travel policy, or HR/process policy that needs plain language.",
+      "category": "documents",
+      "path": "skills/documents/policy-writing",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 208,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/policy-writing",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; not legal advice — align with counsel.",
+      "content_digest": "sha256:88ae3ac9a52e517094a84202172b1bd9cdba1cbb3b33c1ee7da05f80a0f678ca",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "project-proposals",
       "description": "Turn a rough initiative into a decision-ready project proposal with outcomes, scope, plan, costs, risks, and a clear approval request. Use whenever the user needs a business case, internal proposal, project charter, funding request, or stakeholder pitch, even if they only provide scattered notes or an idea.",
       "category": "documents",
@@ -1213,6 +1461,37 @@
       }
     },
     {
+      "name": "rfp-response",
+      "description": "Structure RFP and RFI responses that map requirements to evidence. Use whenever the user answers a vendor questionnaire, RFP, RFI, security questionnaire, or procurement response with claim-and-evidence rows.",
+      "category": "documents",
+      "path": "skills/documents/rfp-response",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 279,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/rfp-response",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; do not invent compliance certifications.",
+      "content_digest": "sha256:a88c54677b6c451e5058e08f5d5ffedad39c6e902a15bb19cb9e450be4a7067f",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "runbook-writing",
       "description": "Write operational runbooks that on-call engineers can follow under stress. Use whenever the user asks for a runbook, playbook, ops procedure, alert response guide, or how to document incident response steps for a system.",
       "category": "documents",
@@ -1294,6 +1573,37 @@
         "network": "optional",
         "filesystem": "read-write",
         "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "1-1-agendas",
+      "description": "Prepare effective manager and IC 1:1 agendas and notes. Use whenever the user asks for a one-on-one agenda, 1:1 talking points, career check-in structure, skip-level prep, or how to run a better 1:1 meeting.",
+      "category": "productivity",
+      "path": "skills/productivity/1-1-agendas",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 224,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/1-1-agendas",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:2e456bbdde8f970818e0c3426492fce76ed577bfe6fcdba3073adf9ef290c70b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -1523,6 +1833,37 @@
       }
     },
     {
+      "name": "oss-maintainer-triage",
+      "description": "Triage open-source issues and PRs with labels, reproduction asks, and maintainer-friendly replies. Use whenever the user maintains a public repo and needs issue triage, good-first-issue labeling, incomplete bug report replies, or PR intake for an open-source project.",
+      "category": "productivity",
+      "path": "skills/productivity/oss-maintainer-triage",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 326,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/oss-maintainer-triage",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:be87c4cb997fbe1e44832a0a998e00caffb9668f1a23c2394b2406596a8a760f",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "privacy-request-playbook",
       "description": "Handle DSAR, GDPR, and CCPA-style privacy requests with verification, scoping, and careful response templates. Use whenever the user has a data export, deletion, or access request, or asks how to process a privacy ticket safely without over-sharing.",
       "category": "productivity",
@@ -1599,6 +1940,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:86b7def1d83b854629acf139551af9f5ca468154fa014b37abafa9dbfe2ff1d4",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "sprint-planning",
+      "description": "Run sprint or iteration planning with capacity, goals, and clear commit scope. Use whenever the user asks for sprint planning help, iteration planning, backlog prioritization for a sprint, or capacity-based planning for a team.",
+      "category": "productivity",
+      "path": "skills/productivity/sprint-planning",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 281,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/sprint-planning",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:315efa3fe298224240480134f444eaf1d2878b6379d46749e152608bed6780da",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1802,6 +2174,37 @@
       }
     },
     {
+      "name": "market-sizing",
+      "description": "Build transparent TAM SAM SOM style market sizing with explicit assumptions. Use whenever the user asks for market size, TAM/SAM/SOM, top-down or bottom-up sizing, addressable market, or investor-style market estimates.",
+      "category": "research",
+      "path": "skills/research/market-sizing",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 249,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/research/market-sizing",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may use public research when network is available.",
+      "content_digest": "sha256:0271750f0a9c421808b1474c37ccf0867746b4dd227e645156d6ee613bd9854b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "optional",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "research-summaries",
       "description": "Summarize papers, articles, and reports into structured research briefs that separate claims from evidence. Use whenever the user shares a paper, study, PDF, or article and asks what it says, wants key findings or limitations, asks \"is this study any good\", or needs several sources synthesized into one brief.",
       "category": "research",
@@ -1926,6 +2329,37 @@
       }
     },
     {
+      "name": "case-studies",
+      "description": "Write customer case studies with problem, solution, proof, and quote discipline. Use whenever the user asks for a case study, customer success story, proof point for sales, or customer story for the website.",
+      "category": "writing",
+      "path": "skills/writing/case-studies",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 234,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/case-studies",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; never invent customer quotes or metrics.",
+      "content_digest": "sha256:76ac4f610d4600f96fef9ab0bb304305cee307caf315fc5da4163bbb9471d90f",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "copy-editing",
       "description": "Edit prose for clarity, correctness, flow, consistency, and concision while preserving the author's meaning and voice. Use whenever the user asks to edit, proofread, polish, tighten, simplify, or improve writing, shares a draft with minimal instructions, or wants grammar and style issues fixed.",
       "category": "writing",
@@ -1940,6 +2374,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:5c514d25b3ca94b0c74a5f1e8f79d5de1de5d32085260729029e9aecbe2ef9ce",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "documentation-migration",
+      "description": "Plan and execute docs migrations between tools and information architectures. Use whenever the user moves docs between wikis, migrates to a docs site, restructures documentation, or consolidates scattered docs into a coherent library.",
+      "category": "writing",
+      "path": "skills/writing/documentation-migration",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 290,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/documentation-migration",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:0915084514952c359a99e2aef79597ad363b196f523e77773d36dcccd4fa943c",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

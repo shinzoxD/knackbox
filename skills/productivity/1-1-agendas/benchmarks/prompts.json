@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "1:1 agenda for me and my manager",
+    "one-on-one talking points for a struggling report",
+    "career check-in structure for quarterly 1:1",
+    "skip-level 1:1 prep questions",
+    "how to run a better 1:1 meeting",
+    "manager 1:1 agenda template weekly"
+  ],
+  "should_not_trigger": [
+    "sprint planning meeting",
+    "all-hands internal comms",
+    "retro facilitation",
+    "interview prep STAR",
+    "status report for execs",
+    "meeting agenda for design review multi-person"
+  ],
+  "tasks": [
+    {
+      "prompt": "Weekly 1:1; report is quiet; projects slipping. Agenda + questions.",
+      "criteria": [
+        "puts their topics first",
+        "includes constructive diagnostic questions",
+        "action item capture"
+      ]
+    },
+    {
+      "prompt": "Career growth 1:1 for mid-level eng wanting staff path.",
+      "criteria": [
+        "growth-oriented structure",
+        "concrete discussion prompts",
+        "avoids empty platitudes"
+      ]
+    },
+    {
+      "prompt": "1:1 became only status every week. Reset approach.",
+      "criteria": [
+        "moves status async",
+        "restores 1:1 purpose",
+        "practical template"
+      ]
+    }
+  ]
+}

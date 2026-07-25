@@ -24,7 +24,11 @@
         "logging-observability",
         "container-review",
         "api-changelog",
-        "kubernetes-review"
+        "kubernetes-review",
+        "openapi-spec-design",
+        "feature-flags",
+        "secrets-management",
+        "code-comments"
       ]
     },
     {
@@ -38,7 +42,8 @@
         "i18n-review",
         "performance-review",
         "issue-triage",
-        "test-generation"
+        "test-generation",
+        "design-system-contribution"
       ]
     },
     {
@@ -54,7 +59,10 @@
         "prompt-injection-hardening",
         "database-migrations",
         "kubernetes-review",
-        "load-test-planning"
+        "load-test-planning",
+        "helm-chart-scaffolding",
+        "secrets-management",
+        "feature-flags"
       ]
     },
     {
@@ -67,7 +75,8 @@
         "data-visualization",
         "metrics-definitions",
         "ab-test-analysis",
-        "sql-analytics"
+        "sql-analytics",
+        "etl-pipeline-design"
       ]
     },
     {
@@ -80,7 +89,8 @@
         "literature-reviews",
         "competitor-briefs",
         "user-interview-synthesis",
-        "survey-analysis"
+        "survey-analysis",
+        "market-sizing"
       ]
     },
     {
@@ -96,7 +106,9 @@
         "social-posts",
         "incident-comms",
         "internal-comms",
-        "api-changelog"
+        "api-changelog",
+        "case-studies",
+        "documentation-migration"
       ]
     },
     {
@@ -119,7 +131,10 @@
         "retro-facilitation",
         "issue-triage",
         "okr-drafting",
-        "onboarding-guides"
+        "onboarding-guides",
+        "sprint-planning",
+        "1-1-agendas",
+        "policy-writing"
       ]
     },
     {
@@ -161,7 +176,9 @@
         "email-drafts",
         "copy-editing",
         "privacy-request-playbook",
-        "internal-comms"
+        "internal-comms",
+        "case-studies",
+        "rfp-response"
       ]
     },
     {
@@ -173,7 +190,10 @@
         "support-macros",
         "security-review",
         "prompt-injection-hardening",
-        "incident-comms"
+        "incident-comms",
+        "secrets-management",
+        "policy-writing",
+        "rfp-response"
       ]
     },
     {
@@ -187,7 +207,35 @@
         "status-reports",
         "retro-facilitation",
         "delegation-briefs",
-        "standup-updates"
+        "standup-updates",
+        "sprint-planning",
+        "1-1-agendas"
+      ]
+    },
+    {
+      "slug": "oss-maintainers",
+      "name": "OSS Maintainers",
+      "description": "Triage community contributions, write onboarding for contributors, and keep public repos healthy.",
+      "skills": [
+        "oss-maintainer-triage",
+        "onboarding-guides",
+        "issue-triage",
+        "pr-descriptions",
+        "code-review",
+        "documentation-migration"
+      ]
+    },
+    {
+      "slug": "product-gtm",
+      "name": "Product & GTM",
+      "description": "Ship narratives and proof: case studies, launches, market sizing, RFPs, and research synthesis.",
+      "skills": [
+        "case-studies",
+        "product-announcements",
+        "market-sizing",
+        "rfp-response",
+        "competitor-briefs",
+        "user-interview-synthesis"
       ]
     }
   ]

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "triage these GitHub issues for our OSS repo",
+    "reply template for incomplete bug reports",
+    "how to prioritize good first issues",
+    "maintainer intake for this pull request",
+    "label taxonomy for our open source project",
+    "close or keep this stale feature request"
+  ],
+  "should_not_trigger": [
+    "internal Jira bug triage for proprietary product only",
+    "customer support refund macro",
+    "write a full blog post about OSS",
+    "sprint planning for a closed-source team",
+    "security code review of auth without OSS context",
+    "market sizing"
+  ],
+  "tasks": [
+    {
+      "prompt": "Issue: 'it broken' with no version or steps. Draft triage reply + labels.",
+      "criteria": [
+        "asks for repro details",
+        "suggests labels like needs-repro",
+        "kind firm tone"
+      ]
+    },
+    {
+      "prompt": "PR is 3k lines refactor + feature + formatting. Maintainer response?",
+      "criteria": [
+        "asks to split or clarifies review capacity",
+        "constructive tone",
+        "states next step clearly"
+      ]
+    },
+    {
+      "prompt": "Want 20 good first issues overnight for hacktober-style event. Advise.",
+      "criteria": [
+        "quality over quantity for good first issue",
+        "scoping guidance",
+        "avoids rubber-stamping hard tasks"
+      ]
+    }
+  ]
+}

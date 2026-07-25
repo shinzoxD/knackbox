@@ -87,3 +87,23 @@ npx knackbox add commit-messages --dest "$HOME/my-skills/commit-messages"
 ```
 
 More: [packages/cli/README.md](packages/cli/README.md) · [COMMUNITY.md](COMMUNITY.md) · [knackbox.pages.dev](https://knackbox.pages.dev)
+
+## OSS maintainers
+
+```bash
+npx knackbox pack oss-maintainers
+npx knackbox add oss-maintainer-triage onboarding-guides code-review
+```
+
+## Product & GTM
+
+```bash
+npx knackbox pack product-gtm
+npx knackbox add case-studies market-sizing rfp-response
+```
+
+## Secure delivery
+
+```bash
+npx knackbox add secrets-management feature-flags security-review ci-cd-pipelines
+```

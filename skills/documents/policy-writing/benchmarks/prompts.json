@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "draft an acceptable use policy",
+    "write a security policy for laptops",
+    "company travel policy plain language",
+    "internal policy for AI tool usage",
+    "HR remote work policy outline",
+    "update our password policy clearly"
+  ],
+  "should_not_trigger": [
+    "runbook for an incident",
+    "RFC technical design",
+    "customer case study",
+    "OKR drafting",
+    "support macro",
+    "market sizing"
+  ],
+  "tasks": [
+    {
+      "prompt": "AI tools policy: no customer PII in public models; approved tools list TBD. Draft.",
+      "criteria": [
+        "clear requirements",
+        "scope and exceptions placeholders",
+        "does not invent legal claims"
+      ]
+    },
+    {
+      "prompt": "Password policy currently vague 'use strong passwords'. Improve.",
+      "criteria": [
+        "testable requirements",
+        "practical enforcement notes",
+        "plain language"
+      ]
+    },
+    {
+      "prompt": "Policy vs procedure: onboarding access. How to split?",
+      "criteria": [
+        "separates must-rules from how-to steps",
+        "structure guidance",
+        "examples"
+      ]
+    }
+  ]
+}

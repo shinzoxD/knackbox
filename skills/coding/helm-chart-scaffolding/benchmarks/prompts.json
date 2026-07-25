@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "scaffold a Helm chart for this service",
+    "review Chart.yaml and values for production",
+    "add a safe pre-upgrade hook pattern",
+    "helm packaging for our API deployment",
+    "values.yaml structure for multi-env",
+    "upgrade-safe helm chart checklist"
+  ],
+  "should_not_trigger": [
+    "raw Kubernetes YAML review with no Helm",
+    "Dockerfile hardening only",
+    "terraform module review only",
+    "load test planning",
+    "customer support macro",
+    "OKR drafting"
+  ],
+  "tasks": [
+    {
+      "prompt": "Scaffold Helm for a stateless Node API with ingress and configmap. No secrets in git.",
+      "criteria": [
+        "proposes chart file layout",
+        "parameterizes image/service/ingress",
+        "avoids committing plaintext secrets"
+      ]
+    },
+    {
+      "prompt": "values.yaml defaults image tag latest and replicaCount 1 for prod chart. Review.",
+      "criteria": [
+        "flags latest and single-replica risk",
+        "proposes safer defaults or env overrides",
+        "severity-minded guidance"
+      ]
+    },
+    {
+      "prompt": "Need a migration job before upgrade. Helm approach?",
+      "criteria": [
+        "discusses hooks or separate job chart carefully",
+        "mentions failure/rollback implications",
+        "practical recommendation"
+      ]
+    }
+  ]
+}

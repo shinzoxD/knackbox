@@ -7,6 +7,8 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skills batch to 83: helm, design-system, OSS triage, OpenAPI, flags, secrets, ETL, policies, RFPs, sprint/1:1, market sizing, case studies, docs migration, code comments.
+- Packs: OSS Maintainers, Product & GTM.
 - Skills: `kubernetes-review`, `load-test-planning`, `privacy-request-playbook`,
   `api-changelog`, `onboarding-guides`, `survey-analysis`, `internal-comms`,
   `okr-drafting` (catalog target: 68 skills).

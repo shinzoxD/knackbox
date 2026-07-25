@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "answer this security questionnaire",
+    "RFP response matrix for these requirements",
+    "RFI for our analytics product",
+    "vendor questionnaire help with evidence columns",
+    "procurement response draft",
+    "map requirements to product capabilities honestly"
+  ],
+  "should_not_trigger": [
+    "customer marketing case study story",
+    "internal policy writing",
+    "technical RFC",
+    "support ticket reply",
+    "market sizing only",
+    "sprint planning"
+  ],
+  "tasks": [
+    {
+      "prompt": "Requirement: SSO SAML. Product has SAML for Enterprise only. Matrix row.",
+      "criteria": [
+        "status reflects edition limitation",
+        "clear response text",
+        "does not invent certs"
+      ]
+    },
+    {
+      "prompt": "Questionnaire asks if SOC 2 Type II; user says audit in progress not complete.",
+      "criteria": [
+        "honest partial/in-progress status",
+        "no false certification claim",
+        "evidence placeholder appropriate"
+      ]
+    },
+    {
+      "prompt": "200 questions due tomorrow. Prioritization approach.",
+      "criteria": [
+        "triage critical security/compliance first",
+        "reuse strategy",
+        "realistic plan"
+      ]
+    }
+  ]
+}

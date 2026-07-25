@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design an ETL pipeline from app DB to warehouse",
+    "ELT architecture for product analytics events",
+    "dbt model layering for orders and users",
+    "data pipeline failure and replay strategy",
+    "ingest SaaS API data hourly with quality checks",
+    "backfill plan for last 90 days of events"
+  ],
+  "should_not_trigger": [
+    "single SQL analytics question only",
+    "A/B test interpretation only",
+    "kubernetes review",
+    "policy writing",
+    "openapi design",
+    "sprint planning"
+  ],
+  "tasks": [
+    {
+      "prompt": "Hourly job copies orders to Snowflake; duplicates appear on reruns. Fix design.",
+      "criteria": [
+        "addresses idempotency/dedup",
+        "load strategy recommendation",
+        "quality check idea"
+      ]
+    },
+    {
+      "prompt": "Need near-real-time dashboard vs cheap daily batch. Trade-offs.",
+      "criteria": [
+        "compares latency/cost",
+        "recommendation with assumptions",
+        "clear architecture sketch"
+      ]
+    },
+    {
+      "prompt": "Pipeline drops rows failing schema silently. Critique.",
+      "criteria": [
+        "rejects silent drops",
+        "quarantine/metrics approach",
+        "alerting"
+      ]
+    }
+  ]
+}

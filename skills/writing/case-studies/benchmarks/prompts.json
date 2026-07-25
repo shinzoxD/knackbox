@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a customer case study from these notes",
+    "success story for the website about Acme",
+    "proof point one-pager for sales",
+    "case study draft with problem solution results",
+    "customer story needing quote placeholders",
+    "B2B SaaS case study outline"
+  ],
+  "should_not_trigger": [
+    "product launch announcement without customer proof",
+    "RFP questionnaire matrix",
+    "blog thought leadership without customer",
+    "internal comms reorg",
+    "market sizing",
+    "documentation migration plan"
+  ],
+  "tasks": [
+    {
+      "prompt": "Notes: retailer cut inventory stockouts 18% after demand forecasting; quote TBD. Draft case study with placeholders.",
+      "criteria": [
+        "uses provided metric only",
+        "placeholder for quote",
+        "problem-solution-results structure"
+      ]
+    },
+    {
+      "prompt": "Sales wants '10x ROI' but customer only said 'saved time'. Handle.",
+      "criteria": [
+        "refuses invented 10x",
+        "uses accurate framing",
+        "suggests how to get real proof"
+      ]
+    },
+    {
+      "prompt": "Only three bullet notes, no metrics. What can we publish?",
+      "criteria": [
+        "honest qualitative story or wait",
+        "lists missing proof",
+        "does not fabricate numbers"
+      ]
+    }
+  ]
+}

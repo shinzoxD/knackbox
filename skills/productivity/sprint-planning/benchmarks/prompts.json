@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "help plan our two-week sprint",
+    "sprint planning with capacity for 5 engineers",
+    "what should we commit this iteration",
+    "prioritize backlog for the next sprint",
+    "iteration plan with on-call load",
+    "sprint goal and committed list from these tickets"
+  ],
+  "should_not_trigger": [
+    "OKR drafting for the quarter",
+    "retro facilitation",
+    "daily standup only",
+    "full project proposal multi-month",
+    "1:1 agenda",
+    "load test plan"
+  ],
+  "tasks": [
+    {
+      "prompt": "Team of 4; one on PTO 3 days; historical 20 points; backlog has 35 points of P0s. Plan.",
+      "criteria": [
+        "uses capacity realism",
+        "sprint goal idea",
+        "commit vs cut/stretch"
+      ]
+    },
+    {
+      "prompt": "Manager wants everything in the sprint including vague exploration. Advise.",
+      "criteria": [
+        "timeboxes spikes",
+        "protects focus/goal",
+        "clear recommendation"
+      ]
+    },
+    {
+      "prompt": "Carryover 60% for third sprint in a row. Planning response?",
+      "criteria": [
+        "addresses systemic overcommit",
+        "concrete process fix",
+        "honest scope cut"
+      ]
+    }
+  ]
+}

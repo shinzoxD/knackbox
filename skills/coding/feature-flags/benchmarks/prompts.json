@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "feature flag rollout plan for the new checkout",
+    "gradual percentage rollout design",
+    "kill switch for this risky change",
+    "how to clean up stale feature flags",
+    "targeting plan for beta tenants",
+    "experiment flag vs release flag which to use"
+  ],
+  "should_not_trigger": [
+    "A/B analysis of experiment results only",
+    "kubernetes review",
+    "write unit tests without flags",
+    "OKR drafting",
+    "openapi design",
+    "support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "Ship search v2 behind a flag: 5% \u2192 25% \u2192 100% over a week. Plan.",
+      "criteria": [
+        "phased targeting",
+        "metrics/kill switch",
+        "cleanup step"
+      ]
+    },
+    {
+      "prompt": "Flag default true in code but false in config service. Risk?",
+      "criteria": [
+        "discusses default mismatch risk",
+        "recommends consistent fail behavior",
+        "practical fix"
+      ]
+    },
+    {
+      "prompt": "100 flags in codebase, many unused. Cleanup approach.",
+      "criteria": [
+        "prioritization approach",
+        "ownership/removal process",
+        "avoids big-bang without inventory"
+      ]
+    }
+  ]
+}
