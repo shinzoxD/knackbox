@@ -141,7 +141,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/accessibility-review",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:28ed0e670a754e385259ba03d073169c92c89a7671253ee2f9946ad7fd113deb",
+      "content_digest": "sha256:5274505295f2e996ba14851b25cb76db98e752cd0eb9b2df5e6343a7fe684fd9",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -203,7 +203,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/database-migrations",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; dialect-aware when the user specifies the database.",
-      "content_digest": "sha256:ddfcbd12c3abe3011713796cf7c5789a2e1ae661d1b9658ff7ada7a8b82b8fcd",
+      "content_digest": "sha256:aefcc0740d05f214ce4ed1c016670b0a31dbc78b445658c55800a1b64ab13829",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -265,7 +265,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/error-handling",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:af1bccbda2f1e64ff997f3b8f6674e93e2e30bbc3ca5b3cea8f1b51a75005b6b",
+      "content_digest": "sha256:3de1ba0b36deceb0640ed4278079758d03318d00ff2eacf4667811d9bfd2291e",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -296,7 +296,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/git-conflict-resolution",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may use local git when available.",
-      "content_digest": "sha256:5fd665e8461f7d701caea50da5596b98e27bc7b898525bc24578fd94f04e2bb4",
+      "content_digest": "sha256:9990f137af32135c8bd7acc6e8d4ede52e8768ddfbaa815bb28194259a673391",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -513,7 +513,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/ab-test-analysis",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may use local analysis tools when available.",
-      "content_digest": "sha256:4b6712bd8640b3d45ec0d85208432fd505df43ffbefb34cf8ec2aebeceeb2ffb",
+      "content_digest": "sha256:09ff76f7c9ffa1e9acedcce4565b3995e3f8e20e96b13fc36d88c78833bbdf55",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -637,7 +637,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/metrics-definitions",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:9c923700821c08c6cf643bd4d456003cd66b5d5772441274d3c024ea868eadb9",
+      "content_digest": "sha256:b99e7e8f34ba941c26e6f3731827af107c0f7d50984fcebe86511459cdc34e09",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -668,7 +668,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/architecture-decision-records",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:70b89169344dcc8ec56d1e06251818dce6f433cc90ccb02f32f4758311080b1d",
+      "content_digest": "sha256:b6a9fad6ec5e042b29c7202a1670b0b560d166c455154014dc0c083a6cb687cc",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -854,7 +854,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/runbook-writing",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:ee1673d7f6c9a1baec5b9e676a666ad698c4f1f943dc3997e0cfb303b0e1c8c8",
+      "content_digest": "sha256:305c9f3bada0108f918fcaba93fb3ce9e7acd697b17a6aadd8fb7f8cbea9ddc4",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -978,7 +978,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/interview-prep",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:c535be6706e5ddb029ed6a47b1c2c179af308d9998299910235944d8634ffd4e",
+      "content_digest": "sha256:744f0cf8771fbc486e28442d3c0c3bccc2cd9f4797dc0aaebb00535b362b748c",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1009,7 +1009,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/issue-triage",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:38a95810bb61d9c8a51f8c06a938a9c52aa8eea1cfcd57f3ba017adb30f4d1e6",
+      "content_digest": "sha256:8d29ea8367efad2f7b479146adb296bbbf2f4bb2bcad321019e576e1f7acc1c3",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1288,7 +1288,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/research/user-interview-synthesis",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:cb50a3b1a4d91026926120dca79c477e44fd256e7c01fbb0539e59c0da5bc525",
+      "content_digest": "sha256:16d385a7b0a75cff0e4634755a6154237feeea862ca27e2674cffee0729968fe",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1412,7 +1412,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/product-announcements",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:2a87ca7a1c63407d89fba00e968197d62c34cfa943fb2d21cc47cf2a1abe2d76",
+      "content_digest": "sha256:31610362ddc7cfab10c545a638c0d102dc7e1e417ba7ce701f67b8de08a429d0",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1443,7 +1443,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/social-posts",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:9c7872c9c3a48d002a172417a43aef6910802e18e9a234f09c78199aee607db7",
+      "content_digest": "sha256:ac9fa189d35fb401b1924bbf0c1357ef2f7f8010a986243138392df6b57e5f1b",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
