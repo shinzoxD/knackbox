@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design error handling for this payment API",
+    "should I retry this HTTP call",
+    "how to structure exceptions in this service",
+    "circuit breaker for the billing dependency",
+    "timeouts and backoff for the worker",
+    "map domain errors to HTTP status codes"
+  ],
+  "should_not_trigger": [
+    "debug this specific null pointer stack trace end to end",
+    "security review for XSS",
+    "write a postmortem for last night",
+    "optimize query performance",
+    "draft an RFC for multi-region",
+    "write unit tests for pure math helpers only"
+  ],
+  "tasks": [
+    {
+      "prompt": "POST /charges may fail on card decline, gateway timeout, or duplicate idempotency key. Design error handling.",
+      "criteria": [
+        "classifies decline vs timeout vs conflict",
+        "retry guidance only where safe",
+        "mentions user-safe messages and logging"
+      ]
+    },
+    {
+      "prompt": "Worker processes webhooks; provider retries deliveries. Handle duplicates and permanent failures.",
+      "criteria": [
+        "addresses idempotency/duplicates",
+        "mentions DLQ or permanent failure path",
+        "avoids infinite retry loops"
+      ]
+    },
+    {
+      "prompt": "Library code catches Exception and returns null. Critique and redesign.",
+      "criteria": [
+        "rejects swallowing all exceptions",
+        "proposes explicit error propagation",
+        "notes observability impact"
+      ]
+    }
+  ]
+}

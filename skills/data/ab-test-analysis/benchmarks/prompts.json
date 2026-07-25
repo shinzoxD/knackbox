@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "did variant B win this A/B test",
+    "interpret these experiment results and lift",
+    "check for sample ratio mismatch",
+    "is this p-value enough to ship",
+    "analyze our checkout experiment metrics",
+    "CUPED adjusted results \u2014 how do I read them"
+  ],
+  "should_not_trigger": [
+    "define a north star metric taxonomy from scratch",
+    "clean this CSV of duplicates",
+    "draw a bar chart of revenue",
+    "competitive analysis of two products",
+    "write SQL to pull experiment assignments",
+    "postmortem for the outage during the test"
+  ],
+  "tasks": [
+    {
+      "prompt": "Control conversion 4.0% n=10k; Variant 4.2% n=10k; primary metric purchase rate. User wants to ship.",
+      "criteria": [
+        "discusses uncertainty / whether lift is decisive",
+        "does not invent a p-value as fact without calc",
+        "mentions guardrails or practical significance"
+      ]
+    },
+    {
+      "prompt": "Assignment 60/40 after intended 50/50. Outcomes look great for minority variant.",
+      "criteria": [
+        "flags sample ratio mismatch",
+        "warns against trusting outcomes until fixed",
+        "suggests investigation of assignment"
+      ]
+    },
+    {
+      "prompt": "Team peeked every day and stopped when p<0.05 on day 3 of 14.",
+      "criteria": [
+        "explains peeking / optional stopping bias",
+        "recommends caution or proper sequential design",
+        "avoids celebrating the win uncritically"
+      ]
+    }
+  ]
+}

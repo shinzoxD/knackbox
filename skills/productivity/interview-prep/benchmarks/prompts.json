@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "help me prep for a senior backend interview",
+    "STAR stories for leadership principles",
+    "system design drill for a URL shortener",
+    "practice behavioral answers for conflict at work",
+    "mock interview questions for React role",
+    "I'm the interviewer \u2014 rubric for a mid-level screen"
+  ],
+  "should_not_trigger": [
+    "write my resume from scratch without interview framing",
+    "solve this leetcode and only give the final code with no prep coaching",
+    "company competitive analysis for investing",
+    "standup update for my team",
+    "RFC for interview platform product",
+    "debug production outage"
+  ],
+  "tasks": [
+    {
+      "prompt": "User has 5 years backend exp. Tomorrow: 45m behavioral at a fintech. Prep plan + one STAR on failure.",
+      "criteria": [
+        "timeboxed prep plan",
+        "STAR structure with situation action result",
+        "fintech or level-appropriate tips"
+      ]
+    },
+    {
+      "prompt": "System design practice: news feed. Give an outline they can rehearse in 35 minutes.",
+      "criteria": [
+        "covers requirements and trade-offs",
+        "structured outline",
+        "time awareness"
+      ]
+    },
+    {
+      "prompt": "Interviewer wants a fair rubric for mid-level coding screen.",
+      "criteria": [
+        "provides rubric dimensions",
+        "avoids gotcha-only evaluation",
+        "actionable scoring guidance"
+      ]
+    }
+  ]
+}

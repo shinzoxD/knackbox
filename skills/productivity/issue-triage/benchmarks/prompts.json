@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "triage these five GitHub issues",
+    "how severe is this bug report",
+    "rewrite this Slack bug into a proper ticket",
+    "prioritize our backlog of defects",
+    "classify P0-P3 for these incidents-looking tickets",
+    "clean up noisy bug reports before sprint planning"
+  ],
+  "should_not_trigger": [
+    "implement a fix for the null pointer",
+    "write a PR description for the fix",
+    "postmortem for the outage",
+    "standup update",
+    "security review the auth code",
+    "define product KPIs"
+  ],
+  "tasks": [
+    {
+      "prompt": "Report: 'app broken sometimes'. No repro. Users on iOS. Triage.",
+      "criteria": [
+        "requests missing repro info",
+        "assigns provisional severity with uncertainty",
+        "gives next investigative steps"
+      ]
+    },
+    {
+      "prompt": "Payment charge succeeds twice for one click; 3 enterprise customers. Triage severity.",
+      "criteria": [
+        "high/critical severity appropriate to double charge",
+        "impact stated",
+        "next actions include mitigation"
+      ]
+    },
+    {
+      "prompt": "Batch: (1) typo on settings, (2) cannot login MFA loop, (3) dark mode contrast nit. Prioritize.",
+      "criteria": [
+        "orders MFA above cosmetic",
+        "uses a clear severity scheme",
+        "brief rationale per item"
+      ]
+    }
+  ]
+}

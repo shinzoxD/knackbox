@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a runbook for high error rate on checkout",
+    "on-call playbook for Redis memory saturation",
+    "ops procedure for failing deploys",
+    "alert response guide for 5xx spike",
+    "document how to fail over the API read replica",
+    "incident response steps for queue lag"
+  ],
+  "should_not_trigger": [
+    "blameless postmortem narrative for last week",
+    "RFC for new queue system",
+    "standup status",
+    "security code review",
+    "define product KPIs",
+    "landing page copy"
+  ],
+  "tasks": [
+    {
+      "prompt": "Runbook: API p95 latency alert. Can scale pods or rollback deploy. Include diagnosis.",
+      "criteria": [
+        "includes diagnosis before mitigation",
+        "copy-pasteable or concrete steps",
+        "escalation or stop conditions"
+      ]
+    },
+    {
+      "prompt": "Playbook for database disk full. Extremely destructive cleanup must be gated.",
+      "criteria": [
+        "marks dangerous steps clearly",
+        "orders customer impact mitigation",
+        "includes escalation"
+      ]
+    },
+    {
+      "prompt": "Only partial notes: alert name and dashboard URL. Scaffold a runbook.",
+      "criteria": [
+        "produces full structure with explicit placeholders for missing steps",
+        "does not invent fake commands as verified fact",
+        "lists missing info to fill"
+      ]
+    }
+  ]
+}

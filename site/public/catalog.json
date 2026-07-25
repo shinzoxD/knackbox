@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-26",
   "score_version": "v0",
-  "count": 34,
+  "count": 47,
   "skills": [
     {
       "name": "code-review",
@@ -128,6 +128,37 @@
       }
     },
     {
+      "name": "accessibility-review",
+      "description": "Review UI and content for accessibility issues against WCAG-minded practices. Use whenever the user asks for an a11y review, accessibility audit, ARIA help, keyboard navigation, screen reader support, or whether a UI is accessible — even for small component snippets.",
+      "category": "coding",
+      "path": "skills/coding/accessibility-review",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 441,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/accessibility-review",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:28ed0e670a754e385259ba03d073169c92c89a7671253ee2f9946ad7fd113deb",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "api-design",
       "description": "Design and review HTTP, REST, GraphQL, and internal service APIs with clear contracts, errors, pagination, security, and evolution rules. Use whenever the user is planning endpoints, reviewing an API specification, naming resources, defining request or response shapes, or asking how services should communicate, even if they only share a rough route list.",
       "category": "coding",
@@ -159,6 +190,37 @@
       }
     },
     {
+      "name": "database-migrations",
+      "description": "Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations, alters tables, backfills data, adds indexes, or asks how to deploy schema changes without downtime or lock pain.",
+      "category": "coding",
+      "path": "skills/coding/database-migrations",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 377,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/database-migrations",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; dialect-aware when the user specifies the database.",
+      "content_digest": "sha256:ddfcbd12c3abe3011713796cf7c5789a2e1ae661d1b9658ff7ada7a8b82b8fcd",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "dependency-upgrades",
       "description": "Plan and execute dependency upgrades with risk assessment, changelog review, and verification. Use whenever the user wants to bump packages, resolve CVEs, upgrade a major version, interpret dependency conflicts, or update lockfiles safely.",
       "category": "coding",
@@ -176,6 +238,68 @@
       "security_profile": "instructions-only",
       "permissions": {
         "network": "optional",
+        "filesystem": "read",
+        "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "error-handling",
+      "description": "Design robust error handling, retries, and failure modes for application code. Use whenever the user asks about exceptions, error types, retry policies, circuit breakers, timeouts, or how to handle failures in APIs, jobs, and distributed calls.",
+      "category": "coding",
+      "path": "skills/coding/error-handling",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 365,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/error-handling",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:af1bccbda2f1e64ff997f3b8f6674e93e2e30bbc3ca5b3cea8f1b51a75005b6b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "git-conflict-resolution",
+      "description": "Resolve git merge and rebase conflicts carefully while preserving intent. Use whenever the user has merge conflicts, rebase conflicts, or asks how to untangle conflicting branches, conflict markers, or conflicting file hunks.",
+      "category": "coding",
+      "path": "skills/coding/git-conflict-resolution",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 374,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/git-conflict-resolution",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may use local git when available.",
+      "content_digest": "sha256:5fd665e8461f7d701caea50da5596b98e27bc7b898525bc24578fd94f04e2bb4",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
         "filesystem": "read",
         "execution": "optional"
       },
@@ -376,6 +500,37 @@
       }
     },
     {
+      "name": "ab-test-analysis",
+      "description": "Analyze A/B and experiment results with correct metrics, uncertainty, and caveats. Use whenever the user shares experiment data, asks if a variant won, or needs help interpreting lift, p-values, confidence intervals, CUPED, or sample ratio mismatch.",
+      "category": "data",
+      "path": "skills/data/ab-test-analysis",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 377,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/ab-test-analysis",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may use local analysis tools when available.",
+      "content_digest": "sha256:4b6712bd8640b3d45ec0d85208432fd505df43ffbefb34cf8ec2aebeceeb2ffb",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "csv-analysis",
       "description": "Analyze CSV, TSV, and tabular data files — profile the data, answer questions with verifiable numbers, and flag quality issues. Use whenever the user uploads or pastes tabular data, asks \"what does this data show\", wants totals, trends, comparisons, or charts from a spreadsheet-like file, or asks any question that must be answered from rows and columns.",
       "category": "data",
@@ -457,6 +612,68 @@
         "network": "none",
         "filesystem": "read-write",
         "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "metrics-definitions",
+      "description": "Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the user asks what to measure, how to define a KPI, North Star, activation, retention, churn, or event taxonomy for analytics — even for a rough product idea.",
+      "category": "data",
+      "path": "skills/data/metrics-definitions",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 378,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/metrics-definitions",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:9c923700821c08c6cf643bd4d456003cd66b5d5772441274d3c024ea868eadb9",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "architecture-decision-records",
+      "description": "Write concise Architecture Decision Records that capture context, decision, and consequences. Use whenever the user asks for an ADR, architecture decision log entry, decision record, or why we chose technology X over Y in a durable doc — even for small stack choices.",
+      "category": "documents",
+      "path": "skills/documents/architecture-decision-records",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 332,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/architecture-decision-records",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:70b89169344dcc8ec56d1e06251818dce6f433cc90ccb02f32f4758311080b1d",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -624,6 +841,37 @@
       }
     },
     {
+      "name": "runbook-writing",
+      "description": "Write operational runbooks that on-call engineers can follow under stress. Use whenever the user asks for a runbook, playbook, ops procedure, alert response guide, or how to document incident response steps for a system.",
+      "category": "documents",
+      "path": "skills/documents/runbook-writing",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 356,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/runbook-writing",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:ee1673d7f6c9a1baec5b9e676a666ad698c4f1f943dc3997e0cfb303b0e1c8c8",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "technical-documentation",
       "description": "Write and improve technical documentation, tutorials, runbooks, and reference pages that users can follow successfully. Use whenever the user asks for docs, a README, setup instructions, an operational runbook, API usage guidance, or an explanation of how a system works, including requests to document code.",
       "category": "documents",
@@ -704,6 +952,68 @@
       "permissions": {
         "network": "none",
         "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "interview-prep",
+      "description": "Prepare for technical and behavioral interviews with structured practice. Use whenever the user asks for interview prep, practice questions, STAR stories, system design drills, coding interview help, or how to answer common interview questions — for candidates or interviewers.",
+      "category": "productivity",
+      "path": "skills/productivity/interview-prep",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 354,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/interview-prep",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:c535be6706e5ddb029ed6a47b1c2c179af308d9998299910235944d8634ffd4e",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "issue-triage",
+      "description": "Triage bugs and tickets with severity, repro steps, and next actions. Use whenever the user asks to triage issues, prioritize a backlog of bugs, rewrite a bug report, classify severity, or clean up noisy tickets — even from messy Slack reports.",
+      "category": "productivity",
+      "path": "skills/productivity/issue-triage",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 405,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/issue-triage",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:38a95810bb61d9c8a51f8c06a938a9c52aa8eea1cfcd57f3ba017adb30f4d1e6",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
         "execution": "none"
       },
       "metrics": {
@@ -965,6 +1275,37 @@
       }
     },
     {
+      "name": "user-interview-synthesis",
+      "description": "Synthesize user interviews into themes, insights, and opportunities. Use whenever the user pastes interview notes or transcripts and wants themes, affinity mapping, insights, JTBD, or product opportunities from qualitative research — even from messy notes.",
+      "category": "research",
+      "path": "skills/research/user-interview-synthesis",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 358,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/research/user-interview-synthesis",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:cb50a3b1a4d91026926120dca79c477e44fd256e7c01fbb0539e59c0da5bc525",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "blog-posts",
       "description": "Write blog posts and articles with a strong hook, clear structure, and a consistent voice. Use whenever the user asks for a blog post, article, newsletter issue, or long-form web content, wants a draft \"for my blog/site\", or shares an outline or topic to turn into a post — regardless of length or how casually they ask.",
       "category": "writing",
@@ -1041,6 +1382,68 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:c706856c7faa36ce04759a09b1909490f6a875f43ed0c3735b7fc631766bced0",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "product-announcements",
+      "description": "Write product launch and feature announcements for users and stakeholders. Use whenever the user asks for a launch announcement, feature blog, \"what's new\" marketing note, launch email, or customer-facing message about a new capability — even from a bullet list of changes.",
+      "category": "writing",
+      "path": "skills/writing/product-announcements",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 327,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/product-announcements",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:2a87ca7a1c63407d89fba00e968197d62c34cfa943fb2d21cc47cf2a1abe2d76",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "social-posts",
+      "description": "Write clear social posts and short threads for LinkedIn, X, and similar channels. Use whenever the user asks for a tweet, thread, LinkedIn post, social copy, launch socials, or a short promotional update for social media — even from a rough idea or link.",
+      "category": "writing",
+      "path": "skills/writing/social-posts",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 291,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/social-posts",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:9c7872c9c3a48d002a172417a43aef6910802e18e9a234f09c78199aee607db7",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

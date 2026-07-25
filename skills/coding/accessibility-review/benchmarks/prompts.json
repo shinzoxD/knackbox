@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "a11y review this modal component",
+    "is this form accessible for keyboard users",
+    "accessibility audit of our settings page markup",
+    "help with ARIA for a custom dropdown",
+    "screen reader issues on this nav",
+    "WCAG-minded review of this React component"
+  ],
+  "should_not_trigger": [
+    "make the page load faster",
+    "security review the login form",
+    "write unit tests for the button",
+    "landing page marketing copy only",
+    "refactor CSS modules structure",
+    "SQL query optimization"
+  ],
+  "tasks": [
+    {
+      "prompt": "Review: <div onclick=submit>Save</div> with no keyboard handler and no role.",
+      "criteria": [
+        "flags non-semantic clickable div as serious/critical",
+        "proposes button or proper role+keyboard support",
+        "mentions accessible name"
+      ]
+    },
+    {
+      "prompt": "Modal opens but focus stays on the background page. What should we fix?",
+      "criteria": [
+        "requires focus move into modal",
+        "mentions focus return on close and escape",
+        "mentions inert/background keyboard blocking"
+      ]
+    },
+    {
+      "prompt": "Chart is canvas-only with no text alternative. Advise.",
+      "criteria": [
+        "requires text summary or table alternative",
+        "severity-tags appropriately",
+        "does not claim canvas is automatically fine"
+      ]
+    }
+  ]
+}

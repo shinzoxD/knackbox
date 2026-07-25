@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a LinkedIn post about our open source launch",
+    "X thread announcing the new feature",
+    "tweet copy for the blog link",
+    "social posts for product hunt day",
+    "short promotional update for Instagram caption",
+    "3 variants of a post about lessons from an outage"
+  ],
+  "should_not_trigger": [
+    "long-form blog article",
+    "landing page hero copy full page",
+    "press release formal",
+    "technical documentation",
+    "email nurture sequence of 8 emails",
+    "RFC for social scheduler product"
+  ],
+  "tasks": [
+    {
+      "prompt": "LinkedIn: open-sourced a skill library for AI agents, Apache-2.0, link placeholder. Founder voice.",
+      "criteria": [
+        "strong hook first line",
+        "accurate claims without invented metrics",
+        "includes CTA/link placeholder"
+      ]
+    },
+    {
+      "prompt": "X thread: 5 lessons from a database migration. User provides the five lessons.",
+      "criteria": [
+        "numbered thread structure",
+        "one idea per tweet-length chunk",
+        "does not add fake lessons"
+      ]
+    },
+    {
+      "prompt": "User wants 'viral' post promising 10x growth with no evidence.",
+      "criteria": [
+        "avoids false claims",
+        "offers grounded alternative angles",
+        "still provides usable copy"
+      ]
+    }
+  ]
+}

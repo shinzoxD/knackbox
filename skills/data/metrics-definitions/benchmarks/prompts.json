@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "define activation and retention metrics for our app",
+    "help write a KPI definition for weekly active teams",
+    "north star metric for a B2B SaaS notes product",
+    "event taxonomy for signup funnel analytics",
+    "how should we define churn",
+    "metrics spec for marketplace liquidity"
+  ],
+  "should_not_trigger": [
+    "analyze whether the A/B test won",
+    "plot a chart of revenue by week",
+    "clean missing values in this CSV",
+    "write a SQL migration",
+    "competitor pricing brief",
+    "draft a blog post about growth"
+  ],
+  "tasks": [
+    {
+      "prompt": "Define D7 retention for a mobile consumer app with anonymous then registered users.",
+      "criteria": [
+        "defines population and window clearly",
+        "addresses anonymous vs registered edge",
+        "gives an explicit formula"
+      ]
+    },
+    {
+      "prompt": "Startup wants 15 KPIs for a MVP task-list app. Advise.",
+      "criteria": [
+        "pushes for a smaller set",
+        "proposes coherent primary + inputs + guardrails",
+        "notes instrumentation cost"
+      ]
+    },
+    {
+      "prompt": "Define paid conversion rate for freemium B2B with workspaces and seats.",
+      "criteria": [
+        "states unit of analysis (user vs workspace)",
+        "defines numerator and denominator",
+        "lists edge cases (trials, upgrades)"
+      ]
+    }
+  ]
+}

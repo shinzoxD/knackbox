@@ -15,9 +15,13 @@ const html = getRepoMarkdownHtml("CONTRIBUTING.md", { demoteHeadings: true });
     <div class="wrap py-10 sm:py-12">
       <p class="eyebrow mb-3">04 / Contribute</p>
       <h1 class="section-title">Contribute open Agent Skills</h1>
-      <p class="mt-2 max-w-3xl text-sm leading-6 muted">Add a skill, improve benchmarks, or request a missing workflow for the Knackbox catalog.</p>
+      <p class="mt-2 max-w-3xl text-sm leading-6 muted">
+        Add a skill, improve benchmarks, or request a missing workflow for the Knackbox catalog.
+        Start with five-minute wins in the community guide, or claim an open skill request.
+      </p>
       <div class="mt-5 flex flex-wrap gap-2.5">
-        <a class="btn btn-primary no-underline hover:no-underline" href={`${githubRepoUrl}/issues?q=is%3Aissue+is%3Aopen+label%3Askill-request`}>Skill requests</a>
+        <a class="btn btn-primary no-underline hover:no-underline" href={`${githubRepoUrl}/blob/main/COMMUNITY.md`}>Community guide</a>
+        <a class="btn no-underline hover:no-underline" href={`${githubRepoUrl}/issues?q=is%3Aissue+is%3Aopen+label%3Askill-request`}>Skill requests</a>
         <a class="btn no-underline hover:no-underline" href={`${githubRepoUrl}/discussions`}>Discussions</a>
         <a class="btn no-underline hover:no-underline" href={githubRepoUrl}>Repository</a>
       </div>

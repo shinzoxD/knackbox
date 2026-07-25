@@ -4,32 +4,115 @@
     {
       "slug": "developer-essentials",
       "name": "Developer Essentials",
-      "description": "Plan, implement, test, review, and document software changes with a consistent engineering workflow.",
-      "skills": ["api-design", "debugging", "test-generation", "code-review", "commit-messages", "pr-descriptions", "security-review", "sql-query-review", "refactor-planning", "dependency-upgrades", "performance-review"]
+      "description": "Plan, implement, test, review, and ship software changes with a consistent engineering workflow.",
+      "skills": [
+        "api-design",
+        "debugging",
+        "test-generation",
+        "code-review",
+        "commit-messages",
+        "pr-descriptions",
+        "security-review",
+        "sql-query-review",
+        "refactor-planning",
+        "dependency-upgrades",
+        "performance-review",
+        "error-handling",
+        "git-conflict-resolution",
+        "database-migrations"
+      ]
+    },
+    {
+      "slug": "quality-and-a11y",
+      "name": "Quality & Accessibility",
+      "description": "Review product quality from security, accessibility, performance, and defect triage angles.",
+      "skills": [
+        "code-review",
+        "security-review",
+        "accessibility-review",
+        "performance-review",
+        "issue-triage",
+        "test-generation"
+      ]
     },
     {
       "slug": "data-workbench",
       "name": "Data Workbench",
-      "description": "Clean tabular inputs, compute defensible findings, and communicate them with honest visualizations.",
-      "skills": ["data-cleaning", "csv-analysis", "data-visualization"]
+      "description": "Clean tabular inputs, define metrics, analyze experiments, and communicate findings honestly.",
+      "skills": [
+        "data-cleaning",
+        "csv-analysis",
+        "data-visualization",
+        "metrics-definitions",
+        "ab-test-analysis"
+      ]
     },
     {
       "slug": "research-rigor",
       "name": "Research Rigor",
-      "description": "Verify claims, summarize individual sources, and synthesize a wider body of evidence without overstating certainty.",
-      "skills": ["fact-checking", "research-summaries", "literature-reviews", "competitor-briefs"]
+      "description": "Verify claims, synthesize sources and interviews, and produce decision-ready competitive briefs.",
+      "skills": [
+        "fact-checking",
+        "research-summaries",
+        "literature-reviews",
+        "competitor-briefs",
+        "user-interview-synthesis"
+      ]
     },
     {
       "slug": "clear-writing",
       "name": "Clear Writing",
-      "description": "Draft, edit, and adapt professional writing across email, articles, and product pages.",
-      "skills": ["email-drafts", "blog-posts", "copy-editing", "landing-page-copy"]
+      "description": "Draft, edit, and adapt writing across email, articles, launches, social, and product pages.",
+      "skills": [
+        "email-drafts",
+        "blog-posts",
+        "copy-editing",
+        "landing-page-copy",
+        "product-announcements",
+        "social-posts"
+      ]
     },
     {
       "slug": "project-leadership",
       "name": "Project Leadership",
-      "description": "Turn uncertain initiatives into decisions, proposals, execution plans, and durable meeting records.",
-      "skills": ["decision-memos", "project-proposals", "task-planning", "meeting-notes", "release-notes", "incident-postmortems", "rfc-design-docs", "standup-updates", "retro-facilitation"]
+      "description": "Turn uncertain work into decisions, designs, plans, status, retros, and durable records.",
+      "skills": [
+        "decision-memos",
+        "project-proposals",
+        "task-planning",
+        "meeting-notes",
+        "release-notes",
+        "incident-postmortems",
+        "rfc-design-docs",
+        "architecture-decision-records",
+        "standup-updates",
+        "retro-facilitation",
+        "issue-triage"
+      ]
+    },
+    {
+      "slug": "ops-reliability",
+      "name": "Ops & Reliability",
+      "description": "Operate systems under stress: runbooks, incidents, migrations, errors, and performance.",
+      "skills": [
+        "runbook-writing",
+        "incident-postmortems",
+        "database-migrations",
+        "error-handling",
+        "performance-review",
+        "dependency-upgrades"
+      ]
+    },
+    {
+      "slug": "career-and-hiring",
+      "name": "Career & Hiring",
+      "description": "Prepare candidates and interviewers with structured practice and clear story telling.",
+      "skills": [
+        "interview-prep",
+        "resume-builder",
+        "decision-memos",
+        "email-drafts"
+      ]
     }
   ]
 }

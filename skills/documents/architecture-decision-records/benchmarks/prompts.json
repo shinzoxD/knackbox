@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write an ADR for choosing Postgres over DynamoDB",
+    "architecture decision record for event-driven order flow",
+    "document why we picked REST over GraphQL",
+    "ADR template filled for monorepo vs polyrepo",
+    "decision log entry for adopting OpenTelemetry",
+    "supersede the old ADR about background jobs"
+  ],
+  "should_not_trigger": [
+    "full multi-section RFC with detailed API schemas for a new product area",
+    "incident postmortem",
+    "runbook for on-call",
+    "meeting notes",
+    "code review this diff",
+    "release notes for v3"
+  ],
+  "tasks": [
+    {
+      "prompt": "ADR: use SQS for async email instead of in-process sends. Include consequences.",
+      "criteria": [
+        "uses ADR structure with context decision alternatives consequences",
+        "lists real alternatives",
+        "includes negative consequences"
+      ]
+    },
+    {
+      "prompt": "We previously accepted ADR-12 for Mongo; now moving to Postgres. How to record.",
+      "criteria": [
+        "uses supersede pattern rather than silent rewrite",
+        "references prior decision",
+        "states new decision clearly"
+      ]
+    },
+    {
+      "prompt": "Need only a blank ADR template for the repo.",
+      "criteria": [
+        "provides clear template sections",
+        "includes status values",
+        "stays concise"
+      ]
+    }
+  ]
+}

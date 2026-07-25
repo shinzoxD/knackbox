@@ -22,6 +22,10 @@ Use [GitHub Issues](https://github.com/shinzoxD/knackbox/issues) for reproducibl
 bugs and scoped feature requests. Use the provided forms and search existing
 issues before opening a new one.
 
+To request a new skill or claim a good first contribution, see
+[COMMUNITY.md](COMMUNITY.md) and open a
+[skill request](https://github.com/shinzoxD/knackbox/issues/new?template=skill_request.yml).
+
 ## Security reports
 
 Do not disclose vulnerabilities in an issue or discussion. Follow

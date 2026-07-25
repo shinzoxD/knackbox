@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a launch announcement for our new export feature",
+    "feature blog post for AI search beta",
+    "customer email about what's new this month",
+    "in-app what's new copy for dark mode",
+    "stakeholder announcement for enterprise SSO GA",
+    "launch note from these release bullets"
+  ],
+  "should_not_trigger": [
+    "technical release notes in Keep a Changelog only",
+    "SEO blog that is not a product launch",
+    "social viral thread without a product",
+    "PR description for the feature branch",
+    "competitive teardown",
+    "incident customer apology only with no launch"
+  ],
+  "tasks": [
+    {
+      "prompt": "Announce CSV export on reports for Pro plans, available now. No metrics given.",
+      "criteria": [
+        "benefit-led headline and body",
+        "states availability/plan accurately",
+        "does not invent metrics"
+      ]
+    },
+    {
+      "prompt": "Beta AI summary with known accuracy limits. Write cautious announcement.",
+      "criteria": [
+        "labels beta/limits",
+        "clear CTA",
+        "honest caveats"
+      ]
+    },
+    {
+      "prompt": "Internal + customer audiences for SSO GA. Provide both variants.",
+      "criteria": [
+        "separates internal vs customer messaging",
+        "accurate capability claims",
+        "includes get-started or rollout info"
+      ]
+    }
+  ]
+}

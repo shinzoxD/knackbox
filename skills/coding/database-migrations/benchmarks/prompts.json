@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this migration that adds a NOT NULL column",
+    "how do I rename a column without downtime",
+    "plan safe index creation on a large Postgres table",
+    "backfill user_uuid then drop the old column",
+    "is this ALTER TABLE dangerous in MySQL",
+    "expand/contract plan for splitting addresses table"
+  ],
+  "should_not_trigger": [
+    "optimize this SELECT query only",
+    "design REST API for users",
+    "write a postmortem",
+    "security review of SQL injection in app code",
+    "standup update",
+    "refactor service classes"
+  ],
+  "tasks": [
+    {
+      "prompt": "Postgres: add email_verified boolean NOT NULL to users (10M rows). Current code unaware. Plan.",
+      "criteria": [
+        "uses multi-step expand/backfill/constrain approach",
+        "avoids naive full-table rewrite as the only step without warning",
+        "includes app deploy ordering"
+      ]
+    },
+    {
+      "prompt": "Want to drop column legacy_code next release. Code still references it on one service.",
+      "criteria": [
+        "refuses drop until code paths are clear",
+        "proposes contract phase",
+        "mentions rollback difficulty of drops"
+      ]
+    },
+    {
+      "prompt": "Add index on orders(created_at, status) in production Postgres.",
+      "criteria": [
+        "mentions concurrent index creation or lock risk",
+        "includes verification",
+        "notes dialect assumption"
+      ]
+    }
+  ]
+}

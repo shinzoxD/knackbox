@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "help me resolve these git merge conflicts",
+    "I have conflict markers after a rebase",
+    "how do I finish this merge with conflicts in package-lock",
+    "untangle ours vs theirs in this file",
+    "git status shows both modified \u2014 what do I keep",
+    "cherry-pick conflict on main"
+  ],
+  "should_not_trigger": [
+    "write a commit message for the merge",
+    "explain what git rebase does in general",
+    "review this PR for bugs",
+    "write release notes",
+    "plan a large refactor of the module",
+    "security review auth code"
+  ],
+  "tasks": [
+    {
+      "prompt": "Conflict in config.ts: ours adds featureFlagB=true; theirs renames featureFlagA to featureFlags.experimental. Resolve.",
+      "criteria": [
+        "removes conflict markers in the recommended resolution",
+        "preserves both intents when compatible or states a product choice",
+        "does not invent unrelated config keys"
+      ]
+    },
+    {
+      "prompt": "package-lock.json is conflicted after merging a dependency bump. Advise.",
+      "criteria": [
+        "prefers regenerate/lockfile workflow over hand merge when appropriate",
+        "gives concrete commands",
+        "mentions verification"
+      ]
+    },
+    {
+      "prompt": "User mid-rebase is lost and afraid of data loss. Give safe options.",
+      "criteria": [
+        "mentions abort as a safe option",
+        "explains continue path at high level",
+        "does not recommend force-push without warning"
+      ]
+    }
+  ]
+}

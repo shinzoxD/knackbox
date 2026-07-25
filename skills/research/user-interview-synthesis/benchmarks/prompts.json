@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "synthesize these five user interviews into themes",
+    "affinity map insights from these notes",
+    "what opportunities come out of these customer calls",
+    "JTBD synthesis from interview transcripts",
+    "qual research readout for product council",
+    "cluster pains from these support-call notes"
+  ],
+  "should_not_trigger": [
+    "competitive landscape of three vendors",
+    "literature review of academic HCI papers",
+    "fact check this market size claim",
+    "write interview recruiting email only",
+    "A/B test statistical analysis",
+    "draft landing page copy"
+  ],
+  "tasks": [
+    {
+      "prompt": "Notes from 3 users: all struggle to find export; 1 loves keyboard shortcuts; 2 mention pricing confusion. Synthesize.",
+      "criteria": [
+        "clusters themes with support counts",
+        "does not invent additional users",
+        "lists opportunities with confidence"
+      ]
+    },
+    {
+      "prompt": "Only one interview transcript provided. Product manager wants definitive roadmap answers.",
+      "criteria": [
+        "cautions on n=1",
+        "still extracts useful observations",
+        "suggests follow-up research"
+      ]
+    },
+    {
+      "prompt": "Stakeholders disagree with a theme. How to present counterevidence.",
+      "criteria": [
+        "includes divergent perspectives section or equivalent",
+        "keeps evidence visible",
+        "avoids erasing dissent"
+      ]
+    }
+  ]
+}
