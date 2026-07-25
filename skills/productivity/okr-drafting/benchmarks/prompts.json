@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "draft OKRs for the growth team this quarter",
+    "turn this strategy into objectives and key results",
+    "help write measurable KRs for platform reliability",
+    "company to team OKR cascade",
+    "rewrite these task lists into proper OKRs",
+    "quarterly goals for a 6-person eng team"
+  ],
+  "should_not_trigger": [
+    "weekly status report",
+    "sprint retro facilitation",
+    "task plan for a single feature only",
+    "interview prep",
+    "privacy request playbook",
+    "meeting agenda for Monday"
+  ],
+  "tasks": [
+    {
+      "prompt": "Team: reduce churn. Current monthly logo churn 4%. Draft 1 objective + 3 KRs.",
+      "criteria": [
+        "objective qualitative",
+        "KRs measurable with targets",
+        "not only task list"
+      ]
+    },
+    {
+      "prompt": "KRs currently: ship 12 tickets, attend meetings, write docs. Fix.",
+      "criteria": [
+        "rewrites away from pure tasks",
+        "outcome-oriented KRs",
+        "explains why"
+      ]
+    },
+    {
+      "prompt": "Platform team serving 4 product teams. OKR approach?",
+      "criteria": [
+        "addresses shared platform outcomes",
+        "example OKR shape",
+        "avoids only output counting"
+      ]
+    }
+  ]
+}

@@ -22,7 +22,9 @@
         "database-migrations",
         "ci-cd-pipelines",
         "logging-observability",
-        "container-review"
+        "container-review",
+        "api-changelog",
+        "kubernetes-review"
       ]
     },
     {
@@ -50,7 +52,9 @@
         "logging-observability",
         "graphql-schema-design",
         "prompt-injection-hardening",
-        "database-migrations"
+        "database-migrations",
+        "kubernetes-review",
+        "load-test-planning"
       ]
     },
     {
@@ -75,7 +79,8 @@
         "research-summaries",
         "literature-reviews",
         "competitor-briefs",
-        "user-interview-synthesis"
+        "user-interview-synthesis",
+        "survey-analysis"
       ]
     },
     {
@@ -89,7 +94,9 @@
         "landing-page-copy",
         "product-announcements",
         "social-posts",
-        "incident-comms"
+        "incident-comms",
+        "internal-comms",
+        "api-changelog"
       ]
     },
     {
@@ -110,7 +117,9 @@
         "architecture-decision-records",
         "standup-updates",
         "retro-facilitation",
-        "issue-triage"
+        "issue-triage",
+        "okr-drafting",
+        "onboarding-guides"
       ]
     },
     {
@@ -125,7 +134,9 @@
         "error-handling",
         "performance-review",
         "dependency-upgrades",
-        "logging-observability"
+        "logging-observability",
+        "load-test-planning",
+        "kubernetes-review"
       ]
     },
     {
@@ -148,7 +159,35 @@
         "incident-comms",
         "product-announcements",
         "email-drafts",
-        "copy-editing"
+        "copy-editing",
+        "privacy-request-playbook",
+        "internal-comms"
+      ]
+    },
+    {
+      "slug": "privacy-and-trust",
+      "name": "Privacy & Trust",
+      "description": "Handle privacy requests, support judgment, security reviews, and careful external communications.",
+      "skills": [
+        "privacy-request-playbook",
+        "support-macros",
+        "security-review",
+        "prompt-injection-hardening",
+        "incident-comms"
+      ]
+    },
+    {
+      "slug": "team-operating-system",
+      "name": "Team Operating System",
+      "description": "Run the team: OKRs, agendas, onboarding, status, retros, and delegation.",
+      "skills": [
+        "okr-drafting",
+        "meeting-agendas",
+        "onboarding-guides",
+        "status-reports",
+        "retro-facilitation",
+        "delegation-briefs",
+        "standup-updates"
       ]
     }
   ]

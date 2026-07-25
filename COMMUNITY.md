@@ -7,8 +7,9 @@ agents still get wrong. This page is the short map for contributors and users.
 
 | Effort | What to do | Where |
 |---|---|---|
-| 5 minutes | Star the repo, share a skill that helped you | GitHub / social |
+| 5 minutes | Star the repo, share a skill that helped you, try `npx knackbox search <job>` | GitHub / social |
 | 15 minutes | [Request a skill](https://github.com/shinzoxD/knackbox/issues/new?template=skill_request.yml) with real trigger prompts | Issues |
+| 30 minutes | Add a recipe to [RECIPES.md](RECIPES.md) for your team's workflow | PR |
 | 1–2 hours | Improve an existing skill (examples, edge cases, benchmarks) | PR |
 | Half day | Add a new skill with `scripts/new_skill.py` + validation | PR |
 | Ongoing | Run measurements when you have API access; report regressions | PR + Discussions |
@@ -40,8 +41,9 @@ Open a skill request (or claim one) if you can bring real expertise:
 - Load-test planning and interpretation
 - Design-system contribution checklist
 
-Shipped from earlier requests: `terraform-review`, `prompt-injection-hardening`,
-`i18n-review`, `graphql-schema-design`, `support-macros`.
+Shipped from community requests: `terraform-review`, `prompt-injection-hardening`,
+`i18n-review`, `graphql-schema-design`, `support-macros`, `kubernetes-review`,
+`load-test-planning`, `privacy-request-playbook`.
 
 If you build a new skill, link any related issue in your PR.
 

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write an engineering onboarding guide",
+    "contributor getting started for our open source repo",
+    "first week plan for a new backend hire",
+    "onboarding checklist for support agents",
+    "starter guide for the payments monorepo",
+    "how do we onboard new teammates to this service"
+  ],
+  "should_not_trigger": [
+    "status report for executives",
+    "RFC for a new feature",
+    "interview prep STAR stories",
+    "release notes for customers",
+    "kubernetes manifest review",
+    "OKRs for the quarter"
+  ],
+  "tasks": [
+    {
+      "prompt": "New hire backend eng, Node monorepo, needs access list + first PR goal. Draft onboarding.",
+      "criteria": [
+        "includes access and setup",
+        "first productive task guidance",
+        "checklist format elements"
+      ]
+    },
+    {
+      "prompt": "OSS contributor guide for knackbox-like skills repo.",
+      "criteria": [
+        "covers contribute path and validation",
+        "no fake secrets",
+        "definition of ready contribution"
+      ]
+    },
+    {
+      "prompt": "Onboarding doc is 40 pages of stale wiki. Advise rewrite approach.",
+      "criteria": [
+        "proposes shorter structure",
+        "canonical links over duplication",
+        "actionable rewrite plan"
+      ]
+    }
+  ]
+}

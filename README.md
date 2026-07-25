@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-60-green)
+![Skills](https://img.shields.io/badge/skills-68-green)
 
 **An open library of skills for AI agents.**
 
@@ -37,15 +37,18 @@ description: Write clear, conventional git commit messages. Use whenever the
 npx knackbox add commit-messages
 npx knackbox add code-review security-review --agent cursor
 npx knackbox pack developer-essentials
+npx knackbox search security
 npx knackbox list --category coding
+npx knackbox doctor
 ```
 
-Default destination is `~/.claude/skills/<name>`. Use `--agent codex|cursor|opencode`, `--dest DIR`, or `--force` as needed. Package source: [`packages/cli`](packages/cli).
+Default destination is `~/.claude/skills/<name>`. Use `--agent codex|cursor|opencode`, `--dest DIR`, or `--force` as needed. Package source: [`packages/cli`](packages/cli). Job-based install recipes: [`RECIPES.md`](RECIPES.md).
 
 Until the package is on the public npm registry, run from a clone:
 
 ```bash
 node packages/cli/bin/knackbox.js add commit-messages
+# or: npm run knackbox -- add commit-messages
 ```
 
 **Open Skills CLI** — install into Claude Code, Codex, OpenCode, Cursor, or another detected agent:
@@ -75,16 +78,20 @@ Curated packs provide explicit multi-skill installation commands for common work
 
 | Pack | Skills |
 |---|---|
-| Developer Essentials | Design, debug, test, review, secure, CI/CD, containers, ship |
+| Developer Essentials | Design, debug, test, review, secure, CI/CD, k8s, ship |
 | Quality & Accessibility | Code review, security, a11y, i18n, performance, triage |
-| Platform & Infra | Terraform, containers, CI/CD, GraphQL, agent hardening |
-| Data Workbench | Cleaning, analysis, charts, metrics, experiments, warehouse SQL |
-| Research Rigor | Fact checks, summaries, literature, competitors, interviews |
-| Clear Writing | Email, blogs, editing, launches, social, incident comms |
-| Project Leadership | Decisions, RFCs, ADRs, agendas, status, retros, handoffs |
-| Ops & Reliability | Runbooks, postmortems, migrations, observability, comms |
+| Platform & Infra | Terraform, k8s, containers, CI/CD, load tests, GraphQL |
+| Data Workbench | Cleaning, analysis, charts, metrics, experiments, SQL |
+| Research Rigor | Fact checks, summaries, literature, competitors, surveys |
+| Clear Writing | Email, blogs, launches, social, internal & API comms |
+| Project Leadership | Decisions, RFCs, OKRs, onboarding, status, retros |
+| Ops & Reliability | Runbooks, postmortems, k8s, load tests, observability |
 | Career & Hiring | Interview prep, resumes, decision memos, professional email |
-| Customer Facing | Support macros, incident updates, announcements, email |
+| Customer Facing | Support macros, privacy, incident updates, announcements |
+| Privacy & Trust | Privacy requests, support judgment, security, agent hardening |
+| Team Operating System | OKRs, agendas, onboarding, status, retros, delegation |
+
+Job-based install sets: [RECIPES.md](RECIPES.md).
 
 Browse commands at [knackbox.pages.dev/packs](https://knackbox.pages.dev/packs/) or consume [`packs.json`](packs.json) directly.
 
@@ -106,6 +113,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | ⭐ core | [meeting-notes](skills/documents/meeting-notes) | documents | 536 | Turn raw meeting transcripts, chat logs, or rough notes into clean, structured meeting notes with decisions a… |
 | ✅ verified | [debugging](skills/coding/debugging) | coding | 541 | Diagnose bugs systematically instead of guessing — form hypotheses, isolate the fault, and verify the fix. Us… |
 | 🧪 community | [accessibility-review](skills/coding/accessibility-review) | coding | 441 | Review UI and content for accessibility issues against WCAG-minded practices. Use whenever the user asks for… |
+| 🧪 community | [api-changelog](skills/coding/api-changelog) | coding | 254 | Write consumer-facing API changelogs and migration notes for breaking and additive changes. Use whenever the… |
 | 🧪 community | [api-design](skills/coding/api-design) | coding | 674 | Design and review HTTP, REST, GraphQL, and internal service APIs with clear contracts, errors, pagination, se… |
 | 🧪 community | [ci-cd-pipelines](skills/coding/ci-cd-pipelines) | coding | 340 | Design and review CI/CD pipelines for speed, safety, and clear failure signals. Use whenever the user edits G… |
 | 🧪 community | [container-review](skills/coding/container-review) | coding | 320 | Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a… |
@@ -115,6 +123,8 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [git-conflict-resolution](skills/coding/git-conflict-resolution) | coding | 374 | Resolve git merge and rebase conflicts carefully while preserving intent. Use whenever the user has merge con… |
 | 🧪 community | [graphql-schema-design](skills/coding/graphql-schema-design) | coding | 354 | Design and review GraphQL schemas for authz, pagination, N+1 risk, nullability, and evolution. Use whenever t… |
 | 🧪 community | [i18n-review](skills/coding/i18n-review) | coding | 434 | Review product UI and copy for internationalization readiness — concatenation, pluralization, locale formats,… |
+| 🧪 community | [kubernetes-review](skills/coding/kubernetes-review) | coding | 380 | Review Kubernetes manifests and Helm values for security, reliability, and operability. Use whenever the user… |
+| 🧪 community | [load-test-planning](skills/coding/load-test-planning) | coding | 355 | Plan and interpret load tests with clear goals, scenarios, and pass/fail criteria. Use whenever the user asks… |
 | 🧪 community | [logging-observability](skills/coding/logging-observability) | coding | 382 | Design logging, metrics, and tracing that operators can use under pressure. Use whenever the user asks about… |
 | 🧪 community | [performance-review](skills/coding/performance-review) | coding | 641 | Diagnose application performance bottlenecks and propose measured fixes. Use whenever the user mentions slow… |
 | 🧪 community | [pr-descriptions](skills/coding/pr-descriptions) | coding | 914 | Write pull request titles and descriptions that reviewers can act on fast. Use whenever the user asks for a P… |
@@ -132,6 +142,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [sql-analytics](skills/data/sql-analytics) | data | 294 | Write analytical SQL for warehouses and BI questions with correct grain and caveats. Use whenever the user as… |
 | 🧪 community | [architecture-decision-records](skills/documents/architecture-decision-records) | documents | 332 | Write concise Architecture Decision Records that capture context, decision, and consequences. Use whenever th… |
 | 🧪 community | [incident-postmortems](skills/documents/incident-postmortems) | documents | 556 | Write blameless incident postmortems with timeline, impact, root cause, and action items. Use whenever the us… |
+| 🧪 community | [onboarding-guides](skills/documents/onboarding-guides) | documents | 292 | Write new-hire and contributor onboarding guides that get people productive fast. Use whenever the user asks… |
 | 🧪 community | [project-proposals](skills/documents/project-proposals) | documents | 477 | Turn a rough initiative into a decision-ready project proposal with outcomes, scope, plan, costs, risks, and… |
 | 🧪 community | [release-notes](skills/documents/release-notes) | documents | 724 | Write clear user-facing and developer release notes from commits, PRs, and changelogs. Use whenever the user… |
 | 🧪 community | [resume-builder](skills/documents/resume-builder) | documents | 526 | Build or rewrite resumes and tailor them to a specific job description, with achievement-focused bullets that… |
@@ -145,6 +156,8 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [interview-prep](skills/productivity/interview-prep) | productivity | 354 | Prepare for technical and behavioral interviews with structured practice. Use whenever the user asks for inte… |
 | 🧪 community | [issue-triage](skills/productivity/issue-triage) | productivity | 405 | Triage bugs and tickets with severity, repro steps, and next actions. Use whenever the user asks to triage is… |
 | 🧪 community | [meeting-agendas](skills/productivity/meeting-agendas) | productivity | 320 | Build focused meeting agendas with outcomes, timeboxes, and prep. Use whenever the user asks for a meeting ag… |
+| 🧪 community | [okr-drafting](skills/productivity/okr-drafting) | productivity | 303 | Draft OKRs and goal cascades that are measurable and non-vanity. Use whenever the user asks for OKRs, quarter… |
+| 🧪 community | [privacy-request-playbook](skills/productivity/privacy-request-playbook) | productivity | 403 | Handle DSAR, GDPR, and CCPA-style privacy requests with verification, scoping, and careful response templates… |
 | 🧪 community | [prompt-improver](skills/productivity/prompt-improver) | productivity | 540 | Rewrite and strengthen prompts for AI models — diagnose what's vague, add structure, and return a copy-paste-… |
 | 🧪 community | [retro-facilitation](skills/productivity/retro-facilitation) | productivity | 507 | Run and write software retros with useful insights and follow-through. Use whenever the user asks for a retro… |
 | 🧪 community | [standup-updates](skills/productivity/standup-updates) | productivity | 367 | Turn raw work notes into crisp standup or status updates. Use whenever the user asks for a standup, daily sta… |
@@ -154,10 +167,12 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [fact-checking](skills/research/fact-checking) | research | 549 | Verify factual claims against current, authoritative evidence and return calibrated verdicts with citations.… |
 | 🧪 community | [literature-reviews](skills/research/literature-reviews) | research | 548 | Plan and synthesize a literature review across papers and reports, organizing evidence by research question r… |
 | 🧪 community | [research-summaries](skills/research/research-summaries) | research | 496 | Summarize papers, articles, and reports into structured research briefs that separate claims from evidence. U… |
+| 🧪 community | [survey-analysis](skills/research/survey-analysis) | research | 266 | Analyze survey results into themes, segments, and decision-ready findings. Use whenever the user shares surve… |
 | 🧪 community | [user-interview-synthesis](skills/research/user-interview-synthesis) | research | 358 | Synthesize user interviews into themes, insights, and opportunities. Use whenever the user pastes interview n… |
 | 🧪 community | [blog-posts](skills/writing/blog-posts) | writing | 856 | Write blog posts and articles with a strong hook, clear structure, and a consistent voice. Use whenever the u… |
 | 🧪 community | [copy-editing](skills/writing/copy-editing) | writing | 522 | Edit prose for clarity, correctness, flow, consistency, and concision while preserving the author's meaning a… |
 | 🧪 community | [incident-comms](skills/writing/incident-comms) | writing | 377 | Write customer and stakeholder communications during incidents. Use whenever the user needs a status page upd… |
+| 🧪 community | [internal-comms](skills/writing/internal-comms) | writing | 207 | Write clear internal company communications — all-hands notes, policy updates, and reorg announcements. Use w… |
 | 🧪 community | [landing-page-copy](skills/writing/landing-page-copy) | writing | 503 | Write and improve landing-page copy with a clear offer, credible proof, scannable structure, and focused call… |
 | 🧪 community | [product-announcements](skills/writing/product-announcements) | writing | 327 | Write product launch and feature announcements for users and stakeholders. Use whenever the user asks for a l… |
 | 🧪 community | [social-posts](skills/writing/social-posts) | writing | 291 | Write clear social posts and short threads for LinkedIn, X, and similar channels. Use whenever the user asks… |

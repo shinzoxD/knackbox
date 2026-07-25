@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write an API changelog for this OpenAPI diff",
+    "migration notes for breaking auth header change",
+    "deprecation announcement for v1 orders endpoint",
+    "consumer-facing changelog between these two versions",
+    "how do we communicate nullability change on User.email",
+    "API release notes for external developers"
+  ],
+  "should_not_trigger": [
+    "customer marketing product announcement",
+    "git commit message only",
+    "engineering postmortem",
+    "terraform review",
+    "Keep a Changelog product release notes without API focus",
+    "support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "Breaking: /v1/orders page size default 50\u219220; max still 100. Write changelog entry + migration.",
+      "criteria": [
+        "labels breaking or behavioral change appropriately",
+        "migration guidance for clients",
+        "does not invent other endpoint changes"
+      ]
+    },
+    {
+      "prompt": "Additive: new field User.timezone optional. Changelog.",
+      "criteria": [
+        "marks as additive/non-breaking",
+        "documents field clearly",
+        "brief"
+      ]
+    },
+    {
+      "prompt": "Removing undocumented field used by one partner. Advise changelog + process.",
+      "criteria": [
+        "treats as breaking for that consumer",
+        "suggests communication/deprecation approach",
+        "honest about risk"
+      ]
+    }
+  ]
+}

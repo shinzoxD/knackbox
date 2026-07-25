@@ -1,0 +1,47 @@
+{
+  "name": "knackbox",
+  "version": "0.2.0",
+  "private": false,
+  "description": "Open Agent Skills library — install with the knackbox CLI",
+  "type": "module",
+  "bin": {
+    "knackbox": "./packages/cli/bin/knackbox.js"
+  },
+  "files": [
+    "packages/cli/bin",
+    "packages/cli/lib",
+    "packages/cli/README.md",
+    "packages/cli/package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "knackbox": "node ./packages/cli/bin/knackbox.js",
+    "test:cli": "npm --prefix packages/cli test",
+    "validate": "python scripts/validate.py",
+    "catalog": "python scripts/build_catalog.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinzoxD/knackbox.git"
+  },
+  "homepage": "https://knackbox.pages.dev",
+  "bugs": {
+    "url": "https://github.com/shinzoxD/knackbox/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "cursor",
+    "skills",
+    "knackbox"
+  ],
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}

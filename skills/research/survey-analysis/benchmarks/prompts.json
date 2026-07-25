@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "analyze these survey results for product",
+    "what do the NPS comments say thematically",
+    "survey readout with segments by plan",
+    "CSAT open ends coding",
+    "findings from this form export CSV",
+    "decision-ready summary of employee engagement survey"
+  ],
+  "should_not_trigger": [
+    "user interview synthesis from transcripts only",
+    "A/B experiment statistics",
+    "competitive brief",
+    "SQL warehouse query without survey",
+    "blog post drafting",
+    "privacy DSAR playbook"
+  ],
+  "tasks": [
+    {
+      "prompt": "n=120; 70% satisfaction; open ends mention price (40), bugs (25), support (10). Summarize.",
+      "criteria": [
+        "uses counts/denominators",
+        "themes from open ends",
+        "limitations or recommendations"
+      ]
+    },
+    {
+      "prompt": "n=8 pilot survey. Stakeholders want definitive roadmap proof.",
+      "criteria": [
+        "cautions on small n",
+        "still extracts directional themes",
+        "does not overclaim"
+      ]
+    },
+    {
+      "prompt": "Crosstab satisfaction by plan but some cells have 3 respondents.",
+      "criteria": [
+        "warns on small cells",
+        "careful interpretation",
+        "practical presentation advice"
+      ]
+    }
+  ]
+}

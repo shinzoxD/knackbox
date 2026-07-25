@@ -152,3 +152,15 @@ test("bin is executable via node", () => {
   assert.equal(result.status, 0);
   assert.match(result.stdout, /knackbox/);
 });
+
+test("cli search finds skills by keyword", async () => {
+  const catalogPath = path.join(repoRoot, "catalog.json");
+  const code = await main(["search", "commit", "--catalog", catalogPath, "--limit", "5"]);
+  assert.equal(code, 0);
+});
+
+test("cli doctor runs without throwing", async () => {
+  const catalogPath = path.join(repoRoot, "catalog.json");
+  const code = await main(["doctor", "--catalog", catalogPath]);
+  assert.equal(code, 0);
+});

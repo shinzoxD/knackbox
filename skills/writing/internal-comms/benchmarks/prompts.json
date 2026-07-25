@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "internal email about the benefits policy update",
+    "Slack all-hands follow-up notes",
+    "reorg announcement draft for the company",
+    "memo to all staff about office days",
+    "internal comms for tool migration next week",
+    "department update after strategy offsite"
+  ],
+  "should_not_trigger": [
+    "customer marketing launch announcement",
+    "incident status page public",
+    "external press release",
+    "support ticket reply",
+    "RFC technical design",
+    "social media viral post"
+  ],
+  "tasks": [
+    {
+      "prompt": "Announce: engineering moves to two-week release train starting June 1. Action: read new runbook. Draft email.",
+      "criteria": [
+        "leads with change and date",
+        "clear actions",
+        "appropriate internal tone"
+      ]
+    },
+    {
+      "prompt": "Reorg: Team A joins Platform org. Limited facts. Draft careful note.",
+      "criteria": [
+        "does not invent motives",
+        "states what is known about reporting",
+        "points to questions channel placeholder"
+      ]
+    },
+    {
+      "prompt": "Need both 500-char Slack and fuller email for same policy change.",
+      "criteria": [
+        "provides two lengths",
+        "consistent facts",
+        "action-required clarity"
+      ]
+    }
+  ]
+}

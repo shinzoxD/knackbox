@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this Deployment and Service YAML",
+    "is our Helm chart production-ready",
+    "RBAC too broad on this ClusterRole",
+    "missing probes and resources on this pod spec",
+    "kubernetes security review of these manifests",
+    "NetworkPolicy and ingress TLS checklist"
+  ],
+  "should_not_trigger": [
+    "Dockerfile review only with no k8s",
+    "terraform AWS VPC only",
+    "write a support macro",
+    "load test planning without cluster YAML",
+    "standup update",
+    "blog post about Kubernetes history"
+  ],
+  "tasks": [
+    {
+      "prompt": "Deployment uses image:app:latest, no probes, runs as root, no resource limits. Review.",
+      "criteria": [
+        "flags latest and root and missing probes/resources",
+        "severity tags findings",
+        "proposes concrete fixes"
+      ]
+    },
+    {
+      "prompt": "ClusterRole with * on * bound to app ServiceAccount. Review.",
+      "criteria": [
+        "flags overly broad RBAC as blocking/important",
+        "proposes least privilege direction",
+        "explains risk"
+      ]
+    },
+    {
+      "prompt": "Helm values set replicaCount:1 for checkout API in prod. Advise.",
+      "criteria": [
+        "discusses availability risk",
+        "mentions PDB or multi-replica guidance",
+        "practical recommendation"
+      ]
+    }
+  ]
+}

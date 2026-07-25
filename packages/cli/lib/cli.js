@@ -13,8 +13,14 @@ import {
   findSkill,
   formatSkillRow,
   listSkillNames,
+  searchSkills,
+  suggestSkills,
 } from "./catalog.js";
+import { AGENT_ROOTS } from "./config.js";
 import { installSkill } from "./install.js";
+import { access } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
+import os from "node:os";
 
 const HELP = `knackbox — install open Agent Skills from shinzoxD/knackbox
 
@@ -22,7 +28,9 @@ Usage:
   knackbox add <skill> [<skill>...] [options]
   knackbox pack <pack-slug> [options]
   knackbox list [--category <name>] [--json]
+  knackbox search <query> [--limit N] [--json]
   knackbox packs [--json]
+  knackbox doctor
   knackbox help
 
 Options:
@@ -32,6 +40,7 @@ Options:
   --catalog <url>    Catalog JSON URL or local path (default: GitHub raw catalog.json)
   --packs <url>      Packs JSON URL or local path
   --tarball <url>    Repo tarball URL or local .tar.gz path
+  --limit <n>        Max search results (default 15)
   -h, --help         Show help
   -v, --version      Show version
 
@@ -39,7 +48,9 @@ Examples:
   npx knackbox add commit-messages
   npx knackbox add code-review security-review --agent cursor
   npx knackbox pack developer-essentials --force
+  npx knackbox search "security terraform"
   npx knackbox list --category coding
+  npx knackbox doctor
 
 Docs: ${DEFAULT_DOCS_URL}
 Site: ${SITE_URL}
@@ -65,8 +76,12 @@ export async function main(argv) {
       return runPack(positionals, flags);
     case "list":
       return runList(flags);
+    case "search":
+      return runSearch(positionals, flags);
     case "packs":
       return runPacks(flags);
+    case "doctor":
+      return runDoctor(flags);
     default:
       console.error(`Unknown command: ${command}`);
       console.error(`Run \`knackbox help\` for usage.`);
@@ -90,10 +105,14 @@ async function runAdd(skillNames, flags) {
   const missing = skillNames.filter((name) => !findSkill(catalog, name));
   if (missing.length) {
     console.error(`Unknown skill(s): ${missing.join(", ")}`);
-    console.error("Available skills:");
-    for (const name of known) {
-      console.error(`  ${name}`);
+    for (const bad of missing) {
+      const suggestions = suggestSkills(catalog, bad);
+      if (suggestions.length) {
+        console.error(`  Did you mean for "${bad}": ${suggestions.join(", ")}?`);
+      }
     }
+    console.error(`Browse all: knackbox list  (${known.length} skills)`);
+    console.error(`Search: knackbox search <words>`);
     return 1;
   }
 
@@ -191,8 +210,102 @@ async function runPacks(flags) {
     console.log(`\n${pack.slug} — ${pack.name}`);
     console.log(`  ${pack.description}`);
     console.log(`  skills: ${pack.skills.join(", ")}`);
+    console.log(`  install: npx knackbox pack ${pack.slug}`);
   }
   return 0;
+}
+
+async function runSearch(positionals, flags) {
+  const query = positionals.join(" ").trim();
+  if (!query) {
+    console.error("Usage: knackbox search <query>");
+    return 2;
+  }
+  const catalog = await fetchCatalog(flags.catalog || DEFAULT_CATALOG_URL);
+  const limit = flags.limit ? Number(flags.limit) : 15;
+  const hits = searchSkills(catalog, query, {
+    limit: Number.isFinite(limit) && limit > 0 ? limit : 15,
+  });
+
+  if (flags.json) {
+    console.log(JSON.stringify(hits, null, 2));
+    return hits.length ? 0 : 1;
+  }
+
+  if (!hits.length) {
+    console.error(`No skills matched ${JSON.stringify(query)}.`);
+    console.error("Try: knackbox list");
+    return 1;
+  }
+
+  console.log(`${hits.length} match(es) for ${JSON.stringify(query)}`);
+  console.log(`${"NAME".padEnd(32)} ${"TIER".padEnd(10)} CATEGORY`);
+  for (const skill of hits) {
+    console.log(formatSkillRow(skill));
+  }
+  console.log(`\nInstall: npx knackbox add ${hits[0].name}`);
+  return 0;
+}
+
+async function runDoctor(flags) {
+  const checks = [];
+  const nodeVersion = process.versions.node;
+  checks.push({
+    ok: true,
+    name: "node",
+    detail: `v${nodeVersion}`,
+  });
+
+  const tar = spawnSync("tar", ["--version"], { encoding: "utf8", windowsHide: true });
+  checks.push({
+    ok: tar.status === 0,
+    name: "tar",
+    detail: tar.status === 0 ? "available" : "missing — install tar (or Git for Windows)",
+  });
+
+  for (const [agent, root] of Object.entries(AGENT_ROOTS)) {
+    // de-dupe identical roots
+    if (agent === "claude" || agent === "open-code") continue;
+    let exists = false;
+    try {
+      await access(root);
+      exists = true;
+    } catch {
+      exists = false;
+    }
+    checks.push({
+      ok: true,
+      name: `agent:${agent}`,
+      detail: exists ? `skills root exists → ${root}` : `skills root not created yet → ${root}`,
+    });
+  }
+
+  try {
+    const catalog = await fetchCatalog(flags.catalog || DEFAULT_CATALOG_URL);
+    checks.push({
+      ok: true,
+      name: "catalog",
+      detail: `${catalog.skills.length} skills from ${flags.catalog || DEFAULT_CATALOG_URL}`,
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    checks.push({ ok: false, name: "catalog", detail: message });
+  }
+
+  let failed = 0;
+  console.log("knackbox doctor");
+  console.log(`platform: ${process.platform} ${os.arch()}  home: ${os.homedir()}`);
+  for (const check of checks) {
+    const mark = check.ok ? "ok " : "ERR";
+    if (!check.ok) failed += 1;
+    console.log(`[${mark}] ${check.name.padEnd(16)} ${check.detail}`);
+  }
+  console.log(
+    failed
+      ? `\n${failed} check(s) failed. Fix the errors above, then retry install.`
+      : "\nAll critical checks passed. Try: npx knackbox add commit-messages"
+  );
+  return failed ? 1 : 0;
 }
 
 function parseArgs(argv) {
@@ -207,6 +320,7 @@ function parseArgs(argv) {
     packs: undefined,
     tarball: undefined,
     category: undefined,
+    limit: undefined,
   };
   const positionals = [];
   let command;
@@ -233,7 +347,15 @@ function parseArgs(argv) {
       flags.json = true;
       continue;
     }
-    if (arg === "--dest" || arg === "--agent" || arg === "--catalog" || arg === "--packs" || arg === "--tarball" || arg === "--category") {
+    if (
+      arg === "--dest" ||
+      arg === "--agent" ||
+      arg === "--catalog" ||
+      arg === "--packs" ||
+      arg === "--tarball" ||
+      arg === "--category" ||
+      arg === "--limit"
+    ) {
       const value = argv[i + 1];
       if (!value || value.startsWith("-")) {
         throw new Error(`Missing value for ${arg}`);

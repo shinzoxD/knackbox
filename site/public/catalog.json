@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-26",
   "score_version": "v0",
-  "count": 60,
+  "count": 68,
   "skills": [
     {
       "name": "code-review",
@@ -142,6 +142,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:28ed0e670a754e385259ba03d073169c92c89a7671253ee2f9946ad7fd113deb",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "api-changelog",
+      "description": "Write consumer-facing API changelogs and migration notes for breaking and additive changes. Use whenever the user asks for an API changelog, OpenAPI migration notes, deprecation announcement, version diff summary, or how to communicate a breaking API change to clients.",
+      "category": "coding",
+      "path": "skills/coding/api-changelog",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 254,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/api-changelog",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:50b9ce7ddc14bc4d52c95c0fd91ab86e9912e2e0f2edf1ffc26c9a32a5bcb437",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -426,6 +457,68 @@
         "network": "none",
         "filesystem": "read",
         "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "kubernetes-review",
+      "description": "Review Kubernetes manifests and Helm values for security, reliability, and operability. Use whenever the user shares Deployment, Service, Ingress, StatefulSet, Helm charts, or asks about probes, RBAC, resource limits, network policies, or production-ready k8s YAML.",
+      "category": "coding",
+      "path": "skills/coding/kubernetes-review",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 380,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/kubernetes-review",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:0590b1a953d616914073c72e41344ece346fdebd42ba516f2510c428e2c78606",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "load-test-planning",
+      "description": "Plan and interpret load tests with clear goals, scenarios, and pass/fail criteria. Use whenever the user asks for k6, Locust, JMeter, Gatling, soak tests, stress tests, capacity tests, or how to read p95 latency and error rates under load.",
+      "category": "coding",
+      "path": "skills/coding/load-test-planning",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 355,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/load-test-planning",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may sketch tool scripts when helpful.",
+      "content_digest": "sha256:20ccc58d1375ab6494dc64b15d2d7beb0ca4e0c7efa65506f4d46a462180a614",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -965,6 +1058,37 @@
       }
     },
     {
+      "name": "onboarding-guides",
+      "description": "Write new-hire and contributor onboarding guides that get people productive fast. Use whenever the user asks for an onboarding doc, starter guide for engineers, contributor getting-started, first-week plan, or \"how do we onboard\" handbook section.",
+      "category": "documents",
+      "path": "skills/documents/onboarding-guides",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 292,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/onboarding-guides",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:4d0d2f12c09702bdf8315130bd75b9f63d0b74717393b7c42b72e32088e7a35c",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "project-proposals",
       "description": "Turn a rough initiative into a decision-ready project proposal with outcomes, scope, plan, costs, risks, and a clear approval request. Use whenever the user needs a business case, internal proposal, project charter, funding request, or stakeholder pitch, even if they only provide scattered notes or an idea.",
       "category": "documents",
@@ -1368,6 +1492,68 @@
       }
     },
     {
+      "name": "okr-drafting",
+      "description": "Draft OKRs and goal cascades that are measurable and non-vanity. Use whenever the user asks for OKRs, quarterly objectives, key results, goal setting, or how to turn a strategy into measurable objectives and key results.",
+      "category": "productivity",
+      "path": "skills/productivity/okr-drafting",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 303,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/okr-drafting",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:01d4569b34131e72861d7ebef7415e10a58bb6e3d4152fc70fdf6c00c1d8041d",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "privacy-request-playbook",
+      "description": "Handle DSAR, GDPR, and CCPA-style privacy requests with verification, scoping, and careful response templates. Use whenever the user has a data export, deletion, or access request, or asks how to process a privacy ticket safely without over-sharing.",
+      "category": "productivity",
+      "path": "skills/productivity/privacy-request-playbook",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 403,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/privacy-request-playbook",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; not legal advice — follow counsel and policy.",
+      "content_digest": "sha256:37e9aed3ef3dee58e217bf764028bb74b610025ac7f89488f4ca4999459d3e00",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "prompt-improver",
       "description": "Rewrite and strengthen prompts for AI models — diagnose what's vague, add structure, and return a copy-paste-ready improved prompt. Use whenever the user shares a prompt to improve, asks why an AI's output was bad or inconsistent, wants a system prompt written, or says \"make this prompt better\" for any model or agent.",
       "category": "productivity",
@@ -1647,6 +1833,37 @@
       }
     },
     {
+      "name": "survey-analysis",
+      "description": "Analyze survey results into themes, segments, and decision-ready findings. Use whenever the user shares survey responses, NPS or CSAT comments, form exports, or asks what the survey says — with counts and caveats rather than vibes.",
+      "category": "research",
+      "path": "skills/research/survey-analysis",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 266,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/research/survey-analysis",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may use local analysis tools when available.",
+      "content_digest": "sha256:7ee8253221af66ea035e5633a56c7d71a25cb7feb246199e5b1e15e06cfa0d5b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "user-interview-synthesis",
       "description": "Synthesize user interviews into themes, insights, and opportunities. Use whenever the user pastes interview notes or transcripts and wants themes, affinity mapping, insights, JTBD, or product opportunities from qualitative research — even from messy notes.",
       "category": "research",
@@ -1754,6 +1971,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:8440dcf000177b9aef2c0869348c7d72fae22fdfd4c80aa943ece6e5e2416776",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "internal-comms",
+      "description": "Write clear internal company communications — all-hands notes, policy updates, and reorg announcements. Use whenever the user asks for an internal email, Slack company update, org announcement, or memo to the whole company or department.",
+      "category": "writing",
+      "path": "skills/writing/internal-comms",
+      "tier": "community",
+      "updated": "2026-07-26",
+      "context_tokens": 207,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/internal-comms",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:e5cdfc5a4afff05b1a1083c612e49b32f8393a596d805cd5cffe0d518e07ab79",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

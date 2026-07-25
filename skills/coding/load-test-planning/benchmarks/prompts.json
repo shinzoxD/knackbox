@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "plan a k6 load test for checkout",
+    "how do I interpret these p95 results under load",
+    "soak test design for the API",
+    "Locust scenario for signup funnel",
+    "stress test plan before Black Friday",
+    "pass fail criteria for capacity test"
+  ],
+  "should_not_trigger": [
+    "micro-optimize a hot loop without load goals",
+    "write unit tests for a pure function",
+    "status page incident comms",
+    "kubernetes YAML review only",
+    "SQL analytics for BI",
+    "customer support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "Need launch readiness test for checkout: SLO p95 400ms, 1% error budget. Outline plan.",
+      "criteria": [
+        "defines traffic model and pass/fail",
+        "includes ramp or scenarios",
+        "ties to SLO"
+      ]
+    },
+    {
+      "prompt": "p95 looks fine but p99 is 3s and errors spike at 5 minutes. Interpret.",
+      "criteria": [
+        "discusses tail latency / saturation",
+        "suggests correlation with resources",
+        "does not declare success solely on p95"
+      ]
+    },
+    {
+      "prompt": "Engineer wants to blast prod with 50k RPS unannounced. Advise.",
+      "criteria": [
+        "rejects unannounced prod stress",
+        "proposes safer alternatives",
+        "mentions approval/comms"
+      ]
+    }
+  ]
+}

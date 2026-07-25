@@ -41,16 +41,22 @@ npx knackbox pack developer-essentials
 npx knackbox pack ops-reliability --force
 ```
 
-### Browse the catalog offline-friendly
+### Browse and search
 
 ```bash
 npx knackbox list
 npx knackbox list --category coding
 npx knackbox list --json
+npx knackbox search "security terraform"
 npx knackbox packs
+npx knackbox doctor
 ```
 
-`list` / `packs` resolve the published `catalog.json` / `packs.json` from GitHub by default (or local paths when you pass `--catalog` / `--packs`).
+`list` / `search` / `packs` resolve the published `catalog.json` / `packs.json` from GitHub by default (or local paths when you pass `--catalog` / `--packs`).
+
+### Recipes
+
+Copy-paste job-based install sets live in the repo root [`RECIPES.md`](../../RECIPES.md).
 
 ## How it works
 

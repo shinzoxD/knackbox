@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "customer requested all their data export",
+    "delete my account privacy request workflow",
+    "draft response for a GDPR access request",
+    "how to process this CCPA deletion ticket",
+    "DSAR playbook steps for support",
+    "privacy ticket identity verification checklist"
+  ],
+  "should_not_trigger": [
+    "general support refund macro",
+    "security code review of login",
+    "marketing email campaign",
+    "incident postmortem engineering",
+    "OKR drafting",
+    "load test plan"
+  ],
+  "tasks": [
+    {
+      "prompt": "User emailed from same address as account: wants full data export. Policy: verify via in-app link. Draft process + reply.",
+      "criteria": [
+        "includes verification step",
+        "does not invent legal text beyond policy",
+        "drafts careful customer reply"
+      ]
+    },
+    {
+      "prompt": "Delete request but open fraud investigation hold exists per policy.",
+      "criteria": [
+        "surfaces hold/exception handling",
+        "does not silently delete against hold",
+        "escalation or policy-aligned messaging"
+      ]
+    },
+    {
+      "prompt": "Requester asks for another person's data 'as their lawyer' with no docs.",
+      "criteria": [
+        "refuses casual third-party disclosure",
+        "verification/authority requirements",
+        "safe reply direction"
+      ]
+    }
+  ]
+}
