@@ -64,3 +64,22 @@ test("renders inline code inside a link label", () => {
     '<p>Read <a href="https://example.com/skill"><code>SKILL.md</code></a>.</p>'
   );
 });
+
+test("blocks unsafe link protocols", () => {
+  for (const href of [
+    "javascript:alert",
+    "java\tscript:alert",
+    "data:text/html,unsafe",
+    "vbscript:msgbox",
+  ]) {
+    assert.equal(renderMarkdown(`[unsafe](${href})`), '<p><a href="#">unsafe</a></p>');
+  }
+});
+
+test("recognizes safe link protocols case-insensitively", () => {
+  const html = renderMarkdown("[secure](HTTPS://example.com)", {
+    linkBase: "https://github.com/shinzoxD/knackbox/blob/main",
+  });
+
+  assert.equal(html, '<p><a href="HTTPS://example.com">secure</a></p>');
+});
