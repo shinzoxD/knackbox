@@ -44,3 +44,23 @@ test("escapes link attributes without changing query parameters", () => {
     '<p><a href="https://example.com/search?q=agent+skills&amp;category=coding">Search</a></p>'
   );
 });
+
+test("keeps markdown syntax literal inside inline code", () => {
+  const html = renderMarkdown(
+    "Use `name*value*`, `[label](https://example.com)`, and `$&` literally."
+  );
+
+  assert.equal(
+    html,
+    '<p>Use <code>name*value*</code>, <code>[label](https://example.com)</code>, and <code>$&amp;</code> literally.</p>'
+  );
+});
+
+test("renders inline code inside a link label", () => {
+  const html = renderMarkdown("Read [`SKILL.md`](https://example.com/skill).");
+
+  assert.equal(
+    html,
+    '<p>Read <a href="https://example.com/skill"><code>SKILL.md</code></a>.</p>'
+  );
+});
