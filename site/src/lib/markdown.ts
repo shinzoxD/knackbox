@@ -4,6 +4,8 @@ type RenderOptions = {
   demoteHeadings?: boolean;
 };
 
+const SAFE_LINK_SCHEMES = new Set(["http", "https", "mailto", "tel"]);
+
 export function stripFrontmatter(text: string): string {
   if (!text.startsWith("---")) {
     return text;
@@ -46,10 +48,23 @@ function slugify(value: string): string {
 }
 
 function resolveLink(href: string, options: RenderOptions): string {
-  if (/^(https?:|mailto:|#|data:)/.test(href) || !options.linkBase) {
-    return href;
+  const normalized = href.trim();
+  if (normalized.startsWith("#")) {
+    return normalized;
   }
-  return `${options.linkBase.replace(/\/$/, "")}/${href.replace(/^\.\//, "")}`;
+
+  // URL parsers ignore ASCII control characters in schemes, so strip them
+  // before deciding whether a protocol is safe.
+  const schemeTarget = normalized.replace(/[\u0000-\u001f\u007f-\u009f]/g, "");
+  const scheme = /^([a-z][a-z0-9+.-]*):/i.exec(schemeTarget);
+  if (scheme) {
+    return SAFE_LINK_SCHEMES.has(scheme[1].toLowerCase()) ? normalized : "#";
+  }
+
+  if (!options.linkBase) {
+    return normalized;
+  }
+  return `${options.linkBase.replace(/\/$/, "")}/${normalized.replace(/^\.\//, "")}`;
 }
 
 function inlineMarkdown(value: string, options: RenderOptions): string {
