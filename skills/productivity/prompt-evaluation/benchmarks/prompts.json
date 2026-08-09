@@ -1,43 +1,46 @@
 {
   "should_trigger": [
-    "how do I evaluate this system prompt before shipping",
-    "build an offline eval harness for our support bot",
-    "compare two models on the same golden set",
-    "LLM-as-judge rubric for summary quality",
-    "we keep shipping prompt tweaks on vibes — need a regression suite",
-    "pass rate dropped after the model swap, design the eval"
+    "design an offline eval to compare these two support-bot prompts",
+    "how should we build a golden dataset and graders for our RAG chatbot",
+    "create regression tests for an agent that calls booking tools",
+    "is this LLM-as-a-judge rubric reliable enough for release gating",
+    "our prompt pass rate improved overall but got worse in Spanish — analyze the eval",
+    "define metrics and a ship threshold for changing the model in production"
   ],
   "should_not_trigger": [
-    "make this prompt better and rewrite it",
-    "threat model this agent for prompt injection",
-    "write a blog post about our launch",
-    "standup update",
-    "review this terraform plan",
-    "customer support macro"
+    "rewrite this prompt to be clearer",
+    "analyze the statistical result of a website checkout A/B test",
+    "security review this agent for prompt injection",
+    "write unit tests for this deterministic date parser",
+    "summarize this research paper about language models",
+    "create a customer survey about chatbot satisfaction"
   ],
   "tasks": [
     {
-      "prompt": "Support bot: we edited the system prompt twice this week. Design an eval so the next edit cannot silently break refund policy answers.",
+      "prompt": "We have prompt A and prompt B for a support bot, 240 redacted historical tickets tagged by intent and language, and a policy handbook. Design a release eval.",
       "criteria": [
-        "defines a frozen suite with pass criteria, not vibes",
-        "includes policy / should-refuse cases",
-        "states a ship gate"
+        "defines a decision-linked primary metric, guardrails, and ship threshold",
+        "uses paired runs on the same held-out cases and reports intent/language segments",
+        "combines deterministic policy checks with a calibrated rubric and human adjudication",
+        "preserves raw outputs and configuration identity without inventing results"
       ]
     },
     {
-      "prompt": "We want an LLM judge to score 'helpfulness' 1-5 for 200 chats.",
+      "prompt": "Design an evaluation for a RAG assistant that must answer from internal manuals and cite sources, but should abstain when the manuals do not contain the answer.",
       "criteria": [
-        "demands a written rubric and human agreement check",
-        "warns about judge variance or in-sample tuning",
-        "suggests programmatic checks where possible"
+        "separates retrieval quality from answer-generation quality",
+        "measures claim support, citation correctness/coverage, and abstention",
+        "includes answerable, unanswerable, conflicting, and retrieval-failure cases",
+        "specifies corpus/index versioning and evidence retained per case"
       ]
     },
     {
-      "prompt": "Pick the best model for our SQL generator. No dataset yet.",
+      "prompt": "Our travel agent can search flights, hold a seat, and charge a test card. Build an offline regression eval for a new model.",
       "criteria": [
-        "refuses a winner without a task-shaped set",
-        "offers a starter suite structure with observable criteria",
-        "keeps model comparison on a fixed prompt and set"
+        "uses a sandbox or fake tools and forbids production side effects",
+        "scores tool choice, arguments, sequence, authorization gates, and final state",
+        "covers tool errors, retries, duplicate-charge prevention, and stopping behavior",
+        "separates task quality from latency, cost, and infrastructure errors"
       ]
     }
   ]
