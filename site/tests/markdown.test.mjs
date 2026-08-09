@@ -33,3 +33,14 @@ test("keeps wrapped ordered list lines in the same item", () => {
     "<ol><li>Name the location and explain the consequence before proposing a fix.</li><li>End with a verdict.</li></ol>"
   );
 });
+
+test("escapes link attributes without changing query parameters", () => {
+  const html = renderMarkdown(
+    "[Search](https://example.com/search?q=agent+skills&category=coding)"
+  );
+
+  assert.equal(
+    html,
+    '<p><a href="https://example.com/search?q=agent+skills&amp;category=coding">Search</a></p>'
+  );
+});
