@@ -27,6 +27,16 @@ function escapeAttribute(value: string): string {
   return escapeHtml(value).replace(/'/g, "&#39;");
 }
 
+// inlineMarkdown escapes the complete source before it identifies links. Restore
+// those entities so the href receives exactly one attribute-escaping pass below.
+function restoreEscapedText(value: string): string {
+  return value
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
+}
+
 function slugify(value: string): string {
   return value
     .toLowerCase()
@@ -50,7 +60,7 @@ function inlineMarkdown(value: string, options: RenderOptions): string {
   html = html.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
     (_match, label: string, href: string) =>
-      `<a href="${escapeAttribute(resolveLink(href, options))}">${label}</a>`
+      `<a href="${escapeAttribute(resolveLink(restoreEscapedText(href), options))}">${label}</a>`
   );
   return html;
 }
