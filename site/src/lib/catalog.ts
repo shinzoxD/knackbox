@@ -2,7 +2,10 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import catalogData from "../../../catalog.json";
 import packsData from "../../../packs.json";
+import { githubFileLinkBase, githubOrg, githubRepoUrl } from "./github";
 import { renderMarkdown, stripFrontmatter } from "./markdown";
+
+export { githubOrg, githubRepoUrl } from "./github";
 
 declare const __REPO_ROOT__: string;
 
@@ -67,8 +70,6 @@ export const allSkills = [...catalog.skills].sort((a, b) =>
 );
 export const categories = [...new Set(allSkills.map((skill) => skill.category))].sort();
 export const tiers: Tier[] = ["core", "verified", "community"];
-export const githubOrg = "shinzoxD";
-export const githubRepoUrl = `https://github.com/${githubOrg}/knackbox`;
 /** Primary Knackbox npm CLI (packages/cli). */
 export const knackboxCliCommand = "npx knackbox add";
 /** Ecosystem Skills CLI. */
@@ -110,7 +111,7 @@ export function skillUrl(skill: Skill): string {
 export function getSkillHtml(skill: Skill): string {
   const markdown = readFileSync(join(repoRoot, skill.path, "SKILL.md"), "utf-8");
   return renderMarkdown(stripFrontmatter(markdown), {
-    linkBase: `${githubRepoUrl}/tree/main/${skill.path}`,
+    linkBase: githubFileLinkBase(`${skill.path}/SKILL.md`),
     demoteHeadings: true,
   });
 }
@@ -121,7 +122,7 @@ export function getRepoMarkdownHtml(
 ): string {
   const markdown = readFileSync(join(repoRoot, fileName), "utf-8");
   return renderMarkdown(markdown, {
-    linkBase: githubRepoUrl,
+    linkBase: githubFileLinkBase(fileName),
     demoteHeadings: options.demoteHeadings,
   });
 }
