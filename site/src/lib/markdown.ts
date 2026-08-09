@@ -69,14 +69,39 @@ function resolveLink(href: string, options: RenderOptions): string {
 
 function inlineMarkdown(value: string, options: RenderOptions): string {
   let html = escapeHtml(value);
-  html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
+  const codeSpans: string[] = [];
+  let codeMarker = "KNACKBOX_INLINE_CODE_";
+  while (html.includes(codeMarker)) {
+    codeMarker = `_${codeMarker}`;
+  }
+  html = html.replace(/`([^`]+)`/g, (_match, code: string) => {
+    const placeholder = `${codeMarker}${codeSpans.length}__`;
+    codeSpans.push(code);
+    return placeholder;
+  });
+  const restoreCodeSpans = (
+    content: string,
+    render: (code: string) => string
+  ): string => {
+    codeSpans.forEach((code, index) => {
+      content = content.replaceAll(
+        `${codeMarker}${index}__`,
+        () => render(code)
+      );
+    });
+    return content;
+  };
   html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
   html = html.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
-    (_match, label: string, href: string) =>
-      `<a href="${escapeAttribute(resolveLink(restoreEscapedText(href), options))}">${label}</a>`
+    (_match, label: string, href: string) => {
+      const literalHref = restoreCodeSpans(href, (code) => `\`${code}\``);
+      const resolvedHref = resolveLink(restoreEscapedText(literalHref), options);
+      return `<a href="${escapeAttribute(resolvedHref)}">${label}</a>`;
+    }
   );
+  html = restoreCodeSpans(html, (code) => `<code>${code}</code>`);
   return html;
 }
 
