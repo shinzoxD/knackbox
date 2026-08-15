@@ -73,6 +73,7 @@
         "secrets-management",
         "feature-flags",
         "chaos-experiment-design",
+        "finops-review",
         "rate-limiting",
         "caching-strategies",
         "migration-playbooks",
@@ -165,6 +166,7 @@
       "description": "Operate systems under stress: runbooks, incidents, migrations, errors, performance, and comms.",
       "skills": [
         "runbook-writing",
+        "incident-command",
         "incident-postmortems",
         "incident-comms",
         "database-migrations",
@@ -302,6 +304,7 @@
       "description": "Ship iOS and Android trains with release checklists, flags, CI, and store-safe comms.",
       "skills": [
         "mobile-release",
+        "desktop-release",
         "ci-cd-pipelines",
         "feature-flags",
         "release-notes",

@@ -3,7 +3,8 @@ name: incident-postmortems
 description: Write blameless incident postmortems with timeline, impact, root
   cause, and action items. Use whenever the user asks for a postmortem, RCA,
   incident write-up, outage report, or lessons learned after a production
-  failure — even from rough Slack notes or pager logs.
+  failure — even from rough Slack notes or pager logs. For a live
+  outage still in progress, use incident-command.
 license: Apache-2.0
 compatibility: Portable instructions; no bundled scripts or required external binaries.
 metadata:

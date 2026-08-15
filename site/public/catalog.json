@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-16",
   "score_version": "v0",
-  "count": 107,
+  "count": 110,
   "skills": [
     {
       "name": "code-review",
@@ -234,7 +234,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/auth-design",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:f11c373ce8943ae19475834139cc648070ef1f7c6487dfabe08ca4b01c962ae6",
+      "content_digest": "sha256:aa684aa254899e400ef72e3796b4e7913d3475380985d3386f53f88228db2666",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -389,7 +389,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/cloudformation-review",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may interpret CloudFormation change sets when provided.",
-      "content_digest": "sha256:922ffa1b11ab92c7832aaf4e60b91ef0bcc2540518a13946d39fbd9371c7c75f",
+      "content_digest": "sha256:7e0faa9b905df2334d06e5d6a849e11abd17ba3731f4049f8d9e6020069f7b55",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -562,6 +562,37 @@
       }
     },
     {
+      "name": "desktop-release",
+      "description": "Plan and review desktop app releases — Electron, Tauri, and native installers, code signing, auto-update, and rollback. Use whenever the user asks about shipping a desktop build, Sparkle/Squirrel/electron- updater, notarization, MSI/DMG/AppImage, or a desktop release checklist.",
+      "category": "coding",
+      "path": "skills/coding/desktop-release",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 684,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/desktop-release",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:58bde4747919b0929a6fe394c9fb82c170de4b64624781f03dc3397bf3773331",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "error-handling",
       "description": "Design robust error handling, retries, and failure modes for application code. Use whenever the user asks about exceptions, error types, retry policies, circuit breakers, timeouts, or how to handle failures in APIs, jobs, and distributed calls.",
       "category": "coding",
@@ -607,6 +638,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:d300b3222329a9fbb55d2d8af3f07079569a675f3be98e1499e7f53c2542e315",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "finops-review",
+      "description": "Review cloud spend and FinOps plans — idle resources, rightsizing, commitment discounts, and unit-cost metrics. Use whenever the user shares a bill, Cost Explorer export, asks why AWS/GCP/Azure is expensive, wants a savings plan, or reviews infra for cost before scaling.",
+      "category": "coding",
+      "path": "skills/coding/finops-review",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 683,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/finops-review",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may interpret cost exports or invoices when provided.",
+      "content_digest": "sha256:05a5fa762dc4666dc4460aa5d41e03e1d3f61c3b341c1a5f612e4b392f2e05c8",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -885,7 +947,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/mobile-release",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:a84c9ad2954703cf1d989163ec37be2e096290fc3a39f19fb6177da6f945fa04",
+      "content_digest": "sha256:5352a9723a12a382899b1b6d157c905839b31cf213d98a720be5647c0b1fcc4d",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1071,7 +1133,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/pulumi-review",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may interpret pulumi preview output when provided.",
-      "content_digest": "sha256:8073b3c8172960c2eb25122c26271302940f66b51abbee82060f7cbe877f1191",
+      "content_digest": "sha256:35cb681037eeff70455e82b1745e7ef4c394928d4024345c80494a72590c9870",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1187,7 +1249,7 @@
       "category": "coding",
       "path": "skills/coding/security-review",
       "tier": "community",
-      "updated": "2026-07-26",
+      "updated": "2026-08-16",
       "context_tokens": 1104,
       "reference_tokens": 301,
       "has_scripts": false,
@@ -1319,7 +1381,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/threat-modeling",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:c3b948483e3fb21826561fb803976d63dac0b39672c4fbe9e51581a8ef78a7f9",
+      "content_digest": "sha256:2c97b4f10e3630b557b2c2af2ef32a312ac87efa024c70584cac318bd32e47e3",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1350,7 +1412,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/webhook-design",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:70a1c67ea8750cd78960d08e0aea751c5a6097150d01f230df3f4ed230de0c29",
+      "content_digest": "sha256:a56b3db2885bd7e251bf59a8c772ba7b0ed9b183deddce0da15c32fd2c1d7c31",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1709,8 +1771,39 @@
       }
     },
     {
+      "name": "incident-command",
+      "description": "Run a live incident as commander — roles, timeline, decisions, and page cadence — distinct from postmortems and customer comms. Use whenever the user is in an active outage, asks who should do what on the bridge, wants an IC checklist, severity call, or war-room notes while the incident is still open.",
+      "category": "documents",
+      "path": "skills/documents/incident-command",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 716,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/incident-command",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:a685119a432d4a3d7bb538fd0fb4f0a45cb9a065d6a25f939b1a1f5c62a616e4",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "incident-postmortems",
-      "description": "Write blameless incident postmortems with timeline, impact, root cause, and action items. Use whenever the user asks for a postmortem, RCA, incident write-up, outage report, or lessons learned after a production failure — even from rough Slack notes or pager logs.",
+      "description": "Write blameless incident postmortems with timeline, impact, root cause, and action items. Use whenever the user asks for a postmortem, RCA, incident write-up, outage report, or lessons learned after a production failure — even from rough Slack notes or pager logs. For a live outage still in progress, use incident-command.",
       "category": "documents",
       "path": "skills/documents/incident-postmortems",
       "tier": "community",
@@ -1722,7 +1815,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/incident-postmortems",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:5aa1f89462462efe37f05ebc5634b67949fcb9afac2fdada8aedca2b2548aec2",
+      "content_digest": "sha256:196f21a954efa85645edf403eedb70f7e7f90e02410d2a4dba95cbdea96a2895",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1815,7 +1908,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/product-requirements",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:2562730487e35b4fa8e2ebd1c051fe9a9198616d25aeb740d6539a98294f4129",
+      "content_digest": "sha256:c528f0572e847439a5ba731588d6640a283da1db6a3b5e9f13c01cdb698f4489",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -2497,7 +2590,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/prompt-evaluation",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:24031bd186b9d54142a2c4c7cd950d849e762712bc474d05f0ea66dd0346b05f",
+      "content_digest": "sha256:47a70df9994be843ac6296d9a359af12ebb4462de22e0282665f2b3244d663af",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -2520,7 +2613,7 @@
       "category": "productivity",
       "path": "skills/productivity/prompt-improver",
       "tier": "community",
-      "updated": "2026-07-11",
+      "updated": "2026-08-16",
       "context_tokens": 540,
       "reference_tokens": 0,
       "has_scripts": false,
@@ -3105,19 +3198,19 @@
     },
     {
       "name": "incident-comms",
-      "description": "Write customer and stakeholder communications during incidents. Use whenever the user needs a status page update, outage notice, customer incident email, or internal incident broadcast — separate from the engineering postmortem write-up.",
+      "description": "Write customer and stakeholder communications during incidents. Use whenever the user needs a status page update, outage notice, customer incident email, or internal incident broadcast — separate from live incident command and the engineering postmortem write-up.",
       "category": "writing",
       "path": "skills/writing/incident-comms",
       "tier": "community",
       "updated": "2026-07-26",
-      "context_tokens": 377,
+      "context_tokens": 396,
       "reference_tokens": 0,
       "has_scripts": false,
       "has_benchmarks": true,
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/writing/incident-comms",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:f2650437bd36691e31ba6507f1926c6773d74f104703141ae073367a086dc72f",
+      "content_digest": "sha256:602275df6fe5529bcccc5f451888125cd577911a21622ad95bc875fe0830f3f3",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

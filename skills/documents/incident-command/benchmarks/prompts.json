@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "we're down, who does what on the bridge",
+    "incident commander checklist for this SEV1",
+    "war-room notes while checkout is failing",
+    "should I page everyone or stay IC",
+    "handoff the incident, I'm going off shift",
+    "live outage — mitigate or keep debugging the root cause"
+  ],
+  "should_not_trigger": [
+    "write the postmortem for last Tuesday's outage",
+    "draft the status page update for customers",
+    "standup update",
+    "review this terraform plan",
+    "write a PRD for shared workspaces",
+    "customer support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "Checkout 500s for ~40 minutes. 8 people on Zoom talking at once. No IC. What now?",
+      "criteria": [
+        "assigns IC and other roles instead of more debugging chatter",
+        "prioritizes mitigate (rollback/flag/shed) over root-cause theater",
+        "does not write a full postmortem"
+      ]
+    },
+    {
+      "prompt": "SEV1. Tech lead wants to patch prod in place. Comms wants an ETA. I am IC.",
+      "criteria": [
+        "requires announced one-change-at-a-time with a revert",
+        "refuses invented ETAs",
+        "keeps customer wording as a fact list for incident-comms"
+      ]
+    },
+    {
+      "prompt": "I'm the only engineer and payments is down. Help me run this.",
+      "criteria": [
+        "allows IC+tech on a single person and still wants a timeline",
+        "gives a live command format, not a postmortem template",
+        "does not invent customer counts"
+      ]
+    }
+  ]
+}

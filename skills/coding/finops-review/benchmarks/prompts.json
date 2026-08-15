@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "why is our AWS bill so high this month",
+    "review this Cost Explorer export for waste",
+    "should we buy Compute Savings Plans",
+    "FinOps review before we scale the GPU fleet",
+    "idle EBS and leftover load balancers — what to cut",
+    "unit cost per active user keeps rising, help"
+  ],
+  "should_not_trigger": [
+    "review this terraform plan for IAM blast radius",
+    "write a PRD for usage-based billing",
+    "standup update",
+    "customer support macro",
+    "threat model the payments service",
+    "design OAuth login"
+  ],
+  "tasks": [
+    {
+      "prompt": "AWS last 30d: $42k. Top: NAT Gateway $11k, unattached EBS $4k, prod RDS Multi-AZ $9k. 'Just delete Multi-AZ to save.' Review.",
+      "criteria": [
+        "treats deleting Multi-AZ as a blocking/high-risk anti-saving",
+        "flags NAT and unattached EBS as waste to investigate",
+        "does not invent dollar lines beyond those given"
+      ]
+    },
+    {
+      "prompt": "Team wants 3-year Reserved Instances on a service launched last week.",
+      "criteria": [
+        "refuses long commitments without a stable baseline",
+        "prefers waste/rightsizing first",
+        "asks for observed utilization or a longer window"
+      ]
+    },
+    {
+      "prompt": "No invoice attached. 'Cut cloud spend 50% by Friday.'",
+      "criteria": [
+        "refuses a 50% number without a bill",
+        "offers a measurement and waste-hunt plan",
+        "does not fabricate savings amounts"
+      ]
+    }
+  ]
+}

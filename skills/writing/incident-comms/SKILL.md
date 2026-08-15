@@ -2,8 +2,8 @@
 name: incident-comms
 description: Write customer and stakeholder communications during incidents.
   Use whenever the user needs a status page update, outage notice, customer
-  incident email, or internal incident broadcast — separate from the engineering
-  postmortem write-up.
+  incident email, or internal incident broadcast — separate from live
+  incident command and the engineering postmortem write-up.
 license: Apache-2.0
 compatibility: Portable instructions; no bundled scripts or required external binaries.
 metadata:
@@ -53,6 +53,7 @@ enough, and free of blame and speculation presented as fact.
 4. Match severity cadence (more frequent when impact is high).
 5. Align public wording with legal/support guidance when provided.
 6. Engineering postmortems are a different skill (`incident-postmortems`).
+   Live bridge roles and mitigate/rollback decisions are `incident-command`.
 
 ## Edge cases
 
