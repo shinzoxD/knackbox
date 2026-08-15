@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "LCP is 4.2s on the product page — implement a fix",
+    "Core Web Vitals failed: help with INP and CLS on checkout",
+    "bundle size is huge, add code splitting for the dashboard route",
+    "Lighthouse says slow page load; optimize the hero image and waterfall",
+    "hydration is blocking the main thread with long tasks",
+    "TTFB for this Next.js page is high and images aren't optimized"
+  ],
+  "should_not_trigger": [
+    "profile this Go service CPU",
+    "this API has N+1 queries on GET /orders — fix the backend SQL",
+    "write a commit message for the cache change",
+    "security review this JWT middleware",
+    "standup update for yesterday",
+    "draft release notes for the speed work"
+  ],
+  "tasks": [
+    {
+      "prompt": "Product PDP LCP is a 2.4MB PNG hero with no width/height, no fetchpriority, and loading=lazy. Mobile users complain the page is slow. Implement the frontend fix.",
+      "criteria": [
+        "treats LCP / the hero image as the dominant bottleneck",
+        "implements concrete image work (priority or preload, dimensions, modern format or srcset) and does not lazy-load the LCP image",
+        "does not invent a Lighthouse score or an unlabeled speedup percentage"
+      ]
+    },
+    {
+      "prompt": "Admin dashboard ships a 1.8MB main bundle, hydrates the whole tree, and INP spikes on filter clicks. Implement code splitting and cut the long tasks.",
+      "criteria": [
+        "proposes route- or widget-level code splitting / dynamic import",
+        "shrinks hydration or breaks the click-path long task rather than only suggesting useMemo",
+        "does not recommend dropping accessible names, focus rings, or keyboard behavior to save JS"
+      ]
+    },
+    {
+      "prompt": "Storefront 'feels slow'. No Lighthouse or RUM attached. Someone wants Lighthouse 100 by stripping alt text, image dimensions, and display:none on below-fold content. The Go /products handler also has N+1 queries. What should we implement?",
+      "criteria": [
+        "prescribes measuring the dominant Web Vital or waterfall before score-chasing rewrites, and does not invent a Lighthouse score",
+        "refuses a11y-breaking shortcuts (alt, unsized media, hiding content) as a performance win",
+        "hands origin CPU / N+1 / DB work to performance-review instead of treating SQL as a React memo problem"
+      ]
+    }
+  ]
+}

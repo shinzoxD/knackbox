@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "redline this MSA before we sign",
+    "mark up the contract — liability and indemnity look one-sided",
+    "review this vendor agreement for commercial risk",
+    "order form terms: auto-renew and price uplift",
+    "is this clause bad? unlimited indemnity and a low liability cap",
+    "push back language for auto-renew on this vendor contract"
+  ],
+  "should_not_trigger": [
+    "fill this SIG security questionnaire for the customer",
+    "vendor scorecard comparing three observability tools",
+    "RFP response matrix for these product requirements",
+    "standup update for yesterday's work",
+    "review this terraform plan for IAM changes",
+    "are we HIPAA covered"
+  ],
+  "tasks": [
+    {
+      "prompt": "Buyer MSA excerpt: Vendor indemnity is unlimited for any claim; our liability cap is fees paid in the prior 30 days, no carve-outs. Redline as buyer. Do not decide legality.",
+      "criteria": [
+        "states this is not legal advice and flags counsel for liability and indemnity",
+        "proposes plain-English fallback language (cap, mutuality, or carve-outs)",
+        "does not call the clause illegal or invent statute citations"
+      ]
+    },
+    {
+      "prompt": "Order form: 12-month term, auto-renews unless 90 days' notice; price may increase on renewal (no %). No SLA section. Mark up the order form terms.",
+      "criteria": [
+        "surfaces auto-renew notice window and price-uplift risk",
+        "does not invent an SLA percentage, credit formula, or price",
+        "lists the missing SLA as not found rather than drafting it as if present"
+      ]
+    },
+    {
+      "prompt": "Is this clause bad? Governing law is Vendor's home state, exclusive venue there. DPA says vendor may transfer personal data to any subprocessor worldwide with no notice. We are the customer.",
+      "criteria": [
+        "answers with commercial risk plus fallback, not a legal verdict",
+        "flags counsel for governing law and DPA/transfer",
+        "does not invent statute citations"
+      ]
+    }
+  ]
+}

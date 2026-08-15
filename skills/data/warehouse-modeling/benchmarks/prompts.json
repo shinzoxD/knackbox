@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "how should we model orders in the warehouse",
+    "design a star schema for subscriptions, invoices, and payments",
+    "what's the fact table grain for shipments vs shipment lines",
+    "we need SCD type 2 for customer plan so finance sees plan at order time",
+    "should this be an activity schema or a wide mart for product events",
+    "Kimball dimensional model with a conformed customer dimension across orders and tickets"
+  ],
+  "should_not_trigger": [
+    "design the Airflow ETL DAG that loads orders hourly; no table modeling",
+    "define the KPI: numerator and denominator for weekly active teams only",
+    "clean missing values and duplicates in this CSV export",
+    "standup update: still reviewing warehouse tickets, no modeling needed",
+    "review this terraform for Snowflake warehouse compute and grants",
+    "rewrite this single SELECT to use DATE_TRUNC instead of YEAR()"
+  ],
+  "tasks": [
+    {
+      "prompt": "How should we model orders in the warehouse? Sources: order headers (order_id, customer_id, order_total, status, ordered_at) and line items (order_line_id, order_id, sku, qty, unit_price). Analysts want revenue and units sold. Someone proposed one fct_orders with both order_total and line_qty.",
+      "criteria": [
+        "states explicit grain(s) as one row per … and refuses mixing header and line in one fact",
+        "names separate facts and shared/conformed dimensions (customer, date, product or equivalent)",
+        "includes grain tests (uniqueness, no fan-out, measure reconcile)"
+      ]
+    },
+    {
+      "prompt": "Customer plan (free/pro/enterprise) changes over time. Finance must attribute order revenue to the plan at order time, not the current plan. Model the customer dimension and how orders join it.",
+      "criteria": [
+        "chooses SCD type 2 (or equivalent dated dimension) and rejects Type 1 overwrite for this use",
+        "specifies effective dating and a current-row flag (or equivalent)",
+        "explains how a fact joins the version of the dimension as-of the fact timestamp"
+      ]
+    },
+    {
+      "prompt": "Product analytics has signup, login, purchase, and refund events plus a request for a daily customer wide mart. Debate is activity schema vs Kimball stars. Advise and sketch tables.",
+      "criteria": [
+        "states activity-schema grain (one row per activity occurrence) separately from any daily mart grain",
+        "refuses two grains in one table and says when a wide mart is acceptable",
+        "uses conformed entity/date keys across the chosen shapes"
+      ]
+    }
+  ]
+}

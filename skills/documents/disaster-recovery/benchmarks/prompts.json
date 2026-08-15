@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a disaster recovery plan for the payments stack",
+    "DR plan: RPO and RTO for postgres plus backup restore steps",
+    "can we restore the customer DB from last night's backup",
+    "design a failover drill for losing us-east-1",
+    "ransomware restore playbook — assume backups might be dirty",
+    "review our backup restore procedure and last restore evidence"
+  ],
+  "should_not_trigger": [
+    "standup update",
+    "we're down, who is IC on the bridge",
+    "draft the 99.9% availability SLA language only",
+    "review this terraform plan",
+    "customer support macro for refunds",
+    "runbook for the checkout 5xx alert"
+  ],
+  "tasks": [
+    {
+      "prompt": "Write a DR plan for checkout-api + Postgres. Declared RPO 15m, RTO 2h. Nightly snapshots to s3://backups/checkout, WAL to the same bucket. Last restore drill: 2026-03-12, restored a staging clone in 47 minutes. Encryption: KMS. Retention: 30 days. No immutable vault. Owner: platform.",
+      "criteria": [
+        "states RPO/RTO as declared targets and cites the 47-minute measured restore separately",
+        "flags missing immutability / ransomware gap instead of claiming readiness",
+        "does not invent backup success dates or restore times beyond the 2026-03-12 / 47m evidence"
+      ]
+    },
+    {
+      "prompt": "Leadership asked 'can we restore' after a board meeting. We take RDS snapshots. No one has ever restored them. Write the DR answer.",
+      "criteria": [
+        "refuses to certify restore capability without a drill",
+        "does not invent a restore time or last-success date",
+        "first action is a scoped restore test, not more policy prose"
+      ]
+    },
+    {
+      "prompt": "Suspect ransomware on the file store Friday 02:00 UTC. Backups run hourly to the same account. Draft the ransomware restore and failover drill plan. Do not assume the 01:00 snapshot is clean.",
+      "criteria": [
+        "treats latest backup as potentially dirty and requires a known-good point-in-time",
+        "does not recommend skipping the restore test",
+        "includes isolate/preserve evidence before overwrite"
+      ]
+    }
+  ]
+}
