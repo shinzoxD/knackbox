@@ -31,6 +31,28 @@ npx knackbox add database-migrations terraform-review kubernetes-review
 ```bash
 npx knackbox pack platform-and-infra
 npx knackbox add load-test-planning logging-observability ci-cd-pipelines container-review
+npx knackbox add pulumi-review cloudformation-review terraform-review
+```
+
+## Identity, webhooks, and threat models
+
+```bash
+npx knackbox pack identity-and-trust
+npx knackbox add auth-design webhook-design threat-modeling security-review
+```
+
+## Ship a mobile train
+
+```bash
+npx knackbox pack mobile-shipping
+npx knackbox add mobile-release feature-flags ci-cd-pipelines release-notes
+```
+
+## Prompt and agent eval
+
+```bash
+npx knackbox pack ai-builders
+npx knackbox add prompt-evaluation prompt-improver prompt-injection-hardening
 ```
 
 ## Incident mode
@@ -51,7 +73,7 @@ npx knackbox add sql-analytics ab-test-analysis metrics-definitions
 
 ```bash
 npx knackbox add user-interview-synthesis survey-analysis competitor-briefs
-npx knackbox add decision-memos rfc-design-docs okr-drafting
+npx knackbox add decision-memos rfc-design-docs okr-drafting product-requirements
 ```
 
 ## Writing & GTM

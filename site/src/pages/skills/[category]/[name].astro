@@ -61,7 +61,7 @@ const permissionRows = [
 ---
 
 <BaseLayout
-  title={`${skill.name} Agent Skill`}
+  title={`${skill.name} Agent Skill for Claude Code`}
   description={pageDescription}
   canonicalPath={pagePath}
   ogType="article"
@@ -84,9 +84,9 @@ const permissionRows = [
     <div class="mb-8 flex flex-col gap-4 border-b border-ink-200 pb-6 dark:border-ink-800 lg:flex-row lg:items-end lg:justify-between">
       <div class="min-w-0">
         <div class="mb-3"><TierBadge tier={skill.tier} /></div>
-        <h1 class="section-title break-words">{skill.name}</h1>
+        <h1 class="section-title break-words">{skill.name} Agent Skill</h1>
         <p class="mt-1 text-sm muted">
-          Open Agent Skill · {skill.category} · works with Claude Code, Codex, Cursor, and compatible agents
+          Open SKILL.md package · {skill.category} · Claude Code, Codex, Cursor, OpenCode
         </p>
         <p class="mt-3 max-w-3xl leading-7 muted">{skill.description}</p>
       </div>

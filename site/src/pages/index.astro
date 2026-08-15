@@ -15,8 +15,12 @@ import {
 import {
   catalogStatsLine,
   defaultDescription,
+  defaultFaqs,
   defaultTitle,
+  faqJsonLd,
+  howToInstallJsonLd,
   itemListJsonLd,
+  organizationJsonLd,
   softwareSourceJsonLd,
   websiteJsonLd,
 } from "../lib/seo";
@@ -34,6 +38,9 @@ const stats = [
 const jsonLd = [
   websiteJsonLd(),
   softwareSourceJsonLd(),
+  organizationJsonLd(),
+  howToInstallJsonLd(),
+  faqJsonLd(),
   itemListJsonLd(
     "Knackbox core Agent Skills",
     "Maintainer-curated core skills in the Knackbox catalog.",
@@ -134,6 +141,32 @@ const jsonLd = [
           );
         })}
       </ul>
+    </div>
+  </section>
+
+  <section class="rail-section" aria-labelledby="faq-heading">
+    <div class="wrap py-12 sm:py-14">
+      <p class="eyebrow mb-3">Questions</p>
+      <h2 id="faq-heading" class="section-title">Agent Skills FAQ</h2>
+      <p class="mt-2 max-w-2xl text-sm muted">
+        Short answers for people comparing Knackbox to a popularity board, or installing their first
+        <code class="font-mono text-[13px]">SKILL.md</code>.
+      </p>
+      <dl class="mt-8 grid gap-4 lg:grid-cols-2">
+        {defaultFaqs.map((faq) => (
+          <div class="panel p-4 sm:p-5">
+            <dt class="text-sm font-semibold text-ink-950 dark:text-ink-50">{faq.question}</dt>
+            <dd class="mt-2 text-sm leading-6 muted">{faq.answer}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-6 text-sm">
+        <a href="/faq/">Full FAQ</a>
+        {" · "}
+        <a href="/docs/">Install docs</a>
+        {" · "}
+        <a href="/why/">Why not skills.sh</a>
+      </p>
     </div>
   </section>
 </BaseLayout>

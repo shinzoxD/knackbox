@@ -7,6 +7,12 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skills: `pulumi-review`, `cloudformation-review`, `prompt-evaluation`,
+  `mobile-release`, `auth-design`, `webhook-design`, `threat-modeling`,
+  `product-requirements` (catalog target: 107 skills).
+- Packs: AI Builders, Mobile Shipping, Identity & Trust.
+- Site SEO: FAQ page, HowTo/FAQ JSON-LD, richer Open Graph PNG, expanded
+  `llms.txt` / `llms-full.txt`, sitemap priorities, and long-tail metadata.
 - Quality-first positioning vs skills.sh: WHY.md, STANDARD.md, site `/why/`, CLI `why`/`compare`/multi-agent.
 - Skills batch to 83: helm, design-system, OSS triage, OpenAPI, flags, secrets, ETL, policies, RFPs, sprint/1:1, market sizing, case studies, docs migration, code comments.
 - Packs: OSS Maintainers, Product & GTM.

@@ -2,9 +2,10 @@
 name: security-review
 description: Review code and designs for security vulnerabilities — injection,
   authn/authz, secrets, crypto, SSRF, and data exposure. Use whenever the user
-  asks for a security review, threat model, OWASP check, or whether something is
-  safe to ship, shares auth/payment/upload code, or mentions vulnerability,
-  exploit, hardcoding secrets, or "is this secure".
+  asks for a security review, OWASP check, or whether something is safe to
+  ship, shares auth/payment/upload code, or mentions vulnerability, exploit,
+  hardcoding secrets, or "is this secure". For a STRIDE-style system threat
+  model, use threat-modeling.
 license: Apache-2.0
 compatibility: Portable instructions; no bundled scripts or required external binaries.
 metadata:
@@ -102,8 +103,9 @@ read `references/owasp-top10.md` and map findings to categories that apply.
 
 ## Edge cases
 
-- **Design-only / no code**: produce a short threat model (assets, actors,
-  entry points, top 5 controls) instead of line-level findings.
+- **Design-only / no code**: produce a short abuse-path list (assets, actors,
+  entry points, top 5 controls). For a full STRIDE system model, point at
+  `threat-modeling`.
 - **Huge surface**: prioritize auth, multi-tenancy, money movement, and file/
   URL handling first; offer a second pass for the rest.
 - **User asks "is this secure?"**: answer with residual risk, not a yes/no

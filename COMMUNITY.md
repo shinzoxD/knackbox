@@ -30,20 +30,18 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Pulumi / CloudFormation review (Terraform skill already ships)
-- Prompt evaluation / offline eval harness notes
-- Mobile release checklist (iOS/Android)
-- Data contract / schema registry workflows
-- Hiring scorecards (beyond interview prep)
-- Open-source maintainer triage (issues + PRs)
-- Kubernetes manifest review
-- Privacy / GDPR request handling playbooks
-- Load-test planning and interpretation
-- Design-system contribution checklist
+- Cost optimization / FinOps review for cloud bills
+- Database index and query-plan coaching beyond `sql-query-review`
+- Incident commander live-bridge notes (distinct from postmortems)
+- Contract / vendor security questionnaire answering
+- Frontend accessibility implementation (beyond `accessibility-review`)
+- Desktop / Electron release checklist (mobile already ships)
 
-Shipped from community requests: `terraform-review`, `prompt-injection-hardening`,
-`i18n-review`, `graphql-schema-design`, `support-macros`, `kubernetes-review`,
-`load-test-planning`, `privacy-request-playbook`.
+Shipped from community requests: `terraform-review`, `pulumi-review`,
+`cloudformation-review`, `prompt-evaluation`, `mobile-release`,
+`prompt-injection-hardening`, `i18n-review`, `graphql-schema-design`,
+`support-macros`, `kubernetes-review`, `load-test-planning`,
+`privacy-request-playbook`.
 
 If you build a new skill, link any related issue in your PR.
 

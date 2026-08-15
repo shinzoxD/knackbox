@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this CloudFormation change set before update",
+    "is this template.yaml IAM role too broad",
+    "stack update wants to replace the RDS instance",
+    "SAM template — check DeletionPolicy on the bucket",
+    "CDK synth CloudFormation looks scary, review",
+    "can I safely delete this production CloudFormation stack"
+  ],
+  "should_not_trigger": [
+    "review this terraform plan before I apply",
+    "review this Pulumi preview",
+    "write a Dockerfile for the API",
+    "standup update",
+    "customer support macro",
+    "design a REST API for orders"
+  ],
+  "tasks": [
+    {
+      "prompt": "Change set: AWS::RDS::DBInstance Main will be Replaced because EngineVersion changed. Prod. Review.",
+      "criteria": [
+        "treats DB replace as high/blocking risk",
+        "discusses snapshot, UpdateReplacePolicy, or blue-green",
+        "does not invent change-set lines not given"
+      ]
+    },
+    {
+      "prompt": "Parameter DBPassword has a default of hunter2 and NoEcho is missing. Template review.",
+      "criteria": [
+        "flags plaintext default and missing NoEcho as blocking/important",
+        "recommends SSM/Secrets Manager dynamic reference",
+        "severity-tagged finding"
+      ]
+    },
+    {
+      "prompt": "Prod stack has no termination protection and DeletionPolicy is Delete on the DynamoDB table.",
+      "criteria": [
+        "flags delete-on-remove of stateful table as serious",
+        "recommends Retain/Snapshot and termination protection",
+        "explains data-loss path"
+      ]
+    }
+  ]
+}

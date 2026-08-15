@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getRepoMarkdownHtml } from "../lib/catalog";
+
+const html = getRepoMarkdownHtml("CHANGELOG.md", { demoteHeadings: true });
+---
+
+<BaseLayout
+  title="Changelog"
+  description="What changed in the Knackbox Agent Skills library: new SKILL.md packages, starter packs, CLI commands, and site SEO work."
+  canonicalPath="/changelog/"
+  keywords="knackbox changelog, new agent skills, SKILL.md updates"
+>
+  <section class="rail-section">
+    <div class="wrap py-10 sm:py-12">
+      <p class="eyebrow mb-3">06 / Changelog</p>
+      <h1 class="section-title">What shipped</h1>
+      <p class="mt-2 max-w-3xl text-sm leading-6 muted">
+        Skill additions are summarized here. The generated inventory lives in
+        <a href="/catalog.json">catalog.json</a>.
+      </p>
+    </div>
+  </section>
+  <section class="rail-section">
+    <div class="wrap py-10 sm:py-12">
+      <article class="prose-skill max-w-3xl" data-pagefind-body set:html={html} />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "how should we verify Stripe webhooks",
+    "design partner callbacks with HMAC signatures",
+    "GitHub webhook receiver keeps double-charging, help",
+    "retry policy for outbound webhooks to customers",
+    "should webhook URLs be user-supplied — SSRF?",
+    "versioning plan for our webhook event payloads"
+  ],
+  "should_not_trigger": [
+    "design WebSocket presence for the editor",
+    "review this terraform plan",
+    "standup update",
+    "write a blog post",
+    "customer support macro",
+    "clean this CSV"
+  ],
+  "tasks": [
+    {
+      "prompt": "Inbound webhook: we JSON.parse then HMAC-verify the object. Sometimes retries double-apply payments.",
+      "criteria": [
+        "requires verify on the raw body before parse",
+        "requires idempotency on event id",
+        "treats retries as expected at-least-once"
+      ]
+    },
+    {
+      "prompt": "Customers paste any HTTPS URL for outbound event delivery.",
+      "criteria": [
+        "flags SSRF to link-local/metadata/private ranges",
+        "recommends allowlist or blocklist plus timeouts",
+        "does not treat HTTPS alone as safety"
+      ]
+    },
+    {
+      "prompt": "We need to rotate the webhook signing secret with zero downtime.",
+      "criteria": [
+        "uses dual-key overlap during rotation",
+        "keeps timestamp/replay window",
+        "does not log the secret"
+      ]
+    }
+  ]
+}

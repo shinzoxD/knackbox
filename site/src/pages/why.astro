@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { allSkills, githubRepoUrl, knackboxCliCommand, tierCounts } from "../lib/catalog";
-import { websiteJsonLd } from "../lib/seo";
+import { faqJsonLd, websiteJsonLd } from "../lib/seo";
 
 const counts = tierCounts();
 const withBenchmarks = allSkills.filter((s) => s.has_benchmarks).length;
@@ -48,7 +48,21 @@ const rows = [
 ];
 
 const command = `${knackboxCliCommand} commit-messages`;
-const jsonLd = websiteJsonLd();
+const jsonLd = [
+  websiteJsonLd(),
+  faqJsonLd([
+    {
+      question: "Is Knackbox a replacement for skills.sh?",
+      answer:
+        "No. skills.sh is the discovery directory. Knackbox is a quality-first library on the same SKILL.md format, with required benchmarks and honest metrics.",
+    },
+    {
+      question: "Can I use both Knackbox and third-party skills?",
+      answer:
+        "Yes. Install Knackbox skills next to any other Agent Skills-compatible folder. The open Skills CLI can target Claude Code, Codex, Cursor, or OpenCode.",
+    },
+  ]),
+];
 ---
 
 <BaseLayout

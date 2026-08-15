@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "threat model this payments service",
+    "STRIDE analysis for our multi-tenant API",
+    "who can attack the new file-upload pipeline",
+    "draw trust boundaries for the agent with tool access",
+    "attack tree for account takeover",
+    "abuse cases before we build the partner webhook"
+  ],
+  "should_not_trigger": [
+    "line-by-line security review of this Express handler",
+    "write a blog post about the launch",
+    "standup update",
+    "review this terraform plan only for IAM syntax",
+    "customer support macro",
+    "make this prompt better"
+  ],
+  "tasks": [
+    {
+      "prompt": "New feature: users upload invoices, we parse with a third-party OCR vendor, then store in S3 and show in-app. Threat model.",
+      "criteria": [
+        "names assets, actors, and at least one trust boundary including the vendor",
+        "uses STRIDE or equivalent structured threats with mitigations",
+        "does not invent architecture beyond the given flow"
+      ]
+    },
+    {
+      "prompt": "Support staff can impersonate any customer to debug billing. Model the threats.",
+      "criteria": [
+        "treats insider / support impersonation as a first-class actor path",
+        "requires audit, time-box, or dual-control style mitigations",
+        "states residual risk instead of claiming none"
+      ]
+    },
+    {
+      "prompt": "An agent can call refund_order and search_docs. Threat model the agent.",
+      "criteria": [
+        "treats tools and retrieval as trust boundaries",
+        "includes prompt injection or tool-abuse style threats",
+        "prioritizes rather than dumping an unranked laundry list"
+      ]
+    }
+  ]
+}

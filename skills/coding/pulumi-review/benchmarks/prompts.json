@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "review this pulumi preview before I up",
+    "is this Pulumi IAM policy too broad",
+    "Pulumi.ts replaces the RDS instance — how bad",
+    "check Pulumi.dev.yaml for leaked secrets",
+    "review our Pulumi stack references across envs",
+    "ESC vs config secret — is this Pulumi setup safe"
+  ],
+  "should_not_trigger": [
+    "review this terraform plan before I apply",
+    "write a Dockerfile for the API",
+    "security review this Express handler only",
+    "design a REST API for orders",
+    "standup update",
+    "customer support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "pulumi preview on prod: aws.rds.Instance.main must be replaced due to engine version. Review.",
+      "criteria": [
+        "treats DB replace as high/blocking risk",
+        "discusses snapshot, protect, or blue-green alternatives",
+        "does not invent preview lines not given"
+      ]
+    },
+    {
+      "prompt": "Pulumi.prod.yaml has dbPassword: hunter2 in plaintext and is committed. Review.",
+      "criteria": [
+        "flags committed plaintext secret as blocking",
+        "recommends ESC, secret config, or a secret manager",
+        "severity-tagged finding"
+      ]
+    },
+    {
+      "prompt": "Team runs pulumi up from laptops against a shared S3 backend with no locking.",
+      "criteria": [
+        "flags missing locking / concurrent-up risk",
+        "recommends a locking backend or CI-gated up",
+        "explains state corruption or collision risk"
+      ]
+    }
+  ]
+}

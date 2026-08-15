@@ -1,0 +1,25 @@
+{
+  "name": "Knackbox",
+  "short_name": "Knackbox",
+  "description": "Open Agent Skills for Claude Code, Codex, Cursor, and OpenCode — ranked by quality, not installs.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0c0b0a",
+  "theme_color": "#0c0b0a",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/og.jpg",
+      "type": "image/jpeg",
+      "sizes": "1376x768",
+      "purpose": "any"
+    }
+  ]
+}

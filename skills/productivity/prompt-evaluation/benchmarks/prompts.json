@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "how do I evaluate this system prompt before shipping",
+    "build an offline eval harness for our support bot",
+    "compare two models on the same golden set",
+    "LLM-as-judge rubric for summary quality",
+    "we keep shipping prompt tweaks on vibes — need a regression suite",
+    "pass rate dropped after the model swap, design the eval"
+  ],
+  "should_not_trigger": [
+    "make this prompt better and rewrite it",
+    "threat model this agent for prompt injection",
+    "write a blog post about our launch",
+    "standup update",
+    "review this terraform plan",
+    "customer support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "Support bot: we edited the system prompt twice this week. Design an eval so the next edit cannot silently break refund policy answers.",
+      "criteria": [
+        "defines a frozen suite with pass criteria, not vibes",
+        "includes policy / should-refuse cases",
+        "states a ship gate"
+      ]
+    },
+    {
+      "prompt": "We want an LLM judge to score 'helpfulness' 1-5 for 200 chats.",
+      "criteria": [
+        "demands a written rubric and human agreement check",
+        "warns about judge variance or in-sample tuning",
+        "suggests programmatic checks where possible"
+      ]
+    },
+    {
+      "prompt": "Pick the best model for our SQL generator. No dataset yet.",
+      "criteria": [
+        "refuses a winner without a task-shaped set",
+        "offers a starter suite structure with observable criteria",
+        "keeps model comparison on a fixed prompt and set"
+      ]
+    }
+  ]
+}

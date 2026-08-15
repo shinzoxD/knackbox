@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "checklist for submitting 3.4.0 to the App Store",
+    "Play Console staged rollout plan for Android",
+    "TestFlight is green — can we ship production",
+    "versionCode didn't increment and Play rejected us",
+    "review our data-safety answers after adding analytics SDK",
+    "iOS hotfix release process for a crash"
+  ],
+  "should_not_trigger": [
+    "design a REST API for orders",
+    "review this terraform plan",
+    "write a blog post about the launch",
+    "standup update",
+    "customer support macro",
+    "improve this system prompt"
+  ],
+  "tasks": [
+    {
+      "prompt": "Android 4.2.0 ready. We want 100% Play rollout Friday 6pm. Crash-free on internal track only. Plan.",
+      "criteria": [
+        "rejects Friday 100% as the default",
+        "requires staged rollout and an owner watching crash/ANR",
+        "does not treat internal-track signal as prod-proof"
+      ]
+    },
+    {
+      "prompt": "We added a new analytics SDK. Store listing copy is unchanged. Review release risk.",
+      "criteria": [
+        "flags privacy / data-safety / nutrition labels as stale risk",
+        "asks to match answers to this binary",
+        "does not invent console UI labels"
+      ]
+    },
+    {
+      "prompt": "Prod iOS crash in payments. Need a hotfix. What is the smallest safe path?",
+      "criteria": [
+        "prefers smallest binary delta and/or a kill switch",
+        "keeps version/build increment rules",
+        "separates halt-rollout from a real fix"
+      ]
+    }
+  ]
+}
