@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "what index should I add for this users-by-email lookup",
+    "EXPLAIN ANALYZE shows Seq Scan on orders — help",
+    "design covering indexes for our Postgres reporting queries",
+    "index bloat and unused indexes on the payments table",
+    "column order for a composite index on (tenant_id, created_at)",
+    "CREATE INDEX CONCURRENTLY plan before we ship"
+  ],
+  "should_not_trigger": [
+    "rewrite this SELECT for correctness and injection safety",
+    "plan a zero-downtime column rename migration",
+    "standup update",
+    "customer support macro",
+    "review this terraform plan",
+    "write a PRD for usage-based billing"
+  ],
+  "tasks": [
+    {
+      "prompt": "Postgres. Query: SELECT id, email FROM users WHERE tenant_id = $1 AND created_at > $2 ORDER BY created_at DESC LIMIT 50; No EXPLAIN. What index?",
+      "criteria": [
+        "proposes a composite with tenant_id before created_at",
+        "discusses covering / INCLUDE for id,email or equivalent",
+        "does not invent table stats"
+      ]
+    },
+    {
+      "prompt": "EXPLAIN ANALYZE: Seq Scan on orders (cost huge) Filter: lower(email) = 'a@b.com'. There is already an index on orders(email).",
+      "criteria": [
+        "explains the existing index cannot be used due to lower()",
+        "proposes an expression index or stored generated column",
+        "does not just say add another index on email"
+      ]
+    },
+    {
+      "prompt": "Add indexes on every FK tonight on a 200GB table in prod.",
+      "criteria": [
+        "refuses spray-on-every-FK without query evidence",
+        "requires CONCURRENTLY/ONLINE and a verify/rollback",
+        "ranks or limits what to add first"
+      ]
+    }
+  ]
+}

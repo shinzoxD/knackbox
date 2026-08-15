@@ -14,6 +14,7 @@
         "pr-descriptions",
         "security-review",
         "sql-query-review",
+        "database-indexing",
         "refactor-planning",
         "dependency-upgrades",
         "performance-review",
@@ -34,6 +35,7 @@
         "cli-design",
         "websocket-design",
         "webhook-design",
+        "message-queue-design",
         "auth-design",
         "migration-playbooks"
       ]
@@ -46,6 +48,7 @@
         "code-review",
         "security-review",
         "accessibility-review",
+        "accessibility-implementation",
         "i18n-review",
         "performance-review",
         "issue-triage",
@@ -227,6 +230,7 @@
         "incident-comms",
         "secrets-management",
         "policy-writing",
+        "security-questionnaire",
         "rfp-response"
       ]
     },
@@ -280,6 +284,7 @@
       "skills": [
         "websocket-design",
         "webhook-design",
+        "message-queue-design",
         "caching-strategies",
         "rate-limiting",
         "error-handling",

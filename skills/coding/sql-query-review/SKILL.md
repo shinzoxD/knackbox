@@ -2,9 +2,10 @@
 name: sql-query-review
 description: Review and improve SQL queries for correctness, performance,
   safety, and maintainability. Use whenever the user shares a SQL query, asks
-  to optimize a query, check indexes, prevent SQL injection, rewrite a join,
-  explain a slow query plan, or debug wrong database results — even for
-  ORM-generated SQL or "why is this query slow".
+  to optimize a query, prevent SQL injection, rewrite a join, or debug
+  wrong database results — even for ORM-generated SQL or "why is this
+  query slow". For a dedicated index / EXPLAIN indexing plan, use
+  database-indexing.
 license: Apache-2.0
 compatibility: Portable instructions; may reason about EXPLAIN output when provided.
 metadata:

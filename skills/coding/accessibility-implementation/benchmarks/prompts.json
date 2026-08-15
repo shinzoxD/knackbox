@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "how do I implement an accessible modal in React",
+    "make this custom dropdown keyboard-accessible",
+    "ARIA pattern for tabs with panels",
+    "fix this icon button so a screen reader can name it",
+    "build a dialog with focus trap and restore",
+    "accessible form error announcements"
+  ],
+  "should_not_trigger": [
+    "audit this page against WCAG and list findings only",
+    "standup update",
+    "review this terraform plan",
+    "write a blog post",
+    "customer support macro",
+    "design OAuth login"
+  ],
+  "tasks": [
+    {
+      "prompt": "React modal is a div with onClick overlay. Focus stays on the page. Implement it accessibly.",
+      "criteria": [
+        "uses a dialog role or native dialog and focus in/out",
+        "Escape + close control + restore focus to opener",
+        "does not recommend div-as-button as the primary fix"
+      ]
+    },
+    {
+      "prompt": "Icon-only header button is <div class=icon onClick=openMenu>. Fix markup.",
+      "criteria": [
+        "changes it to a button with an accessible name",
+        "does not add role=button on a real button",
+        "mentions expanded state if it opens a menu"
+      ]
+    },
+    {
+      "prompt": "Audit-only: list WCAG fails on this screenshot, do not write code.",
+      "criteria": [
+        "points at accessibility-review or stays audit-only if insisted",
+        "does not invent a full implementation when they refused code",
+        "does not invent WCAG numbers if the screenshot is insufficient"
+      ]
+    }
+  ]
+}

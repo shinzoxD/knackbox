@@ -13,7 +13,8 @@
     "write unit tests for the button",
     "landing page marketing copy only",
     "refactor CSS modules structure",
-    "SQL query optimization"
+    "SQL query optimization",
+    "implement an accessible modal with focus restore"
   ],
   "tasks": [
     {
