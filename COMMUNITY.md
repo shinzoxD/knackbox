@@ -30,15 +30,14 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Cost optimization / FinOps review for cloud bills
 - Database index and query-plan coaching beyond `sql-query-review`
-- Incident commander live-bridge notes (distinct from postmortems)
 - Contract / vendor security questionnaire answering
 - Frontend accessibility implementation (beyond `accessibility-review`)
-- Desktop / Electron release checklist (mobile already ships)
+- Grant / security questionnaire writing for enterprise sales
 
 Shipped from community requests: `terraform-review`, `pulumi-review`,
 `cloudformation-review`, `prompt-evaluation`, `mobile-release`,
+`desktop-release`, `finops-review`, `incident-command`,
 `prompt-injection-hardening`, `i18n-review`, `graphql-schema-design`,
 `support-macros`, `kubernetes-review`, `load-test-planning`,
 `privacy-request-playbook`.

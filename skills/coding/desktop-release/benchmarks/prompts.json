@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "checklist for shipping Electron 4.2.0 to stable",
+    "Tauri auto-update feed review before we promote",
+    "Windows Authenticode and MSI upgrade from 3.9",
+    "macOS notarization failed — release risk?",
+    "can we roll back the desktop updater if 1.8 is bad",
+    "desktop release process for a hotfix crash"
+  ],
+  "should_not_trigger": [
+    "App Store / Play Console staged rollout",
+    "review this terraform plan",
+    "write a blog post about the launch",
+    "standup update",
+    "customer support macro",
+    "design OAuth login"
+  ],
+  "tasks": [
+    {
+      "prompt": "Electron app. We want to push unsigned Windows EXE to 100% of stable Friday 6pm via HTTP update feed.",
+      "criteria": [
+        "flags unsigned stable and HTTP update as blocking",
+        "rejects Friday 100% as the default",
+        "requires a halt/rollback path"
+      ]
+    },
+    {
+      "prompt": "Signing p12 is in the repo so any engineer can ship. Review.",
+      "criteria": [
+        "treats committed signing material as blocking",
+        "recommends CI/HSM and restricted minting",
+        "severity-tagged finding"
+      ]
+    },
+    {
+      "prompt": "1.8 auto-update is crashing on launch. How do we roll back desktop users?",
+      "criteria": [
+        "uses feed/channel rollback or N-1 installer, not 'tell them to reinstall Windows'",
+        "notes if the updater cannot go backwards",
+        "keeps a crash-gate owner"
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-107-green)
+![Skills](https://img.shields.io/badge/skills-110-green)
 
 **An open library of Agent Skills for Claude Code, Codex, Cursor, and OpenCode — ranked by quality, not installs.**
 
@@ -100,7 +100,7 @@ Curated packs provide explicit multi-skill installation commands for common work
 | Product & GTM | PRDs, case studies, launches, market sizing, RFPs |
 | Realtime & Edge | WebSockets, webhooks, caching, rate limits |
 | AI Builders | Prompt rewrite, offline eval, injection hardening |
-| Mobile Shipping | iOS/Android release trains, flags, store rollback |
+| Mobile Shipping | iOS/Android/desktop release trains, flags, rollback |
 | Identity & Trust | Auth design, webhooks, threat models, security review |
 
 Job-based install sets: [RECIPES.md](RECIPES.md).
@@ -138,8 +138,10 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [database-migrations](skills/coding/database-migrations) | coding | 377 | Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations,… |
 | 🧪 community | [dependency-upgrades](skills/coding/dependency-upgrades) | coding | 648 | Plan and execute dependency upgrades with risk assessment, changelog review, and verification. Use whenever t… |
 | 🧪 community | [design-system-contribution](skills/coding/design-system-contribution) | coding | 328 | Guide contributions to a design system — component API, accessibility, tokens, and docs. Use whenever the use… |
+| 🧪 community | [desktop-release](skills/coding/desktop-release) | coding | 684 | Plan and review desktop app releases — Electron, Tauri, and native installers, code signing, auto-update, and… |
 | 🧪 community | [error-handling](skills/coding/error-handling) | coding | 365 | Design robust error handling, retries, and failure modes for application code. Use whenever the user asks abo… |
 | 🧪 community | [feature-flags](skills/coding/feature-flags) | coding | 321 | Design feature flag rollout plans with targeting, kill switches, and cleanup. Use whenever the user asks abou… |
+| 🧪 community | [finops-review](skills/coding/finops-review) | coding | 683 | Review cloud spend and FinOps plans — idle resources, rightsizing, commitment discounts, and unit-cost metric… |
 | 🧪 community | [git-conflict-resolution](skills/coding/git-conflict-resolution) | coding | 374 | Resolve git merge and rebase conflicts carefully while preserving intent. Use whenever the user has merge con… |
 | 🧪 community | [graphql-schema-design](skills/coding/graphql-schema-design) | coding | 354 | Design and review GraphQL schemas for authz, pagination, N+1 risk, nullability, and evolution. Use whenever t… |
 | 🧪 community | [helm-chart-scaffolding](skills/coding/helm-chart-scaffolding) | coding | 332 | Scaffold and review Helm charts with safe defaults for values, templates, and hooks. Use whenever the user as… |
@@ -175,6 +177,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [metrics-definitions](skills/data/metrics-definitions) | data | 378 | Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the u… |
 | 🧪 community | [sql-analytics](skills/data/sql-analytics) | data | 294 | Write analytical SQL for warehouses and BI questions with correct grain and caveats. Use whenever the user as… |
 | 🧪 community | [architecture-decision-records](skills/documents/architecture-decision-records) | documents | 332 | Write concise Architecture Decision Records that capture context, decision, and consequences. Use whenever th… |
+| 🧪 community | [incident-command](skills/documents/incident-command) | documents | 716 | Run a live incident as commander — roles, timeline, decisions, and page cadence — distinct from postmortems a… |
 | 🧪 community | [incident-postmortems](skills/documents/incident-postmortems) | documents | 556 | Write blameless incident postmortems with timeline, impact, root cause, and action items. Use whenever the us… |
 | 🧪 community | [onboarding-guides](skills/documents/onboarding-guides) | documents | 292 | Write new-hire and contributor onboarding guides that get people productive fast. Use whenever the user asks… |
 | 🧪 community | [policy-writing](skills/documents/policy-writing) | documents | 208 | Write clear internal policies people can follow under time pressure. Use whenever the user asks for a company… |
@@ -220,7 +223,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [case-studies](skills/writing/case-studies) | writing | 234 | Write customer case studies with problem, solution, proof, and quote discipline. Use whenever the user asks f… |
 | 🧪 community | [copy-editing](skills/writing/copy-editing) | writing | 522 | Edit prose for clarity, correctness, flow, consistency, and concision while preserving the author's meaning a… |
 | 🧪 community | [documentation-migration](skills/writing/documentation-migration) | writing | 290 | Plan and execute docs migrations between tools and information architectures. Use whenever the user moves doc… |
-| 🧪 community | [incident-comms](skills/writing/incident-comms) | writing | 377 | Write customer and stakeholder communications during incidents. Use whenever the user needs a status page upd… |
+| 🧪 community | [incident-comms](skills/writing/incident-comms) | writing | 396 | Write customer and stakeholder communications during incidents. Use whenever the user needs a status page upd… |
 | 🧪 community | [internal-comms](skills/writing/internal-comms) | writing | 207 | Write clear internal company communications — all-hands notes, policy updates, and reorg announcements. Use w… |
 | 🧪 community | [landing-page-copy](skills/writing/landing-page-copy) | writing | 503 | Write and improve landing-page copy with a clear offer, credible proof, scannable structure, and focused call… |
 | 🧪 community | [newsletter-writing](skills/writing/newsletter-writing) | writing | 161 | Write email newsletters with a clear point, scannable structure, and one CTA. Use whenever the user asks for… |

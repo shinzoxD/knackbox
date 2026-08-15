@@ -13,7 +13,8 @@
     "security review of the auth service",
     "release notes for the hotfix",
     "debug why the service OOM'd right now",
-    "write an RFC for retry policies"
+    "write an RFC for retry policies",
+    "we're down, assign IC and mitigate on the bridge"
   ],
   "tasks": [
     {

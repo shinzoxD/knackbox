@@ -7,6 +7,8 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skills: `finops-review`, `incident-command`, `desktop-release`
+  (catalog target: 110 skills).
 - Skills: `pulumi-review`, `cloudformation-review`, `prompt-evaluation`,
   `mobile-release`, `auth-design`, `webhook-design`, `threat-modeling`,
   `product-requirements` (catalog target: 107 skills).

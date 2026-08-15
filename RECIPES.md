@@ -45,7 +45,20 @@ npx knackbox add auth-design webhook-design threat-modeling security-review
 
 ```bash
 npx knackbox pack mobile-shipping
-npx knackbox add mobile-release feature-flags ci-cd-pipelines release-notes
+npx knackbox add mobile-release desktop-release feature-flags ci-cd-pipelines release-notes
+```
+
+## Live incident
+
+```bash
+npx knackbox add incident-command incident-comms runbook-writing
+npx knackbox pack ops-reliability
+```
+
+## Cloud bill / FinOps
+
+```bash
+npx knackbox add finops-review terraform-review kubernetes-review
 ```
 
 ## Prompt and agent eval
