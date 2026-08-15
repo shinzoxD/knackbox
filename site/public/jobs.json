@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "slug": "review-a-pr",
+      "title": "Review a pull request",
+      "blurb": "Findings first, then security, tests, and a description reviewers can act on.",
+      "keywords": ["pr", "pull request", "code review", "review diff", "feedback"],
+      "skills": ["code-review", "security-review", "test-generation", "pr-descriptions"]
+    },
+    {
+      "slug": "ship-a-change",
+      "title": "Ship a code change",
+      "blurb": "Commit, describe the PR, and keep the trail readable.",
+      "keywords": ["commit", "ship", "land", "merge", "git commit"],
+      "skills": ["commit-messages", "pr-descriptions", "code-review", "test-generation"]
+    },
+    {
+      "slug": "debug-production",
+      "title": "Debug a production issue",
+      "blurb": "Hypothesize, isolate, and only then patch.",
+      "keywords": ["debug", "bug", "outage", "500", "stacktrace", "prod"],
+      "skills": ["debugging", "logging-observability", "incident-command", "error-handling"]
+    },
+    {
+      "slug": "live-incident",
+      "title": "Run a live incident",
+      "blurb": "Assign an IC, mitigate first, keep customer copy factual.",
+      "keywords": ["incident", "sev1", "bridge", "war room", "down", "outage"],
+      "skills": ["incident-command", "incident-comms", "runbook-writing", "issue-triage"]
+    },
+    {
+      "slug": "secure-before-ship",
+      "title": "Secure something before ship",
+      "blurb": "Abuse paths, injection, secrets, and agent hardening.",
+      "keywords": ["security", "owasp", "vuln", "auth", "is this safe"],
+      "skills": ["security-review", "threat-modeling", "prompt-injection-hardening", "secrets-management"]
+    },
+    {
+      "slug": "design-an-api",
+      "title": "Design or wrap an API",
+      "blurb": "Contracts, errors, and vendor clients without invented endpoints.",
+      "keywords": ["api", "rest", "openapi", "graphql", "stripe", "partner"],
+      "skills": ["api-design", "openapi-spec-design", "partner-api-integration", "webhook-design"]
+    },
+    {
+      "slug": "slow-query",
+      "title": "Fix a slow query or missing index",
+      "blurb": "Rewrite the statement, then add the smallest index that serves it.",
+      "keywords": ["sql", "slow query", "index", "explain", "seq scan"],
+      "skills": ["sql-query-review", "database-indexing", "database-migrations"]
+    },
+    {
+      "slug": "infra-apply",
+      "title": "Review infra before apply",
+      "blurb": "Treat apply as a production change. Prefer plan evidence.",
+      "keywords": ["terraform", "pulumi", "cloudformation", "apply", "iac"],
+      "skills": ["terraform-review", "pulumi-review", "cloudformation-review", "kubernetes-review"]
+    },
+    {
+      "slug": "frontend-vitals",
+      "title": "Improve page speed and a11y",
+      "blurb": "Fix the dominant Web Vital, then make the UI keyboard-usable.",
+      "keywords": ["lcp", "lighthouse", "cls", "a11y", "bundle", "frontend"],
+      "skills": ["frontend-performance", "accessibility-implementation", "accessibility-review", "design-tokens"]
+    },
+    {
+      "slug": "ship-mobile-or-desktop",
+      "title": "Ship a mobile or desktop train",
+      "blurb": "Version, sign, stage, and know how to halt.",
+      "keywords": ["app store", "play console", "electron", "testflight", "release"],
+      "skills": ["mobile-release", "desktop-release", "feature-flags", "release-notes"]
+    },
+    {
+      "slug": "cloud-bill",
+      "title": "Explain or cut a cloud bill",
+      "blurb": "Investigate a spike first; rightsizing is a different job.",
+      "keywords": ["aws bill", "cost", "finops", "spend", "cost explorer"],
+      "skills": ["cost-anomaly-investigation", "finops-review", "anomaly-detection"]
+    },
+    {
+      "slug": "launch-an-experiment",
+      "title": "Design an experiment before launch",
+      "blurb": "Hypothesis, unit, power, then later read the result.",
+      "keywords": ["ab test", "experiment", "mde", "power", "variant"],
+      "skills": ["experiment-design", "metrics-definitions", "ab-test-analysis"]
+    },
+    {
+      "slug": "warehouse-model",
+      "title": "Model warehouse facts and dims",
+      "blurb": "One grain per fact. Pipelines and KPIs are adjacent jobs.",
+      "keywords": ["star schema", "kimball", "fact table", "scd", "warehouse"],
+      "skills": ["warehouse-modeling", "etl-pipeline-design", "metrics-definitions", "sql-analytics"]
+    },
+    {
+      "slug": "write-a-prd",
+      "title": "Turn an idea into a PRD or RFC",
+      "blurb": "Decision-ready scope, then the technical design.",
+      "keywords": ["prd", "spec", "rfc", "requirements", "design doc"],
+      "skills": ["product-requirements", "rfc-design-docs", "decision-memos", "architecture-decision-records"]
+    },
+    {
+      "slug": "oss-maintainer",
+      "title": "Triage an open-source repo",
+      "blurb": "Issues, PRs, and contributor onboarding without burning out.",
+      "keywords": ["oss", "maintainer", "triage issues", "good first issue"],
+      "skills": ["oss-maintainer-triage", "issue-triage", "code-review", "onboarding-guides"]
+    },
+    {
+      "slug": "harden-an-agent",
+      "title": "Harden an AI agent or prompt",
+      "blurb": "Rewrite the prompt, eval it, then threat-model tools.",
+      "keywords": ["prompt", "agent", "eval", "injection", "system prompt"],
+      "skills": ["prompt-improver", "prompt-evaluation", "prompt-injection-hardening", "threat-modeling"]
+    },
+    {
+      "slug": "customer-incident-update",
+      "title": "Write a status-page update",
+      "blurb": "Facts only. Live command and postmortems are different jobs.",
+      "keywords": ["status page", "customer email", "outage notice"],
+      "skills": ["incident-comms", "incident-command", "support-macros"]
+    },
+    {
+      "slug": "dr-readiness",
+      "title": "Prove we can restore",
+      "blurb": "RPO/RTO as evidence, not slogans.",
+      "keywords": ["disaster recovery", "backup", "restore", "rpo", "rto"],
+      "skills": ["disaster-recovery", "runbook-writing", "sla-slo-writing"]
+    }
+  ]
+}

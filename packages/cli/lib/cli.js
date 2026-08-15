@@ -2,6 +2,7 @@ import {
   AGENT_ROOTS,
   DEFAULT_CATALOG_URL,
   DEFAULT_DOCS_URL,
+  DEFAULT_JOBS_URL,
   DEFAULT_PACKS_URL,
   DEFAULT_TARBALL_URL,
   PRIMARY_AGENTS,
@@ -11,9 +12,11 @@ import {
 } from "./config.js";
 import {
   fetchCatalog,
+  fetchJobs,
   fetchPacks,
   findPack,
   findSkill,
+  recommendJobs,
   formatSkillRow,
   listSkillNames,
   searchSkills,
@@ -31,6 +34,8 @@ Usage:
   knackbox pack <pack-slug> [options]
   knackbox list [--category <name>] [--sort tier|name|context|score] [--json]
   knackbox search <query> [--limit N] [--json]
+  knackbox for <job> [--limit N] [--json] [--add]
+  knackbox jobs [--json]
   knackbox compare <skill-a> <skill-b>
   knackbox packs [--json]
   knackbox doctor
@@ -44,6 +49,7 @@ Options:
   --force            Replace an existing skill folder
   --catalog <url>    Catalog JSON URL or local path
   --packs <url>      Packs JSON URL or local path
+  --jobs <url>       Jobs JSON URL or local path
   --tarball <url>    Repo tarball URL or local .tar.gz path
   --sort <key>       list sort: tier (default) | name | context | score
   --limit <n>        Max search results (default 15)
@@ -59,6 +65,7 @@ Examples:
   npx knackbox add security-review --agent *
   npx knackbox pack developer-essentials --force
   npx knackbox list --sort tier
+  npx knackbox for "review a PR"
   npx knackbox compare code-review security-review
   npx knackbox why
 
@@ -88,6 +95,11 @@ export async function main(argv) {
       return runList(flags);
     case "search":
       return runSearch(positionals, flags);
+    case "for":
+    case "recommend":
+      return runFor(positionals, flags);
+    case "jobs":
+      return runJobs(flags);
     case "compare":
       return runCompare(positionals, flags);
     case "packs":
@@ -274,6 +286,71 @@ function compareSkills(a, b, sortKey) {
   return tr;
 }
 
+async function runJobs(flags) {
+  const jobsDoc = await fetchJobs(flags.jobs || DEFAULT_JOBS_URL);
+  if (flags.json) {
+    console.log(JSON.stringify(jobsDoc.jobs, null, 2));
+    return 0;
+  }
+  console.log(`${jobsDoc.jobs.length} job guides · pick one, then install`);
+  console.log(`${"SLUG".padEnd(24)} TITLE`);
+  for (const job of jobsDoc.jobs) {
+    console.log(`${job.slug.padEnd(24)} ${job.title}`);
+  }
+  console.log(`\nExample: npx knackbox for "review a PR"`);
+  console.log(`Browse: ${SITE_URL}/start/`);
+  return 0;
+}
+
+async function runFor(positionals, flags) {
+  const query = positionals.join(" ").trim();
+  if (!query) {
+    console.error('Usage: knackbox for "<what you are trying to do>"');
+    console.error('Example: knackbox for "review a PR"');
+    console.error("List jobs: knackbox jobs");
+    return 2;
+  }
+
+  const jobsDoc = await fetchJobs(flags.jobs || DEFAULT_JOBS_URL);
+  const limit = Number(flags.limit) || 3;
+  const matches = recommendJobs(jobsDoc, query, { limit });
+  if (!matches.length) {
+    console.error(`No job guide matched "${query}".`);
+    console.error("Try: knackbox jobs   or   knackbox search " + query);
+    return 1;
+  }
+
+  if (flags.json) {
+    console.log(JSON.stringify(matches.map(({ job, score }) => ({ score, ...job })), null, 2));
+    return 0;
+  }
+
+  const [best, ...rest] = matches;
+  console.log(`Job: ${best.job.title}  [${best.job.slug}]`);
+  console.log(best.job.blurb);
+  console.log("");
+  console.log("Install:");
+  const command = `npx knackbox add ${best.job.skills.join(" ")}`;
+  console.log(`  ${command}`);
+  console.log("");
+  console.log("Skills:");
+  for (const name of best.job.skills) {
+    console.log(`  - ${name}`);
+  }
+  if (rest.length) {
+    console.log("\nAlso close:");
+    for (const { job } of rest) {
+      console.log(`  ${job.slug.padEnd(24)} ${job.title}`);
+    }
+  }
+  console.log(`\nGuide: ${SITE_URL}/start/#${best.job.slug}`);
+
+  if (flags.add) {
+    return runAdd(best.job.skills, flags);
+  }
+  return 0;
+}
+
 async function runCompare(positionals, flags) {
   const [aName, bName] = positionals;
   if (!aName || !bName) {
@@ -458,10 +535,12 @@ function parseArgs(argv) {
     version: false,
     force: false,
     json: false,
+    add: false,
     dest: undefined,
     agent: undefined,
     catalog: undefined,
     packs: undefined,
+    jobs: undefined,
     tarball: undefined,
     category: undefined,
     limit: undefined,
@@ -492,11 +571,16 @@ function parseArgs(argv) {
       flags.json = true;
       continue;
     }
+    if (arg === "--add") {
+      flags.add = true;
+      continue;
+    }
     if (
       arg === "--dest" ||
       arg === "--agent" ||
       arg === "--catalog" ||
       arg === "--packs" ||
+      arg === "--jobs" ||
       arg === "--tarball" ||
       arg === "--category" ||
       arg === "--limit" ||

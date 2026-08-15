@@ -8,6 +8,7 @@ import {
   categories,
   catalog,
   githubRepoUrl,
+  jobs,
   knackboxCliCommand,
   skillUrl,
   tierCounts,
@@ -66,8 +67,8 @@ const jsonLd = [
         — plain-file Agent Skills for Claude Code, Codex, Cursor, and OpenCode, with digests and honest scores.
       </p>
       <div class="mt-7 flex flex-wrap gap-2.5">
-        <a class="btn btn-primary no-underline hover:no-underline" href="/skills/">Quality leaderboard</a>
-        <a class="btn no-underline hover:no-underline" href="/why/">Why not skills.sh</a>
+        <a class="btn btn-primary no-underline hover:no-underline" href="/start/">Start with a job</a>
+        <a class="btn no-underline hover:no-underline" href="/skills/">Quality leaderboard</a>
         <a class="btn no-underline hover:no-underline" href="/packs/">Starter packs</a>
         <a class="btn no-underline hover:no-underline" href={githubRepoUrl}>View source</a>
       </div>
@@ -116,6 +117,31 @@ const jsonLd = [
       <p class="mt-4 text-xs muted">
         Catalog generated <span class="metric">{catalog.generated}</span>. Scores follow version <span class="metric">{catalog.score_version}</span>.
         Unmeasured metrics stay <span class="metric">—</span> until the benchmark harness runs.
+      </p>
+    </div>
+  </section>
+
+  <section class="rail-section" aria-label="Common jobs">
+    <div class="wrap py-12 sm:py-14">
+      <p class="eyebrow mb-3">Start here</p>
+      <h2 class="section-title">I want to…</h2>
+      <p class="mt-2 max-w-2xl text-sm muted">
+        Developers do not browse 120 skills. They have a job. Each card is a short install set.
+      </p>
+      <ul class="mt-6 grid list-none gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {jobs.slice(0, 6).map((job) => (
+          <li>
+            <a class="panel block p-4 no-underline hover:no-underline" href={`/start/#${job.slug}`}>
+              <span class="text-base font-semibold text-ink-950 dark:text-ink-50">{job.title}</span>
+              <span class="mt-1 block text-sm muted">{job.blurb}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-4 text-sm">
+        <a href="/start/">All job guides</a>
+        {" · "}
+        <code class="font-mono text-[13px]">npx knackbox for "review a PR"</code>
       </p>
     </div>
   </section>

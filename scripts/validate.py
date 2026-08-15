@@ -33,6 +33,7 @@ SKILLS_DIR = REPO_ROOT / "skills"
 TIERS_PATH = REPO_ROOT / "tiers.yaml"
 MEASUREMENTS_DIR = REPO_ROOT / "measurements"
 PACKS_PATH = REPO_ROOT / "packs.json"
+JOBS_PATH = REPO_ROOT / "jobs.json"
 MIN_TRIGGER_PROMPTS = 5
 EVALUATION_PROTOCOL = "knackbox-eval-v1"
 
@@ -335,6 +336,48 @@ def check_packs(known_skills: dict[str, Path]) -> None:
                 err(PACKS_PATH, f"pack '{slug}' references unknown skill '{name}'")
 
 
+def check_jobs(known_skills: dict[str, Path]) -> None:
+    """Validate job guides used by `knackbox for` and the Start page."""
+    if not JOBS_PATH.is_file():
+        err(JOBS_PATH, "missing job-guide catalog")
+        return
+    try:
+        data = json.loads(JOBS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        err(JOBS_PATH, f"invalid JSON: {exc}")
+        return
+    jobs = data.get("jobs") if isinstance(data, dict) else None
+    if data.get("version") != 1 or not isinstance(jobs, list) or not jobs:
+        err(JOBS_PATH, "must contain version 1 and a non-empty jobs list")
+        return
+    seen: set[str] = set()
+    for index, job in enumerate(jobs):
+        if not isinstance(job, dict):
+            err(JOBS_PATH, f"jobs[{index}] must be an object")
+            continue
+        slug = job.get("slug")
+        if not isinstance(slug, str) or not NAME_RE.fullmatch(slug):
+            err(JOBS_PATH, f"jobs[{index}].slug must be lowercase-with-hyphens")
+        elif slug in seen:
+            err(JOBS_PATH, f"duplicate job slug: {slug}")
+        else:
+            seen.add(slug)
+        if not job.get("title") or not job.get("blurb"):
+            err(JOBS_PATH, f"jobs[{index}] requires title and blurb")
+        keywords = job.get("keywords")
+        if not isinstance(keywords, list) or len(keywords) < 2:
+            err(JOBS_PATH, f"jobs[{index}].keywords must list at least two phrases")
+        skill_names = job.get("skills")
+        if not isinstance(skill_names, list) or len(skill_names) < 2:
+            err(JOBS_PATH, f"jobs[{index}].skills must list at least two skills")
+            continue
+        if len(skill_names) != len(set(skill_names)):
+            err(JOBS_PATH, f"jobs[{index}] contains duplicate skills")
+        for name in skill_names:
+            if name not in known_skills:
+                err(JOBS_PATH, f"job '{slug}' references unknown skill '{name}'")
+
+
 def main() -> int:
     if not SKILLS_DIR.is_dir():
         print(f"No skills/ directory found at {SKILLS_DIR}")
@@ -363,6 +406,7 @@ def main() -> int:
     check_tiers(known_skills)
     check_measurements(known_skills)
     check_packs(known_skills)
+    check_jobs(known_skills)
 
     for line in errors + warnings:
         print(line)

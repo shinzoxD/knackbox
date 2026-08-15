@@ -13,6 +13,10 @@ export const DEFAULT_PACKS_URL =
   process.env.KNACKBOX_PACKS_URL ||
   `https://raw.githubusercontent.com/${ORG}/${REPO}/${BRANCH}/packs.json`;
 
+export const DEFAULT_JOBS_URL =
+  process.env.KNACKBOX_JOBS_URL ||
+  `https://raw.githubusercontent.com/${ORG}/${REPO}/${BRANCH}/jobs.json`;
+
 export const DEFAULT_TARBALL_URL =
   process.env.KNACKBOX_TARBALL_URL ||
   `https://codeload.github.com/${ORG}/${REPO}/tar.gz/refs/heads/${BRANCH}`;

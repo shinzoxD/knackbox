@@ -9,6 +9,7 @@ const publicDir = join(siteDir, "..", "public");
 mkdirSync(publicDir, { recursive: true });
 copyFileSync(join(root, "catalog.json"), join(publicDir, "catalog.json"));
 copyFileSync(join(root, "packs.json"), join(publicDir, "packs.json"));
+copyFileSync(join(root, "jobs.json"), join(publicDir, "jobs.json"));
 
 const catalog = JSON.parse(readFileSync(join(root, "catalog.json"), "utf8"));
 const packs = JSON.parse(readFileSync(join(root, "packs.json"), "utf8"));
@@ -29,6 +30,7 @@ Knackbox ranks skills with independent measurement columns (trigger accuracy, qu
 ## Site
 
 - Home: ${site}/
+- Start with a job: ${site}/start/
 - Skill leaderboard: ${site}/skills/
 - Starter packs: ${site}/packs/
 - Install docs: ${site}/docs/
@@ -39,6 +41,7 @@ Knackbox ranks skills with independent measurement columns (trigger accuracy, qu
 - Contribute: ${site}/contribute/
 - Machine-readable catalog: ${site}/catalog.json
 - Starter packs JSON: ${site}/packs.json
+- Job guides JSON: ${site}/jobs.json
 - Full skill list for crawlers: ${site}/llms-full.txt
 
 ## Repository
@@ -115,4 +118,4 @@ ${fullSections}
 
 writeFileSync(join(publicDir, "llms.txt"), llms, "utf8");
 writeFileSync(join(publicDir, "llms-full.txt"), llmsFull, "utf8");
-console.log("Copied catalog.json and packs.json; wrote llms.txt and llms-full.txt");
+console.log("Copied catalog.json, packs.json, jobs.json; wrote llms.txt and llms-full.txt");

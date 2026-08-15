@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
 import { findSkillMember, installSkill } from "../lib/install.js";
+import { recommendJobs } from "../lib/catalog.js";
 import { main } from "../lib/cli.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -151,6 +152,21 @@ test("bin is executable via node", () => {
   const result = spawnSync(process.execPath, [bin, "help"], { encoding: "utf8" });
   assert.equal(result.status, 0);
   assert.match(result.stdout, /knackbox/);
+});
+
+test("recommendJobs ranks review-a-pr for a PR query", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const jobsDoc = JSON.parse(await readFile(path.join(repoRoot, "jobs.json"), "utf8"));
+  const hits = recommendJobs(jobsDoc, "review a pull request");
+  assert.ok(hits.length > 0);
+  assert.equal(hits[0].job.slug, "review-a-pr");
+  assert.ok(hits[0].job.skills.includes("code-review"));
+});
+
+test("cli for matches a job from local jobs.json", async () => {
+  const jobsPath = path.join(repoRoot, "jobs.json");
+  const code = await main(["for", "review", "a", "PR", "--jobs", jobsPath, "--json"]);
+  assert.equal(code, 0);
 });
 
 test("cli search finds skills by keyword", async () => {

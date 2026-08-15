@@ -9,6 +9,7 @@ import {
 } from "../../lib/catalog";
 
 const knackboxExample = `${knackboxCliCommand} commit-messages`;
+const knackboxForExample = 'npx knackbox for "review a PR"';
 const knackboxPackExample = "npx knackbox pack developer-essentials";
 const skillsExample = `${installCommand} commit-messages`;
 const legacyExample = `${legacyInstallCommand} commit-messages`;
@@ -45,6 +46,14 @@ const legacyExample = `${legacyInstallCommand} commit-messages`;
           {" "}<code class="font-mono text-[13px]">--dest DIR</code>, or
           {" "}<code class="font-mono text-[13px]">--force</code>. Install a starter pack with
           {" "}<code class="font-mono text-[13px]">npx knackbox pack &lt;slug&gt;</code>.
+        </p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <h4 class="text-sm font-semibold">Start from a job</h4>
+          <CopyButton value={knackboxForExample} />
+        </div>
+        <pre class="terminal mt-2"><code>{knackboxForExample}</code></pre>
+        <p class="mt-2 text-xs muted">
+          See <a href="/start/">all job guides</a>. Add <code class="font-mono">--add</code> to install the match.
         </p>
         <div class="mt-4 flex items-center justify-between gap-3">
           <h4 class="text-sm font-semibold">Add a skill</h4>
