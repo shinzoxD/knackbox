@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { defaultFaqs, faqJsonLd, howToInstallJsonLd } from "../lib/seo";
+
+const description =
+  "FAQ for Knackbox Agent Skills: what SKILL.md is, how to install Claude Code / Cursor / Codex skills, how ranking works, and how Knackbox differs from skills.sh.";
+---
+
+<BaseLayout
+  title="Agent Skills FAQ — Install, Ranking, and skills.sh"
+  description={description}
+  canonicalPath="/faq/"
+  keywords="agent skills FAQ, what is SKILL.md, install Claude Code skills, knackbox vs skills.sh, Cursor skills FAQ"
+  jsonLd={[faqJsonLd(), howToInstallJsonLd()]}
+>
+  <section class="rail-section" data-pagefind-body>
+    <div class="wrap py-10 sm:py-12">
+      <p class="eyebrow mb-3">05 / FAQ</p>
+      <h1 class="section-title">Agent Skills FAQ</h1>
+      <p class="mt-3 max-w-3xl text-sm leading-6 muted">
+        Knackbox is an open <code class="font-mono text-[13px]">SKILL.md</code> library for Claude Code,
+        Codex, Cursor, and OpenCode. These are the questions people ask before they install.
+      </p>
+
+      <dl class="mt-10 max-w-3xl space-y-6">
+        {defaultFaqs.map((faq) => (
+          <div class="border-b border-ink-200 pb-6 dark:border-ink-800">
+            <dt>
+              <h2 class="text-base font-semibold text-ink-950 dark:text-ink-50">{faq.question}</h2>
+            </dt>
+            <dd class="mt-2 text-sm leading-7 muted">{faq.answer}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div class="mt-10 flex flex-wrap gap-2.5">
+        <a class="btn btn-primary no-underline hover:no-underline" href="/skills/">Browse the leaderboard</a>
+        <a class="btn no-underline hover:no-underline" href="/docs/">Install docs</a>
+        <a class="btn no-underline hover:no-underline" href="/why/">Why Knackbox</a>
+        <a class="btn no-underline hover:no-underline" href="/contribute/">Contribute a skill</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

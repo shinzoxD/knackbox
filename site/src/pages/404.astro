@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page not found"
+  description="That Knackbox page does not exist. Browse Agent Skills, starter packs, or install docs instead."
+  canonicalPath="/404/"
+  noindex={true}
+>
+  <section class="rail-section">
+    <div class="wrap py-16 sm:py-20">
+      <p class="eyebrow mb-3">404</p>
+      <h1 class="hero-title">This page is not in the catalog.</h1>
+      <p class="mt-5 max-w-xl text-[16px] leading-7 muted">
+        The URL may be mistyped or the skill may have been renamed. Start from the leaderboard
+        or install docs.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-2.5">
+        <a class="btn btn-primary no-underline hover:no-underline" href="/skills/">Skill leaderboard</a>
+        <a class="btn no-underline hover:no-underline" href="/packs/">Starter packs</a>
+        <a class="btn no-underline hover:no-underline" href="/docs/">Install docs</a>
+        <a class="btn no-underline hover:no-underline" href="/faq/">FAQ</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

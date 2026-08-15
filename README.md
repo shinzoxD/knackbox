@@ -2,13 +2,13 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-99-green)
+![Skills](https://img.shields.io/badge/skills-107-green)
 
-**An open library of skills for AI agents — ranked by quality, not installs.**
+**An open library of Agent Skills for Claude Code, Codex, Cursor, and OpenCode — ranked by quality, not installs.**
 
-[skills.sh](https://www.skills.sh/) is great at discovery and popularity. Knackbox is the **quality layer** on the same open [Agent Skills format](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview): mandatory benchmarks, trust digests, honest metrics (no faked scores), and curated packs. See **[WHY.md](WHY.md)** · **[STANDARD.md](STANDARD.md)** · [why page](https://knackbox.pages.dev/why/).
+[skills.sh](https://www.skills.sh/) is great at discovery and popularity. Knackbox is the **quality layer** on the same open [Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) `SKILL.md` format: mandatory benchmarks, trust digests, honest metrics (no faked scores), and curated starter packs. Browse the live catalog at **[knackbox.pages.dev](https://knackbox.pages.dev)** · **[WHY.md](WHY.md)** · **[STANDARD.md](STANDARD.md)** · [why page](https://knackbox.pages.dev/why/) · [FAQ](https://knackbox.pages.dev/faq/).
 
-Skills are small folders of instructions that teach a model a job well — commits, reviews, SQL, incidents, writing — for Claude Code, Codex, Cursor, OpenCode, and any runtime that reads `SKILL.md`.
+Skills are small folders of instructions that teach a model a job well — commits, reviews, SQL, incidents, writing, IaC, auth, evals — for Claude Code, Codex, Cursor, OpenCode, Claude.ai, and any runtime that reads `SKILL.md`.
 
 ## What a skill looks like
 
@@ -96,6 +96,12 @@ Curated packs provide explicit multi-skill installation commands for common work
 | Customer Facing | Support macros, privacy, incident updates, announcements |
 | Privacy & Trust | Privacy requests, support judgment, security, agent hardening |
 | Team Operating System | OKRs, agendas, onboarding, status, retros, delegation |
+| OSS Maintainers | Issue/PR triage, contributor onboarding, reviews |
+| Product & GTM | PRDs, case studies, launches, market sizing, RFPs |
+| Realtime & Edge | WebSockets, webhooks, caching, rate limits |
+| AI Builders | Prompt rewrite, offline eval, injection hardening |
+| Mobile Shipping | iOS/Android release trains, flags, store rollback |
+| Identity & Trust | Auth design, webhooks, threat models, security review |
 
 Job-based install sets: [RECIPES.md](RECIPES.md).
 
@@ -121,10 +127,12 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [accessibility-review](skills/coding/accessibility-review) | coding | 441 | Review UI and content for accessibility issues against WCAG-minded practices. Use whenever the user asks for… |
 | 🧪 community | [api-changelog](skills/coding/api-changelog) | coding | 254 | Write consumer-facing API changelogs and migration notes for breaking and additive changes. Use whenever the… |
 | 🧪 community | [api-design](skills/coding/api-design) | coding | 674 | Design and review HTTP, REST, GraphQL, and internal service APIs with clear contracts, errors, pagination, se… |
+| 🧪 community | [auth-design](skills/coding/auth-design) | coding | 650 | Design authentication and authorization — sessions, OAuth/OIDC, JWT, MFA, cookies, and object-level access. U… |
 | 🧪 community | [caching-strategies](skills/coding/caching-strategies) | coding | 286 | Design caching layers with correctness, TTLs, invalidation, and stampede control. Use whenever the user asks… |
 | 🧪 community | [chaos-experiment-design](skills/coding/chaos-experiment-design) | coding | 302 | Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use wh… |
 | 🧪 community | [ci-cd-pipelines](skills/coding/ci-cd-pipelines) | coding | 340 | Design and review CI/CD pipelines for speed, safety, and clear failure signals. Use whenever the user edits G… |
 | 🧪 community | [cli-design](skills/coding/cli-design) | coding | 244 | Design developer CLIs with clear UX, exit codes, flags, and help text. Use whenever the user builds a command… |
+| 🧪 community | [cloudformation-review](skills/coding/cloudformation-review) | coding | 599 | Review AWS CloudFormation templates and change sets for blast radius, IAM capabilities, deletion policy, and… |
 | 🧪 community | [code-comments](skills/coding/code-comments) | coding | 317 | Write and improve code comments and docstrings that explain why, not noise. Use whenever the user asks for be… |
 | 🧪 community | [container-review](skills/coding/container-review) | coding | 320 | Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a… |
 | 🧪 community | [database-migrations](skills/coding/database-migrations) | coding | 377 | Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations,… |
@@ -140,18 +148,22 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [load-test-planning](skills/coding/load-test-planning) | coding | 355 | Plan and interpret load tests with clear goals, scenarios, and pass/fail criteria. Use whenever the user asks… |
 | 🧪 community | [logging-observability](skills/coding/logging-observability) | coding | 382 | Design logging, metrics, and tracing that operators can use under pressure. Use whenever the user asks about… |
 | 🧪 community | [migration-playbooks](skills/coding/migration-playbooks) | coding | 258 | Plan large technical migrations with strangler patterns, dual-run, and rollback. Use whenever the user migrat… |
+| 🧪 community | [mobile-release](skills/coding/mobile-release) | coding | 667 | Plan and review iOS and Android store releases — versioning, signing, store listings, staged rollout, and rol… |
 | 🧪 community | [observability-alerts](skills/coding/observability-alerts) | coding | 259 | Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes… |
 | 🧪 community | [openapi-spec-design](skills/coding/openapi-spec-design) | coding | 275 | Design and review OpenAPI specifications for clarity, consistency, and evolution. Use whenever the user write… |
 | 🧪 community | [performance-review](skills/coding/performance-review) | coding | 641 | Diagnose application performance bottlenecks and propose measured fixes. Use whenever the user mentions slow… |
 | 🧪 community | [pr-descriptions](skills/coding/pr-descriptions) | coding | 914 | Write pull request titles and descriptions that reviewers can act on fast. Use whenever the user asks for a P… |
 | 🧪 community | [prompt-injection-hardening](skills/coding/prompt-injection-hardening) | coding | 559 | Threat-model AI features against prompt injection, tool abuse, and data exfiltration, then propose mitigation… |
+| 🧪 community | [pulumi-review](skills/coding/pulumi-review) | coding | 587 | Review Pulumi programs, stack configs, and previews for blast radius, state risk, secrets, IAM overreach, and… |
 | 🧪 community | [rate-limiting](skills/coding/rate-limiting) | coding | 277 | Design rate limiting and throttling for APIs and gateways with fair use and abuse resistance. Use whenever th… |
 | 🧪 community | [refactor-planning](skills/coding/refactor-planning) | coding | 630 | Plan safe refactors that preserve behavior — seams, steps, tests, and rollback. Use whenever the user asks ho… |
 | 🧪 community | [secrets-management](skills/coding/secrets-management) | coding | 347 | Handle secrets safely in apps and infrastructure without committing credentials. Use whenever the user asks a… |
-| 🧪 community | [security-review](skills/coding/security-review) | coding | 1095 | Review code and designs for security vulnerabilities — injection, authn/authz, secrets, crypto, SSRF, and dat… |
+| 🧪 community | [security-review](skills/coding/security-review) | coding | 1104 | Review code and designs for security vulnerabilities — injection, authn/authz, secrets, crypto, SSRF, and dat… |
 | 🧪 community | [sql-query-review](skills/coding/sql-query-review) | coding | 948 | Review and improve SQL queries for correctness, performance, safety, and maintainability. Use whenever the us… |
 | 🧪 community | [terraform-review](skills/coding/terraform-review) | coding | 440 | Review Terraform and OpenTofu configuration and plans for blast radius, state risk, IAM overreach, and safer… |
 | 🧪 community | [test-generation](skills/coding/test-generation) | coding | 616 | Design and write focused automated tests for new code, bug fixes, and risky behavior. Use whenever the user a… |
+| 🧪 community | [threat-modeling](skills/coding/threat-modeling) | coding | 625 | Build a structured threat model — assets, actors, trust boundaries, STRIDE, and mitigations — before or besid… |
+| 🧪 community | [webhook-design](skills/coding/webhook-design) | coding | 610 | Design outbound and inbound webhooks with signatures, retries, idempotency, and replay defense. Use whenever… |
 | 🧪 community | [websocket-design](skills/coding/websocket-design) | coding | 286 | Design WebSocket and realtime channels with auth, backpressure, and reconnect semantics. Use whenever the use… |
 | 🧪 community | [ab-test-analysis](skills/data/ab-test-analysis) | data | 377 | Analyze A/B and experiment results with correct metrics, uncertainty, and caveats. Use whenever the user shar… |
 | 🧪 community | [anomaly-detection](skills/data/anomaly-detection) | data | 257 | Investigate metric and log anomalies with structured hypotheses and next checks. Use whenever the user sees a… |
@@ -166,6 +178,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [incident-postmortems](skills/documents/incident-postmortems) | documents | 556 | Write blameless incident postmortems with timeline, impact, root cause, and action items. Use whenever the us… |
 | 🧪 community | [onboarding-guides](skills/documents/onboarding-guides) | documents | 292 | Write new-hire and contributor onboarding guides that get people productive fast. Use whenever the user asks… |
 | 🧪 community | [policy-writing](skills/documents/policy-writing) | documents | 208 | Write clear internal policies people can follow under time pressure. Use whenever the user asks for a company… |
+| 🧪 community | [product-requirements](skills/documents/product-requirements) | documents | 599 | Write decision-ready product requirements (PRDs) with problem, users, success metrics, non-goals, and scoped… |
 | 🧪 community | [project-proposals](skills/documents/project-proposals) | documents | 477 | Turn a rough initiative into a decision-ready project proposal with outcomes, scope, plan, costs, risks, and… |
 | 🧪 community | [release-notes](skills/documents/release-notes) | documents | 724 | Write clear user-facing and developer release notes from commits, PRs, and changelogs. Use whenever the user… |
 | 🧪 community | [resume-builder](skills/documents/resume-builder) | documents | 526 | Build or rewrite resumes and tailor them to a specific job description, with achievement-focused bullets that… |
@@ -187,6 +200,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [okr-drafting](skills/productivity/okr-drafting) | productivity | 303 | Draft OKRs and goal cascades that are measurable and non-vanity. Use whenever the user asks for OKRs, quarter… |
 | 🧪 community | [oss-maintainer-triage](skills/productivity/oss-maintainer-triage) | productivity | 326 | Triage open-source issues and PRs with labels, reproduction asks, and maintainer-friendly replies. Use whenev… |
 | 🧪 community | [privacy-request-playbook](skills/productivity/privacy-request-playbook) | productivity | 403 | Handle DSAR, GDPR, and CCPA-style privacy requests with verification, scoping, and careful response templates… |
+| 🧪 community | [prompt-evaluation](skills/productivity/prompt-evaluation) | productivity | 623 | Design offline prompt and agent eval harnesses — golden sets, rubrics, judges, leakage checks, and regression… |
 | 🧪 community | [prompt-improver](skills/productivity/prompt-improver) | productivity | 540 | Rewrite and strengthen prompts for AI models — diagnose what's vague, add structure, and return a copy-paste-… |
 | 🧪 community | [retro-facilitation](skills/productivity/retro-facilitation) | productivity | 507 | Run and write software retros with useful insights and follow-through. Use whenever the user asks for a retro… |
 | 🧪 community | [sprint-planning](skills/productivity/sprint-planning) | productivity | 281 | Run sprint or iteration planning with capacity, goals, and clear commit scope. Use whenever the user asks for… |
@@ -221,7 +235,7 @@ The same data is available as machine-readable [`catalog.json`](catalog.json), w
 
 **Live catalog:** [knackbox.pages.dev](https://knackbox.pages.dev) — browse the [skill leaderboard](https://knackbox.pages.dev/skills/), [starter packs](https://knackbox.pages.dev/packs/), and per-skill pages with install commands.
 
-The static site in [`site/`](site/) is built from `catalog.json` plus the raw repository markdown files. It ships with SEO essentials: canonical URLs, Open Graph / Twitter cards, JSON-LD, `sitemap-index.xml`, `robots.txt`, and [`llms.txt`](https://knackbox.pages.dev/llms.txt) for AI crawlers. Machine-readable [`catalog.json`](https://knackbox.pages.dev/catalog.json) is published at the site root.
+The static site in [`site/`](site/) is built from `catalog.json` plus the raw repository markdown files. It ships with SEO essentials: canonical URLs, Open Graph / Twitter cards, JSON-LD (WebSite, FAQ, HowTo, SoftwareSourceCode), `sitemap-index.xml`, `robots.txt`, [`llms.txt`](https://knackbox.pages.dev/llms.txt), and [`llms-full.txt`](https://knackbox.pages.dev/llms-full.txt) for AI crawlers. Machine-readable [`catalog.json`](https://knackbox.pages.dev/catalog.json) is published at the site root. Human-readable answers: [FAQ](https://knackbox.pages.dev/faq/).
 
 Requires Node.js 22.12 or newer.
 

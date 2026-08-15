@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "should we use JWT or sessions for this web app",
+    "design OAuth login with Google for our SPA",
+    "how should refresh tokens work on mobile",
+    "RBAC vs ABAC for a multi-tenant SaaS",
+    "add passkeys and keep password login",
+    "API key design for our public API"
+  ],
+  "should_not_trigger": [
+    "write a blog post about our launch",
+    "review this terraform plan",
+    "standup update",
+    "customer support macro",
+    "design a landing page headline",
+    "clean this CSV"
+  ],
+  "tasks": [
+    {
+      "prompt": "SPA wants JWT in localStorage so the API can be stateless. First-party browser app. Design auth.",
+      "criteria": [
+        "states XSS tradeoff of localStorage tokens",
+        "offers HttpOnly cookie session as default",
+        "does not treat JWT as automatically required to scale"
+      ]
+    },
+    {
+      "prompt": "Multi-tenant SaaS: authorize so user A cannot read user B's invoices in another tenant.",
+      "criteria": [
+        "requires object-level and tenant checks, not just is-logged-in",
+        "rejects trusting a client-supplied tenant header",
+        "names IDOR / tenant isolation explicitly"
+      ]
+    },
+    {
+      "prompt": "Public mobile app will use Google Sign-In. What OAuth details matter?",
+      "criteria": [
+        "requires PKCE and exact redirect allowlist",
+        "mentions state/nonce or equivalent CSRF protection",
+        "keeps scopes minimal"
+      ]
+    }
+  ]
+}

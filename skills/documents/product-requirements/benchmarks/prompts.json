@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a PRD for shared workspaces",
+    "turn this idea into product requirements",
+    "feature spec for usage-based billing v1",
+    "requirements doc for the new onboarding checklist",
+    "product brief so engineering can estimate",
+    "what should be in / out of scope for this feature"
+  ],
+  "should_not_trigger": [
+    "write the RFC for the database sharding design",
+    "draft the launch tweet thread",
+    "standup update",
+    "review this terraform plan",
+    "customer support macro",
+    "make this prompt better"
+  ],
+  "tasks": [
+    {
+      "prompt": "We want 'smart inbox' for support. No research. Write the PRD.",
+      "criteria": [
+        "states the problem is unproven or proposes a cheaper test",
+        "includes non-goals and testable must-requirements",
+        "does not invent a huge backlog from a slogan"
+      ]
+    },
+    {
+      "prompt": "PRD for usage-based billing. Success = 'more revenue' and 'delightful UX'.",
+      "criteria": [
+        "rejects vanity / slogan metrics in favor of numerator-denominator-window",
+        "keeps implementation out of requirements unless constrained",
+        "includes launch slice or rollback"
+      ]
+    },
+    {
+      "prompt": "Engineering already shipped shared folders. Write the spec from reality plus the next delta (guest links).",
+      "criteria": [
+        "separates as-is behavior from the delta",
+        "uses numbered testable requirements",
+        "lists open questions with implied owners or next checks"
+      ]
+    }
+  ]
+}

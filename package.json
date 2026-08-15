@@ -35,9 +35,15 @@
   "keywords": [
     "agent-skills",
     "claude-code",
+    "claude-code-skills",
     "codex",
     "cursor",
-    "skills",
+    "opencode",
+    "skill-md",
+    "ai-agents",
+    "llm-skills",
+    "prompt-library",
+    "skills.sh",
     "knackbox"
   ],
   "license": "Apache-2.0",

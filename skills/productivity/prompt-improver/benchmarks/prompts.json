@@ -11,6 +11,7 @@
     "Write API documentation for prompt storage.",
     "Debug this Python error from the model client.",
     "Create benchmark tasks for an agent skill.",
+    "Design an offline eval harness and LLM-as-judge rubric.",
     "Copy edit this article without changing its instructions."
   ],
   "tasks": [

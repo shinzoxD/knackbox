@@ -4,6 +4,10 @@
 
 Knackbox ranks skills with independent measurement columns (trigger accuracy, quality uplift, context cost) and ships every skill with a benchmark suite. Source of truth is the GitHub repository; this site is a static catalog.
 
+- Catalog version: v0
+- Generated: 2026-08-16
+- Skills: 107 across 6 categories
+
 ## Site
 
 - Home: https://knackbox.pages.dev/
@@ -11,9 +15,13 @@ Knackbox ranks skills with independent measurement columns (trigger accuracy, qu
 - Starter packs: https://knackbox.pages.dev/packs/
 - Install docs: https://knackbox.pages.dev/docs/
 - Metrics methodology: https://knackbox.pages.dev/docs/metrics/
+- FAQ: https://knackbox.pages.dev/faq/
+- Why Knackbox: https://knackbox.pages.dev/why/
+- Changelog: https://knackbox.pages.dev/changelog/
 - Contribute: https://knackbox.pages.dev/contribute/
 - Machine-readable catalog: https://knackbox.pages.dev/catalog.json
 - Starter packs JSON: https://knackbox.pages.dev/packs.json
+- Full skill list for crawlers: https://knackbox.pages.dev/llms-full.txt
 
 ## Repository
 
@@ -24,6 +32,7 @@ Knackbox ranks skills with independent measurement columns (trigger accuracy, qu
 ## Install
 
 ```bash
+npx knackbox add commit-messages
 npx skills add shinzoxD/knackbox --skill commit-messages
 ```
 
@@ -36,6 +45,27 @@ curl -fsSL https://raw.githubusercontent.com/shinzoxD/knackbox/main/install.sh |
 ## Categories
 
 coding, data, documents, productivity, research, writing
+
+## Starter packs
+
+- Developer Essentials (`developer-essentials`): Plan, implement, test, review, secure, and ship software with a consistent engineering workflow.
+- Quality & Accessibility (`quality-and-a11y`): Review product quality from security, accessibility, performance, i18n, and defect triage angles.
+- Platform & Infra (`platform-and-infra`): Review infrastructure-as-code, containers, CI/CD, GraphQL platforms, and AI agent hardening.
+- Data Workbench (`data-workbench`): Clean inputs, define metrics, analyze experiments, write warehouse SQL, and communicate findings.
+- Research Rigor (`research-rigor`): Verify claims, synthesize sources and interviews, and produce decision-ready competitive briefs.
+- Clear Writing (`clear-writing`): Draft and edit writing across email, articles, launches, social, and incident communications.
+- Project Leadership (`project-leadership`): Turn uncertain work into decisions, designs, plans, status, agendas, and durable records.
+- Ops & Reliability (`ops-reliability`): Operate systems under stress: runbooks, incidents, migrations, errors, performance, and comms.
+- Career & Hiring (`career-and-hiring`): Prepare candidates and interviewers with structured practice and clear storytelling.
+- Customer Facing (`customer-facing`): Support macros, incident customer updates, announcements, and clear external writing.
+- Privacy & Trust (`privacy-and-trust`): Handle privacy requests, support judgment, security reviews, and careful external communications.
+- Team Operating System (`team-operating-system`): Run the team: OKRs, agendas, onboarding, status, retros, and delegation.
+- OSS Maintainers (`oss-maintainers`): Triage community contributions, write onboarding for contributors, and keep public repos healthy.
+- Product & GTM (`product-gtm`): Ship narratives and proof: case studies, launches, market sizing, RFPs, and research synthesis.
+- Realtime & Edge (`realtime-and-edge`): Design sockets, caching, rate limits, and resilient edge behavior.
+- AI Builders (`ai-builders`): Write, evaluate, and harden prompts and tool-using agents instead of shipping on vibes.
+- Mobile Shipping (`mobile-shipping`): Ship iOS and Android trains with release checklists, flags, CI, and store-safe comms.
+- Identity & Trust (`identity-and-trust`): Design login, sessions, webhooks, and threat models before the first security review.
 
 ## Optional
 
