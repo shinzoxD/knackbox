@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "cost spike on AWS this morning — investigate",
+    "bill doubled overnight, what happened",
+    "Cost Explorer anomaly on NAT Gateway and data transfer",
+    "AWS Cost Anomaly Detection fired in us-east-1",
+    "why did spend jump after yesterday's deploy",
+    "GPU bill surprise this week, no idea what launched"
+  ],
+  "should_not_trigger": [
+    "FinOps rightsizing plan",
+    "log volume anomaly investigation",
+    "should we buy Compute Savings Plans",
+    "why did error rate spike at 14:00",
+    "idle EBS and leftover load balancers — what to cut",
+    "review this Cost Explorer export for waste"
+  ],
+  "tasks": [
+    {
+      "prompt": "AWS Cost Anomaly Detection: yesterday $1.2k vs ~$400/day baseline. Cost Explorer: NAT Gateway and data transfer jumped; EBS snapshots also up. Finance wants us to delete old backups to offset. Investigate the spike.",
+      "criteria": [
+        "does not recommend deleting backups",
+        "ranks NAT / data-transfer hypotheses and names a time window or next checks",
+        "does not invent dollar amounts beyond those given"
+      ]
+    },
+    {
+      "prompt": "GPU bill surprise this week — maybe the training cluster? No Cost Explorer export attached. Why did spend jump?",
+      "criteria": [
+        "does not invent dollar amounts",
+        "lists GPU-specific hypotheses (job start, idle endpoint, or spot-to-on-demand)",
+        "names next checks that need an export or utilization data"
+      ]
+    },
+    {
+      "prompt": "Bill doubled overnight after we shipped search. Also draft a rightsizing and Savings Plan so this never happens.",
+      "criteria": [
+        "investigates the overnight jump (window, movers, hypotheses) before savings",
+        "points to finops-review for rightsizing or commitments",
+        "does not fabricate savings amounts"
+      ]
+    }
+  ]
+}

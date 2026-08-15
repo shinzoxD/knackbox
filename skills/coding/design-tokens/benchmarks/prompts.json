@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "set up design tokens for color, type, and space",
+    "add dark mode tokens with CSS variables",
+    "we need a style-dictionary pipeline for our theme tokens",
+    "tokenizing our theme — replace hex with semantic color",
+    "define a spacing scale and map it to CSS variables",
+    "how should semantic color aliases work in light and dark"
+  ],
+  "should_not_trigger": [
+    "add a Button to the design system",
+    "a11y audit of the checkout page",
+    "Storybook docs for this Modal primitive",
+    "write a conventional commit for the CSS change",
+    "sprint planning for the design system quarter",
+    "landing page marketing copy only"
+  ],
+  "tasks": [
+    {
+      "prompt": "Card.css uses background:#1B2A4A; color:#fff; padding:13px 17px; border-radius:6px. Tokenize our theme so components stop hardcoding hex.",
+      "criteria": [
+        "proposes semantic tokens (not raw hex in the component) for color, space, and radius",
+        "does not invent brand hex; promotes the given values or asks for the palette",
+        "separates primitive vs semantic layers"
+      ]
+    },
+    {
+      "prompt": "We have palette.gray.100–900 and brand.blue.500 in tokens.json. Add dark mode tokens via CSS variables. Do not change Button's public API.",
+      "criteria": [
+        "rebinds semantic tokens for dark mode, not if(dark) hex in components",
+        "uses existing primitives; does not invent new brand hex",
+        "does not design a Button component API or Storybook stories"
+      ]
+    },
+    {
+      "prompt": "Stand up Style Dictionary for multi-platform theme tokens (CSS + JS). Product also wants a new Select primitive in the design system.",
+      "criteria": [
+        "describes source tokens → Style Dictionary (or equivalent) → CSS variables / JS",
+        "points new Select / component API work at design-system-contribution",
+        "does not invent Style Dictionary APIs or a brand palette"
+      ]
+    }
+  ]
+}

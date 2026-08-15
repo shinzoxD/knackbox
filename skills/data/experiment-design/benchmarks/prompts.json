@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design this A/B test for a new checkout CTA",
+    "experiment design before we launch the pricing trial",
+    "power analysis and MDE for a 2% conversion lift",
+    "what randomization unit should we use for this marketplace test",
+    "pre-register metrics for this onboarding experiment",
+    "are we ready to launch this experiment"
+  ],
+  "should_not_trigger": [
+    "did variant B win this A/B test — control 4.0% n=10k, variant 4.2% n=10k, ship?",
+    "define a North Star metric only for our B2B notes product",
+    "standup update: still scoping the experiment, no design needed today",
+    "plan a chaos game day that injects checkout latency",
+    "write SQL to pull experiment assignments and conversion",
+    "feature-flag rollout and kill switch with no hypothesis or power"
+  ],
+  "tasks": [
+    {
+      "prompt": "Design this A/B test: new checkout CTA copy vs current. Primary idea is purchase conversion. ~8k eligible checkout sessions/day, baseline purchase rate 4.0%. Product wants to detect a 5% relative lift and launch Monday. Two variants, user-sticky assignment. No sequential design planned.",
+      "criteria": [
+        "states a falsifiable hypothesis plus one primary metric and at least one guardrail",
+        "gives n or duration only after stating assumptions (baseline, α, power, sidedness, variants or equivalent)",
+        "includes an SRM plan and a fixed-horizon or sequential stop rule (does not bless informal peeking)"
+      ]
+    },
+    {
+      "prompt": "Two-sided marketplace: we will raise fees on the seller side and measure buyer conversion. PM wants to randomize individual buyers 50/50 for two weeks. Couriers and inventory are shared. Are we ready to launch this experiment?",
+      "criteria": [
+        "rejects independent buyer randomization because of interference / network effects",
+        "proposes cluster or switchback (or equivalent) and names carryover or burn-in",
+        "marks the design not launch-ready until unit, primary, guardrails, and power/MDE are set"
+      ]
+    },
+    {
+      "prompt": "Onboarding experiment: 200 new users/day, want a 1% relative lift in D7 retention, peek every morning, ship when p<0.05. Team says n=2,000 total is enough. Pre-register metrics and say if we can launch Friday.",
+      "criteria": [
+        "treats peeking without a sequential design as a finding and refuses to bless optional stopping",
+        "refuses the invented n=2000 (or any n) unless assumptions show it is powered for the stated MDE",
+        "pre-registers a single primary plus guardrails and an SRM check, and says not ready to launch"
+      ]
+    }
+  ]
+}

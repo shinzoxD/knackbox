@@ -27,6 +27,7 @@
         "api-changelog",
         "kubernetes-review",
         "openapi-spec-design",
+        "partner-api-integration",
         "feature-flags",
         "secrets-management",
         "code-comments",
@@ -54,7 +55,8 @@
         "frontend-performance",
         "issue-triage",
         "test-generation",
-        "design-system-contribution"
+        "design-system-contribution",
+        "design-tokens"
       ]
     },
     {
@@ -93,12 +95,14 @@
         "csv-analysis",
         "data-visualization",
         "metrics-definitions",
+        "experiment-design",
         "ab-test-analysis",
         "sql-analytics",
         "etl-pipeline-design",
         "data-contract-design",
         "warehouse-modeling",
-        "anomaly-detection"
+        "anomaly-detection",
+        "cost-anomaly-investigation"
       ]
     },
     {
@@ -186,7 +190,8 @@
         "chaos-experiment-design",
         "observability-alerts",
         "sla-slo-writing",
-        "anomaly-detection"
+        "anomaly-detection",
+        "cost-anomaly-investigation"
       ]
     },
     {
