@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-16",
   "score_version": "v0",
-  "count": 114,
+  "count": 118,
   "skills": [
     {
       "name": "code-review",
@@ -141,7 +141,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/accessibility-implementation",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:6b7b776df400d1a31ca5d4a24c27adf2a02f13e269b94ea254647afa7627cc6c",
+      "content_digest": "sha256:326d881d3d2f3ffbb5f188721bdb847406f66d4c5a228fe25141ce8dfdab8d12",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -164,7 +164,7 @@
       "category": "coding",
       "path": "skills/coding/accessibility-review",
       "tier": "community",
-      "updated": "2026-07-26",
+      "updated": "2026-08-16",
       "context_tokens": 441,
       "reference_tokens": 0,
       "has_scripts": false,
@@ -513,7 +513,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/database-indexing",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may interpret EXPLAIN output when provided.",
-      "content_digest": "sha256:d57adf85dfa04391ba74afb1ef2f989e1ce7416be12a95833a423d7dcea2085d",
+      "content_digest": "sha256:3dbe3b6284d61555742a6c39960750072df70e9914327c0db498907257f00534",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -731,6 +731,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may interpret cost exports or invoices when provided.",
       "content_digest": "sha256:05a5fa762dc4666dc4460aa5d41e03e1d3f61c3b341c1a5f612e4b392f2e05c8",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "frontend-performance",
+      "description": "Implement frontend performance — Core Web Vitals (LCP, INP, CLS), bundle size, code splitting, image optimization, hydration, and request waterfalls. Use whenever the user mentions Lighthouse, slow page load, LCP, INP, CLS, long tasks, TTFB for pages, or asks to shrink JS / split routes. For server, CPU, or DB profiling, use performance-review instead.",
+      "category": "coding",
+      "path": "skills/coding/frontend-performance",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 871,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/frontend-performance",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may interpret Lighthouse/Web Vitals traces when provided.",
+      "content_digest": "sha256:f648c7f9765b681715dc58864e1ef63ef72dcf90ca7ac865a24c8810667a3934",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -978,7 +1009,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/message-queue-design",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:417e2e1323659c7aac4015fbf26c1481847e0b5d4ad3796deea32dbe60c9497d",
+      "content_digest": "sha256:246e4869f7ef777c911334f627dceeb305d6a9c34b00531ae2450a9da0358e68",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1373,7 +1404,7 @@
       "category": "coding",
       "path": "skills/coding/sql-query-review",
       "tier": "community",
-      "updated": "2026-07-26",
+      "updated": "2026-08-16",
       "context_tokens": 948,
       "reference_tokens": 0,
       "has_scripts": false,
@@ -1833,6 +1864,37 @@
       }
     },
     {
+      "name": "warehouse-modeling",
+      "description": "Design warehouse dimensional models, activity schemas, and marts with explicit fact grain, facts, dimensions, SCD, and conformed dims. Use whenever the user asks about star schema, dimensional model, fact table grain, SCD type 2, slowly changing dimension, activity schema, wide mart, conformed dimension, Kimball, snowflake schema, or \"how should we model orders in the warehouse\" — not ETL DAG mechanics, a single SQL rewrite, or a KPI numerator/denominator definition.",
+      "category": "data",
+      "path": "skills/data/warehouse-modeling",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 882,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/warehouse-modeling",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:c2fd3ffa0f8f42bbb3943c66a403117ccceeecc0fadd715b06f09033f4e37e8b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "architecture-decision-records",
       "description": "Write concise Architecture Decision Records that capture context, decision, and consequences. Use whenever the user asks for an ADR, architecture decision log entry, decision record, or why we chose technology X over Y in a durable doc — even for small stack choices.",
       "category": "documents",
@@ -1847,6 +1909,68 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:435acb76ea0356b8baac83e91146d116ebabf905e258f413ca0ca6eb8a47d19c",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "contract-redlines",
+      "description": "Redline commercial paper — MSAs, vendor agreements, order forms, and DPA-adjacent commercial terms — as a business and risk pass, not legal advice. Use whenever the user says redline this MSA, mark up the contract, review a vendor agreement, check order form terms, flags auto-renew, liability cap, or indemnity, asks \"is this clause bad\", or wants fallback language before signing.",
+      "category": "documents",
+      "path": "skills/documents/contract-redlines",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 905,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/contract-redlines",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; not legal advice; do not invent statute citations.",
+      "content_digest": "sha256:d0b74b01e2c76d95f40285f2d0eb65e13dc4ae5132c040ce5495fd93c7b0a61a",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "disaster-recovery",
+      "description": "Write and review disaster recovery and backup restore playbooks. Use whenever the user asks for a DR plan, RPO/RTO targets with restore evidence, a failover drill, ransomware restore steps, or \"can we restore\" — not a single-alert runbook, live incident command, or SLA wording alone.",
+      "category": "documents",
+      "path": "skills/documents/disaster-recovery",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 879,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/disaster-recovery",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:cb46db46e6999cec40dcc43aa1866d16d846313267da7d393e4cd66af87239e4",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -2218,7 +2342,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/security-questionnaire",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:d1dbd95f372351d065ecbf85031662bf093fb0289d129d87bf79a0d44423daa3",
+      "content_digest": "sha256:052a802e145e903a2ed633e384b5beb86c7d4a1f82d3260a6f0f7d059be4f147",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

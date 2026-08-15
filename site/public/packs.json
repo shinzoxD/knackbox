@@ -51,6 +51,7 @@
         "accessibility-implementation",
         "i18n-review",
         "performance-review",
+        "frontend-performance",
         "issue-triage",
         "test-generation",
         "design-system-contribution"
@@ -96,6 +97,7 @@
         "sql-analytics",
         "etl-pipeline-design",
         "data-contract-design",
+        "warehouse-modeling",
         "anomaly-detection"
       ]
     },
@@ -159,6 +161,7 @@
         "1-1-agendas",
         "policy-writing",
         "vendor-evaluation",
+        "contract-redlines",
         "timebox-planning",
         "hiring-scorecards"
       ]
@@ -169,6 +172,7 @@
       "description": "Operate systems under stress: runbooks, incidents, migrations, errors, performance, and comms.",
       "skills": [
         "runbook-writing",
+        "disaster-recovery",
         "incident-command",
         "incident-postmortems",
         "incident-comms",

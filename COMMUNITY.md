@@ -30,18 +30,19 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Disaster recovery / backup restore playbooks
-- Frontend performance implementation (beyond `performance-review`)
-- Contract redlines for commercial paper (non-legal-advice)
-- Data warehouse modeling (dimensional / activity schema)
+- Cost anomaly investigation playbooks beyond `finops-review`
+- Design token / theming implementation (beyond design-system contribution)
+- Partner API integration playbooks
+- Experiment design (pre-launch, distinct from `ab-test-analysis`)
 
 Shipped from community requests: `terraform-review`, `pulumi-review`,
 `cloudformation-review`, `prompt-evaluation`, `mobile-release`,
 `desktop-release`, `finops-review`, `incident-command`,
 `database-indexing`, `accessibility-implementation`,
-`security-questionnaire`, `prompt-injection-hardening`, `i18n-review`,
-`graphql-schema-design`, `support-macros`, `kubernetes-review`,
-`load-test-planning`, `privacy-request-playbook`.
+`security-questionnaire`, `disaster-recovery`, `frontend-performance`,
+`contract-redlines`, `warehouse-modeling`, `prompt-injection-hardening`,
+`i18n-review`, `graphql-schema-design`, `support-macros`,
+`kubernetes-review`, `load-test-planning`, `privacy-request-playbook`.
 
 If you build a new skill, link any related issue in your PR.
 

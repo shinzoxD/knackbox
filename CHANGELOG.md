@@ -7,6 +7,8 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skills: `disaster-recovery`, `frontend-performance`,
+  `contract-redlines`, `warehouse-modeling` (catalog target: 118).
 - Skills: `database-indexing`, `accessibility-implementation`,
   `security-questionnaire`, `message-queue-design` (catalog target: 114).
 - Skills: `finops-review`, `incident-command`, `desktop-release`

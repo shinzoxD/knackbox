@@ -55,6 +55,24 @@ npx knackbox add incident-command incident-comms runbook-writing
 npx knackbox pack ops-reliability
 ```
 
+## Disaster recovery
+
+```bash
+npx knackbox add disaster-recovery runbook-writing sla-slo-writing incident-command
+```
+
+## Frontend Web Vitals
+
+```bash
+npx knackbox add frontend-performance performance-review accessibility-implementation
+```
+
+## Warehouse modeling
+
+```bash
+npx knackbox add warehouse-modeling etl-pipeline-design metrics-definitions sql-analytics
+```
+
 ## Cloud bill / FinOps
 
 ```bash
