@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "fill this SIG questionnaire for Acme",
+    "customer sent a security spreadsheet, due Friday",
+    "CAIQ answers for our SaaS",
+    "enterprise sales needs SOC 2 and encryption answers",
+    "vendor assessment: how do we handle subprocessors",
+    "help answer this ISO-style control pack honestly"
+  ],
+  "should_not_trigger": [
+    "line-by-line security review of this Express handler",
+    "STRIDE threat model of the payments service",
+    "handle this GDPR deletion request",
+    "standup update",
+    "review this terraform plan",
+    "write a PRD for shared workspaces"
+  ],
+  "tasks": [
+    {
+      "prompt": "Q: Are you SOC 2 Type II certified? We have a draft report in progress, no letter yet. Sales wants 'Yes'.",
+      "criteria": [
+        "refuses to claim SOC 2 without a letter in hand",
+        "offers an honest partial/in-progress wording",
+        "does not invent a certification date"
+      ]
+    },
+    {
+      "prompt": "Blank pack: 8 questions on encryption at rest, SSO, backups, subprocessors. We use AWS RDS, Google Workspace SSO, nightly snapshots. No subprocessor list.",
+      "criteria": [
+        "answers from given facts only",
+        "marks the missing subprocessor list as a gap",
+        "uses yes/partial/no/N-A style with evidence pointers"
+      ]
+    },
+    {
+      "prompt": "Old pack says SSO required. Product still allows password-only signup. Reconcile before we send.",
+      "criteria": [
+        "surfaces the contradiction instead of picking the nicer claim",
+        "does not invent a control that does not exist",
+        "gives a sendable honest answer or a close-the-gap item"
+      ]
+    }
+  ]
+}

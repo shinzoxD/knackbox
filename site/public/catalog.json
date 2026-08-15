@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-16",
   "score_version": "v0",
-  "count": 110,
+  "count": 114,
   "skills": [
     {
       "name": "code-review",
@@ -128,8 +128,39 @@
       }
     },
     {
+      "name": "accessibility-implementation",
+      "description": "Implement accessible UI — semantic HTML, keyboard behavior, focus management, and names — rather than only auditing. Use whenever the user asks how to build an accessible modal, menu, form, table, or component, wants ARIA patterns to implement, or to fix a11y findings in code.",
+      "category": "coding",
+      "path": "skills/coding/accessibility-implementation",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 551,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/accessibility-implementation",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:6b7b776df400d1a31ca5d4a24c27adf2a02f13e269b94ea254647afa7627cc6c",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "accessibility-review",
-      "description": "Review UI and content for accessibility issues against WCAG-minded practices. Use whenever the user asks for an a11y review, accessibility audit, ARIA help, keyboard navigation, screen reader support, or whether a UI is accessible — even for small component snippets.",
+      "description": "Review UI and content for accessibility issues against WCAG-minded practices. Use whenever the user asks for an a11y review, accessibility audit, ARIA help, keyboard navigation, screen reader support, or whether a UI is accessible — even for small component snippets. To implement the keyboard/ARIA pattern, use accessibility-implementation.",
       "category": "coding",
       "path": "skills/coding/accessibility-review",
       "tier": "community",
@@ -141,7 +172,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/accessibility-review",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:3812f7c74bc74edd19b87dc0e2b7ca3b84166837f5f502a7ba822bde24237c34",
+      "content_digest": "sha256:d7cbe2ba83c3cfb3e0d25187c946e73c2ebf581512906b9b52831b190bb8d734",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -452,6 +483,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may reason about local docker commands when available.",
       "content_digest": "sha256:a3053948a654f1c8099a4ef6e4a4034d21b42127c173f71f6f6b116c94984300",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "database-indexing",
+      "description": "Design and review database indexes and query plans — covering indexes, INCLUDE columns, partial/expression indexes, and EXPLAIN coaching beyond a single query rewrite. Use whenever the user asks what index to add, shares EXPLAIN ANALYZE, talks seq scans or index bloat, or wants a indexing plan for Postgres, MySQL, or SQL Server.",
+      "category": "coding",
+      "path": "skills/coding/database-indexing",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 582,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/database-indexing",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may interpret EXPLAIN output when provided.",
+      "content_digest": "sha256:d57adf85dfa04391ba74afb1ef2f989e1ce7416be12a95833a423d7dcea2085d",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -903,6 +965,37 @@
       }
     },
     {
+      "name": "message-queue-design",
+      "description": "Design queue and pub/sub systems — Kafka, SQS, Rabbit, NATS — with poison messages, retries, ordering, and exactly-once caveats. Use whenever the user designs consumers, dead-letter queues, outbox, Kafka partitions, SQS visibility, or asks if delivery is at-least-once.",
+      "category": "coding",
+      "path": "skills/coding/message-queue-design",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 523,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/message-queue-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:417e2e1323659c7aac4015fbf26c1481847e0b5d4ad3796deea32dbe60c9497d",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "migration-playbooks",
       "description": "Plan large technical migrations with strangler patterns, dual-run, and rollback. Use whenever the user migrates frameworks, databases, clouds, monorepo boundaries, or large platform changes at scale.",
       "category": "coding",
@@ -1276,7 +1369,7 @@
     },
     {
       "name": "sql-query-review",
-      "description": "Review and improve SQL queries for correctness, performance, safety, and maintainability. Use whenever the user shares a SQL query, asks to optimize a query, check indexes, prevent SQL injection, rewrite a join, explain a slow query plan, or debug wrong database results — even for ORM-generated SQL or \"why is this query slow\".",
+      "description": "Review and improve SQL queries for correctness, performance, safety, and maintainability. Use whenever the user shares a SQL query, asks to optimize a query, prevent SQL injection, rewrite a join, or debug wrong database results — even for ORM-generated SQL or \"why is this query slow\". For a dedicated index / EXPLAIN indexing plan, use database-indexing.",
       "category": "coding",
       "path": "skills/coding/sql-query-review",
       "tier": "community",
@@ -1288,7 +1381,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/sql-query-review",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may reason about EXPLAIN output when provided.",
-      "content_digest": "sha256:ff8ab6647638dc45d94b5b56416c906ad8fbe9f4bc559ad2322fb8a766c18ab1",
+      "content_digest": "sha256:c255fe6665616258d87cc99d4c975ab2d2d2b84a71a0811d210b37e59a83aa80",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1807,7 +1900,7 @@
       "category": "documents",
       "path": "skills/documents/incident-postmortems",
       "tier": "community",
-      "updated": "2026-07-26",
+      "updated": "2026-08-16",
       "context_tokens": 556,
       "reference_tokens": 0,
       "has_scripts": false,
@@ -2099,6 +2192,37 @@
       "permissions": {
         "network": "none",
         "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "security-questionnaire",
+      "description": "Answer vendor and enterprise security questionnaires — SIG, CAIQ, SOC 2, ISO, and custom sales security packs — with evidence, not slogans. Use whenever the user pastes a security questionnaire, vendor assessment, SIG/CAIQ, \"sales needs this by Friday\", or a customer asking how you encrypt, auth, or subprocess.",
+      "category": "documents",
+      "path": "skills/documents/security-questionnaire",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 574,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/security-questionnaire",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:d1dbd95f372351d065ecbf85031662bf093fb0289d129d87bf79a0d44423daa3",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
         "execution": "none"
       },
       "metrics": {
@@ -3202,7 +3326,7 @@
       "category": "writing",
       "path": "skills/writing/incident-comms",
       "tier": "community",
-      "updated": "2026-07-26",
+      "updated": "2026-08-16",
       "context_tokens": 396,
       "reference_tokens": 0,
       "has_scripts": false,

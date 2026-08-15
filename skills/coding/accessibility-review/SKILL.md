@@ -3,7 +3,8 @@ name: accessibility-review
 description: Review UI and content for accessibility issues against WCAG-minded
   practices. Use whenever the user asks for an a11y review, accessibility audit,
   ARIA help, keyboard navigation, screen reader support, or whether a UI is
-  accessible — even for small component snippets.
+  accessible — even for small component snippets. To implement the
+  keyboard/ARIA pattern, use accessibility-implementation.
 license: Apache-2.0
 compatibility: Portable instructions; no bundled scripts or required external binaries.
 metadata:

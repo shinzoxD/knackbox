@@ -13,7 +13,8 @@
     "analyze this CSV of query latencies for trends",
     "draft a PR description for the index migration",
     "threat model the database network boundary",
-    "write release notes for the reporting feature"
+    "write release notes for the reporting feature",
+    "what covering index should I add on tenant_id, created_at"
   ],
   "tasks": [
     {

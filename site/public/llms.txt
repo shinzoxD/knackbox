@@ -6,7 +6,7 @@ Knackbox ranks skills with independent measurement columns (trigger accuracy, qu
 
 - Catalog version: v0
 - Generated: 2026-08-16
-- Skills: 110 across 6 categories
+- Skills: 114 across 6 categories
 
 ## Site
 

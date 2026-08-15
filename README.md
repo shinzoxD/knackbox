@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-110-green)
+![Skills](https://img.shields.io/badge/skills-114-green)
 
 **An open library of Agent Skills for Claude Code, Codex, Cursor, and OpenCode — ranked by quality, not installs.**
 
@@ -124,6 +124,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | ⭐ core | [commit-messages](skills/coding/commit-messages) | coding | 496 | Write clear, conventional git commit messages from diffs or descriptions of changes. Use whenever the user as… |
 | ⭐ core | [meeting-notes](skills/documents/meeting-notes) | documents | 536 | Turn raw meeting transcripts, chat logs, or rough notes into clean, structured meeting notes with decisions a… |
 | ✅ verified | [debugging](skills/coding/debugging) | coding | 541 | Diagnose bugs systematically instead of guessing — form hypotheses, isolate the fault, and verify the fix. Us… |
+| 🧪 community | [accessibility-implementation](skills/coding/accessibility-implementation) | coding | 551 | Implement accessible UI — semantic HTML, keyboard behavior, focus management, and names — rather than only au… |
 | 🧪 community | [accessibility-review](skills/coding/accessibility-review) | coding | 441 | Review UI and content for accessibility issues against WCAG-minded practices. Use whenever the user asks for… |
 | 🧪 community | [api-changelog](skills/coding/api-changelog) | coding | 254 | Write consumer-facing API changelogs and migration notes for breaking and additive changes. Use whenever the… |
 | 🧪 community | [api-design](skills/coding/api-design) | coding | 674 | Design and review HTTP, REST, GraphQL, and internal service APIs with clear contracts, errors, pagination, se… |
@@ -135,6 +136,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [cloudformation-review](skills/coding/cloudformation-review) | coding | 599 | Review AWS CloudFormation templates and change sets for blast radius, IAM capabilities, deletion policy, and… |
 | 🧪 community | [code-comments](skills/coding/code-comments) | coding | 317 | Write and improve code comments and docstrings that explain why, not noise. Use whenever the user asks for be… |
 | 🧪 community | [container-review](skills/coding/container-review) | coding | 320 | Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a… |
+| 🧪 community | [database-indexing](skills/coding/database-indexing) | coding | 582 | Design and review database indexes and query plans — covering indexes, INCLUDE columns, partial/expression in… |
 | 🧪 community | [database-migrations](skills/coding/database-migrations) | coding | 377 | Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations,… |
 | 🧪 community | [dependency-upgrades](skills/coding/dependency-upgrades) | coding | 648 | Plan and execute dependency upgrades with risk assessment, changelog review, and verification. Use whenever t… |
 | 🧪 community | [design-system-contribution](skills/coding/design-system-contribution) | coding | 328 | Guide contributions to a design system — component API, accessibility, tokens, and docs. Use whenever the use… |
@@ -149,6 +151,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [kubernetes-review](skills/coding/kubernetes-review) | coding | 380 | Review Kubernetes manifests and Helm values for security, reliability, and operability. Use whenever the user… |
 | 🧪 community | [load-test-planning](skills/coding/load-test-planning) | coding | 355 | Plan and interpret load tests with clear goals, scenarios, and pass/fail criteria. Use whenever the user asks… |
 | 🧪 community | [logging-observability](skills/coding/logging-observability) | coding | 382 | Design logging, metrics, and tracing that operators can use under pressure. Use whenever the user asks about… |
+| 🧪 community | [message-queue-design](skills/coding/message-queue-design) | coding | 523 | Design queue and pub/sub systems — Kafka, SQS, Rabbit, NATS — with poison messages, retries, ordering, and ex… |
 | 🧪 community | [migration-playbooks](skills/coding/migration-playbooks) | coding | 258 | Plan large technical migrations with strangler patterns, dual-run, and rollback. Use whenever the user migrat… |
 | 🧪 community | [mobile-release](skills/coding/mobile-release) | coding | 667 | Plan and review iOS and Android store releases — versioning, signing, store listings, staged rollout, and rol… |
 | 🧪 community | [observability-alerts](skills/coding/observability-alerts) | coding | 259 | Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes… |
@@ -188,6 +191,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [rfc-design-docs](skills/documents/rfc-design-docs) | documents | 588 | Write RFCs and technical design docs that force clear decisions. Use whenever the user asks for an RFC, desig… |
 | 🧪 community | [rfp-response](skills/documents/rfp-response) | documents | 279 | Structure RFP and RFI responses that map requirements to evidence. Use whenever the user answers a vendor que… |
 | 🧪 community | [runbook-writing](skills/documents/runbook-writing) | documents | 356 | Write operational runbooks that on-call engineers can follow under stress. Use whenever the user asks for a r… |
+| 🧪 community | [security-questionnaire](skills/documents/security-questionnaire) | documents | 574 | Answer vendor and enterprise security questionnaires — SIG, CAIQ, SOC 2, ISO, and custom sales security packs… |
 | 🧪 community | [sla-slo-writing](skills/documents/sla-slo-writing) | documents | 255 | Write SLAs and SLOs that operations can measure and support can explain. Use whenever the user drafts service… |
 | 🧪 community | [status-reports](skills/documents/status-reports) | documents | 245 | Write clear project and program status reports for stakeholders. Use whenever the user asks for a weekly stat… |
 | 🧪 community | [technical-documentation](skills/documents/technical-documentation) | documents | 504 | Write and improve technical documentation, tutorials, runbooks, and reference pages that users can follow suc… |

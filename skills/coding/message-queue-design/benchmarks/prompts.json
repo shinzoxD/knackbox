@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design our SQS consumers and DLQ",
+    "Kafka partition key for order events",
+    "is this at-least-once or exactly-once",
+    "transactional outbox vs dual write to Rabbit",
+    "poison messages keep retrying forever",
+    "pub/sub vs queue for notification fan-out"
+  ],
+  "should_not_trigger": [
+    "design Stripe-style HTTP webhooks",
+    "WebSocket presence for the editor",
+    "standup update",
+    "review this terraform plan",
+    "write a PRD",
+    "customer support macro"
+  ],
+  "tasks": [
+    {
+      "prompt": "Payments service writes a row then publishes to Kafka. Sometimes the row exists and the event does not. Design.",
+      "criteria": [
+        "recommends a transactional outbox or equivalent",
+        "does not promise broker exactly-once as the fix",
+        "requires idempotent consumers"
+      ]
+    },
+    {
+      "prompt": "SQS visibility 5s, handler p99 is 20s, no DLQ. Duplicates and poison loops.",
+      "criteria": [
+        "visibility timeout must exceed p99 handler time",
+        "requires a DLQ / poison path",
+        "treats at-least-once duplicates as expected"
+      ]
+    },
+    {
+      "prompt": "Need global ordering of all shop events in Kafka.",
+      "criteria": [
+        "explains ordering is per key/partition not global",
+        "states the single-consumer cost if they insist",
+        "does not invent broker settings"
+      ]
+    }
+  ]
+}

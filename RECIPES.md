@@ -80,6 +80,19 @@ npx knackbox add incident-comms runbook-writing issue-triage
 ```bash
 npx knackbox pack data-workbench
 npx knackbox add sql-analytics ab-test-analysis metrics-definitions
+npx knackbox add sql-query-review database-indexing
+```
+
+## Accessibility build + review
+
+```bash
+npx knackbox add accessibility-implementation accessibility-review design-system-contribution
+```
+
+## Enterprise security questionnaires
+
+```bash
+npx knackbox add security-questionnaire threat-modeling privacy-request-playbook rfp-response
 ```
 
 ## Product & research

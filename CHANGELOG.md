@@ -7,6 +7,8 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skills: `database-indexing`, `accessibility-implementation`,
+  `security-questionnaire`, `message-queue-design` (catalog target: 114).
 - Skills: `finops-review`, `incident-command`, `desktop-release`
   (catalog target: 110 skills).
 - Skills: `pulumi-review`, `cloudformation-review`, `prompt-evaluation`,

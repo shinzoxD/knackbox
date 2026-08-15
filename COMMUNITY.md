@@ -30,17 +30,18 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Database index and query-plan coaching beyond `sql-query-review`
-- Contract / vendor security questionnaire answering
-- Frontend accessibility implementation (beyond `accessibility-review`)
-- Grant / security questionnaire writing for enterprise sales
+- Disaster recovery / backup restore playbooks
+- Frontend performance implementation (beyond `performance-review`)
+- Contract redlines for commercial paper (non-legal-advice)
+- Data warehouse modeling (dimensional / activity schema)
 
 Shipped from community requests: `terraform-review`, `pulumi-review`,
 `cloudformation-review`, `prompt-evaluation`, `mobile-release`,
 `desktop-release`, `finops-review`, `incident-command`,
-`prompt-injection-hardening`, `i18n-review`, `graphql-schema-design`,
-`support-macros`, `kubernetes-review`, `load-test-planning`,
-`privacy-request-playbook`.
+`database-indexing`, `accessibility-implementation`,
+`security-questionnaire`, `prompt-injection-hardening`, `i18n-review`,
+`graphql-schema-design`, `support-macros`, `kubernetes-review`,
+`load-test-planning`, `privacy-request-playbook`.
 
 If you build a new skill, link any related issue in your PR.
 
