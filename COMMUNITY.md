@@ -7,7 +7,7 @@ agents still get wrong. This page is the short map for contributors and users.
 
 | Effort | What to do | Where |
 |---|---|---|
-| 5 minutes | Star the repo, share a skill that helped you, try `npx knackbox search <job>` | GitHub / social |
+| 5 minutes | Star the repo, share a skill that helped you, try `npx knackbox for "review a PR"` | GitHub / social |
 | 15 minutes | [Request a skill](https://github.com/shinzoxD/knackbox/issues/new?template=skill_request.yml) with real trigger prompts | Issues |
 | 30 minutes | Add a recipe to [RECIPES.md](RECIPES.md) for your team's workflow | PR |
 | 1–2 hours | Improve an existing skill (examples, edge cases, benchmarks) | PR |

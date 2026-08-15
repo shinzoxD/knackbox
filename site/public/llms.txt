@@ -5,12 +5,13 @@
 Knackbox ranks skills with independent measurement columns (trigger accuracy, quality uplift, context cost) and ships every skill with a benchmark suite. Source of truth is the GitHub repository; this site is a static catalog.
 
 - Catalog version: v0
-- Generated: 2026-08-16
+- Generated: 2026-08-15
 - Skills: 122 across 6 categories
 
 ## Site
 
 - Home: https://knackbox.pages.dev/
+- Start with a job: https://knackbox.pages.dev/start/
 - Skill leaderboard: https://knackbox.pages.dev/skills/
 - Starter packs: https://knackbox.pages.dev/packs/
 - Install docs: https://knackbox.pages.dev/docs/
@@ -21,6 +22,7 @@ Knackbox ranks skills with independent measurement columns (trigger accuracy, qu
 - Contribute: https://knackbox.pages.dev/contribute/
 - Machine-readable catalog: https://knackbox.pages.dev/catalog.json
 - Starter packs JSON: https://knackbox.pages.dev/packs.json
+- Job guides JSON: https://knackbox.pages.dev/jobs.json
 - Full skill list for crawlers: https://knackbox.pages.dev/llms-full.txt
 
 ## Repository

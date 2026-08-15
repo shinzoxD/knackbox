@@ -1,4 +1,4 @@
-import { DEFAULT_CATALOG_URL, DEFAULT_PACKS_URL } from "./config.js";
+import { DEFAULT_CATALOG_URL, DEFAULT_JOBS_URL, DEFAULT_PACKS_URL } from "./config.js";
 import { loadJson } from "./http.js";
 
 export async function fetchCatalog(source = DEFAULT_CATALOG_URL) {
@@ -15,6 +15,60 @@ export async function fetchPacks(source = DEFAULT_PACKS_URL) {
     throw new Error("Packs document is missing a packs array");
   }
   return data;
+}
+
+export async function fetchJobs(source = DEFAULT_JOBS_URL) {
+  const data = await loadJson(source, { label: "jobs" });
+  if (!data || !Array.isArray(data.jobs)) {
+    throw new Error("Jobs document is missing a jobs array");
+  }
+  return data;
+}
+
+/**
+ * Score job guides against a free-text query (what the user is trying to do).
+ * Returns jobs sorted by score descending.
+ */
+export function recommendJobs(jobsDoc, query, { limit = 5 } = {}) {
+  const tokens = String(query || "")
+    .trim()
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((token) => token.length > 1);
+  if (!tokens.length) {
+    return [];
+  }
+  const jobs = Array.isArray(jobsDoc?.jobs) ? jobsDoc.jobs : [];
+  const scored = [];
+  for (const job of jobs) {
+    const hay = [
+      job.slug,
+      job.title,
+      job.blurb,
+      ...(job.keywords || []),
+      ...(job.skills || []),
+    ]
+      .join(" ")
+      .toLowerCase();
+    let score = 0;
+    for (const token of tokens) {
+      if ((job.slug || "") === token) score += 40;
+      else if ((job.slug || "").includes(token)) score += 20;
+      if ((job.title || "").toLowerCase().includes(token)) score += 18;
+      if ((job.keywords || []).some((word) => String(word).toLowerCase().includes(token))) {
+        score += 14;
+      }
+      if ((job.skills || []).some((name) => String(name).toLowerCase().includes(token))) {
+        score += 10;
+      }
+      if (hay.includes(token)) score += 4;
+    }
+    if (score > 0) {
+      scored.push({ job, score });
+    }
+  }
+  scored.sort((a, b) => b.score - a.score || a.job.slug.localeCompare(b.job.slug));
+  return scored.slice(0, Math.max(1, Number(limit) || 5));
 }
 
 export function listSkillNames(catalog) {

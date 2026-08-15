@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import catalogData from "../../../catalog.json";
+import jobsData from "../../../jobs.json";
 import packsData from "../../../packs.json";
 import { githubFileLinkBase, githubOrg, githubRepoUrl } from "./github";
 import { renderMarkdown, stripFrontmatter } from "./markdown";
@@ -59,10 +60,19 @@ export type SkillPack = {
   skills: string[];
 };
 
+export type JobGuide = {
+  slug: string;
+  title: string;
+  blurb: string;
+  keywords: string[];
+  skills: string[];
+};
+
 const repoRoot = __REPO_ROOT__;
 
 export const catalog = catalogData as Catalog;
 export const packs = packsData.packs as SkillPack[];
+export const jobs = (jobsData as { jobs: JobGuide[] }).jobs;
 export const allSkills = [...catalog.skills].sort((a, b) =>
   a.tier === b.tier
     ? a.name.localeCompare(b.name)
@@ -106,6 +116,40 @@ export function fmtPercent(value: number | null | undefined): string {
 
 export function skillUrl(skill: Skill): string {
   return `/skills/${skill.category}/${skill.name}/`;
+}
+
+export function relatedSkills(skill: Skill, limit = 6): Skill[] {
+  const scores = new Map<string, number>();
+  const bump = (name: string, amount: number) => {
+    if (name === skill.name) {
+      return;
+    }
+    scores.set(name, (scores.get(name) || 0) + amount);
+  };
+  for (const job of jobs) {
+    if (job.skills.includes(skill.name)) {
+      for (const name of job.skills) {
+        bump(name, 8);
+      }
+    }
+  }
+  for (const pack of packs) {
+    if (pack.skills.includes(skill.name)) {
+      for (const name of pack.skills) {
+        bump(name, 3);
+      }
+    }
+  }
+  for (const other of allSkills) {
+    if (other.category === skill.category) {
+      bump(other.name, 1);
+    }
+  }
+  return [...scores.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([name]) => allSkills.find((entry) => entry.name === name))
+    .filter((entry): entry is Skill => Boolean(entry))
+    .slice(0, limit);
 }
 
 export function getSkillHtml(skill: Skill): string {

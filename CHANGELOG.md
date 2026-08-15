@@ -7,6 +7,8 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Job guides: `jobs.json`, `npx knackbox for "review a PR"`, site `/start/`,
+  related-skill links, `GETTING_STARTED.md`, and `AGENTS.md`.
 - Skills: `cost-anomaly-investigation`, `design-tokens`,
   `partner-api-integration`, `experiment-design` (catalog target: 122).
 - Skills: `disaster-recovery`, `frontend-performance`,

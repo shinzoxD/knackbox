@@ -36,6 +36,8 @@ description: Write clear, conventional git commit messages. Use whenever the
 **Knackbox CLI** — zero-dependency Node installer (resolves the live catalog, extracts from the repo tarball):
 
 ```bash
+npx knackbox for "review a PR"
+npx knackbox for "review a PR" --add
 npx knackbox add commit-messages
 npx knackbox add code-review security-review --agent cursor
 npx knackbox pack developer-essentials
@@ -47,7 +49,7 @@ npx knackbox doctor
 npx knackbox why
 ```
 
-Default destination is `~/.claude/skills/<name>`. Use `--agent codex|cursor|opencode`, `--dest DIR`, or `--force` as needed. Package source: [`packages/cli`](packages/cli). Job-based install recipes: [`RECIPES.md`](RECIPES.md).
+Default destination is `~/.claude/skills/<name>`. Use `--agent codex|cursor|opencode`, `--dest DIR`, or `--force` as needed. Package source: [`packages/cli`](packages/cli). Start with a job: [`GETTING_STARTED.md`](GETTING_STARTED.md) · [`jobs.json`](jobs.json) · [start page](https://knackbox.pages.dev/start/). Longer recipes: [`RECIPES.md`](RECIPES.md).
 
 Until the package is on the public npm registry, run from a clone:
 

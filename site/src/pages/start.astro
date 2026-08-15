@@ -1,0 +1,75 @@
+---
+import CopyButton from "../components/CopyButton.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { allSkills, jobs, knackboxCliCommand, skillUrl } from "../lib/catalog";
+import { itemListJsonLd, howToInstallJsonLd } from "../lib/seo";
+
+const entries = jobs.map((job) => ({
+  ...job,
+  command: `npx knackbox add ${job.skills.join(" ")}`,
+  skillEntries: job.skills
+    .map((name) => allSkills.find((skill) => skill.name === name))
+    .filter((skill): skill is NonNullable<typeof skill> => Boolean(skill)),
+}));
+const description =
+  "Pick the job you are doing. Knackbox recommends a short, coherent set of Agent Skills — then one command installs them into Claude Code, Cursor, or Codex.";
+const jsonLd = [
+  howToInstallJsonLd(),
+  itemListJsonLd(
+    "Knackbox job guides",
+    description,
+    entries.map((job) => ({
+      name: job.title,
+      path: `/start/#${job.slug}`,
+      description: job.blurb,
+    }))
+  ),
+];
+---
+
+<BaseLayout
+  title="Start here — pick a job, install the skills"
+  description={description}
+  canonicalPath="/start/"
+  keywords="knackbox for, install agent skills by job, Claude Code starter skills, review a PR skills"
+  jsonLd={jsonLd}
+>
+  <section class="rail-section" data-pagefind-body>
+    <div class="wrap py-10 sm:py-12">
+      <p class="eyebrow mb-3">00 / Start</p>
+      <h1 class="section-title">What are you trying to do?</h1>
+      <p class="mt-3 max-w-3xl text-sm leading-6 muted">
+        122 skills is too many to browse when you have a job. Pick a situation.
+        Each card is a small set that works together — not the whole catalog.
+      </p>
+      <pre class="terminal mt-6 max-w-xl"><code>npx knackbox for "review a PR"</code></pre>
+      <p class="mt-2 text-xs muted">
+        Same matching in the CLI. Then <code class="font-mono">npx knackbox for "review a PR" --add</code> to install.
+      </p>
+    </div>
+  </section>
+
+  <section class="rail-section">
+    <div class="wrap pb-14 space-y-6">
+      {entries.map((job) => (
+        <article id={job.slug} class="panel p-5 sm:p-6 scroll-mt-24">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h2 class="text-lg font-semibold text-ink-950 dark:text-ink-50">{job.title}</h2>
+              <p class="mt-1 text-sm leading-6 muted">{job.blurb}</p>
+            </div>
+            <CopyButton value={job.command} />
+          </div>
+          <pre class="terminal mt-4"><code>{job.command}</code></pre>
+          <ul class="mt-4 flex flex-wrap gap-2 list-none">
+            {job.skillEntries.map((skill) => (
+              <li>
+                <a class="chip no-underline hover:no-underline" href={skillUrl(skill)}>{skill.name}</a>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -3,6 +3,7 @@
 Install [Knackbox](https://github.com/shinzoxD/knackbox) Agent Skills with one command.
 
 ```bash
+npx knackbox for "review a PR"
 npx knackbox add commit-messages
 ```
 
@@ -48,9 +49,13 @@ npx knackbox list
 npx knackbox list --category coding
 npx knackbox list --json
 npx knackbox search "security terraform"
+npx knackbox for "review a PR"
+npx knackbox jobs
 npx knackbox packs
 npx knackbox doctor
 ```
+
+`for` / `jobs` read [`jobs.json`](../../jobs.json) (override with `--jobs`). `for --add` installs the top match.
 
 `list` / `search` / `packs` resolve the published `catalog.json` / `packs.json` from GitHub by default (or local paths when you pass `--catalog` / `--packs`).
 
