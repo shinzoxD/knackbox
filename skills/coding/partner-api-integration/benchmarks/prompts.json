@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "how do we wrap this vendor API for creating payouts",
+    "integrate Stripe into our billing service as an outbound HTTP client",
+    "third-party API client for Twilio SMS with retries and timeouts",
+    "sandbox vs prod keys for the partner payments API",
+    "partner pagination — how do we page through their invoices list",
+    "integrate a partner API with OAuth client credentials and idempotency keys"
+  ],
+  "should_not_trigger": [
+    "Design our public REST API for multi-tenant invoicing",
+    "How should we verify Stripe webhook signatures only",
+    "Review this terraform plan before I apply",
+    "Write OpenAPI YAML for the orders API we publish",
+    "Design inbound partner webhook callbacks with HMAC signatures",
+    "Where should CI inject database passwords — secret manager vs committed .env"
+  ],
+  "tasks": [
+    {
+      "prompt": "Plan an outbound client for a partner payments API. Their provided docs cover creating a charge and fetching it by id. We need create plus refund from our billing service. Sandbox and live keys exist.",
+      "criteria": [
+        "does not invent vendor endpoints, fields, or auth beyond the given docs; labels any assumption",
+        "specifies connect/request timeouts, retry policy, and idempotency keys on mutations",
+        "separates sandbox vs prod keys with placeholders and keeps secrets out of the repo"
+      ]
+    },
+    {
+      "prompt": "Our partner HTTP client has no timeout, retries every POST to create a charge, and someone committed a live partner secret in a sample .env.",
+      "criteria": [
+        "requires connect and request timeouts on outbound calls",
+        "refuses blind retry of non-idempotent POSTs unless an idempotency key is sent and stored",
+        "keeps secrets out of the repo, calls for rotation, and points storage to secrets-management"
+      ]
+    },
+    {
+      "prompt": "We wrap a partner list API that paginates with a cursor. They version via an API-Version header. They also POST payment.succeeded events to our HTTPS URL.",
+      "criteria": [
+        "plans partner pagination using their cursor, not an assumed offset scheme",
+        "pins the vendor API version instead of leaving the client unversioned",
+        "sends inbound webhook/callback design to webhook-design rather than specifying signatures here"
+      ]
+    }
+  ]
+}

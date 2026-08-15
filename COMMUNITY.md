@@ -30,19 +30,21 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Cost anomaly investigation playbooks beyond `finops-review`
-- Design token / theming implementation (beyond design-system contribution)
-- Partner API integration playbooks
-- Experiment design (pre-launch, distinct from `ab-test-analysis`)
+- Multi-region active-active design notes
+- Feature analytics instrumentation plans
+- Internal developer portal / golden-path docs
+- On-call shadowing / game-day facilitation (beyond chaos experiments)
 
 Shipped from community requests: `terraform-review`, `pulumi-review`,
 `cloudformation-review`, `prompt-evaluation`, `mobile-release`,
 `desktop-release`, `finops-review`, `incident-command`,
 `database-indexing`, `accessibility-implementation`,
 `security-questionnaire`, `disaster-recovery`, `frontend-performance`,
-`contract-redlines`, `warehouse-modeling`, `prompt-injection-hardening`,
-`i18n-review`, `graphql-schema-design`, `support-macros`,
-`kubernetes-review`, `load-test-planning`, `privacy-request-playbook`.
+`contract-redlines`, `warehouse-modeling`, `cost-anomaly-investigation`,
+`design-tokens`, `partner-api-integration`, `experiment-design`,
+`prompt-injection-hardening`, `i18n-review`, `graphql-schema-design`,
+`support-macros`, `kubernetes-review`, `load-test-planning`,
+`privacy-request-playbook`.
 
 If you build a new skill, link any related issue in your PR.
 

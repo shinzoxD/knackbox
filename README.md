@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-118-green)
+![Skills](https://img.shields.io/badge/skills-122-green)
 
 **An open library of Agent Skills for Claude Code, Codex, Cursor, and OpenCode — ranked by quality, not installs.**
 
@@ -140,6 +140,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [database-migrations](skills/coding/database-migrations) | coding | 377 | Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations,… |
 | 🧪 community | [dependency-upgrades](skills/coding/dependency-upgrades) | coding | 648 | Plan and execute dependency upgrades with risk assessment, changelog review, and verification. Use whenever t… |
 | 🧪 community | [design-system-contribution](skills/coding/design-system-contribution) | coding | 328 | Guide contributions to a design system — component API, accessibility, tokens, and docs. Use whenever the use… |
+| 🧪 community | [design-tokens](skills/coding/design-tokens) | coding | 899 | Implement a token and theming system — color, type, space, dark mode, CSS variables, and Style Dictionary. Us… |
 | 🧪 community | [desktop-release](skills/coding/desktop-release) | coding | 684 | Plan and review desktop app releases — Electron, Tauri, and native installers, code signing, auto-update, and… |
 | 🧪 community | [error-handling](skills/coding/error-handling) | coding | 365 | Design robust error handling, retries, and failure modes for application code. Use whenever the user asks abo… |
 | 🧪 community | [feature-flags](skills/coding/feature-flags) | coding | 321 | Design feature flag rollout plans with targeting, kill switches, and cleanup. Use whenever the user asks abou… |
@@ -157,6 +158,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [mobile-release](skills/coding/mobile-release) | coding | 667 | Plan and review iOS and Android store releases — versioning, signing, store listings, staged rollout, and rol… |
 | 🧪 community | [observability-alerts](skills/coding/observability-alerts) | coding | 259 | Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes… |
 | 🧪 community | [openapi-spec-design](skills/coding/openapi-spec-design) | coding | 275 | Design and review OpenAPI specifications for clarity, consistency, and evolution. Use whenever the user write… |
+| 🧪 community | [partner-api-integration](skills/coding/partner-api-integration) | coding | 922 | Plan integrating a third-party or partner HTTP API: auth, retries, idempotency keys, sandbox vs prod keys, ve… |
 | 🧪 community | [performance-review](skills/coding/performance-review) | coding | 641 | Diagnose application performance bottlenecks and propose measured fixes. Use whenever the user mentions slow… |
 | 🧪 community | [pr-descriptions](skills/coding/pr-descriptions) | coding | 914 | Write pull request titles and descriptions that reviewers can act on fast. Use whenever the user asks for a P… |
 | 🧪 community | [prompt-injection-hardening](skills/coding/prompt-injection-hardening) | coding | 559 | Threat-model AI features against prompt injection, tool abuse, and data exfiltration, then propose mitigation… |
@@ -173,11 +175,13 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [websocket-design](skills/coding/websocket-design) | coding | 286 | Design WebSocket and realtime channels with auth, backpressure, and reconnect semantics. Use whenever the use… |
 | 🧪 community | [ab-test-analysis](skills/data/ab-test-analysis) | data | 377 | Analyze A/B and experiment results with correct metrics, uncertainty, and caveats. Use whenever the user shar… |
 | 🧪 community | [anomaly-detection](skills/data/anomaly-detection) | data | 257 | Investigate metric and log anomalies with structured hypotheses and next checks. Use whenever the user sees a… |
+| 🧪 community | [cost-anomaly-investigation](skills/data/cost-anomaly-investigation) | data | 792 | Investigate a sudden cloud, bill, or cost spike — isolate the time window, rank hypotheses, and name the next… |
 | 🧪 community | [csv-analysis](skills/data/csv-analysis) | data | 961 | Analyze CSV, TSV, and tabular data files — profile the data, answer questions with verifiable numbers, and fl… |
 | 🧪 community | [data-cleaning](skills/data/data-cleaning) | data | 540 | Profile and clean messy tabular datasets with reproducible transformations and explicit handling of types, mi… |
 | 🧪 community | [data-contract-design](skills/data/data-contract-design) | data | 308 | Define producer-consumer data contracts with schema evolution, compatibility, and SLAs. Use whenever the user… |
 | 🧪 community | [data-visualization](skills/data/data-visualization) | data | 579 | Choose and produce clear, honest charts from tabular or summarized data. Use whenever the user asks for a cha… |
 | 🧪 community | [etl-pipeline-design](skills/data/etl-pipeline-design) | data | 300 | Design ETL and ELT pipelines with clear contracts, quality checks, and failure modes. Use whenever the user p… |
+| 🧪 community | [experiment-design](skills/data/experiment-design) | data | 957 | Design A/B and switchback experiments before launch: hypothesis, randomization unit, primary metric, guardrai… |
 | 🧪 community | [metrics-definitions](skills/data/metrics-definitions) | data | 378 | Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the u… |
 | 🧪 community | [sql-analytics](skills/data/sql-analytics) | data | 294 | Write analytical SQL for warehouses and BI questions with correct grain and caveats. Use whenever the user as… |
 | 🧪 community | [warehouse-modeling](skills/data/warehouse-modeling) | data | 882 | Design warehouse dimensional models, activity schemas, and marts with explicit fact grain, facts, dimensions,… |

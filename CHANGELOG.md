@@ -7,6 +7,8 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skills: `cost-anomaly-investigation`, `design-tokens`,
+  `partner-api-integration`, `experiment-design` (catalog target: 122).
 - Skills: `disaster-recovery`, `frontend-performance`,
   `contract-redlines`, `warehouse-modeling` (catalog target: 118).
 - Skills: `database-indexing`, `accessibility-implementation`,

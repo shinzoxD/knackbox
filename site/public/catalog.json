@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-16",
   "score_version": "v0",
-  "count": 118,
+  "count": 122,
   "skills": [
     {
       "name": "code-review",
@@ -624,6 +624,37 @@
       }
     },
     {
+      "name": "design-tokens",
+      "description": "Implement a token and theming system — color, type, space, dark mode, CSS variables, and Style Dictionary. Use whenever the user mentions design tokens, theme tokens, CSS variables, dark mode tokens, style-dictionary, semantic color, a spacing scale, or \"tokenizing our theme\", or wants to replace hex and magic numbers with a theme contract.",
+      "category": "coding",
+      "path": "skills/coding/design-tokens",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 899,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/design-tokens",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts.",
+      "content_digest": "sha256:def0accc23b0f3eddddc12c78763f3fabb9f94bdf046d9789a80fcfef8b24752",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "desktop-release",
       "description": "Plan and review desktop app releases — Electron, Tauri, and native installers, code signing, auto-update, and rollback. Use whenever the user asks about shipping a desktop build, Sparkle/Squirrel/electron- updater, notarization, MSI/DMG/AppImage, or a desktop release checklist.",
       "category": "coding",
@@ -761,7 +792,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/frontend-performance",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may interpret Lighthouse/Web Vitals traces when provided.",
-      "content_digest": "sha256:f648c7f9765b681715dc58864e1ef63ef72dcf90ca7ac865a24c8810667a3934",
+      "content_digest": "sha256:ba629fae5d5898f61152c0e5e43ea7e9bea9f9c627d0c439e7ca347aa0b3d5c6",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1134,6 +1165,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:a304c5761440399545a67ad99dbadb6c62285e299314ff852d783d824c46a540",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "partner-api-integration",
+      "description": "Plan integrating a third-party or partner HTTP API: auth, retries, idempotency keys, sandbox vs prod keys, versioning, pagination, and field mapping. Use whenever the user wants to integrate Stripe, Twilio, or a partner API, build a third-party API client, compare sandbox vs prod keys, handle partner pagination, or asks \"how do we wrap this vendor API\" — even if they only share a vendor doc snippet and do not name this skill.",
+      "category": "coding",
+      "path": "skills/coding/partner-api-integration",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 922,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/partner-api-integration",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions.",
+      "content_digest": "sha256:820bbee29daf10fbb05be9aa1930c18e5219753c70c6cf8e43ac207181761d7b",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1647,6 +1709,37 @@
       }
     },
     {
+      "name": "cost-anomaly-investigation",
+      "description": "Investigate a sudden cloud, bill, or cost spike — isolate the time window, rank hypotheses, and name the next checks. Use whenever the user reports a cost spike, bill doubled overnight, Cost Explorer anomaly, AWS Cost Anomaly Detection alert, asks \"why did spend jump\", or has a GPU bill surprise. Not a cheaper-bill program (use finops-review) and not a generic metric or log spike that is not money (use anomaly-detection).",
+      "category": "data",
+      "path": "skills/data/cost-anomaly-investigation",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 792,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/cost-anomaly-investigation",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may interpret cost exports when provided.",
+      "content_digest": "sha256:66dd9be02d8a6f8973864392c17c18bfc58b69746382a5ca0a403ca9b1c63c7b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "csv-analysis",
       "description": "Analyze CSV, TSV, and tabular data files — profile the data, answer questions with verifiable numbers, and flag quality issues. Use whenever the user uploads or pastes tabular data, asks \"what does this data show\", wants totals, trends, comparisons, or charts from a spreadsheet-like file, or asks any question that must be answered from rows and columns.",
       "category": "data",
@@ -1802,6 +1895,37 @@
       }
     },
     {
+      "name": "experiment-design",
+      "description": "Design A/B and switchback experiments before launch: hypothesis, randomization unit, primary metric, guardrails, sample size / MDE, duration, and SRM plan. Use whenever the user says design this A/B test, experiment design, power analysis, MDE, randomization unit, pre-register metrics, or \"are we ready to launch this experiment\" — not when they paste results and ask if a variant won, only want a North Star KPI defined, or need a standup.",
+      "category": "data",
+      "path": "skills/data/experiment-design",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 957,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/experiment-design",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions.",
+      "content_digest": "sha256:78b7319fc1c015706ad1779ba4431ed2643e2daa5278c3b0e3179e3bdaa2331b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "metrics-definitions",
       "description": "Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the user asks what to measure, how to define a KPI, North Star, activation, retention, churn, or event taxonomy for analytics — even for a rough product idea.",
       "category": "data",
@@ -1877,7 +2001,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/warehouse-modeling",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:c2fd3ffa0f8f42bbb3943c66a403117ccceeecc0fadd715b06f09033f4e37e8b",
+      "content_digest": "sha256:5ec12c6da679993d6d34805c1beb44ba83227403afa2c4208fabaff5b06f46ba",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1939,7 +2063,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/contract-redlines",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; not legal advice; do not invent statute citations.",
-      "content_digest": "sha256:d0b74b01e2c76d95f40285f2d0eb65e13dc4ae5132c040ce5495fd93c7b0a61a",
+      "content_digest": "sha256:ff03e610cd4df1bdb51ad54d9f3bdd8c72c37b03df0313fcd879c5f3e87bd0d5",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1970,7 +2094,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/disaster-recovery",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:cb46db46e6999cec40dcc43aa1866d16d846313267da7d393e4cd66af87239e4",
+      "content_digest": "sha256:f6f4ee8ae4f3a6d5cc430c1df0610a495d7ea2b10ffb5808c8ac98fff75a57fe",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

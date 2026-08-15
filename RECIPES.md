@@ -73,6 +73,30 @@ npx knackbox add frontend-performance performance-review accessibility-implement
 npx knackbox add warehouse-modeling etl-pipeline-design metrics-definitions sql-analytics
 ```
 
+## Cost spike vs FinOps program
+
+```bash
+npx knackbox add cost-anomaly-investigation finops-review anomaly-detection
+```
+
+## Tokens and theming
+
+```bash
+npx knackbox add design-tokens design-system-contribution accessibility-implementation
+```
+
+## Wrap a vendor API
+
+```bash
+npx knackbox add partner-api-integration webhook-design secrets-management api-design
+```
+
+## Design an experiment (before launch)
+
+```bash
+npx knackbox add experiment-design metrics-definitions ab-test-analysis
+```
+
 ## Cloud bill / FinOps
 
 ```bash
