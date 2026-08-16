@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-122-green)
+![Skills](https://img.shields.io/badge/skills-123-green)
 
 **An open library of Agent Skills for Claude Code, Codex, Cursor, and OpenCode — ranked by quality, not installs.**
 
@@ -158,6 +158,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [message-queue-design](skills/coding/message-queue-design) | coding | 523 | Design queue and pub/sub systems — Kafka, SQS, Rabbit, NATS — with poison messages, retries, ordering, and ex… |
 | 🧪 community | [migration-playbooks](skills/coding/migration-playbooks) | coding | 258 | Plan large technical migrations with strangler patterns, dual-run, and rollback. Use whenever the user migrat… |
 | 🧪 community | [mobile-release](skills/coding/mobile-release) | coding | 667 | Plan and review iOS and Android store releases — versioning, signing, store listings, staged rollout, and rol… |
+| 🧪 community | [multi-region-active-active](skills/coding/multi-region-active-active) | coding | 1265 | Design multi-region and active-active systems — data-plane topology, consistency, conflict policy, traffic st… |
 | 🧪 community | [observability-alerts](skills/coding/observability-alerts) | coding | 259 | Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes… |
 | 🧪 community | [openapi-spec-design](skills/coding/openapi-spec-design) | coding | 275 | Design and review OpenAPI specifications for clarity, consistency, and evolution. Use whenever the user write… |
 | 🧪 community | [partner-api-integration](skills/coding/partner-api-integration) | coding | 922 | Plan integrating a third-party or partner HTTP API: auth, retries, idempotency keys, sandbox vs prod keys, ve… |

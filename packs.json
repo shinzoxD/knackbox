@@ -78,6 +78,7 @@
         "helm-chart-scaffolding",
         "secrets-management",
         "feature-flags",
+        "multi-region-active-active",
         "chaos-experiment-design",
         "finops-review",
         "rate-limiting",
@@ -177,6 +178,7 @@
       "skills": [
         "runbook-writing",
         "disaster-recovery",
+        "multi-region-active-active",
         "incident-command",
         "incident-postmortems",
         "incident-comms",

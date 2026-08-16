@@ -30,7 +30,6 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Multi-region active-active design notes
 - Feature analytics instrumentation plans
 - Internal developer portal / golden-path docs
 - On-call shadowing / game-day facilitation (beyond chaos experiments)
@@ -44,7 +43,7 @@ Shipped from community requests: `terraform-review`, `pulumi-review`,
 `design-tokens`, `partner-api-integration`, `experiment-design`,
 `prompt-injection-hardening`, `i18n-review`, `graphql-schema-design`,
 `support-macros`, `kubernetes-review`, `load-test-planning`,
-`privacy-request-playbook`.
+`privacy-request-playbook`, `multi-region-active-active`.
 
 If you build a new skill, link any related issue in your PR.
 

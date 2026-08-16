@@ -1,6 +1,6 @@
 # Knackbox — full Agent Skills catalog
 
-> 122 SKILL.md packages for Claude Code, Codex, Cursor, and OpenCode.
+> 123 SKILL.md packages for Claude Code, Codex, Cursor, and OpenCode.
 
 This file is generated from catalog.json for AI crawlers. Prefer the live pages for humans.
 
@@ -49,6 +49,7 @@ Install one skill: `npx knackbox add <name>`
 - [message-queue-design](https://knackbox.pages.dev/skills/coding/message-queue-design/) (community): Design queue and pub/sub systems — Kafka, SQS, Rabbit, NATS — with poison messages, retries, ordering, and exactly-once caveats. Use whenever the user designs consumers, dead-letter queues, outbox, Kafka partitions, SQS visibility, or asks if delivery is at-least-once.
 - [migration-playbooks](https://knackbox.pages.dev/skills/coding/migration-playbooks/) (community): Plan large technical migrations with strangler patterns, dual-run, and rollback. Use whenever the user migrates frameworks, databases, clouds, monorepo boundaries, or large platform changes at scale.
 - [mobile-release](https://knackbox.pages.dev/skills/coding/mobile-release/) (community): Plan and review iOS and Android store releases — versioning, signing, store listings, staged rollout, and rollback. Use whenever the user asks about TestFlight, Play Console tracks, App Store submit, build numbers, signing, privacy nutrition labels, or a mobile release checklist.
+- [multi-region-active-active](https://knackbox.pages.dev/skills/coding/multi-region-active-active/) (community): Design multi-region and active-active systems — data-plane topology, consistency, conflict policy, traffic steering, and failover — and refuse invented RPO, vendor replication flags, or magic DNS. Use whenever the user asks for active-active, multi-region, multi-primary, dual-region writes, global database, cross-region failover architecture, "serve writes from two regions", or "users in EU and US write locally" — not a backup restore drill, live incident command, or Kubernetes manifest review.
 - [observability-alerts](https://knackbox.pages.dev/skills/coding/observability-alerts/) (community): Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes alert fatigue, designs on-call notifications, escalations, or SLO burn alerts.
 - [openapi-spec-design](https://knackbox.pages.dev/skills/coding/openapi-spec-design/) (community): Design and review OpenAPI specifications for clarity, consistency, and evolution. Use whenever the user writes OpenAPI or Swagger YAML/JSON, reviews API specs, or asks how to document REST endpoints for code generation and client SDKs.
 - [partner-api-integration](https://knackbox.pages.dev/skills/coding/partner-api-integration/) (community): Plan integrating a third-party or partner HTTP API: auth, retries, idempotency keys, sandbox vs prod keys, versioning, pagination, and field mapping. Use whenever the user wants to integrate Stripe, Twilio, or a partner API, build a third-party API client, compare sandbox vs prod keys, handle partner pagination, or asks "how do we wrap this vendor API" — even if they only share a vendor doc snippet and do not name this skill.
