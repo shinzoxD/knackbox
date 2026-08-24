@@ -8,6 +8,7 @@
       "skills": [
         "api-design",
         "debugging",
+        "codebase-orientation",
         "test-generation",
         "code-review",
         "commit-messages",
@@ -103,7 +104,8 @@
         "data-contract-design",
         "warehouse-modeling",
         "anomaly-detection",
-        "cost-anomaly-investigation"
+        "cost-anomaly-investigation",
+        "feature-analytics"
       ]
     },
     {
@@ -190,6 +192,7 @@
         "load-test-planning",
         "kubernetes-review",
         "chaos-experiment-design",
+        "game-day-facilitation",
         "observability-alerts",
         "sla-slo-writing",
         "anomaly-detection",
@@ -253,6 +256,7 @@
         "okr-drafting",
         "meeting-agendas",
         "onboarding-guides",
+        "golden-path-docs",
         "status-reports",
         "retro-facilitation",
         "delegation-briefs",

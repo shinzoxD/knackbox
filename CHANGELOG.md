@@ -7,6 +7,8 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skills: `feature-analytics`, `game-day-facilitation`, `golden-path-docs`,
+  `codebase-orientation` (catalog target: 127). Closes #27 and #28.
 - Skill: `multi-region-active-active` (catalog target: 123).
 - Job guides: `jobs.json`, `npx knackbox for "review a PR"`, site `/start/`,
   related-skill links, `GETTING_STARTED.md`, and `AGENTS.md`.

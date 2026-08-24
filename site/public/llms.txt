@@ -5,8 +5,8 @@
 Knackbox ranks skills with independent measurement columns (trigger accuracy, quality uplift, context cost) and ships every skill with a benchmark suite. Source of truth is the GitHub repository; this site is a static catalog.
 
 - Catalog version: v0
-- Generated: 2026-08-16
-- Skills: 123 across 6 categories
+- Generated: 2026-08-25
+- Skills: 127 across 6 categories
 
 ## Site
 

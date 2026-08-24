@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "I'm new to this repo — map it so I know where things live",
+    "where is rate limiting implemented in this codebase",
+    "map this repo for me",
+    "how is this project structured",
+    "help me get oriented in this unfamiliar codebase",
+    "explore this repository and tell me where to change the CLI entrypoint"
+  ],
+  "should_not_trigger": [
+    "write a company onboarding guide for new hires",
+    "debug this 500 from production, here's the stack trace",
+    "design an API for our billing service",
+    "write my standup from this git log",
+    "plan a refactor of the auth module without changing behavior",
+    "write a first-week onboarding handbook for the new backend hire"
+  ],
+  "tasks": [
+    {
+      "prompt": "I'm new to this repo. Map it, name the entrypoints, and tell me how to run tests.\n\nTree:\n  README.md — \"Install: pip install -e .  Tests: pytest\"\n  pyproject.toml — [project.scripts] acme = \"acme.cli:main\"; [tool.pytest.ini_options]\n  src/acme/__init__.py\n  src/acme/cli.py\n  src/acme/api.py\n  src/acme/billing/invoices.py\n  tests/test_cli.py\n  tests/test_invoices.py\n  .github/workflows/ci.yml — runs: pytest",
+      "criteria": [
+        "maps src/acme, billing, and tests from the tree without inventing extra packages",
+        "names the CLI entrypoint acme.cli / the acme script from pyproject.toml",
+        "says tests are pytest citing pyproject.toml or CI, not an invented runner"
+      ]
+    },
+    {
+      "prompt": "Where is rate limiting implemented?\n\nTree:\n  src/server/main.py\n  src/server/middleware/ratelimit.py\n  src/server/routes/users.py\n  packages/web/src/hooks/useApi.ts\n  README.md — no mention of rate limits",
+      "criteria": [
+        "points at src/server/middleware/ratelimit.py as the primary implementation",
+        "does not invent nginx, Redis, or package names that are not in the tree",
+        "treats packages/web as a client, not the limiter"
+      ]
+    },
+    {
+      "prompt": "How is this project structured and how do I run tests? I'm exploring the repository.\n\n  package.json scripts: { \"test\": \"vitest run\", \"dev\": \"vite\" }\n  README.md: \"Run npm test (jest)\"\n  src/main.tsx\n  src/App.tsx\n  src/lib/api.ts\n  vite.config.ts\n  vitest.config.ts",
+      "criteria": [
+        "prefers package.json / vitest.config.ts (vitest run) over the README jest claim and notes the conflict",
+        "identifies src/main.tsx as the app entry",
+        "does not invent jest, extra packages, or missing scripts"
+      ]
+    }
+  ]
+}

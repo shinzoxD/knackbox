@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write the golden path for creating a new service here",
+    "paved road docs for shipping a backend to production",
+    "developer portal page: how do we start a new service here",
+    "internal platform docs for the blessed deploy path",
+    "IDP Backstage TechDocs for our service template",
+    "document the golden path to observe a service after it ships"
+  ],
+  "should_not_trigger": [
+    "first week plan for a new backend hire — new-hire onboarding week 1",
+    "write an alert runbook for checkout 5xx",
+    "RFC for a new billing service",
+    "standup update: still reading the golden path, no doc needed",
+    "Improve this README so a new developer can run the project",
+    "review this Deployment YAML for probes, PDBs, and resource limits"
+  ],
+  "tasks": [
+    {
+      "prompt": "Platform wants Backstage TechDocs: how do we start a new Node service. Blessed template is service-node, owner group platform-idp, vault path services/<name>/runtime (no values). Draft the golden path for create, ship, and observe.",
+      "criteria": [
+        "includes copy-paste create/ship/observe commands with placeholders",
+        "names an owner for the path and a not-the-golden-path section",
+        "does not embed secrets, tokens, or production credentials"
+      ]
+    },
+    {
+      "prompt": "Wiki has three conflicting deploy guides: laptop kubectl, a personal Helm gist, and the platform pipeline. Write the golden path for shipping. Do not write an on-call runbook or a new-hire first week.",
+      "criteria": [
+        "picks one blessed ship path and lists the others as not the golden path",
+        "names owners for the path",
+        "does not become an alert runbook or week-1 onboarding guide"
+      ]
+    },
+    {
+      "prompt": "We have no cookiecutter yet. Leadership asked for the golden path to create services anyway. Engineers currently fork checkout-api and rename it. Write the page.",
+      "criteria": [
+        "refuses to label fork-and-rename as golden and marks it unsupported",
+        "names who must own a real template",
+        "does not invent Backstage API paths or embed secrets"
+      ]
+    }
+  ]
+}

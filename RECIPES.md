@@ -11,6 +11,31 @@ node packages/cli/bin/knackbox.js <command>
 # or: npm start --prefix packages/cli -- <command>
 ```
 
+## Unfamiliar repo
+
+```bash
+npx knackbox add codebase-orientation debugging onboarding-guides
+npx knackbox for "new to this repo"
+```
+
+## Instrument a feature
+
+```bash
+npx knackbox add feature-analytics metrics-definitions experiment-design
+```
+
+## Game day
+
+```bash
+npx knackbox add game-day-facilitation chaos-experiment-design incident-command
+```
+
+## Golden path / developer portal
+
+```bash
+npx knackbox add golden-path-docs onboarding-guides runbook-writing
+```
+
 ## Everyday engineering
 
 ```bash
