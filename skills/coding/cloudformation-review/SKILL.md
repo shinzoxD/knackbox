@@ -1,12 +1,11 @@
 ---
 name: cloudformation-review
-description: Review AWS CloudFormation templates and change sets for blast
-  radius, IAM capabilities, deletion policy, and safer stack updates. Use
-  whenever the user shares template.yaml, template.json, a change set, SAM
-  or CDK-synthesized CloudFormation, stack policy, or asks if a stack
-  update or delete is safe.
+description: Review AWS CloudFormation and SAM templates for deployment safety,
+  IAM scope, replacement risk, dependencies, rollback behavior, and operability.
+  Use whenever the user shares YAML or JSON templates, change sets, nested
+  stacks, custom resources, or asks whether a CloudFormation deployment is safe.
 license: Apache-2.0
-compatibility: Portable instructions; may interpret CloudFormation change sets when provided.
+compatibility: Portable instructions; may interpret templates, change sets, stack events, and linter output when provided.
 metadata:
   knackbox.network: "none"
   knackbox.filesystem: "read"
@@ -15,71 +14,77 @@ metadata:
 
 # CloudFormation Review
 
-Treat stack update/delete as a production change. Prefer change-set evidence
-over reading the template in isolation.
+Treat every stack update as a production change. Base the verdict on a change
+set and deployment context when available; a template alone cannot prove what
+CloudFormation will replace or delete in an existing stack.
+
+For Terraform or OpenTofu plans, use `terraform-review`. For Pulumi programs
+or previews, use `pulumi-review`.
 
 ## Workflow
 
-1. Identify stack, region, nested stacks, and parameters/SSM sources.
-2. Read the change set: add/modify/remove/replace and replacement reasons.
-3. Check IAM (`CAPABILITY_IAM` / `NAMED_IAM`), public network, and secrets
-   in parameters or templates.
-4. Flag replacement of stateful resources, missing `DeletionPolicy` /
-   `UpdateReplacePolicy`, and retain-vs-delete choices.
-5. Review stack policy, termination protection, and rollback configuration.
-6. Order safe updates (expand before replace) and verification.
-7. Call out drift, hardcoded account IDs, or `NoEcho` missing on secrets.
+1. Establish the account, Region, partition, stack, environment, parameters,
+   capabilities, and deployment command. Mark assumptions that affect risk.
+2. Inventory resources, nested stacks, exports/imports, transforms, macros,
+   custom resources, and stateful or externally shared dependencies.
+3. Inspect the change set. Separate creates, in-place updates, replacements,
+   removals, imports, and condition-driven changes. Trace replacement chains.
+4. Review data protection, identity, network exposure, secrets, dependency
+   ordering, quotas, rollback behavior, and observability.
+5. Propose the smallest reversible deployment sequence and explicit gates.
+6. End with a verdict: **safe to execute**, **safe with conditions**, or
+   **do not execute**. State what evidence could change the verdict.
+
+## Detailed checks
+
+Read `references/review-checklist.md` for full template or change-set reviews,
+especially when stateful resources, IAM, nested stacks, StackSets, SAM/macros,
+or custom resources are present. Use only the sections relevant to the change.
 
 ## Severity tags
 
-- **[blocking]** replace/delete of prod data stores, `AWS::IAM::*` with `*`
-  on `*`, secrets in plaintext Parameters, stack delete without retain
-- **[important]** missing termination protection on prod, overly broad
-  SecurityGroup, unpinned AMI, nested stack with unbounded IAM
-- **[nit]** logical IDs, description text, unused outputs
+- **[blocking]** likely data loss, destructive replacement without recovery,
+  privilege escalation, exposed sensitive service, or unbounded custom code
+- **[important]** rollback gap, broad access, hidden drift, fragile dependency,
+  missing alarm, or material operability risk
+- **[nit]** readability, naming, duplication, or maintainability issue with low
+  deployment risk
 
 ## Output format
 
 ```markdown
 ## CloudFormation review
 
-**Scope:** …
-**Stack / env assumption:** …
+**Target:** <account / Region / stack / environment or unknown>
+**Evidence:** <template, parameters, change set, events, lint output>
+**Verdict:** <safe to execute | safe with conditions | do not execute>
 
-### Change set / delta
-…
+### Change summary
+- Create: ...
+- Update: ...
+- Replace/delete: ...
 
 ### Findings
-1. [blocking] …
+1. [blocking] **<finding>** — <resource/logical ID and consequence>
+   **Action:** <specific remediation or gate>
 
-### Update order
-1. …
+### Deployment plan
+1. <precondition or backup>
+2. <change-set execution step>
+3. <verification and rollback trigger>
 
-### Verify after update
-…
-
-### Do not update if
-…
+### Missing evidence
+- <item that prevents a stronger verdict>
 ```
 
 ## Rules
 
-1. Never invent change-set lines. If missing, ask for a change set (or
-   `aws cloudformation create-change-set` output) before blessing update.
-2. Parameters that are secrets need `NoEcho` and a Secrets Manager / SSM
-   dynamic reference — not committed default values.
-3. Replacements of databases, queues with data, or KMS keys are blocking
-   until snapshot/retain/blue-green is explicit.
-4. `CAPABILITY_NAMED_IAM` requires reviewing every named role/policy.
-5. Prefer stack policies + termination protection on prod over "be careful".
-6. CDK/SAM users: review the synthesized template, not only the high-level
-   construct, when blast radius is unclear.
-
-## Edge cases
-
-- **Nested / imported stacks:** a parent update can replace children; say so.
-- **Drift:** drifted resources make change sets lie; recommend detect-drift.
-- **Custom resources / macros:** treat Lambda-backed resources as untrusted
-  code paths; ask for the handler if behavior is load-bearing.
-- **Rollback disabled:** flag `--disable-rollback` on prod as a finding.
----
+1. Never invent change-set output, current stack state, parameter values, or AWS
+   defaults. Ask for them or mark the conclusion conditional.
+2. Do not call `validate-template` a safety check; it does not evaluate live
+   replacements, permissions, quotas, or runtime behavior.
+3. Name logical IDs and properties in findings so the review is actionable.
+4. Distinguish stack rollback from rollback of external actions performed by a
+   macro or custom resource.
+5. Prefer expand/migrate/contract changes over destructive in-place migrations.
+6. Do not recommend `Retain` without assigning follow-up ownership and cleanup.
