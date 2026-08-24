@@ -135,7 +135,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [chaos-experiment-design](skills/coding/chaos-experiment-design) | coding | 302 | Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use wh… |
 | 🧪 community | [ci-cd-pipelines](skills/coding/ci-cd-pipelines) | coding | 340 | Design and review CI/CD pipelines for speed, safety, and clear failure signals. Use whenever the user edits G… |
 | 🧪 community | [cli-design](skills/coding/cli-design) | coding | 244 | Design developer CLIs with clear UX, exit codes, flags, and help text. Use whenever the user builds a command… |
-| 🧪 community | [cloudformation-review](skills/coding/cloudformation-review) | coding | 599 | Review AWS CloudFormation templates and change sets for blast radius, IAM capabilities, deletion policy, and… |
+| 🧪 community | [cloudformation-review](skills/coding/cloudformation-review) | coding | 777 | Review AWS CloudFormation and SAM templates for deployment safety, IAM scope, replacement risk, dependencies,… |
 | 🧪 community | [code-comments](skills/coding/code-comments) | coding | 317 | Write and improve code comments and docstrings that explain why, not noise. Use whenever the user asks for be… |
 | 🧪 community | [container-review](skills/coding/container-review) | coding | 320 | Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a… |
 | 🧪 community | [database-indexing](skills/coding/database-indexing) | coding | 582 | Design and review database indexes and query plans — covering indexes, INCLUDE columns, partial/expression in… |
@@ -165,7 +165,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [performance-review](skills/coding/performance-review) | coding | 641 | Diagnose application performance bottlenecks and propose measured fixes. Use whenever the user mentions slow… |
 | 🧪 community | [pr-descriptions](skills/coding/pr-descriptions) | coding | 914 | Write pull request titles and descriptions that reviewers can act on fast. Use whenever the user asks for a P… |
 | 🧪 community | [prompt-injection-hardening](skills/coding/prompt-injection-hardening) | coding | 559 | Threat-model AI features against prompt injection, tool abuse, and data exfiltration, then propose mitigation… |
-| 🧪 community | [pulumi-review](skills/coding/pulumi-review) | coding | 587 | Review Pulumi programs, stack configs, and previews for blast radius, state risk, secrets, IAM overreach, and… |
+| 🧪 community | [pulumi-review](skills/coding/pulumi-review) | coding | 770 | Review Pulumi programs and previews for safe infrastructure changes across TypeScript, Python, Go, C#, Java,… |
 | 🧪 community | [rate-limiting](skills/coding/rate-limiting) | coding | 277 | Design rate limiting and throttling for APIs and gateways with fair use and abuse resistance. Use whenever th… |
 | 🧪 community | [refactor-planning](skills/coding/refactor-planning) | coding | 630 | Plan safe refactors that preserve behavior — seams, steps, tests, and rollback. Use whenever the user asks ho… |
 | 🧪 community | [secrets-management](skills/coding/secrets-management) | coding | 347 | Handle secrets safely in apps and infrastructure without committing credentials. Use whenever the user asks a… |
@@ -218,7 +218,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [okr-drafting](skills/productivity/okr-drafting) | productivity | 303 | Draft OKRs and goal cascades that are measurable and non-vanity. Use whenever the user asks for OKRs, quarter… |
 | 🧪 community | [oss-maintainer-triage](skills/productivity/oss-maintainer-triage) | productivity | 326 | Triage open-source issues and PRs with labels, reproduction asks, and maintainer-friendly replies. Use whenev… |
 | 🧪 community | [privacy-request-playbook](skills/productivity/privacy-request-playbook) | productivity | 403 | Handle DSAR, GDPR, and CCPA-style privacy requests with verification, scoping, and careful response templates… |
-| 🧪 community | [prompt-evaluation](skills/productivity/prompt-evaluation) | productivity | 623 | Design offline prompt and agent eval harnesses — golden sets, rubrics, judges, leakage checks, and regression… |
+| 🧪 community | [prompt-evaluation](skills/productivity/prompt-evaluation) | productivity | 992 | Design and review repeatable offline evaluations for prompts, RAG systems, and tool-using agents. Use wheneve… |
 | 🧪 community | [prompt-improver](skills/productivity/prompt-improver) | productivity | 540 | Rewrite and strengthen prompts for AI models — diagnose what's vague, add structure, and return a copy-paste-… |
 | 🧪 community | [retro-facilitation](skills/productivity/retro-facilitation) | productivity | 507 | Run and write software retros with useful insights and follow-through. Use whenever the user asks for a retro… |
 | 🧪 community | [sprint-planning](skills/productivity/sprint-planning) | productivity | 281 | Run sprint or iteration planning with capacity, goals, and clear commit scope. Use whenever the user asks for… |
