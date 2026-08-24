@@ -61,6 +61,13 @@ npx knackbox pack ops-reliability
 npx knackbox add disaster-recovery runbook-writing sla-slo-writing incident-command
 ```
 
+## Multi-region / active-active
+
+```bash
+npx knackbox for "design multi-region"
+npx knackbox add multi-region-active-active disaster-recovery sla-slo-writing chaos-experiment-design
+```
+
 ## Frontend Web Vitals
 
 ```bash

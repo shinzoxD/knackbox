@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-16",
   "score_version": "v0",
-  "count": 122,
+  "count": 123,
   "skills": [
     {
       "name": "code-review",
@@ -637,7 +637,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/design-tokens",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts.",
-      "content_digest": "sha256:def0accc23b0f3eddddc12c78763f3fabb9f94bdf046d9789a80fcfef8b24752",
+      "content_digest": "sha256:9b17aba3ad30ceb1dd8f015b522d373e1596d0279a3f872c5d4601390ed05ada",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1120,6 +1120,37 @@
       }
     },
     {
+      "name": "multi-region-active-active",
+      "description": "Design multi-region and active-active systems — data-plane topology, consistency, conflict policy, traffic steering, and failover — and refuse invented RPO, vendor replication flags, or magic DNS. Use whenever the user asks for active-active, multi-region, multi-primary, dual-region writes, global database, cross-region failover architecture, \"serve writes from two regions\", or \"users in EU and US write locally\" — not a backup restore drill, live incident command, or Kubernetes manifest review.",
+      "category": "coding",
+      "path": "skills/coding/multi-region-active-active",
+      "tier": "community",
+      "updated": "2026-08-16",
+      "context_tokens": 1265,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/multi-region-active-active",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:3e2ccc62c18bf0e3f98f6e86f902ce01d1b5077a7fd12bdcc3e8e80822b59026",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "observability-alerts",
       "description": "Design actionable alerts that page humans only for real pain. Use whenever the user writes alert rules, fixes alert fatigue, designs on-call notifications, escalations, or SLO burn alerts.",
       "category": "coding",
@@ -1195,7 +1226,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/partner-api-integration",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions.",
-      "content_digest": "sha256:820bbee29daf10fbb05be9aa1930c18e5219753c70c6cf8e43ac207181761d7b",
+      "content_digest": "sha256:f34cb127feb9ee17ade5c6956ac0bdd24ac5cf1e242fd5f87c4de9151c6a1623",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1722,7 +1753,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/cost-anomaly-investigation",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; may interpret cost exports when provided.",
-      "content_digest": "sha256:66dd9be02d8a6f8973864392c17c18bfc58b69746382a5ca0a403ca9b1c63c7b",
+      "content_digest": "sha256:29024eed6727c89153b050a001a57de44fab0b9dd0852edb98170bfe86af8e88",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1908,7 +1939,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/experiment-design",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions.",
-      "content_digest": "sha256:78b7319fc1c015706ad1779ba4431ed2643e2daa5278c3b0e3179e3bdaa2331b",
+      "content_digest": "sha256:8b4ff62c014bf1605d4480990b60759982bb4d7c610463e30c54c9454edb2a5d",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",

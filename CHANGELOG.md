@@ -7,6 +7,7 @@ see `catalog.json` for the full generated inventory.
 
 ### Added
 
+- Skill: `multi-region-active-active` (catalog target: 123).
 - Job guides: `jobs.json`, `npx knackbox for "review a PR"`, site `/start/`,
   related-skill links, `GETTING_STARTED.md`, and `AGENTS.md`.
 - Skills: `cost-anomaly-investigation`, `design-tokens`,

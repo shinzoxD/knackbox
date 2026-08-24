@@ -126,6 +126,13 @@
       "blurb": "RPO/RTO as evidence, not slogans.",
       "keywords": ["disaster recovery", "backup", "restore", "rpo", "rto"],
       "skills": ["disaster-recovery", "runbook-writing", "sla-slo-writing"]
+    },
+    {
+      "slug": "design-multi-region",
+      "title": "Design multi-region active-active",
+      "blurb": "Data plane first. Restore drills and YAML are different jobs.",
+      "keywords": ["multi-region", "active-active", "multi-primary", "cross-region", "global database"],
+      "skills": ["multi-region-active-active", "disaster-recovery", "sla-slo-writing", "chaos-experiment-design"]
     }
   ]
 }

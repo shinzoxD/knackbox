@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "design active-active for checkout across us-east-1 and eu-west-1",
+    "multi-region architecture: users in the EU and US should write locally",
+    "can we run a multi-primary Postgres so both regions accept writes",
+    "global database plan — dual-region writes, conflict policy, failover",
+    "active-active vs read-replica for a SaaS with EU residency",
+    "cross-region failover architecture for sessions, inventory, and identity"
+  ],
+  "should_not_trigger": [
+    "write a disaster recovery restore playbook and last-restore evidence for Postgres",
+    "review this Deployment YAML for probes, PDBs, and resource limits",
+    "we're down, who is IC on the bridge right now",
+    "draft the 99.9% availability SLA language only",
+    "chaos experiment hypothesis for killing one cache replica in staging",
+    "standup update: still reading the multi-region doc, no design needed"
+  ],
+  "tasks": [
+    {
+      "prompt": "We want active-active checkout in us-east-1 and eu-west-1. Postgres today is primary in us-east-1 with an async replica in eu-west-1 (lag unmeasured). Sessions in Redis us-east-1 only. Inventory is a single stock row per SKU. Product says EU users must write locally and RPO must be 0. Leadership said 'just turn on Aurora Global'. Design the data plane.",
+      "criteria": [
+        "refuses true multi-primary / RPO 0 on the async replica and does not invent Aurora flags or measured lag",
+        "separates stores: inventory/money need a single writer or reservation; sessions are not multi-primary by default",
+        "picks an explicit topology (home-region or write-primary) and names split-brain / read-your-writes / residency"
+      ]
+    },
+    {
+      "prompt": "Signup must enforce globally unique email. Engineers proposed INSERT in whichever region the user is closest to, last-writer-wins on conflict, and Route53 latency routing with an assumed 1-second TTL for instant failover. Respond with a design, not a restore drill.",
+      "criteria": [
+        "rejects LWW plus dual INSERT as uniqueness/HA and requires a home region or reservation",
+        "refuses instant DNS failover / invented TTL evidence",
+        "does not treat this as a backup-restore or Kubernetes YAML review"
+      ]
+    },
+    {
+      "prompt": "Marketing site is static on a CDN. App servers are stateless in two regions. Only the user DB is single-region. Someone asked 'are we already active-active?'. Answer and sketch what would have to change for home-region writes per tenant.",
+      "criteria": [
+        "says no: stateless compute + CDN is not active-active data",
+        "describes home-region writes per tenant and what stays single-writer",
+        "does not invent RPO/RTO numbers or vendor replication syntax"
+      ]
+    }
+  ]
+}
