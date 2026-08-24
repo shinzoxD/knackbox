@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-16",
+  "generated": "2026-08-25",
   "score_version": "v0",
-  "count": 123,
+  "count": 127,
   "skills": [
     {
       "name": "code-review",
@@ -315,19 +315,19 @@
     },
     {
       "name": "chaos-experiment-design",
-      "description": "Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use whenever the user asks for chaos engineering, game days, fault injection, resilience experiments, or how to safely break things in staging or production.",
+      "description": "Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use whenever the user asks for chaos engineering, fault injection, resilience experiments, or how to safely break things in staging or production. For facilitating a game day or on-call shadow, use game-day-facilitation.",
       "category": "coding",
       "path": "skills/coding/chaos-experiment-design",
       "tier": "community",
       "updated": "2026-07-26",
-      "context_tokens": 302,
+      "context_tokens": 315,
       "reference_tokens": 0,
       "has_scripts": false,
       "has_benchmarks": true,
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/chaos-experiment-design",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:db4b2e81e4a65621c1afb074a4a54680223eafbc17996502840482b8dc062025",
+      "content_digest": "sha256:992d6a63ebd8de1b3d41dab74744b9376cd87b96abbd45159136350c7d2f9255",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -408,19 +408,19 @@
     },
     {
       "name": "cloudformation-review",
-      "description": "Review AWS CloudFormation templates and change sets for blast radius, IAM capabilities, deletion policy, and safer stack updates. Use whenever the user shares template.yaml, template.json, a change set, SAM or CDK-synthesized CloudFormation, stack policy, or asks if a stack update or delete is safe.",
+      "description": "Review AWS CloudFormation and SAM templates for deployment safety, IAM scope, replacement risk, dependencies, rollback behavior, and operability. Use whenever the user shares YAML or JSON templates, change sets, nested stacks, custom resources, or asks whether a CloudFormation deployment is safe.",
       "category": "coding",
       "path": "skills/coding/cloudformation-review",
       "tier": "community",
       "updated": "2026-08-16",
-      "context_tokens": 599,
-      "reference_tokens": 0,
+      "context_tokens": 777,
+      "reference_tokens": 785,
       "has_scripts": false,
       "has_benchmarks": true,
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/cloudformation-review",
       "license": "Apache-2.0",
-      "compatibility": "Portable instructions; may interpret CloudFormation change sets when provided.",
-      "content_digest": "sha256:7e0faa9b905df2334d06e5d6a849e11abd17ba3731f4049f8d9e6020069f7b55",
+      "compatibility": "Portable instructions; may interpret templates, change sets, stack events, and linter output when provided.",
+      "content_digest": "sha256:02d4303bd13ce54c2ccf39359ddb1ea215b9f51197b12dc50c38e901a32c8018",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -457,6 +457,37 @@
         "network": "none",
         "filesystem": "read",
         "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "codebase-orientation",
+      "description": "Orient an engineer (or agent) in an unfamiliar codebase — map modules, entrypoints, how to run tests, and where to change a feature. Use whenever the user says \"I'm new to this repo\", asks where X is implemented, wants you to map this repo, asks how this project is structured, or an agent is exploring a repository — even if they only paste a directory listing. Distinct from onboarding-guides (HR/company onboarding) and debugging (a specific bug).",
+      "category": "coding",
+      "path": "skills/coding/codebase-orientation",
+      "tier": "community",
+      "updated": "2026-08-25",
+      "context_tokens": 731,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/codebase-orientation",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; may list files and run existing test or help commands when execution is allowed.",
+      "content_digest": "sha256:1da50860d8bd1d3c809a637c5d26e93917d2e09f43ad497e03b8b1949e1814db",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "read",
+        "execution": "optional"
       },
       "metrics": {
         "efficiency": 100.0,
@@ -1133,7 +1164,7 @@
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/multi-region-active-active",
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:3e2ccc62c18bf0e3f98f6e86f902ce01d1b5077a7fd12bdcc3e8e80822b59026",
+      "content_digest": "sha256:1e7cbfc88d9901caa2cdededde380f381f74d0b746198569a9d8bda8b7532d9e",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1338,19 +1369,19 @@
     },
     {
       "name": "pulumi-review",
-      "description": "Review Pulumi programs, stack configs, and previews for blast radius, state risk, secrets, IAM overreach, and safer update order. Use whenever the user shares Pulumi TypeScript/Python/Go/C# code, a pulumi preview, Pulumi.yaml, stack config, ESC secrets, or asks if a Pulumi up is safe — even if they only say \"infra as code\" in Pulumi.",
+      "description": "Review Pulumi programs and previews for safe infrastructure changes across TypeScript, Python, Go, C#, Java, and YAML. Use whenever the user shares Pulumi code or preview output, designs component resources, handles secrets or state, or asks whether pulumi up is safe.",
       "category": "coding",
       "path": "skills/coding/pulumi-review",
       "tier": "community",
       "updated": "2026-08-16",
-      "context_tokens": 587,
-      "reference_tokens": 0,
+      "context_tokens": 770,
+      "reference_tokens": 954,
       "has_scripts": false,
       "has_benchmarks": true,
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/coding/pulumi-review",
       "license": "Apache-2.0",
-      "compatibility": "Portable instructions; may interpret pulumi preview output when provided.",
-      "content_digest": "sha256:35cb681037eeff70455e82b1745e7ef4c394928d4024345c80494a72590c9870",
+      "compatibility": "Portable instructions; may interpret Pulumi programs, previews, stack state summaries, and policy output when provided.",
+      "content_digest": "sha256:33afd91837c8f64cbec5b17523e53d7506d2212424a6b367b70ee94f56be6e66",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -1957,6 +1988,37 @@
       }
     },
     {
+      "name": "feature-analytics",
+      "description": "Plan event names, properties, identity, and what not to log for a new product feature. Use whenever the user asks for a tracking plan, instrumentation, event taxonomy, analytics events, Segment, Mixpanel, Amplitude, identify vs track, \"what should we log for this feature\", or PII in analytics — even if they only paste a feature spec — not when they only want a KPI formula, operator logs, or an A/B experiment design.",
+      "category": "data",
+      "path": "skills/data/feature-analytics",
+      "tier": "community",
+      "updated": "2026-08-25",
+      "context_tokens": 872,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/data/feature-analytics",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:b6a99ef8cf77c5cf716a4f3dd16517da81fcf344886951fa9aad4ba88cd890dc",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "metrics-definitions",
       "description": "Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the user asks what to measure, how to define a KPI, North Star, activation, retention, churn, or event taxonomy for analytics — even for a rough product idea.",
       "category": "data",
@@ -2126,6 +2188,37 @@
       "license": "Apache-2.0",
       "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
       "content_digest": "sha256:f6f4ee8ae4f3a6d5cc430c1df0610a495d7ea2b10ffb5808c8ac98fff75a57fe",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
+      "name": "golden-path-docs",
+      "description": "Write internal developer-portal and golden-path docs — the blessed, supported way to create a service, ship, and observe it. Use whenever the user asks for a golden path, paved road, developer portal, internal platform docs, IDP Backstage docs, or \"how do we start a new service here\" — even if they call it a handbook page or TechDocs template.",
+      "category": "documents",
+      "path": "skills/documents/golden-path-docs",
+      "tier": "community",
+      "updated": "2026-08-25",
+      "context_tokens": 944,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/documents/golden-path-docs",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:d559a94eedb9b42574a227b32b1ee890aa0e09f52ae63033c46c4bb2e0edec53",
       "security_profile": "instructions-only",
       "permissions": {
         "network": "none",
@@ -2763,6 +2856,37 @@
       }
     },
     {
+      "name": "game-day-facilitation",
+      "description": "Facilitate a game day or on-call shadow with objectives, injects, abort criteria, observer roles, and a blameless debrief. Use whenever the user mentions game day, gameday, on-call shadowing, incident drill facilitation, tabletop exercise, or \"run a game day\" — even if they also mention chaos, failover, paging, or incident response. Do not use for a live SEV or a chaos-experiment hypothesis.",
+      "category": "productivity",
+      "path": "skills/productivity/game-day-facilitation",
+      "tier": "community",
+      "updated": "2026-08-25",
+      "context_tokens": 858,
+      "reference_tokens": 0,
+      "has_scripts": false,
+      "has_benchmarks": true,
+      "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/game-day-facilitation",
+      "license": "Apache-2.0",
+      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
+      "content_digest": "sha256:68a55e8ff168dccd571a1f745429c2a967b3ee3f5a899e20f1b2ea9ee0b53c5b",
+      "security_profile": "instructions-only",
+      "permissions": {
+        "network": "none",
+        "filesystem": "none",
+        "execution": "none"
+      },
+      "metrics": {
+        "efficiency": 100.0,
+        "trigger_accuracy": null,
+        "quality_uplift": null,
+        "skill_score": null,
+        "installs_30d": null,
+        "measured_at": null,
+        "model": null
+      }
+    },
+    {
       "name": "hiring-scorecards",
       "description": "Build interview scorecards and debrief structures that reduce bias and noise. Use whenever the user designs hiring loops, interview rubrics, scorecards, structured debriefs, or leveling guides for candidates.",
       "category": "productivity",
@@ -2981,24 +3105,24 @@
     },
     {
       "name": "prompt-evaluation",
-      "description": "Design offline prompt and agent eval harnesses — golden sets, rubrics, judges, leakage checks, and regression gates. Use whenever the user asks how to evaluate a prompt, measure an LLM change, build an eval suite, compare models, score outputs, or stop shipping prompt edits on vibes.",
+      "description": "Design and review repeatable offline evaluations for prompts, RAG systems, and tool-using agents. Use whenever the user asks about eval datasets, graders, rubrics, golden sets, regression tests, pass rates, model comparisons, prompt changes, or how to measure AI output quality before release.",
       "category": "productivity",
       "path": "skills/productivity/prompt-evaluation",
       "tier": "community",
       "updated": "2026-08-16",
-      "context_tokens": 623,
-      "reference_tokens": 0,
+      "context_tokens": 992,
+      "reference_tokens": 1014,
       "has_scripts": false,
       "has_benchmarks": true,
       "source_url": "https://github.com/shinzoxD/knackbox/tree/main/skills/productivity/prompt-evaluation",
       "license": "Apache-2.0",
-      "compatibility": "Portable instructions; no bundled scripts or required external binaries.",
-      "content_digest": "sha256:47a70df9994be843ac6296d9a359af12ebb4462de22e0282665f2b3244d663af",
+      "compatibility": "Portable evaluation-design instructions; can adapt to any model provider or test harness.",
+      "content_digest": "sha256:e7c489014f12526a59107a9a6299a4fce06913b0088d03f7208276026f9fd3be",
       "security_profile": "instructions-only",
       "permissions": {
-        "network": "none",
-        "filesystem": "none",
-        "execution": "none"
+        "network": "optional",
+        "filesystem": "read",
+        "execution": "optional"
       },
       "metrics": {
         "efficiency": 100.0,

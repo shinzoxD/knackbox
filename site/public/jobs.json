@@ -133,6 +133,34 @@
       "blurb": "Data plane first. Restore drills and YAML are different jobs.",
       "keywords": ["multi-region", "active-active", "multi-primary", "cross-region", "global database"],
       "skills": ["multi-region-active-active", "disaster-recovery", "sla-slo-writing", "chaos-experiment-design"]
+    },
+    {
+      "slug": "instrument-a-feature",
+      "title": "Instrument a feature for analytics",
+      "blurb": "Event names, properties, and what not to log. KPI formulas are a different job.",
+      "keywords": ["tracking plan", "instrumentation", "analytics events", "segment", "event taxonomy"],
+      "skills": ["feature-analytics", "metrics-definitions", "experiment-design"]
+    },
+    {
+      "slug": "run-a-game-day",
+      "title": "Run a game day or on-call shadow",
+      "blurb": "Objectives, injects, abort, debrief. Live SEV and chaos hypotheses are adjacent.",
+      "keywords": ["game day", "gameday", "on-call shadow", "tabletop", "incident drill"],
+      "skills": ["game-day-facilitation", "chaos-experiment-design", "incident-command", "runbook-writing"]
+    },
+    {
+      "slug": "pave-the-golden-path",
+      "title": "Document the golden path for a new service",
+      "blurb": "The blessed create/ship/observe path — not week-1 HR onboarding.",
+      "keywords": ["golden path", "paved road", "developer portal", "backstage", "new service"],
+      "skills": ["golden-path-docs", "onboarding-guides", "runbook-writing", "technical-documentation"]
+    },
+    {
+      "slug": "orient-in-a-repo",
+      "title": "Orient in an unfamiliar codebase",
+      "blurb": "Map modules, entrypoints, tests, and where to change X. Evidence from the tree.",
+      "keywords": ["unfamiliar codebase", "map this repo", "where is this implemented", "new to this repo"],
+      "skills": ["codebase-orientation", "debugging", "onboarding-guides"]
     }
   ]
 }

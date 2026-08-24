@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "write a tracking plan for the new saved-search feature",
+    "instrumentation for product analytics — event names and properties for comments",
+    "event taxonomy and Segment identify vs track for onboarding",
+    "what analytics events should we fire for the new billing portal",
+    "what should we log for this feature in Mixpanel/Segment",
+    "PII in analytics: can we put email on the signup event?"
+  ],
+  "should_not_trigger": [
+    "define activation KPI only: numerator, denominator, and window — no instrumentation",
+    "structured logging and OpenTelemetry for the API, SLOs and alerts, not product analytics",
+    "design this A/B test: hypothesis, randomization unit, MDE, and SRM before launch",
+    "standup update: yesterday still reading the tracking doc, no plan today",
+    "review this Terraform module and plan for IAM and state risk",
+    "security review of this login handler for injection, IDOR, and hardcoded secrets"
+  ],
+  "tasks": [
+    {
+      "prompt": "We're launching invite-by-email on web. PM wants analytics events in Segment. They said log invitee email, full name, and 'we'll do about a million events a day'. Draft the tracking plan: event names, properties, identity, and what not to log.",
+      "criteria": [
+        "refuses email, full name, or other PII on event properties and uses opaque ids",
+        "defines named events for send and accept (or equivalent) with triggers, properties, and identity",
+        "does not invent or bless event volumes (rejects or ignores the million/day figure)"
+      ]
+    },
+    {
+      "prompt": "Checkout feature: engineers want a client-side purchase_completed event with card last4, CVV, and the password field 'for debugging'. PM also wants you to define paid conversion rate as a KPI formula in the same doc. Write the feature analytics plan.",
+      "criteria": [
+        "forbids PAN/CVV/password/secrets on analytics events",
+        "requires server-side (not client-only) for purchase/money events",
+        "does not write a standalone KPI formula spec; points paid conversion to metrics-definitions"
+      ]
+    },
+    {
+      "prompt": "B2B workspace file sharing: anonymous visitors can view a link, then log in. Product wants a tracking plan. Eng also asked for structured operator log fields, request_id, and SLO alerts in the same answer. Cover identity merge and what not to log.",
+      "criteria": [
+        "covers anonymous_id, opaque user_id, and workspace/group id plus merge-after-login",
+        "includes an explicit do-not-log list (PII/secrets/payloads)",
+        "points operator logs/SLOs to logging-observability instead of treating them as analytics events"
+      ]
+    }
+  ]
+}

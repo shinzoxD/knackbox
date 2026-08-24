@@ -2,7 +2,7 @@
 
 [![Validate skills](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml/badge.svg)](https://github.com/shinzoxD/knackbox/actions/workflows/validate.yml)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Skills](https://img.shields.io/badge/skills-123-green)
+![Skills](https://img.shields.io/badge/skills-127-green)
 
 **An open library of Agent Skills for Claude Code, Codex, Cursor, and OpenCode — ranked by quality, not installs.**
 
@@ -132,11 +132,12 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [api-design](skills/coding/api-design) | coding | 674 | Design and review HTTP, REST, GraphQL, and internal service APIs with clear contracts, errors, pagination, se… |
 | 🧪 community | [auth-design](skills/coding/auth-design) | coding | 650 | Design authentication and authorization — sessions, OAuth/OIDC, JWT, MFA, cookies, and object-level access. U… |
 | 🧪 community | [caching-strategies](skills/coding/caching-strategies) | coding | 286 | Design caching layers with correctness, TTLs, invalidation, and stampede control. Use whenever the user asks… |
-| 🧪 community | [chaos-experiment-design](skills/coding/chaos-experiment-design) | coding | 302 | Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use wh… |
+| 🧪 community | [chaos-experiment-design](skills/coding/chaos-experiment-design) | coding | 315 | Plan chaos and resilience experiments safely with hypotheses, blast radius limits, and abort criteria. Use wh… |
 | 🧪 community | [ci-cd-pipelines](skills/coding/ci-cd-pipelines) | coding | 340 | Design and review CI/CD pipelines for speed, safety, and clear failure signals. Use whenever the user edits G… |
 | 🧪 community | [cli-design](skills/coding/cli-design) | coding | 244 | Design developer CLIs with clear UX, exit codes, flags, and help text. Use whenever the user builds a command… |
 | 🧪 community | [cloudformation-review](skills/coding/cloudformation-review) | coding | 777 | Review AWS CloudFormation and SAM templates for deployment safety, IAM scope, replacement risk, dependencies,… |
 | 🧪 community | [code-comments](skills/coding/code-comments) | coding | 317 | Write and improve code comments and docstrings that explain why, not noise. Use whenever the user asks for be… |
+| 🧪 community | [codebase-orientation](skills/coding/codebase-orientation) | coding | 731 | Orient an engineer (or agent) in an unfamiliar codebase — map modules, entrypoints, how to run tests, and whe… |
 | 🧪 community | [container-review](skills/coding/container-review) | coding | 320 | Review Dockerfiles and container configs for size, security, and operability. Use whenever the user shares a… |
 | 🧪 community | [database-indexing](skills/coding/database-indexing) | coding | 582 | Design and review database indexes and query plans — covering indexes, INCLUDE columns, partial/expression in… |
 | 🧪 community | [database-migrations](skills/coding/database-migrations) | coding | 377 | Plan and review database schema migrations for safety and rollback. Use whenever the user writes migrations,… |
@@ -185,12 +186,14 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [data-visualization](skills/data/data-visualization) | data | 579 | Choose and produce clear, honest charts from tabular or summarized data. Use whenever the user asks for a cha… |
 | 🧪 community | [etl-pipeline-design](skills/data/etl-pipeline-design) | data | 300 | Design ETL and ELT pipelines with clear contracts, quality checks, and failure modes. Use whenever the user p… |
 | 🧪 community | [experiment-design](skills/data/experiment-design) | data | 957 | Design A/B and switchback experiments before launch: hypothesis, randomization unit, primary metric, guardrai… |
+| 🧪 community | [feature-analytics](skills/data/feature-analytics) | data | 872 | Plan event names, properties, identity, and what not to log for a new product feature. Use whenever the user… |
 | 🧪 community | [metrics-definitions](skills/data/metrics-definitions) | data | 378 | Define product and business metrics with precise numerators, denominators, and edge cases. Use whenever the u… |
 | 🧪 community | [sql-analytics](skills/data/sql-analytics) | data | 294 | Write analytical SQL for warehouses and BI questions with correct grain and caveats. Use whenever the user as… |
 | 🧪 community | [warehouse-modeling](skills/data/warehouse-modeling) | data | 882 | Design warehouse dimensional models, activity schemas, and marts with explicit fact grain, facts, dimensions,… |
 | 🧪 community | [architecture-decision-records](skills/documents/architecture-decision-records) | documents | 332 | Write concise Architecture Decision Records that capture context, decision, and consequences. Use whenever th… |
 | 🧪 community | [contract-redlines](skills/documents/contract-redlines) | documents | 905 | Redline commercial paper — MSAs, vendor agreements, order forms, and DPA-adjacent commercial terms — as a bus… |
 | 🧪 community | [disaster-recovery](skills/documents/disaster-recovery) | documents | 879 | Write and review disaster recovery and backup restore playbooks. Use whenever the user asks for a DR plan, RP… |
+| 🧪 community | [golden-path-docs](skills/documents/golden-path-docs) | documents | 944 | Write internal developer-portal and golden-path docs — the blessed, supported way to create a service, ship,… |
 | 🧪 community | [incident-command](skills/documents/incident-command) | documents | 716 | Run a live incident as commander — roles, timeline, decisions, and page cadence — distinct from postmortems a… |
 | 🧪 community | [incident-postmortems](skills/documents/incident-postmortems) | documents | 556 | Write blameless incident postmortems with timeline, impact, root cause, and action items. Use whenever the us… |
 | 🧪 community | [onboarding-guides](skills/documents/onboarding-guides) | documents | 292 | Write new-hire and contributor onboarding guides that get people productive fast. Use whenever the user asks… |
@@ -211,6 +214,7 @@ The table below is regenerated automatically by CI on every merge — do not edi
 | 🧪 community | [decision-memos](skills/productivity/decision-memos) | productivity | 460 | Write concise decision memos that compare options, expose trade-offs, and make a clear evidence-based recomme… |
 | 🧪 community | [delegation-briefs](skills/productivity/delegation-briefs) | productivity | 248 | Write tight delegation briefs so others can execute without thrash. Use whenever the user wants to hand off w… |
 | 🧪 community | [email-drafts](skills/productivity/email-drafts) | productivity | 478 | Draft and rewrite professional emails that get replies — clear ask, right tone, minimal length. Use whenever… |
+| 🧪 community | [game-day-facilitation](skills/productivity/game-day-facilitation) | productivity | 858 | Facilitate a game day or on-call shadow with objectives, injects, abort criteria, observer roles, and a blame… |
 | 🧪 community | [hiring-scorecards](skills/productivity/hiring-scorecards) | productivity | 277 | Build interview scorecards and debrief structures that reduce bias and noise. Use whenever the user designs h… |
 | 🧪 community | [interview-prep](skills/productivity/interview-prep) | productivity | 354 | Prepare for technical and behavioral interviews with structured practice. Use whenever the user asks for inte… |
 | 🧪 community | [issue-triage](skills/productivity/issue-triage) | productivity | 405 | Triage bugs and tickets with severity, repro steps, and next actions. Use whenever the user asks to triage is… |

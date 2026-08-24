@@ -2,8 +2,9 @@
 name: chaos-experiment-design
 description: Plan chaos and resilience experiments safely with hypotheses, blast
   radius limits, and abort criteria. Use whenever the user asks for chaos engineering,
-  game days, fault injection, resilience experiments, or how to safely break things
-  in staging or production.
+  fault injection, resilience experiments, or how to safely break things in staging
+  or production. For facilitating a game day or on-call shadow, use
+  game-day-facilitation.
 license: Apache-2.0
 compatibility: Portable instructions; no bundled scripts or required external binaries.
 metadata:
@@ -51,6 +52,7 @@ abort criteria, and learnings — prefer staging before prod.
 
 ## Edge cases
 
-- **Game days:** facilitation roles + scenario script.
+- **Game days:** point at `game-day-facilitation` for roles and debrief;
+  keep the fault hypothesis here.
 - **Multi-region:** partial vs full region loss.
 - **Data plane faults:** disk full, poison messages, clock skew.

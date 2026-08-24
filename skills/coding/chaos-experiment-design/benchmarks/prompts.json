@@ -1,7 +1,7 @@
 {
   "should_trigger": [
     "design a chaos experiment for checkout",
-    "game day plan for regional failover",
+    "production chaos test approval and abort plan",
     "safe fault injection for the payments service",
     "chaos engineering hypothesis for redis down",
     "resilience experiment for pod kill storm",
@@ -13,7 +13,8 @@
     "kubernetes YAML style nits only",
     "write a blog post about chaos",
     "support macro",
-    "OKR drafting"
+    "OKR drafting",
+    "facilitate a game day and on-call shadow debrief"
   ],
   "tasks": [
     {

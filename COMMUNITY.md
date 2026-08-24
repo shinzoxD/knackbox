@@ -30,9 +30,9 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for folder rules, the quality bar, and D
 
 Open a skill request (or claim one) if you can bring real expertise:
 
-- Feature analytics instrumentation plans
-- Internal developer portal / golden-path docs
-- On-call shadowing / game-day facilitation (beyond chaos experiments)
+- Pagination and cursor-API design (beyond `api-design`)
+- Dependency CVE triage playbooks (beyond `dependency-upgrades`)
+- Internal RFC facilitation (beyond writing the RFC)
 
 Shipped from community requests: `terraform-review`, `pulumi-review`,
 `cloudformation-review`, `prompt-evaluation`, `mobile-release`,
@@ -43,7 +43,9 @@ Shipped from community requests: `terraform-review`, `pulumi-review`,
 `design-tokens`, `partner-api-integration`, `experiment-design`,
 `prompt-injection-hardening`, `i18n-review`, `graphql-schema-design`,
 `support-macros`, `kubernetes-review`, `load-test-planning`,
-`privacy-request-playbook`, `multi-region-active-active`.
+`privacy-request-playbook`, `multi-region-active-active`,
+`feature-analytics`, `game-day-facilitation`, `golden-path-docs`,
+`codebase-orientation`.
 
 If you build a new skill, link any related issue in your PR.
 

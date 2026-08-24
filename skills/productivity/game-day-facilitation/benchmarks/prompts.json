@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    "run a game day for checkout failover",
+    "facilitate our gameday next Thursday with injects and observers",
+    "on-call shadowing plan for the new hire",
+    "incident drill facilitation agenda and roles",
+    "tabletop exercise for losing one availability zone",
+    "help me run a game day — safety brief, abort criteria, debrief"
+  ],
+  "should_not_trigger": [
+    "design a chaos experiment for pod kill",
+    "we are in a live SEV1",
+    "write my standup from these notes",
+    "review this terraform plan before I apply",
+    "facilitate our sprint retrospective",
+    "write the postmortem for last Tuesday's outage"
+  ],
+  "tasks": [
+    {
+      "prompt": "Thursday staging game day: cache gone in one AZ. Checkout team plus one new on-call shadow. Build the facilitation pack.",
+      "criteria": [
+        "assigns facilitator, inject operator, primary, shadow, observers, and scribe",
+        "includes timed injects, named abort criteria, and never-surprise-prod safety",
+        "ends with a blameless same-day debrief and at most a few owned actions"
+      ]
+    },
+    {
+      "prompt": "New hire shadows Friday on-call. No fault inject. What do the shadow, primary, and observer actually do?",
+      "criteria": [
+        "defines shadow vs primary decision rights and when the primary takes over",
+        "gives observers concrete watch items instead of coaching on the bridge",
+        "includes psychological safety and a same-day debrief"
+      ]
+    },
+    {
+      "prompt": "Engineer wants to kill checkout pods in prod at noon with no announcement to see who notices. Payments SEV1 from this morning is still open.",
+      "criteria": [
+        "refuses unannounced production injects",
+        "stands down the drill while the live SEV is open and points at incident-command",
+        "offers a scheduled staging drill or tabletop with abort criteria"
+      ]
+    }
+  ]
+}
